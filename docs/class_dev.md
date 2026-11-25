@@ -37,6 +37,12 @@ prediction, so the teacher's score is agreement too and not a true ceiling on qu
 
 | Split | Model | n | Accuracy | Department | Macro-F1 | Said "other" |
 | --- | --- | --- | --- | --- | --- | --- |
+| all | Gemini zero-shot (teacher) | 480 | 0.738 [0.698, 0.775] | 0.821 | 0.813 (29 classes) | 49 |
+| all | Student | 480 | 0.662 [0.621, 0.704] | 0.750 | 0.717 (29 classes) | 88 |
+| all | Student minus teacher |  | -0.075 [-0.121, -0.029] |  |  |  |
 | dev | Gemini zero-shot (teacher) | 96 | 0.688 [0.594, 0.781] | 0.781 | undefined (0 classes) | 13 |
 | dev | Student | 96 | 0.635 [0.542, 0.729] | 0.708 | undefined (0 classes) | 21 |
 | dev | Student minus teacher |  | -0.052 [-0.146, +0.042] |  |  |  |
+| primary | Gemini zero-shot (teacher) | 384 | 0.750 [0.706, 0.792] | 0.831 | 0.847 (21 classes) | 36 |
+| primary | Student | 384 | 0.669 [0.622, 0.716] | 0.760 | 0.754 (21 classes) | 67 |
+| primary | Student minus teacher |  | -0.081 [-0.133, -0.029] |  |  |  |

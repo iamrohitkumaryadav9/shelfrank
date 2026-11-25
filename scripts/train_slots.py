@@ -30,25 +30,11 @@ from shelfrank.qu.slot_model import (
     load_lexicon,
     load_lexicon_data,
 )
+from shelfrank.qu.slot_scores import f1_interval
 from shelfrank.stats.bootstrap import bootstrap_mean
 
 GRID = [TaggerConfig(x, w, c) for x in (False, True) for w in (1, 2) for c in (0.3, 1.0, 3.0, 10.0)]
 MODEL = "artifacts/slot_model.joblib"
-
-
-def f1_interval(truth: list[Any], predicted: list[Any]) -> dict[str, float]:
-    """Bootstrap interval of the micro-F1, resampling queries."""
-    counts = []
-    for t, p in zip(truth, predicted, strict=True):
-        s = span_scores([t], [p])["all"]
-        hits = 0.0 if not s["support"] or not s["predicted"] else s["recall"] * s["support"]
-        counts.append((hits, s["predicted"], s["support"]))
-    table = np.asarray(counts, dtype=float)
-    picks = np.random.default_rng(SEED).integers(0, len(table), (10_000, len(table)))
-    sums = table[picks].sum(axis=1)
-    scores = 2 * sums[:, 0] / np.maximum(sums[:, 1] + sums[:, 2], 1)
-    low, high = np.percentile(scores, [2.5, 97.5])
-    return {"low": float(low), "high": float(high)}
 
 
 def main() -> None:
