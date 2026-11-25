@@ -15,7 +15,8 @@ RULES = (
     "attributes: colour, material, style, room, size or other properties that the query states. "
     "Never add one it does not state.",
     "synonyms: up to 2 other names shoppers or sellers use for the same product type.",
-    "If the query names only a theme, a brand or a use, give the product type it most likely means.",
+    "If the query names only a theme, a brand or a use, give the product type it most likely "
+    "means.",
 )
 
 EXAMPLES: tuple[tuple[str, dict[str, Any]], ...] = (
