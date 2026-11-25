@@ -31,7 +31,16 @@ currency:
   # The docs state no tax or card margin. Caps are enforced as if both applied: 18% GST, 5% margin.
   safety_factor: 1.24
 
+# The absolute limit of Rs 500 is a constant in shelfrank/llm/budget.py and cannot be changed here.
 caps_inr:
+  smoke: 1
   labelling: 100
   rewriting: 200
   total: 300
+
+# One entry per approved batch, added only after Rohit's explicit yes.
+approvals:
+  - {batch: smoke, max_inr: 1, date: 2026-11-25}
+
+# Use of the Rs 200 between the planned total and the absolute limit. Same rule.
+buffer_approvals: []

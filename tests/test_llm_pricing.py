@@ -42,7 +42,7 @@ def test_committed_config_is_complete():
     assert config["checked"] and all(u.startswith("https://") for u in config["sources"].values())
     assert config["currency"]["safety_factor"] >= 1
     caps = config["caps_inr"]
-    assert caps == {"labelling": 100, "rewriting": 200, "total": 300}
+    assert caps == {"smoke": 1, "labelling": 100, "rewriting": 200, "total": 300}
 
 
 def test_planned_labelling_stays_under_the_cap():

@@ -21,6 +21,10 @@ def main() -> int:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     cfg = load_config("esci")["seed"]
     results: dict[str, bool] = {"settings match configs/esci.yaml": manifest["settings"] == cfg}
+    results["Colab ran this repository's code"] = all(
+        hashlib.sha256((REPO_ROOT / n).read_bytes().replace(b"\r\n", b"\n")).hexdigest() == digest
+        for n, digest in manifest["code_sha256"].items()
+    )
     lines: dict[str, list[str]] = {}
     for name, info in manifest["files"].items():
         # Normalised, because a browser or editor may have changed the line endings.
