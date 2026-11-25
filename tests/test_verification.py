@@ -290,23 +290,26 @@ def script(tmp_path, monkeypatch):
     spec.loader.exec_module(module)
     monkeypatch.setattr(module, "PRACTICE_LOG", tmp_path / "p.jsonl")
     monkeypatch.setattr(module, "FOLDER", tmp_path)
-    monkeypatch.setattr(sys, "argv", ["verify_slots.py", "--round", "A"])
+    monkeypatch.setattr(sys, "argv", ["verify_slots.py", "--round", "B"])
     return module
 
 
-def test_round_a_is_locked_until_practice_is_passed(script, capsys):
+def test_round_b_is_locked_until_practice_is_passed(script, capsys):
     assert script.main() == 1 and "locked" in capsys.readouterr().out
     write_attempt(script.PRACTICE_LOG, correct=12, version=script.SLOT_VERSION)
     assert script.main() == 1 and "locked" in capsys.readouterr().out
 
 
-def test_round_a_never_opens_the_teacher_file_while_labelling(script, monkeypatch):
+def test_round_b_never_opens_the_silver_file_while_labelling(script, monkeypatch):
     import pandas as pd
 
     write_attempt(script.PRACTICE_LOG, version=script.SLOT_VERSION)
     used = {}
     monkeypatch.setattr(script, "load_teacher", lambda path: pytest.fail("teacher file opened"))
     monkeypatch.setattr(script, "queries_for", lambda *a: (7,))
+    draw = script.FOLDER / "draw.json"
+    draw.write_text('{"query_ids": [7, 8]}', encoding="utf-8")
+    monkeypatch.setattr(script, "DRAW", draw)
     frame = pd.DataFrame({"query_id": [7], "query": ["red rug"]})
     monkeypatch.setattr(script, "load_queries", lambda path: frame)
     monkeypatch.setattr(script, "run_session", lambda s, q, seed: used.update(s=s, q=q) or 0)
@@ -318,12 +321,30 @@ def test_summary_is_refused_before_every_query_is_finished(script, monkeypatch, 
     import pandas as pd
 
     write_attempt(script.PRACTICE_LOG, version=script.SLOT_VERSION)
-    monkeypatch.setattr(sys, "argv", ["verify_slots.py", "--round", "A", "--summary"])
+    monkeypatch.setattr(sys, "argv", ["verify_slots.py", "--round", "B", "--summary"])
     monkeypatch.setattr(script, "load_teacher", lambda path: pytest.fail("teacher file opened"))
     monkeypatch.setattr(script, "queries_for", lambda *a: (7,))
+    draw = script.FOLDER / "draw.json"
+    draw.write_text('{"query_ids": [7, 8]}', encoding="utf-8")
+    monkeypatch.setattr(script, "DRAW", draw)
     frame = pd.DataFrame({"query_id": [7], "query": ["red rug"]})
     monkeypatch.setattr(script, "load_queries", lambda path: frame)
     assert script.main() == 1 and "0 of 1 finished" in capsys.readouterr().out
+
+
+def test_round_b_waits_for_the_freeze(script, capsys):
+    if (REPO_ROOT / "configs/frozen.yaml").exists():
+        pytest.skip("frozen")
+    write_attempt(script.PRACTICE_LOG, version=script.SLOT_VERSION)
+    assert script.main() == 1 and "locked until" in capsys.readouterr().out
+
+
+def test_round_b_draw_is_seeded_and_from_the_primary_folds(folds):
+    import random
+
+    draw = json.loads((REPO_ROOT / "data/splits/round_b_draw.json").read_text(encoding="utf-8"))
+    expected = sorted(random.Random(draw["seed"]).sample(folds.primary, 50))
+    assert draw["query_ids"] == expected and not set(expected) & set(folds.dev)
 
 
 def event(query_id, stage, color=None):

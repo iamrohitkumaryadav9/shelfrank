@@ -75,36 +75,40 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
 - Room rule: a room word is part of the product type when it lies inside a category name and the name
   continues past it. Category names are classes with at least 30 products and path segments with at least
   100. Patio, garden, balcony and deck count as outdoor. **The threshold of 100 was chosen while looking at 7
-  examples, so 7 of 7 is not independent evidence.** The check is agreement with the Round A room labels. More than 2 disagreements force a new rules version before any 2,000-query batch.
+  examples, so 7 of 7 is not independent evidence.** The rule stays as slots-v1 with **no human check before the
+  freeze** (pre-freeze change below). Round B, if it is done, reports agreement with it.
 - If the rules change, labels are paid for again under the new version. The old ones stay in the cache.
 - Room values come from category paths plus a small hand list. The hand list is written from
   catalogue-side text only (category names, product names, feature values), never from queries.
-- Room support (the number of room mentions in the verified queries of the round) is shown beside its F1.
+- Room support (the number of room mentions in the reference labels) is shown beside its F1.
   Below 10, the F1 is reported as not interpretable.
 - Whether the room slot stays is decided by the ablation.
 - A product with several values for a slot is a family of variants. A conflict means that **none** of
   its listed values matches the query.
 
-### Verification by hand
-
-| Round | Queries | When | Used for |
-| --- | --- | --- | --- |
-| A | all 96 dev queries | before the freeze | choosing the slot student, Gate 2 numbers |
-| B | 100 from folds 1 to 4, a seeded draw committed as ids | after `preregistered-v1` | **primary reported slot F1** |
+### Verification by hand, and the pre-freeze change of 2026-11-26
 
 - A first labelling attempt was discarded after the rater misapplied the slot rules; the tool was revised and the rater retrained before the recorded pass. That attempt showed the teacher's answers, so Round A is not blind; Round B is.
-- Labelling is unlocked by practice on 15 invented queries with rule-derived answers (at least 13 right).
-  The tool refuses words that are not in the query and a word used in two slots.
-- The tool shows no teacher answer in either round and has no code path that could. Labels are stored with
-  timestamps.
-- The room-rule check of section 6 now rests on Round A labels, which are not blind. **Round B therefore also
-  reports agreement with the room rule, and that is the clean check.** The gate of at most 2 disagreements
-  before any 2,000-query batch stays on Round A, because Round B comes after the freeze.
-- Reported: agreement with the teacher overall and per slot with its n, and the count of "unsure".
-  Queries excluded from agreement are listed in `scripts/verify_slots.py` and in the result.
+- **Round A was then dropped before any recorded pass, because of rater time.** This is a protocol change made before
+  the freeze. Consequences:
+  - No human slot label exists when the slot student is selected, when G4 is enabled, or at the freeze.
+  - Gemini's slot labels on the 96 dev queries are called **silver** everywhere.
+  - The room rule has no human check.
+- **Slot selection rule, set before any student was trained:** the mean of two exact-span F1 scores over all slots, one
+  against silver labels on the 96 dev queries and one against teacher labels on held-out ESCI seed queries (a fifth of
+  the seed, not trained on). The candidates are the lexicon matcher and every student configuration. The highest
+  score is used for G4, and an exact tie goes to the lexicon, which is simpler.
+- Both references come from the same teacher, so the rule measures how well a student imitates Gemini.
+- **Round B is optional and comes after the freeze.** It has 50 queries from folds 1 to 4, a seeded draw committed as
+  ids in `data/splits/round_b_draw.json`. Until it is complete, every slot F1 is labelled **"vs LLM silver labels;
+  human verification pending"**. If it is completed, the human number becomes primary in the README. Nothing in the
+  ranking pipeline depends on it.
+- Round B labelling is unlocked by practice on 15 invented queries with rule-derived answers (at least 13 right). The
+  tool refuses words that are not in the query and a word used in two slots. It shows no teacher answer and has no
+  code path that could. Labels are stored with timestamps.
+- Round B reports: agreement with silver overall and per slot with its n, student and lexicon F1 against the human
+  labels, agreement with the room rule, and the count of "unsure".
 - The slot student and the lexicons are frozen before Round B starts.
-- Silver labels for all 480 queries may be generated before the freeze. Nothing is scored against the
-  non-dev ones until after it.
 
 ## 7. Pool bias
 
@@ -130,7 +134,7 @@ products. These rules apply:
   `configs/ltr.yaml` and copied into `configs/frozen.yaml` at the freeze, because the existence of that file is
   what unlocks the other folds. Dev numbers are optimistic, since options are chosen on the queries they are
   scored on.
-- **Dev comparisons from here:** one INTERIM run (G4 off), then, after Round A and G4, one FINAL run. Nothing is
+- **Dev comparisons from here:** one INTERIM run (G4 off), then, with G4, one FINAL run. Nothing is
   added after either except logged bug fixes. No option is searched for until LTR wins. Groups are not dropped
   before the freeze: the pre-registered ablation decides.
 - **Encoder of G2** (written before the fine-tuned encoder was measured on WANDS): the fine-tuned encoder replaces
@@ -146,8 +150,7 @@ products. These rules apply:
   candidate is ranked, judged or not.
 - Dev experiments run out-of-fold inside the dev fold and every configuration is appended to
   `results/ltr_dev_log.jsonl`. The number of trees is chosen on training queries only.
-- G4 is refused by `shelfrank/ltr/gates.py` until Round A has a summary, the room rule has passed and a slot
-  student is selected. The slot seed batch is refused by the same check.
+- G4 is refused by `shelfrank/ltr/gates.py` until a slot student is selected.
 - The main BM25 baseline is tuned multi-field BM25. Its field weights are the ones tuned on fold 0 and are
   not re-tuned per fold. Title-only BM25 appears in every table.
 - Reciprocal rank fusion uses k = 60, the published default. **It is not tuned** and is frozen now.
@@ -200,7 +203,7 @@ it is flagged at the next gate.
 | 0 | The example queries printed in the WANDS annotation guidelines and paper | No |
 | 0 | Taxonomy coverage over all 480 queries was visible; the rule reads only catalogue counts | No |
 | 1 | None. `shelfrank/eval/access.py` refuses any other split until `configs/frozen.yaml` exists. The only query texts displayed were the five dev queries of the CI fixture | No |
-| 2, planned | Round A shows dev queries only. Round B shows 100 primary queries, after the freeze | No: the student and lexicons are frozen first |
+| 2, planned | Round B shows 50 primary queries, after the freeze. Their ids were drawn by code and no text was displayed | No: the student and lexicons are frozen first |
 | 2 (so far) | None. The seed notebook reads all WANDS queries by code, to remove look-alikes, and never prints or saves them. Hashed token keys of all queries are committed for the leakage tests | No |
 | 3 | None. The fine-tuning notebook reads all WANDS queries by code, to remove look-alikes from ESCI, and never prints or saves them | No |
 | 3 (dev) | None. The encoder comparison used the 96 dev queries only. Five invented check queries are not WANDS queries | No |
@@ -223,6 +226,9 @@ catalogue's own vocabulary. Every other phrase in a prompt is checked against al
   although the documentation says failed requests are not charged.
 - Every paid batch starts with a 10-item pilot. Its measured cost per item gives the projection, and the rest
   runs only after a recorded approval.
+- Standing approval of 2026-11-26: a batch may follow its pilot without a separate yes if the pilot's cost per item is
+  within 20% of the projection made before it, the phase stays under its cap (labelling Rs 100, rewriting Rs 200) and
+  cumulative spend stays under Rs 300. Each use is recorded in `configs/llm.yaml` with both figures.
 - Cached responses hold a hash of the prompt and no query text.
 - The teacher is `gemini-3.1-flash-lite`.
 

@@ -17,7 +17,7 @@ from shelfrank.ltr.dataset import (
     build_data,
     group_sizes,
 )
-from shelfrank.ltr.gates import allowed_groups, slot_blockers
+from shelfrank.ltr.gates import allowed_groups
 from shelfrank.ltr.model import (
     CV,
     POINTWISE,
@@ -290,22 +290,9 @@ def test_log_entry_describes_the_whole_configuration():
     assert set(body) >= {"variant", "objective", "label_gain", "params", "seeds", "valid_share"}
 
 
-def round_a(root, disagreements):
-    (root / "results").mkdir(exist_ok=True)
-    body = {"room_rule": {"cases": 9, "disagreements": disagreements}}
-    (root / "results/slots_round_a.json").write_text(json.dumps(body), encoding="utf-8")
-
-
-def test_g4_is_refused_until_round_a_the_room_rule_and_a_student(tmp_path):
-    with pytest.raises(ProtocolError, match="Round A has no summary"):
-        allowed_groups(["G1", "G4"], tmp_path)
-    round_a(tmp_path, 3)
-    with pytest.raises(ProtocolError, match="3 disagreements"):
-        allowed_groups(["G4"], tmp_path)
-    round_a(tmp_path, 2)
-    assert slot_blockers(tmp_path) == []
+def test_g4_is_refused_until_a_slot_student_is_selected(tmp_path):
     with pytest.raises(ProtocolError, match="no slot student"):
-        allowed_groups(["G4"], tmp_path)
+        allowed_groups(["G1", "G4"], tmp_path)
     (tmp_path / "configs").mkdir()
     (tmp_path / "configs/slot_student.yaml").write_text("x: 1", encoding="utf-8")
     assert allowed_groups(["G4"], tmp_path) == ["G4"]
@@ -317,17 +304,6 @@ def test_other_groups_need_nothing(tmp_path):
 
 def test_committed_config_is_allowed_now():
     assert allowed_groups(load_config("ltr")["groups"])
-
-
-@pytest.mark.parametrize("extra", [[], ["--pilot"]])
-def test_slot_seed_batch_is_refused_before_any_client_exists(monkeypatch, extra):
-    from scripts import label
-
-    monkeypatch.setattr("sys.argv", ["label.py", "slots", "esci_seed", *extra])
-    monkeypatch.setattr(label, "slot_blockers", lambda: ["Round A has no summary"])
-    monkeypatch.setattr(label, "make_client", lambda **k: pytest.fail("a client was made"))
-    with pytest.raises(SystemExit, match="must wait"):
-        label.main()
 
 
 def test_committed_dev_page_is_generated_from_the_committed_results():

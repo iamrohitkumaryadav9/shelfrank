@@ -1,8 +1,10 @@
 """Label slots by hand. Practice comes first and unlocks the rounds.
 
 Practice:  .venv\\Scripts\\python.exe scripts\\verify_slots.py --practice
-Round A:   .venv\\Scripts\\python.exe scripts\\verify_slots.py --round A
-Summary:   .venv\\Scripts\\python.exe scripts\\verify_slots.py --round A --summary
+Round B:   .venv\\Scripts\\python.exe scripts\\verify_slots.py --round B
+Summary:   .venv\\Scripts\\python.exe scripts\\verify_slots.py --round B --summary
+
+Round A was dropped before any recorded pass (docs/PROTOCOL.md section 6).
 """
 
 import argparse
@@ -25,6 +27,8 @@ from shelfrank.qu.guidelines import (
     require_final,
     slot_rules_text,
 )
+from shelfrank.qu.slot_lexicon import span_scores
+from shelfrank.qu.slot_model import load_lexicon, load_slot_model
 from shelfrank.qu.slot_vocab import Term, load_vocabulary
 from shelfrank.qu.verification import (
     Session,
@@ -33,19 +37,15 @@ from shelfrank.qu.verification import (
     room_check,
     run_practice,
     run_session,
+    scored_labels,
     summary,
 )
 
 SEED = 20260
 FOLDER = REPO_ROOT / "data" / "labels"
 PRACTICE_LOG = FOLDER / "slots_practice.jsonl"
-ROUNDS = {
-    "A": ("dev", f"slots_wands_dev_{SLOT_VERSION}.jsonl"),
-    "B": ("primary", f"slots_wands_round_b_{SLOT_VERSION}.jsonl"),
-}
-# Labelled like the rest, but not counted in agreement: in the discarded attempt its label was
-# changed to the teacher's answer.
-EXCLUDED = {"A": frozenset({371}), "B": frozenset()}
+DRAW = REPO_ROOT / "data/splits/round_b_draw.json"
+SILVER = f"slots_wands_primary_{SLOT_VERSION}.jsonl"
 
 
 def load_teacher(path: Path) -> dict[int, Slots]:
@@ -75,19 +75,32 @@ def practice() -> int:
         handle.write(json.dumps(asdict(attempt)) + "\n")
     passed = attempt.unlocks(SLOT_VERSION)
     print(f"\nScore {attempt.correct}/{attempt.total}. Needed {PASS_MARK}.")
-    print("Round A is unlocked." if passed else "Not yet. Read the answers above and try again.")
+    print(
+        "Round B is unlocked after the freeze."
+        if passed
+        else "Not yet. Read the answers above and try again."
+    )
     return 0
 
 
-def write_summary(name: str, log: VerificationLog, queries: dict[int, str], path: Path) -> None:
-    """Save and print agreement. The teacher's labels are read only here."""
+def write_summary(log: VerificationLog, queries: dict[int, str], path: Path) -> None:
+    """Save and print agreement. The silver labels are read only here."""
+    human = scored_labels(log)
+    order = sorted(human)
+    predicted = {
+        "student": [load_slot_model().slots(queries[q]) for q in order],
+        "lexicon": [load_lexicon().slots(queries[q]) for q in order],
+    }
     out: dict[str, Any] = {
         "rules": SLOT_VERSION,
         "practice": [f"{a.correct}/{a.total}" for a in read_attempts(PRACTICE_LOG)],
-        **summary(log, load_teacher(path), EXCLUDED[name]),
-        "room_rule": room_check(log, queries, vocabulary()[2], EXCLUDED[name]),
+        **summary(log, load_teacher(path)),
+        "room_rule": room_check(log, queries, vocabulary()[2]),
+        "against_human": {
+            name: span_scores([human[q] for q in order], rows) for name, rows in predicted.items()
+        },
     }
-    target = REPO_ROOT / "results" / f"slots_round_{name.lower()}.json"
+    target = REPO_ROOT / "results/slots_round_b.json"
     target.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(out, indent=1))
 
@@ -95,30 +108,26 @@ def write_summary(name: str, log: VerificationLog, queries: dict[int, str], path
 def main() -> int:
     """Run practice, a round, or its summary."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--round", choices=sorted(ROUNDS))
+    parser.add_argument("--round", choices=["B"])
     parser.add_argument("--practice", action="store_true")
     parser.add_argument("--summary", action="store_true")
     args = parser.parse_args()
     if args.practice:
         return practice()
     if not args.round:
-        parser.error("choose --practice or --round A")
+        parser.error("choose --practice or --round B")
     if not unlocked(PRACTICE_LOG, SLOT_VERSION):
         print(f"locked: score at least {PASS_MARK}/{len(PRACTICE)} in --practice first")
         return 1
-    split, silver = ROUNDS[args.round]
     try:
         require_final(SLOT_VERSION)
         cfg = load_config("data")
-        ids = queries_for(split, load_folds(REPO_ROOT / cfg["splits"]["path"]))
+        allowed = set(queries_for("primary", load_folds(REPO_ROOT / cfg["splits"]["path"])))
     except (RulesNotFinalError, ProtocolError) as error:
         print(f"not yet: {error}")
         return 1
-    if args.round == "B":
-        # The committed draw of 100 ids does not exist before the freeze.
-        print("not yet: round B has no committed query draw")
-        return 1
-    log = VerificationLog(FOLDER / f"slots_round_{args.round.lower()}.jsonl")
+    ids = [q for q in json.loads(DRAW.read_text(encoding="utf-8"))["query_ids"] if q in allowed]
+    log = VerificationLog(FOLDER / "slots_round_b.jsonl")
     texts = load_queries(REPO_ROOT / cfg["wands"]["raw_dir"]).set_index("query_id")["query"]
     queries = {q: str(texts[q]) for q in ids}
     if args.summary:
@@ -127,11 +136,11 @@ def main() -> int:
             # Agreement seen halfway would influence the remaining labels.
             print(f"not yet: {done} of {len(queries)} finished")
             return 1
-        write_summary(args.round, log, queries, FOLDER / silver)
+        write_summary(log, queries, FOLDER / SILVER)
         return 0
     print(slot_rules_text())
     names, terms, _ = vocabulary()
-    # No teacher label file is opened on this path, in either round.
+    # No silver label file is opened on this path.
     session = Session(log, SLOT_VERSION, input, print, names, terms)
     done = run_session(session, queries, SEED)
     print(f"{done} of {len(queries)} finished")

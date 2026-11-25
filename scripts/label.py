@@ -14,7 +14,7 @@ from shelfrank.eval.splits import load_folds
 from shelfrank.llm.batch import project, run_batch
 from shelfrank.llm.budget import PILOT_ITEMS
 from shelfrank.llm.setup import make_client, make_request
-from shelfrank.ltr.gates import slot_blockers
+from shelfrank.llm.standing import reasons_to_ask
 from shelfrank.qu import teacher
 from shelfrank.qu.guidelines import CLASS_VERSION, SLOT_VERSION, SLOTS, require_final
 from shelfrank.qu.slot_vocab import in_vocabulary, load_vocabulary
@@ -39,12 +39,11 @@ def main() -> None:
     parser.add_argument("source", choices=["esci_dev", "esci_seed", "wands_dev"])
     parser.add_argument("--pilot", action="store_true")
     parser.add_argument("--live", action="store_true", help="allow paid calls")
+    parser.add_argument("--projected", type=float, help="Rs per item projected before the pilot")
     args = parser.parse_args()
 
     version = CLASS_VERSION if args.task == "class" else SLOT_VERSION
     require_final(version)
-    if (args.task, args.source) == ("slots", "esci_seed") and (blockers := slot_blockers()):
-        raise SystemExit("the slot seed batch must wait: " + "; ".join(blockers))
     rows = load_source(args.source)
     everything = len(rows)
     if args.pilot:
@@ -98,6 +97,17 @@ def main() -> None:
         print(
             f"pilot Rs {out.inr_per_item:.4f} per item; {everything} items project to Rs {out.projected_inr:.2f}"
         )
+        if args.projected:
+            ledger = client.budget.ledger
+            reasons = reasons_to_ask(
+                args.projected,
+                out.inr_per_item,
+                out.projected_inr,
+                ledger.spent("labelling"),
+                client.budget.caps["labelling"],
+                ledger.spent(),
+            )
+            print("standing approval:", "STOP, " + "; ".join(reasons) if reasons else "holds")
         for (_, query), label in zip(rows, labels, strict=True):
             # ESCI only: a WANDS query is never printed, not even a dev one.
             if args.source != "wands_dev":

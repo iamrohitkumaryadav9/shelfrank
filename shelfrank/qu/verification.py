@@ -324,7 +324,7 @@ def room_check(
     """Compare room labels with the room rule, on queries that contain a room word.
 
     The thresholds of the rule were chosen while looking at seven examples, so it needs labels made
-    without it. Round B gives the clean check; Round A labels are not blind.
+    without it. Only Round B gives them.
     """
     disagree = []
     cases = 0
