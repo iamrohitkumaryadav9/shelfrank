@@ -120,7 +120,7 @@ def test_product_phrases_respect_thresholds_and_merge_patio_with_outdoor():
         }
     )
     out = sv.product_type_phrases(products, min_class=2, min_path=2)
-    assert ("outdoor", "table") in out and ("garden", "statue") in out
+    assert ("outdoor", "table") in out and ("outdoor", "statue") in out
     assert ("deck", "box") not in out
 
 
@@ -134,6 +134,53 @@ def test_release_candidates_are_refused_and_final_versions_pass():
         require_final("slots-v1-rc1")
     require_final("slots-v1")
     require_final(CLASS_VERSION)
+
+
+@pytest.mark.parametrize(
+    ("slot", "span", "known"),
+    [
+        ("color", "very dark gray", True),
+        ("material_finish", "dark gray", True),
+        ("color", "sparkleberry", False),
+        ("style", "mid century modern", True),
+        ("style", "gray", False),
+        ("room", "patio", True),
+        ("room", "spaceship", False),
+    ],
+)
+def test_vocabulary_is_shared_by_colour_and_material_but_not_style(slot, span, known):
+    union, styles = {("gray",): 9}, {("mid", "century", "modern"): 9}
+    assert sv.in_vocabulary(slot, span, union, styles) is known
+
+
+@pytest.mark.parametrize("word", ["patio", "garden", "balcony", "deck", "outdoor"])
+def test_outdoor_places_share_product_phrases(word):
+    assert sv.room_slots(f"{word} dining set", PHRASES) == []
+
+
+def load_vocab():
+    return json.loads((REPO_ROOT / "data/slot_vocab.json").read_text(encoding="utf-8"))
+
+
+def test_values_named_in_the_rules_are_in_the_committed_vocabulary():
+    union, styles, _ = sv.load_vocabulary(load_vocab())
+    for value in ("chrome", "brushed nickel", "matte black", "oil rubbed bronze", "walnut", "oak"):
+        assert sv.in_vocabulary("material_finish", value, union, styles)
+    for value in ("navy", "light gray", "espresso", "gold", "silver"):
+        assert sv.in_vocabulary("color", value, union, styles)
+    for value in ("modern", "farmhouse", "mid century", "boho", "rustic", "coastal", "vintage"):
+        assert sv.in_vocabulary("style", value, union, styles), value
+
+
+def test_style_list_has_the_recorded_cutoff():
+    vocab = load_vocab()
+    assert vocab["min_products"] == 3 and min(vocab["styles"].values()) >= 3
+    assert vocab["styles"] == load_evidence()["styles"]
+
+
+@pytest.mark.full_data
+def test_committed_vocabulary_is_rebuilt_from_the_catalogue(raw_dir):
+    assert json.loads(json.dumps(sv.build_vocabulary(load_products(raw_dir)))) == load_vocab()
 
 
 def test_rule_text_gives_the_same_room_examples_as_the_code():

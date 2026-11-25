@@ -36,7 +36,7 @@ class SlotItem(_Strict):
 
     i: int
     color: list[str]
-    material: list[str]
+    material_finish: list[str]
     style: list[str]
     room: list[str]
 

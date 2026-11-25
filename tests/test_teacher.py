@@ -53,9 +53,9 @@ def test_bad_class_answers_are_rejected(text):
 
 
 def test_slots_keep_spans_that_are_in_the_query():
-    text = slots(color=["Dark Gray"], material=["linen"])
+    text = slots(color=["Dark Gray"], material_finish=["linen"])
     (row,) = teacher.parse_slots(text, ["dark gray linen headboard"])
-    assert row["color"] == ["Dark Gray"] and row["material"] == ["linen"]
+    assert row["color"] == ["Dark Gray"] and row["material_finish"] == ["linen"]
     assert row["style"] == row["room"] == row["invented"] == []
 
 

@@ -12,7 +12,7 @@ from shelfrank.data.taxonomy import build_taxonomy, class_support
 from shelfrank.data.wands import load_products, load_queries
 from shelfrank.eval.leakage import exact_matches, key_hashes, load_key_hashes, near_matches
 from shelfrank.eval.splits import assign_folds
-from shelfrank.qu.guidelines import example_queries
+from shelfrank.qu.guidelines import example_queries, quoted_phrases
 from shelfrank.text.near_duplicates import jaccard, leakage_keys, near_duplicate_groups, token_key
 
 TEXT_SUFFIXES = {".md", ".json", ".jsonl", ".yaml", ".csv", ".txt", ".py"}
@@ -173,4 +173,19 @@ def test_stronger_key_finds_no_cross_fold_pair(raw_dir, data_cfg, folds):
 @pytest.mark.full_data
 def test_prompt_examples_resemble_no_wands_query(raw_dir, data_cfg):
     threshold = data_cfg["splits"]["near_duplicate_jaccard"]
-    assert near_matches(example_queries(), load_queries(raw_dir)["query"], threshold) == []
+    texts = example_queries() + quoted_phrases()
+    assert near_matches(texts, load_queries(raw_dir)["query"], threshold) == []
+
+
+def test_no_prompt_phrase_is_a_wands_query():
+    assert len(quoted_phrases()) > 20
+    assert exact_matches(example_queries() + quoted_phrases(), load_key_hashes(KEYS)) == []
+
+
+def test_class_names_are_catalogue_vocabulary_and_the_overlap_is_documented(data_cfg):
+    """Some class names equal a WANDS query. The classifier has to list them anyway."""
+    path = REPO_ROOT / data_cfg["taxonomy"]["path"]
+    classes = json.loads(path.read_text(encoding="utf-8"))["classes"]
+    overlap = len(exact_matches(classes, load_key_hashes(KEYS)))
+    protocol = (REPO_ROOT / "docs/PROTOCOL.md").read_text(encoding="utf-8")
+    assert f"{overlap} of {len(classes)} class names" in protocol

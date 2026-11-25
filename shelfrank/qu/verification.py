@@ -6,9 +6,12 @@ from collections.abc import Callable, Mapping, Sequence
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 from shelfrank.qu.guidelines import SLOTS
+from shelfrank.qu.slot_vocab import room_slots, room_spans
 from shelfrank.qu.teacher import contains_span
+from shelfrank.text.normalize import tokenize
 
 Slots = dict[str, list[str]]
 Ask = Callable[[str], str]
@@ -89,7 +92,7 @@ def ask_slots(query: str, ask: Ask, say: Say, allow_unsure: bool = True) -> Slot
     slots: Slots = {}
     for slot in SLOTS:
         while True:
-            answer = ask(f"  {slot:9s}> ").strip()
+            answer = ask(f"  {slot:15s}> ").strip()
             if answer == QUIT:
                 raise Quit
             if answer == REDO:
@@ -190,31 +193,66 @@ def run_session(
     return sum(bool(s & finished) for s in log.stages().values())
 
 
-def summary(log: VerificationLog, teacher: Mapping[int, Slots]) -> dict[str, float | int]:
-    """Blind agreement with the teacher, revisions and unsure counts.
+def _spans(slots: Slots, slot: str) -> set[str]:
+    return {" ".join(s.casefold().split()) for s in slots.get(slot, [])}
+
+
+def same_slots(a: Slots, b: Slots) -> bool:
+    """Whether two labels agree on every slot, ignoring case, spacing and order."""
+    return all(_spans(a, slot) == _spans(b, slot) for slot in SLOTS)
+
+
+def summary(log: VerificationLog, teacher: Mapping[int, Slots]) -> dict[str, Any]:
+    """Blind agreement with the teacher overall and per slot, revisions and unsure counts.
 
     Agreement uses the blind label. A label changed after seeing the answer is not independent.
+    Per slot, agreement alone would look high because most slots are empty, so the F1 of the
+    teacher's spans against the blind ones is given with its support.
     """
     events = log.events()
-    blind = {e.query_id: e.slots for e in events if e.stage == "blind"}
-    unsure = {e.query_id for e in events if e.stage == "unsure"}
-    revised = {e.query_id: e.slots for e in events if e.stage == "revised"}
-
-    def same(a: Slots | None, b: Slots | None) -> bool:
-        if a is None or b is None:
-            return False
-        return all(
-            {s.casefold() for s in a.get(slot, [])} == {s.casefold() for s in b.get(slot, [])}
-            for slot in SLOTS
-        )
-
-    scored = [q for q in blind if q in teacher]
-    agree = sum(same(blind[q], teacher[q]) for q in scored)
+    blind = {e.query_id: e.slots or {} for e in events if e.stage == "blind"}
+    revised = {e.query_id: e.slots or {} for e in events if e.stage == "revised"}
+    scored = sorted(q for q in blind if q in teacher)
+    per_slot = {}
+    for slot in SLOTS:
+        pairs = [(_spans(blind[q], slot), _spans(teacher[q], slot)) for q in scored]
+        hits = sum(len(mine & theirs) for mine, theirs in pairs)
+        mine_n, theirs_n = sum(len(m) for m, _ in pairs), sum(len(t) for _, t in pairs)
+        per_slot[slot] = {
+            "agreement": sum(m == t for m, t in pairs) / len(pairs) if pairs else float("nan"),
+            "support": mine_n,
+            "teacher_spans": theirs_n,
+            "f1": 2 * hits / (mine_n + theirs_n) if mine_n + theirs_n else float("nan"),
+        }
+    agree = sum(same_slots(blind[q], teacher[q]) for q in scored)
     return {
         "blind": len(blind),
-        "unsure": len(unsure),
+        "unsure": sum(e.stage == "unsure" for e in events),
         "agree_all_slots": agree,
         "blind_agreement": agree / len(scored) if scored else float("nan"),
         "revised": len(revised),
-        "revised_to_teacher": sum(same(s, teacher.get(q)) for q, s in revised.items()),
+        "revised_to_teacher": sum(
+            same_slots(s, teacher[q]) for q, s in revised.items() if q in teacher
+        ),
+        "per_slot": per_slot,
     }
+
+
+def room_check(
+    log: VerificationLog, queries: Mapping[int, str], phrases: set[tuple[str, ...]]
+) -> dict[str, Any]:
+    """Compare blind room labels with the room rule, on queries that contain a room word.
+
+    This is the independent test of the rule, whose thresholds were chosen while looking at seven
+    examples.
+    """
+    disagree = []
+    cases = 0
+    for event in log.events():
+        if event.stage != "blind" or not room_spans(queries[event.query_id]):
+            continue
+        cases += 1
+        mine = sorted(" ".join(tokenize(s)) for s in (event.slots or {}).get("room", []))
+        if mine != sorted(room_slots(queries[event.query_id], phrases)):
+            disagree.append(event.query_id)
+    return {"cases": cases, "disagreements": len(disagree), "query_ids": sorted(disagree)}

@@ -1,4 +1,5 @@
 import json
+import math
 
 import pytest
 
@@ -7,12 +8,13 @@ from shelfrank.qu.verification import (
     VerificationLog,
     order,
     read_spans,
+    room_check,
     run_session,
     summary,
 )
 
 QUERIES = {7: "dark gray linen sofa"}
-TEACHER = {7: {"color": ["gray"], "material": ["linen"], "style": [], "room": []}}
+TEACHER = {7: {"color": ["gray"], "material_finish": ["linen"], "style": [], "room": []}}
 
 
 class Person:
@@ -68,7 +70,7 @@ def test_revision_is_kept_beside_the_blind_label(tmp_path):
     log, done = session(tmp_path, person)
     events = log.events()
     assert done == 1 and stages(log) == ["blind", "revised"]
-    assert events[0].slots["color"] == ["dark gray"] and events[0].slots["material"] == []
+    assert events[0].slots["color"] == ["dark gray"] and events[0].slots["material_finish"] == []
     assert events[1].slots == TEACHER[7]
     assert all(e.time and e.version == "v1" for e in events)
 
@@ -90,7 +92,7 @@ def test_a_word_cannot_be_in_two_slots(tmp_path):
     person = Person("linen", "linen", "", "", "", "", "")
     log, _ = session(tmp_path, person)
     assert "already in another slot" in person.text()
-    assert log.events()[0].slots["material"] == []
+    assert log.events()[0].slots["material_finish"] == []
 
 
 def test_redo_during_and_after_labelling_stores_only_the_final_label(tmp_path):
@@ -111,7 +113,7 @@ def test_quit_at_the_reveal_resumes_there_without_a_second_blind_label(tmp_path)
     person = Person("")
     log, done = session(tmp_path, person)
     assert done == 1 and stages(log) == ["blind", "kept"]
-    assert person.text().count("color    >") == 0
+    assert "color" not in person.text().split("Type the words")[1].split("yours")[0]
 
 
 def test_finished_queries_are_not_asked_again(tmp_path):
@@ -162,6 +164,7 @@ def test_summary_scores_the_blind_label_and_counts_the_rest(tmp_path):
     empty = {s: [] for s in SLOTS}
     teacher = {1: {**empty, "color": ["Red"]}, 2: {**empty, "color": ["navy"]}, 3: empty}
     out = summary(VerificationLog(path), teacher)
+    per_slot = out.pop("per_slot")
     assert out == {
         "blind": 2,
         "unsure": 1,
@@ -170,3 +173,17 @@ def test_summary_scores_the_blind_label_and_counts_the_rest(tmp_path):
         "revised": 1,
         "revised_to_teacher": 1,
     }
+    assert per_slot["color"] == {"agreement": 0.5, "support": 2, "teacher_spans": 2, "f1": 0.5}
+    assert per_slot["room"]["agreement"] == 1.0 and math.isnan(per_slot["room"]["f1"])
+
+
+def test_room_check_compares_blind_labels_with_the_rule_on_room_queries_only(tmp_path):
+    queries = {1: "dining table", 2: "bathroom rug", 3: "red chair", 4: "bedroom lamp"}
+    rows = [event(1, "blind"), event(2, "blind"), event(3, "blind"), event(4, "blind")]
+    rows[3]["slots"]["room"] = ["Bedroom"]
+    rows.append(event(2, "revised"))
+    rows[-1]["slots"]["room"] = ["bathroom"]
+    path = tmp_path / "log.jsonl"
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+    out = room_check(VerificationLog(path), queries, {("dining", "table")})
+    assert out == {"cases": 3, "disagreements": 1, "query_ids": [2]}

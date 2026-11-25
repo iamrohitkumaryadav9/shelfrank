@@ -22,17 +22,21 @@ from shelfrank.qu.guidelines import (
     require_final,
     slot_rules_text,
 )
-from shelfrank.qu.verification import Slots, VerificationLog, run_session, summary
+from shelfrank.qu.slot_vocab import load_vocabulary
+from shelfrank.qu.verification import Slots, VerificationLog, room_check, run_session, summary
 
 SEED = 20260
 FOLDER = REPO_ROOT / "data" / "labels"
-ROUNDS = {"A": ("dev", "silver_slots_dev.jsonl"), "B": ("primary", "silver_slots_round_b.jsonl")}
+ROUNDS = {
+    "A": ("dev", f"slots_wands_dev_{SLOT_VERSION}.jsonl"),
+    "B": ("primary", f"slots_wands_round_b_{SLOT_VERSION}.jsonl"),
+}
 
 
 def load_teacher(path: Path) -> dict[int, Slots]:
     """Read teacher labels by query id."""
     rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
-    return {int(row["query_id"]): row["slots"] for row in rows}
+    return {int(row["id"]): row["label"] for row in rows}
 
 
 def practice() -> int:
@@ -72,11 +76,19 @@ def main() -> int:
         return 1
     teacher = load_teacher(teacher_path)
     log = VerificationLog(FOLDER / f"slots_round_{args.round.lower()}.jsonl")
-    if args.summary:
-        print(json.dumps(summary(log, teacher), indent=1))
-        return 0
     texts = load_queries(REPO_ROOT / cfg["wands"]["raw_dir"]).set_index("query_id")["query"]
     queries = {q: str(texts[q]) for q in ids if q in teacher}
+    if args.summary:
+        raw = json.loads((REPO_ROOT / "data/slot_vocab.json").read_text(encoding="utf-8"))
+        out = {
+            "rules": SLOT_VERSION,
+            **summary(log, teacher),
+            "room_rule": room_check(log, queries, load_vocabulary(raw)[2]),
+        }
+        path = REPO_ROOT / "results" / f"slots_round_{args.round.lower()}.json"
+        path.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
+        print(json.dumps(out, indent=1))
+        return 0
     print(slot_rules_text())
     done = run_session(queries, teacher.__getitem__, log, SLOT_VERSION, SEED, input, print)
     print(f"{done} of {len(queries)} finished")

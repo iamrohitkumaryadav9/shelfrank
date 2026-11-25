@@ -21,6 +21,12 @@ NOT_A_STYLE = frozenset(
     "decorative|convertible chair|children's|youth|teen|storage|org|shag|classroom|educational|"
     "global|electric geometric|weathered worn down".split("|")
 )
+# Spellings of one catalogue style that shoppers shorten.
+STYLE_ALIASES = {
+    "mid century": "mid-century modern",
+    "midcentury": "mid-century modern",
+    "midcentury modern": "mid-century modern",
+}
 _AUDIENCE = re.compile(r"^(youth|teen)\s+")
 _PARTS = re.compile(r"\s*(?:&|/| - )\s*")
 
@@ -32,9 +38,11 @@ ROOM_WORDS = (
     "entryway|foyer|hallway|closet|pantry|basement|garage|sunroom|mudroom|classroom|dining|"
     "living|den|loft|outdoor|indoor|patio|garden|balcony|porch|deck|backyard|lawn|poolside"
 ).split("|")
-# "Outdoor" and "patio" name the same place in this catalogue: "Outdoor Conversation Sets" and
-# "Patio Conversation Sets" are the same category.
-SAME_PLACE = {"patio": "outdoor"}
+# One place for the purpose of the room rule and of matching.
+SAME_PLACE = {"patio": "outdoor", "garden": "outdoor", "balcony": "outdoor", "deck": "outdoor"}
+# A value needs this many products to be in the catalogue vocabulary.
+MIN_PRODUCTS = 3
+UNION = ("color", "finish", "material")
 
 
 def key_group(key: str) -> str | None:
@@ -66,7 +74,9 @@ def value_table(products: pd.DataFrame) -> dict[str, Counter[str]]:
     return dict(table)
 
 
-def style_terms(table: Mapping[str, Counter[str]], min_products: int = 3) -> dict[str, int]:
+def style_terms(
+    table: Mapping[str, Counter[str]], min_products: int = MIN_PRODUCTS
+) -> dict[str, int]:
     """Style names in the catalogue's style keys, with product counts.
 
     "Country / farmhouse" names two styles, and an audience prefix ("youth boho") is not part of
@@ -171,3 +181,37 @@ def match_terms(query: str, terms: Mapping[Term, Any]) -> list[Term]:
                 taken.update(span)
                 found.append(term)
     return found
+
+
+def in_vocabulary(
+    slot: str, span: str, union: Mapping[Term, Any], styles: Mapping[Term, Any]
+) -> bool:
+    """Whether a labelled span contains a catalogue value of its slot.
+
+    Containment and not equality: "very dark gray" is a catalogue colour with a modifier. Colours
+    and materials share one vocabulary, because matching is key-agnostic.
+    """
+    if slot == "room":
+        return bool(room_spans(span))
+    return bool(match_terms(span, styles if slot == "style" else union))
+
+
+def build_vocabulary(products: pd.DataFrame) -> dict[str, Any]:
+    """Everything the slot code needs from the catalogue, as plain data."""
+    values = value_table(products)
+    union = majority_terms(values, UNION, MIN_PRODUCTS)
+    return {
+        "min_products": MIN_PRODUCTS,
+        "union": {" ".join(t): n for t, (_, _, n) in sorted(union.items())},
+        "styles": style_terms(values),
+        "product_types": sorted(" ".join(p) for p in product_type_phrases(products)),
+    }
+
+
+def load_vocabulary(raw: Mapping[str, Any]) -> tuple[dict[Term, int], dict[Term, int], set[Term]]:
+    """Return the union terms, the style terms and the product-type phrases, tokenised."""
+    union = {tuple(name.split()): n for name, n in raw["union"].items()}
+    styles = {tuple(tokenize(name)): n for name, n in raw["styles"].items()}
+    for alias, name in STYLE_ALIASES.items():
+        styles[tuple(tokenize(alias))] = raw["styles"][name]
+    return union, styles, {tuple(name.split()) for name in raw["product_types"]}

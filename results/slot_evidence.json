@@ -116,6 +116,7 @@
   }
  },
  "finish_majority_terms": 39,
+ "union_terms": 2565,
  "styles": {
   "modern": 15405,
   "contemporary": 8584,
@@ -217,9 +218,9 @@
   },
   "esci_seed_queries": {
    "queries": 2000,
-   "any": 552,
+   "any": 551,
    "material": 185,
-   "room": 172,
+   "room": 171,
    "color": 208,
    "style": 45,
    "finish": 14

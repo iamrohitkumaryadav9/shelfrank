@@ -67,6 +67,17 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
 
 ## 6. Attribute slots
 
+- Slots: color, material_finish, style, room. The rules are `shelfrank/qu/guidelines.py`, and every label
+  carries their version.
+- **Every slot value must exist in the catalogue's attribute vocabulary** (at least 3 products). G4 matching is
+  key-agnostic: a color or material_finish value is looked up across the union of colour, finish and
+  material keys. Finishes have no slot of their own because too few queries mention one.
+- Room rule: a room word is part of the product type when it lies inside a category name and the name
+  continues past it. Category names are classes with at least 30 products and path segments with at least
+  100. Patio, garden, balcony and deck count as outdoor. **The threshold of 100 was chosen while looking at 7
+  examples, so 7 of 7 is not independent evidence.** The independent check is agreement with the blind
+  Round A room labels. More than 2 disagreements force a new rules version before any 2,000-query batch.
+- If the rules change, labels are paid for again under the new version. The old ones stay in the cache.
 - Room values come from category paths plus a small hand list. The hand list is written from
   catalogue-side text only (category names, product names, feature values), never from queries.
 - Room support (the number of room mentions in the verified queries of the round) is shown beside its F1.
@@ -161,6 +172,10 @@ it is flagged at the next gate.
 | 1 | None. `shelfrank/eval/access.py` refuses any other split until `configs/frozen.yaml` exists. The only query texts displayed were the five dev queries of the CI fixture | No |
 | 2, planned | Round A shows dev queries only. Round B shows 100 primary queries, after the freeze | No: the student and lexicons are frozen first |
 | 2 (so far) | None. The seed notebook reads all WANDS queries by code, to remove look-alikes, and never prints or saves them. Hashed token keys of all queries are committed for the leakage tests | No |
+| 2 | The leakage test found that one style word in a draft of the slot rules is a dev query. It was removed before any call used that draft | No |
+
+2 of 211 class names have the same words as a WANDS query. The class prompt lists them because they are the
+catalogue's own vocabulary. Every other phrase in a prompt is checked against all 480 queries.
 
 ## 14. LLM spend
 
