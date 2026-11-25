@@ -1474,6 +1474,7 @@ bench = [
     { name = "transformers" },
 ]
 dev = [
+    { name = "pyarrow" },
     { name = "pytest" },
     { name = "ranx" },
     { name = "ruff" },
@@ -1490,6 +1491,7 @@ requires-dist = [
     { name = "onnxruntime", marker = "extra == 'app'", specifier = "==1.19.2" },
     { name = "pandas", specifier = "==2.2.2" },
     { name = "pyarrow", marker = "extra == 'app'", specifier = "==17.0.0" },
+    { name = "pyarrow", marker = "extra == 'dev'", specifier = "==17.0.0" },
     { name = "pydantic", marker = "extra == 'bench'", specifier = ">=2.9.2,<3" },
     { name = "pytest", marker = "extra == 'dev'", specifier = "==8.3.3" },
     { name = "python-dotenv", marker = "extra == 'bench'", specifier = ">=1.0,<2" },

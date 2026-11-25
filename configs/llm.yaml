@@ -1,0 +1,37 @@
+# Read from Google's documentation on the date below. Prices are USD per 1M tokens, paid tier,
+# standard mode. Output price includes thinking tokens.
+checked: 2026-11-25
+sources:
+  pricing: https://ai.google.dev/gemini-api/docs/pricing
+  models: https://ai.google.dev/gemini-api/docs/models
+  thinking: https://ai.google.dev/gemini-api/docs/thinking
+  deprecations: https://ai.google.dev/gemini-api/docs/deprecations
+
+model: gemini-3.1-flash-lite
+models:
+  gemini-3.1-flash-lite:
+    input: 0.25
+    output: 1.50
+    thinking_level: minimal   # the lowest level listed; the page lists no way to disable it
+    earliest_shutdown: 2027-05-07
+  gemini-2.5-flash-lite:
+    # Cheaper, but Google limits access to users who already used the 2.5 models.
+    input: 0.10
+    output: 0.40
+    thinking_level: "off"     # the default listed for this model
+    earliest_shutdown: null
+  gemini-3.5-flash-lite:
+    input: 0.30
+    output: 2.50
+    thinking_level: minimal
+    earliest_shutdown: null
+
+currency:
+  inr_per_usd: 92.92          # ECB reference rate of 2026-11-24, via frankfurter.dev
+  # The docs state no tax or card margin. Caps are enforced as if both applied: 18% GST, 5% margin.
+  safety_factor: 1.24
+
+caps_inr:
+  labelling: 100
+  rewriting: 200
+  total: 300

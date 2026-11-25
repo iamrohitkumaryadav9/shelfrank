@@ -11,6 +11,7 @@ Query understanding and learning-to-rank for home-goods product search, evaluate
 | [docs/PROTOCOL.md](docs/PROTOCOL.md) | Splits, metrics, label rules and what has been looked at so far |
 | [docs/retrieval_dev.md](docs/retrieval_dev.md) | Retrieval baselines on the 96 dev queries (generated) |
 | [docs/DATA.md](docs/DATA.md) | Source, commit, license, published baseline |
+| [docs/COLAB.md](docs/COLAB.md) | Running the ESCI notebooks |
 | [docs/ENVIRONMENT.md](docs/ENVIRONMENT.md) | Pinned versions and why |
 
 ## Findings so far

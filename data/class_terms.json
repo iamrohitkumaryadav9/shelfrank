@@ -1,0 +1,1364 @@
+{
+ "Accent Chairs": [
+  "accent chair",
+  "armchair",
+  "club chair",
+  "inch wide armchair",
+  "leather armchair",
+  "polyester armchair",
+  "velvet armchair",
+  "wide armchair",
+  "wingback chair"
+ ],
+ "Area Rugs": [
+  "area rug",
+  "beige area rug",
+  "blue area rug",
+  "gray area rug",
+  "gray rug",
+  "outdoor area rug",
+  "plum area rug",
+  "rug"
+ ],
+ "Beds": [
+  "bed",
+  "platform bed",
+  "profile platform bed",
+  "profile standard bed",
+  "sleigh bed",
+  "standard bed",
+  "storage platform bed",
+  "upholstered platform bed",
+  "upholstered standard bed"
+ ],
+ "Coffee & Cocktail Tables": [
+  "abstract coffee table",
+  "block coffee table",
+  "cocktail table",
+  "coffee table",
+  "coffee table storage",
+  "drum coffee table",
+  "leg coffee table",
+  "sled coffee table",
+  "wood coffee table"
+ ],
+ "Floor & Wall Tile": [
+  "ceramic subway tile",
+  "field tile",
+  "floor tile",
+  "mosaic tile",
+  "porcelain field tile",
+  "subway tile",
+  "tile",
+  "wall floor tile",
+  "wall tile"
+ ],
+ "Dining Chairs": [
+  "arm chair",
+  "chair gray",
+  "dining chair",
+  "parson chair",
+  "side chair",
+  "upholstered dining chair",
+  "upholstered parson chair",
+  "upholstered side chair"
+ ],
+ "Bar Stools": [
+  "bar counter stool",
+  "bar stool",
+  "counter bar stool",
+  "counter stool",
+  "height bar stool",
+  "inch bar stool",
+  "inch counter stool",
+  "stool"
+ ],
+ "Desks": [
+  "desk",
+  "desk hutch",
+  "executive desk",
+  "floating desk hutch",
+  "shape executive desk",
+  "solid wood desk",
+  "standing desk",
+  "wood desk",
+  "writing desk"
+ ],
+ "End Tables": [
+  "drawer end table",
+  "drum end table",
+  "end table",
+  "end table storage",
+  "leg end table",
+  "nesting table",
+  "top end table",
+  "wood end table"
+ ],
+ "Accent Pillows": [
+  "accent pillow",
+  "cover insert",
+  "lumbar pillow",
+  "pillow",
+  "pillow cover",
+  "pillow cover insert",
+  "throw pillow",
+  "throw pillow cover"
+ ],
+ "Dining Tables": [
+  "dining table",
+  "extendable dining table",
+  "height dining table",
+  "inch dining table",
+  "pedestal dining table",
+  "pub table",
+  "trestle dining table",
+  "wood dining table"
+ ],
+ "Wall Art": [
+  "art print",
+  "canvas",
+  "graphic art print",
+  "painting print",
+  "print canvas",
+  "print wrapped canvas",
+  "wall art",
+  "wrapped canvas"
+ ],
+ "Bedding Sets": [
+  "comforter",
+  "comforter set",
+  "cover set",
+  "duvet cover set",
+  "piece comforter set",
+  "quilt set",
+  "reversible comforter set",
+  "single comforter"
+ ],
+ "Dressers & Chests": [
+  "chest",
+  "combo dresser",
+  "double dresser",
+  "drawer chest",
+  "drawer double dresser",
+  "drawer dresser",
+  "drawer standard dresser",
+  "dresser",
+  "standard dresser"
+ ],
+ "Curtains & Drapes": [
+  "curtain",
+  "curtain drape",
+  "curtain panel",
+  "drape",
+  "grommet curtain panel",
+  "inch multicolor",
+  "pocket curtain panel",
+  "single curtain panel"
+ ],
+ "Wall Décor": [
+  "anchor wall decor",
+  "decor",
+  "decor set",
+  "metal wall decor",
+  "sign wall decor",
+  "wall decor",
+  "wall decor set",
+  "window wall decor"
+ ],
+ "Sofa & Console Tables": [
+  "console table",
+  "inch console table",
+  "sofa table",
+  "wood console table",
+  "wooden console table"
+ ],
+ "Vanities": [
+  "bathroom vanity",
+  "bathroom vanity set",
+  "double bathroom vanity",
+  "set mirror",
+  "single bathroom vanity",
+  "single vanity set",
+  "vanity",
+  "vanity set",
+  "vanity set mirror"
+ ],
+ "Office Chairs": [
+  "conference chair",
+  "drafting chair",
+  "ergonomic executive chair",
+  "ergonomic task chair",
+  "executive chair",
+  "mesh task chair",
+  "office chair",
+  "task chair"
+ ],
+ "Recliners": [
+  "assist standard recliner",
+  "manual standard recliner",
+  "massager",
+  "recliner",
+  "recliner massager",
+  "standard recliner",
+  "standard recliner massager"
+ ],
+ "Sofas": [
+  "arm loveseat",
+  "arm reclining loveseat",
+  "arm sleeper",
+  "arm sofa",
+  "loveseat",
+  "reclining loveseat",
+  "reversible cushion",
+  "sofa",
+  "sofa bed"
+ ],
+ "Cabinet and Drawer Pulls": [
+  "arch pull",
+  "bar pull",
+  "bar pull multipack",
+  "cabinet pull",
+  "center arch pull",
+  "center bar pull",
+  "drawer pull",
+  "finger pull",
+  "pull multipack"
+ ],
+ "Outdoor Conversation Sets": [
+  "group cushion",
+  "outdoor conversation set",
+  "seating group",
+  "seating group cushion"
+ ],
+ "TV Stands & Entertainment Centers": [
+  "electric fireplace included",
+  "entertainment center",
+  "fireplace included",
+  "tv stand"
+ ],
+ "Wall & Accent Mirrors": [
+  "accent mirror",
+  "beveled accent mirror",
+  "distressed accent mirror",
+  "dresser mirror",
+  "full length mirror",
+  "length mirror",
+  "vanity mirror",
+  "wall mirror"
+ ],
+ "Sectionals": [
+  "chaise",
+  "chaise ottoman",
+  "corner sectional",
+  "corner sectional ottoman",
+  "sectional",
+  "sectional ottoman",
+  "sofa chaise",
+  "sofa chaise ottoman"
+ ],
+ "Chandeliers": [
+  "chandelier",
+  "classic traditional chandelier",
+  "drum chandelier",
+  "geometric chandelier",
+  "statement geometric chandelier",
+  "style drum chandelier",
+  "tiered chandelier",
+  "traditional chandelier"
+ ],
+ "Nightstands": [
+  "drawer nightstand",
+  "light brown",
+  "light gray",
+  "nightstand",
+  "nightstand light brown",
+  "nightstand light gray",
+  "solid wood nightstand",
+  "wood nightstand"
+ ],
+ "Kitchen Mats": [
+  "anti fatigue mat",
+  "comfort kitchen mat",
+  "fatigue kitchen mat",
+  "fatigue mat",
+  "fatigue mat set",
+  "kitchen mat",
+  "mat set"
+ ],
+ "Decorative Objects": [
+  "decorative object",
+  "figurine",
+  "figurine set",
+  "pineapple sculpture",
+  "rooster figurine",
+  "sculpture"
+ ],
+ "Patio Sofas": [
+  "daybed cushion",
+  "loveseat cushion",
+  "patio sectional cushion",
+  "patio sofa",
+  "patio sofa cushion",
+  "sectional cushion",
+  "sofa cushion"
+ ],
+ "Bathroom Sink Faucets": [
+  "bathroom faucet",
+  "bathroom sink faucet",
+  "diamond seal technology",
+  "drain assembly",
+  "faucet drain assembly",
+  "hole bathroom faucet",
+  "sink bathroom faucet",
+  "widespread bathroom faucet"
+ ],
+ "Accent Chests / Cabinets": [
+  "accent cabinet",
+  "accent chest",
+  "cabinet",
+  "door accent cabinet",
+  "drawer accent chest"
+ ],
+ "Table Lamps": [
+  "bedside table lamp",
+  "inch standard lamp",
+  "inch table lamp",
+  "lamp",
+  "lamp set",
+  "standard lamp",
+  "table lamp",
+  "table lamp set"
+ ],
+ "Doormats": [
+  "door mat",
+  "doormat",
+  "indoor door mat",
+  "outdoor door mat"
+ ],
+ "Furniture Cushions": [
+  "back cushion",
+  "bench cushion",
+  "dining chair cushion",
+  "furniture cushion",
+  "lounge chair cushion",
+  "outdoor bench cushion",
+  "outdoor seat cushion",
+  "seat back cushion",
+  "seat cushion"
+ ],
+ "Ottomans": [
+  "cocktail ottoman",
+  "ottoman",
+  "pouf",
+  "pouf ottoman",
+  "rectangle standard ottoman",
+  "square standard ottoman",
+  "square storage ottoman",
+  "standard ottoman",
+  "storage ottoman"
+ ],
+ "Kids Beds": [
+  "bunk bed",
+  "bunk bed trundle",
+  "full bunk bed",
+  "kid bed",
+  "low loft bed",
+  "standard bunk bed",
+  "toddler bed",
+  "twin bunk bed"
+ ],
+ "Wall Clocks": [
+  "clock",
+  "inch wall clock",
+  "wall clock"
+ ],
+ "Wall Mounted Shelves": [
+  "accent shelf",
+  "floating shelf",
+  "shelf set",
+  "tiered shelf",
+  "wall mounted shelf",
+  "wall shelf",
+  "wall shelf set",
+  "wood floating shelf"
+ ],
+ "Bookcases": [
+  "bookcase",
+  "etagere bookcase",
+  "geometric bookcase",
+  "ladder bookcase",
+  "metal etagere bookcase",
+  "standard bookcase",
+  "steel etagere bookcase"
+ ],
+ "Garden Statues": [
+  "book statue",
+  "garden gnome statue",
+  "garden statue",
+  "girl statue",
+  "gnome statue",
+  "reading book statue",
+  "statue",
+  "statue set"
+ ],
+ "Kitchen Islands": [
+  "block top",
+  "butcher block top",
+  "island",
+  "island set",
+  "kitchen cart",
+  "kitchen island",
+  "kitchen island set",
+  "wood top"
+ ],
+ "Bathroom Storage": [
+  "bathroom cabinet",
+  "bathroom shelf",
+  "bathroom storage",
+  "mounted bathroom cabinet",
+  "mounted bathroom shelf",
+  "over toilet storage",
+  "standing bathroom cabinet",
+  "toilet storage"
+ ],
+ "Shoe Storage": [
+  "pair shoe rack",
+  "shoe rack",
+  "shoe storage",
+  "shoe storage bench",
+  "shoe storage cabinet",
+  "stackable shoe rack"
+ ],
+ "Sideboards & Buffets": [
+  "buffet",
+  "buffet table",
+  "drawer sideboard",
+  "inch wide server",
+  "inch wide sideboard",
+  "sideboard",
+  "wide server",
+  "wide sideboard"
+ ],
+ "Planters": [
+  "ceramic statue planter",
+  "hanging planter",
+  "planter",
+  "planter set",
+  "plastic pot planter",
+  "pot planter",
+  "pot planter set",
+  "resin pot planter",
+  "statue planter"
+ ],
+ "Sheets And Sheet Sets": [
+  "body pillow case",
+  "body pillowcase",
+  "pillow case",
+  "pillowcase",
+  "sheet set"
+ ],
+ "Dining Table Sets": [
+  "breakfast dining set",
+  "dining set",
+  "dining table set",
+  "height dining set",
+  "piece dining set",
+  "pub table set",
+  "wood dining set"
+ ],
+ "Faux Florals": [
+  "arrangement glass vase",
+  "arrangement planter",
+  "arrangement pot",
+  "arrangement vase",
+  "faux floral",
+  "floral arrangement pot",
+  "floral arrangement vase",
+  "glass vase",
+  "vase"
+ ],
+ "Kids Chairs": [
+  "kid chair",
+  "kid club chair",
+  "kid desk",
+  "kid sleeper",
+  "kid sofa"
+ ],
+ "Fountains": [
+  "fountain",
+  "fountain led light",
+  "fountain light",
+  "led light",
+  "resin fountain light",
+  "water fountain",
+  "water fountain light"
+ ],
+ "Vanity Lighting": [
+  "bath bar",
+  "bath sconce",
+  "bath vanity light",
+  "chrome vanity light",
+  "dimmable vanity light",
+  "light bath bar",
+  "light vanity light",
+  "vanity light",
+  "vanity lighting"
+ ],
+ "Benches": [
+  "bench",
+  "storage bench",
+  "top storage bench",
+  "upholstered bench",
+  "upholstered storage bench",
+  "upholstered wood bench",
+  "wood bench"
+ ],
+ "Office Storage Cabinets": [
+  "door storage cabinet",
+  "drawer storage cabinet",
+  "filing storage cabinet",
+  "office storage cabinet",
+  "shelf storage cabinet"
+ ],
+ "Canisters & Jars": [
+  "canister",
+  "canister set",
+  "coffee jar",
+  "jar",
+  "jar set",
+  "kitchen canister",
+  "kitchen canister set",
+  "sugar jar",
+  "sugar jar set"
+ ],
+ "Bars & Bar Sets": [
+  "bar cabinet",
+  "bar set",
+  "bar wine storage",
+  "floor wine cabinet",
+  "wine bar",
+  "wine cabinet",
+  "wine storage"
+ ],
+ "Headboards": [
+  "frame headboard",
+  "headboard",
+  "open frame headboard",
+  "panel headboard",
+  "upholstered panel headboard",
+  "upholstered wingback headboard",
+  "wingback headboard"
+ ],
+ "Living Room Table Sets": [
+  "coffee table set",
+  "living room table set",
+  "piece nesting table",
+  "table set"
+ ],
+ "Light Bulbs": [
+  "candelabra base",
+  "led light bulb",
+  "light bulb",
+  "medium standard base",
+  "standard base"
+ ],
+ "Wall Plates": [
+  "outlet wall plate",
+  "switch wall plate",
+  "wall plate"
+ ],
+ "Bath Accessories": [
+  "accessory set",
+  "bath accessory",
+  "bathroom accessory set",
+  "box cover",
+  "tissue box cover"
+ ],
+ "Serving Dishes & Platters": [
+  "condiment server set",
+  "melamine platter",
+  "platter",
+  "serving dish"
+ ],
+ "Patio Lounge Chairs": [
+  "patio chair",
+  "patio chair cushion",
+  "patio lounge chair"
+ ],
+ "Indoor Chaise Lounges": [
+  "arm chaise lounge",
+  "armless chaise lounge",
+  "chaise lounge",
+  "indoor chaise lounge",
+  "lounge"
+ ],
+ "Patio Dining Sets": [
+  "bistro set",
+  "bistro set cushion",
+  "patio dining set",
+  "piece bistro set"
+ ],
+ "Flush Mount Lighting": [
+  "flush mount",
+  "flush mount lighting",
+  "inch flush mount",
+  "semi flush mount"
+ ],
+ "Licensed Products": [
+  "licensed product"
+ ],
+ "Daybeds & Guest Beds": [
+  "daybed",
+  "daybed bed",
+  "daybed trundle",
+  "guest bed",
+  "twin daybed",
+  "twin daybed trundle"
+ ],
+ "Cabinet and Drawer Knobs": [
+  "cabinet knob",
+  "diameter mushroom knob",
+  "diameter round knob",
+  "drawer knob",
+  "knob",
+  "knob multipack",
+  "length square knob",
+  "mushroom knob",
+  "round knob",
+  "square knob"
+ ],
+ "Hampers & Baskets": [
+  "hamper",
+  "laundry basket",
+  "laundry hamper"
+ ],
+ "Shower Curtain Hooks and Accessories": [
+  "curtain hook",
+  "shower curtain hook",
+  "shower hook"
+ ],
+ "Curtain Hardware & Accessories": [
+  "curtain hardware",
+  "curtain rod",
+  "curtain tension rod",
+  "double curtain rod",
+  "single curtain rod",
+  "tension rod"
+ ],
+ "Plant & Telephone Tables": [
+  "plant stand",
+  "plant table",
+  "telephone table",
+  "tiered plant stand"
+ ],
+ "Molding & Millwork": [
+  "crown molding",
+  "millwork",
+  "molding",
+  "panel molding",
+  "wainscot wall panel",
+  "wall panel"
+ ],
+ "Bed Frames": [
+  "bed frame",
+  "inch bed frame",
+  "inch platform bed",
+  "steel bed frame",
+  "steel platform bed"
+ ],
+ "Outdoor Wall Decor": [
+  "outdoor wall decor",
+  "welcome sign"
+ ],
+ "Kitchen Sinks": [
+  "apron kitchen sink",
+  "basket strainer",
+  "farmhouse kitchen sink",
+  "grid basket strainer",
+  "grid drain assembly",
+  "kitchen sink"
+ ],
+ "Shower & Tub Doors": [
+  "clearmax technology",
+  "door clearmax technology",
+  "fixed glass panel",
+  "frameless shower door",
+  "frameless tub door",
+  "glass panel",
+  "shower door",
+  "tub door"
+ ],
+ "Slow Cookers": [
+  "cooker",
+  "pressure cooker",
+  "slow cooker",
+  "steel slow cooker"
+ ],
+ "Wall Sconces": [
+  "armed sconce",
+  "dimmable wall sconce",
+  "light wall sconce",
+  "wall sconce"
+ ],
+ "Coat Racks and Hooks": [
+  "coat rack",
+  "mounted coat rack",
+  "wall hook"
+ ],
+ "Shower Faucets & Systems": [
+  "faucet rough valve",
+  "rough valve",
+  "shower faucet",
+  "system rough valve"
+ ],
+ "Kids Wall Décor": [
+  "canvas art",
+  "framed art",
+  "kid wall decor",
+  "paper print"
+ ],
+ "Projector Screens": [
+  "electric projection screen",
+  "mounted projector screen",
+  "portable projection screen",
+  "projection screen",
+  "projector screen"
+ ],
+ "Outdoor Wall Lights": [
+  "barn light",
+  "bulkhead light",
+  "outdoor armed sconce",
+  "outdoor barn light",
+  "outdoor bulkhead light",
+  "outdoor wall lantern",
+  "outdoor wall light",
+  "wall lantern"
+ ],
+ "Boxes, Bins, Baskets, & Buckets": [
+  "basket",
+  "basket set",
+  "bin",
+  "bucket",
+  "metal wire basket",
+  "wire basket",
+  "wire basket set"
+ ],
+ "Kids Dressers & Chests": [
+  "kid dresser"
+ ],
+ "Shower Curtains": [
+  "curtain liner",
+  "shower curtain",
+  "shower curtain liner",
+  "single shower curtain"
+ ],
+ "Crib Bedding Sets": [
+  "bedding set",
+  "crib bedding set"
+ ],
+ "Towel & Robe Hooks": [
+  "mounted robe hook",
+  "mounted towel hook",
+  "robe hook",
+  "towel hook"
+ ],
+ "Living Room Sets": [
+  "living room set",
+  "room set"
+ ],
+ "Fixture Parts And Components": [
+  "fixture part",
+  "lever handle",
+  "trim lever handle"
+ ],
+ "Toilet Paper Holders": [
+  "paper holder",
+  "toilet paper holder"
+ ],
+ "Shelving & Racks": [
+  "rack",
+  "shelving",
+  "shelving unit",
+  "storage rack",
+  "storage shelf"
+ ],
+ "Furniture Covers": [
+  "furniture cover",
+  "furniture cover set",
+  "set cover",
+  "year warranty"
+ ],
+ "Plates & Saucers": [
+  "dessert plate",
+  "dinner plate",
+  "inch salad plate",
+  "melamine salad plate",
+  "salad plate",
+  "saucer"
+ ],
+ "Foam and Latex Mattresses": [
+  "foam mattress",
+  "latex mattress",
+  "memory foam mattress"
+ ],
+ "Patio Rockers & Gliders": [
+  "glider",
+  "patio rocker",
+  "porch rocking chair",
+  "rocking chair cushion"
+ ],
+ "Kitchen Faucets": [
+  "handle kitchen faucet",
+  "hot water dispenser",
+  "kitchen faucet",
+  "kitchen sink faucet",
+  "water dispenser"
+ ],
+ "Deck Boxes": [
+  "deck box",
+  "plasic deck box",
+  "plastic deck box",
+  "resin deck box"
+ ],
+ "Vanity Bases": [
+  "base only",
+  "vanity base",
+  "vanity base only"
+ ],
+ "Carts & Stands": [
+  "cart",
+  "mobile printer stand",
+  "printer stand",
+  "utility cart"
+ ],
+ "Mattress Toppers and Pads": [
+  "foam mattress topper",
+  "mattress pad",
+  "mattress topper",
+  "polyester mattress pad",
+  "topper"
+ ],
+ "Faux Plants and Trees": [
+  "faux plant",
+  "plant planter",
+  "plant pot",
+  "succulent pot",
+  "tree"
+ ],
+ "Garden Accents": [
+  "fairy garden",
+  "garden accent"
+ ],
+ "Holiday Accents & Decor": [
+  "holiday accent"
+ ],
+ "Bath Rugs & Mats": [
+  "bath mat",
+  "bath rug",
+  "bath rug set",
+  "foam bath rug",
+  "mat",
+  "slip bath rug"
+ ],
+ "Greenhouses": [
+  "greenhouse"
+ ],
+ "Landscape Lighting": [
+  "landscape lighting",
+  "led pathway light",
+  "light pack",
+  "pathway light",
+  "pathway light pack"
+ ],
+ "Patio Tables": [
+  "patio table",
+  "side table"
+ ],
+ "Trash Cans & Recycling": [
+  "gallon waste basket",
+  "trash can",
+  "waste basket"
+ ],
+ "Patio Chaise Lounges": [
+  "patio chaise lounge",
+  "reclining chaise lounge"
+ ],
+ "Folding Tables": [
+  "adjustable folding table",
+  "folding table",
+  "half folding table",
+  "portable folding table"
+ ],
+ "Sheds": [
+  "lean storage shed",
+  "metal storage shed",
+  "plastic storage shed",
+  "shed",
+  "storage shed",
+  "tool shed"
+ ],
+ "Food Storage & Dispensers": [
+  "bread box",
+  "dispenser",
+  "food storage",
+  "food storage container",
+  "food storage set",
+  "storage container",
+  "storage set"
+ ],
+ "Clothing & Garment Racks": [
+  "clothing rack",
+  "garment rack"
+ ],
+ "Chairmats": [
+  "chair mat",
+  "chairmat",
+  "edge chair mat",
+  "rectangular chair mat"
+ ],
+ "Patio Bar Stools": [
+  "patio bar stool"
+ ],
+ "Range Hoods": [
+  "cabinet range hood",
+  "hood stainless steel",
+  "mount range hood",
+  "range hood",
+  "stainless steel"
+ ],
+ "Picture Frames": [
+  "picture frame"
+ ],
+ "Bread & Loaf Pans": [
+  "bread pan",
+  "loaf pan",
+  "stick loaf pan"
+ ],
+ "Futons": [
+  "convertible sofa",
+  "futon"
+ ],
+ "Under Cabinet Lighting": [
+  "cabinet puck light",
+  "cabinet strip light",
+  "puck light",
+  "strip light",
+  "under cabinet lighting"
+ ],
+ "Lighting Shades": [
+  "lamp shade screw",
+  "lighting shade",
+  "pendant shade screw",
+  "shade screw"
+ ],
+ "Candle Holders": [
+  "candle holder",
+  "iron wall sconce"
+ ],
+ "Kids Desks": [
+  "kid study desk",
+  "study desk"
+ ],
+ "Ceiling Fans": [
+  "ceiling fan",
+  "kit included",
+  "light kit included",
+  "standard ceiling fan"
+ ],
+ "Shower Heads": [
+  "dual shower head",
+  "handheld shower head",
+  "shower head"
+ ],
+ "Dining Bowls": [
+  "cereal bowl",
+  "dessert bowl",
+  "dining bowl"
+ ],
+ "Armoires & Wardrobes": [
+  "armoire",
+  "wardrobe",
+  "wardrobe armoire"
+ ],
+ "Bike And Sport Racks": [
+  "bike rack",
+  "freestanding sport rack",
+  "mounted sport rack",
+  "sport rack"
+ ],
+ "Dining Linens": [
+  "dining linen",
+  "table runner",
+  "tablecloth",
+  "vinyl tablecloth"
+ ],
+ "Outdoor Fireplaces": [
+  "fire pit",
+  "fire pit table",
+  "outdoor fireplace",
+  "pit table"
+ ],
+ "Planter Accessories": [
+  "planter accessory"
+ ],
+ "Flatware & Silverware Serving Pieces": [
+  "cake knife",
+  "cake serving set",
+  "flatware piece",
+  "serving set",
+  "silverware serving piece"
+ ],
+ "Teen Desk Chairs": [
+  "teen desk chair"
+ ],
+ "Adjustable Beds": [
+  "adjustable bed",
+  "bed wireless remote",
+  "wireless remote"
+ ],
+ "Office Sets": [
+  "office set"
+ ],
+ "Patio Umbrella Stands & Bases": [
+  "patio umbrella stand",
+  "standing umbrella base",
+  "umbrella base"
+ ],
+ "Strainers, Colanders, & Salad Spinners": [
+  "colander set",
+  "colander spinner",
+  "salad spinner",
+  "stainless steel colander",
+  "steel colander",
+  "steel colander set",
+  "strainer set",
+  "strainer spinner"
+ ],
+ "Safes": [
+  "electronic lock",
+  "key lock",
+  "safe"
+ ],
+ "Closet Storage & Organization": [
+  "closet rod",
+  "closet storage",
+  "closet system"
+ ],
+ "Ornaments & Tree Décor": [
+  "figurine ornament",
+  "hanging figurine ornament",
+  "holiday shaped ornament",
+  "ornament",
+  "ornament decor",
+  "shaped ornament",
+  "tree decor"
+ ],
+ "Reception Sofas & Loveseats": [
+  "reception sofa"
+ ],
+ "Wall Stickers": [
+  "decal",
+  "wall decal",
+  "wall sticker"
+ ],
+ "Door Levers": [
+  "door lever",
+  "passage door lever"
+ ],
+ "Innerspring Mattresses": [
+  "firm innerspring mattress",
+  "innerspring mattress",
+  "medium innerspring mattress",
+  "pillow top mattress",
+  "plush innerspring mattress",
+  "top mattress"
+ ],
+ "Massage Chairs": [
+  "heated massage chair",
+  "massage chair",
+  "reclining massage chair"
+ ],
+ "Mugs & Teacups": [
+  "coffee mug",
+  "mug",
+  "teacup"
+ ],
+ "Barn Door Hardware": [
+  "barn door hardware",
+  "door hardware kit",
+  "hardware kit"
+ ],
+ "Christmas Trees": [
+  "artificial christmas tree",
+  "christmas tree",
+  "clear white light",
+  "white light"
+ ],
+ "Pantry Cabinets": [
+  "inch kitchen pantry",
+  "kitchen pantry",
+  "pantry",
+  "pantry cabinet"
+ ],
+ "Signs & Sign Holders": [
+  "inch wide",
+  "name room sign",
+  "room sign",
+  "sign holder"
+ ],
+ "Teen Lounge Furniture": [
+  "teen lounge furniture"
+ ],
+ "Shower & Tub Accessories": [
+  "caddy",
+  "shower accessory",
+  "shower caddy",
+  "tub accessory"
+ ],
+ "Wall Paneling": [
+  "paneling white",
+  "wall paneling",
+  "wood wall paneling"
+ ],
+ "Pergolas": [
+  "pergola",
+  "pergola canopy",
+  "solid wood pergola",
+  "vinyl pergola",
+  "wood pergola"
+ ],
+ "Makeup Vanities": [
+  "makeup vanity"
+ ],
+ "Poker & Casino Tables": [
+  "card table",
+  "casino table",
+  "poker table"
+ ],
+ "Tubs And Whirlpools": [
+  "acrylic bathtub",
+  "bathtub",
+  "bathtub faucet",
+  "freestanding soaking bathtub",
+  "soaking acrylic bathtub",
+  "soaking bathtub",
+  "tub",
+  "whirlpool"
+ ],
+ "Bathroom Sinks": [
+  "bathroom sink",
+  "bathroom sink overflow",
+  "sink overflow",
+  "vessel bathroom sink"
+ ],
+ "Specialty Serving": [
+  "cake stand",
+  "specialty serving"
+ ],
+ "Teen Beds": [
+  "teen bed"
+ ],
+ "Weather Instruments": [
+  "clock thermometer",
+  "thermometer",
+  "weather instrument"
+ ],
+ "Reception Benches": [
+  "reception bench"
+ ],
+ "Refrigerators": [
+  "energy star refrigerator",
+  "refrigerator",
+  "star refrigerator"
+ ],
+ "Computer Mounts": [
+  "computer mount",
+  "desk mount",
+  "screen desk mount"
+ ],
+ "Pet Gates": [
+  "gate",
+  "pet gate",
+  "standing pet gate"
+ ],
+ "Mailboxes": [
+  "brass mail slot",
+  "mail slot",
+  "mailbox",
+  "mounted mailbox",
+  "wall mounted mailbox"
+ ],
+ "Memo Boards": [
+  "calendar board",
+  "dry erase board",
+  "erase board",
+  "memo board",
+  "mounted calendar board"
+ ],
+ "Fencing & Accessories": [
+  "fencing",
+  "privacy screen",
+  "vinyl privacy screen"
+ ],
+ "Outdoor Lanterns & Lamps": [
+  "outdoor lantern"
+ ],
+ "Cooking Utensils": [
+  "cooking utensil",
+  "utensil set"
+ ],
+ "Jewelry Armoires": [
+  "armoire mirror",
+  "jewelry armoire",
+  "jewelry armoire mirror"
+ ],
+ "Jewelry Boxes": [
+  "jewelry box",
+  "jewelry organizer tray",
+  "organizer tray"
+ ],
+ "Standard Bed Pillows": [
+  "body pillow",
+  "standard bed pillow",
+  "support pillow"
+ ],
+ "Teen Desks": [
+  "teen desk"
+ ],
+ "Awnings": [
+  "awning",
+  "patio awning",
+  "retractable side awning",
+  "side awning",
+  "standard patio awning"
+ ],
+ "Log Storage": [
+  "firewood log rack",
+  "log rack",
+  "log storage"
+ ],
+ "Stackable Chairs": [
+  "stackable chair"
+ ],
+ "Bed Accessories": [
+  "bed accessory",
+  "bed riser"
+ ],
+ "Covers & Carry Bags": [
+  "carry bag",
+  "cover bag"
+ ],
+ "Decorative Trays": [
+  "accent tray set",
+  "decorative tray",
+  "serving tray set",
+  "tray set"
+ ],
+ "Interior Doors": [
+  "closet door",
+  "installation hardware kit",
+  "interior door",
+  "sliding closet door"
+ ],
+ "Reception Seating Chairs": [
+  "reception seating chair"
+ ],
+ "Towel Bars, Racks, and Stands": [
+  "mounted towel bar",
+  "towel bar"
+ ],
+ "Wine Racks": [
+  "bottle glass rack",
+  "glass rack",
+  "wine glass rack",
+  "wine rack"
+ ],
+ "Desktop Organizers & Desk Pads": [
+  "desk pad",
+  "desktop organizer",
+  "monitor stand"
+ ],
+ "Game Chairs": [
+  "game chair",
+  "gaming chair"
+ ],
+ "Pendant Lights": [
+  "pendant",
+  "pendant light"
+ ],
+ "Holiday Lighting": [
+  "holiday lighting"
+ ],
+ "Saunas": [
+  "sauna",
+  "steam sauna",
+  "traditional steam sauna"
+ ],
+ "Bird Cages": [
+  "bird cage"
+ ],
+ "Rocking Chairs": [
+  "rocking chair"
+ ],
+ "Glassware & Barware": [
+  "barware",
+  "glassware"
+ ],
+ "Lighting Accessories": [
+  "lighting accessory",
+  "power strip"
+ ],
+ "Office Stools": [
+  "office stool"
+ ],
+ "Storage Drawers": [
+  "drawer storage chest",
+  "storage chest",
+  "storage drawer"
+ ],
+ "Hybrid Mattresses": [
+  "hybrid mattress"
+ ],
+ "Teen Dressers": [
+  "teen dresser"
+ ],
+ "Vases, Urns, Jars, & Bottles": [
+  "urn"
+ ],
+ "Washer and Dryer Sets": [
+  "dryer set",
+  "electric dryer",
+  "gas dryer",
+  "washer set"
+ ],
+ "Closet Organizer Accessories": [
+  "closet organizer accessory",
+  "hanging organizer"
+ ],
+ "Flags": [
+  "flag",
+  "garden flag",
+  "inch garden flag"
+ ],
+ "Kids Headboards": [
+  "kid headboard",
+  "twin bookcase headboard"
+ ],
+ "Lawn Games": [
+  "lawn game"
+ ],
+ "Valances & Kitchen Curtains": [
+  "kitchen curtain",
+  "valance curtain"
+ ],
+ "Accent Stools": [
+  "accent stool"
+ ],
+ "Dog and Cat Bowls, Feeders & Accessories": [
+  "cat bowl",
+  "feeder"
+ ],
+ "Teens Headboards": [
+  "teen headboard"
+ ]
+}

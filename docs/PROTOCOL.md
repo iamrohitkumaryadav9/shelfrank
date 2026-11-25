@@ -142,9 +142,13 @@ it is flagged at the next gate.
 | 0 | The example queries printed in the WANDS annotation guidelines and paper | No |
 | 0 | Taxonomy coverage over all 480 queries was visible; the rule reads only catalogue counts | No |
 | 1 | None. `shelfrank/eval/access.py` refuses any other split until `configs/frozen.yaml` exists. The only query texts displayed were the five dev queries of the CI fixture | No |
+| 2 (so far) | None. The seed notebook reads all WANDS queries by code, to remove look-alikes, and never prints or saves them. Hashed token keys of all queries are committed for the leakage tests | No |
 
 ## 14. Guards
 
 `tests/test_leakage.py` checks fold sizes and disjointness, near-duplicate grouping, that the CI fixture
 holds dev queries only, that the taxonomy is rebuilt from the catalogue alone, and that no primary query
 of four or more words appears in committed files. Each later phase adds its derived datasets to this file.
+
+Leakage checks compare two token keys, because the key frozen with the folds misses some plurals. Under the
+stronger key no additional pair of WANDS queries crosses folds, so the folds stand.

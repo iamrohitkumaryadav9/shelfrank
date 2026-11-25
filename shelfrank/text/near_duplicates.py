@@ -4,6 +4,8 @@ import re
 from collections.abc import Mapping
 from itertools import combinations
 
+from shelfrank.text.normalize import tokenize
+
 _TOKEN = re.compile(r"[a-z0-9]+")
 
 
@@ -14,6 +16,15 @@ def token_key(query: str) -> frozenset[str]:
     """
     tokens = _TOKEN.findall(query.lower())
     return frozenset(t[:-1] if len(t) > 3 and t.endswith("s") else t for t in tokens)
+
+
+def leakage_keys(query: str) -> tuple[frozenset[str], ...]:
+    """Every key under which two queries may count as the same.
+
+    The frozen folds use ``token_key``, which misses "vanity" against "vanities". Changing it would
+    change the folds, so leakage checks add the full normaliser. No WANDS pair differs between them.
+    """
+    return tuple(dict.fromkeys(k for k in (token_key(query), frozenset(tokenize(query))) if k))
 
 
 def jaccard(a: frozenset[str], b: frozenset[str]) -> float:

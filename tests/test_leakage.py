@@ -3,14 +3,16 @@
 import json
 import re
 from collections import Counter
+from itertools import combinations
 
 import pytest
 
 from shelfrank.config import REPO_ROOT
 from shelfrank.data.taxonomy import build_taxonomy, class_support
 from shelfrank.data.wands import load_products, load_queries
+from shelfrank.eval.leakage import exact_matches, key_hashes, load_key_hashes, near_matches
 from shelfrank.eval.splits import assign_folds
-from shelfrank.text.near_duplicates import near_duplicate_groups
+from shelfrank.text.near_duplicates import jaccard, leakage_keys, near_duplicate_groups, token_key
 
 TEXT_SUFFIXES = {".md", ".json", ".jsonl", ".yaml", ".csv", ".txt", ".py"}
 
@@ -90,3 +92,78 @@ def test_no_primary_query_text_in_committed_files(raw_dir, folds):
             text = re.sub(r"\s+", " ", path.read_text(encoding="utf-8").lower())
             found += [(path.name, q) for q in needles if re.search(rf"\b{re.escape(q)}\b", text)]
     assert found == []
+
+
+KEYS = REPO_ROOT / "data/splits/wands_query_keys.json"
+SEED_FILES = ["esci_seed_queries.txt", "esci_prompt_dev.txt"]
+
+
+def seed_lines(name):
+    path = REPO_ROOT / "data/esci" / name
+    if not path.exists():
+        pytest.skip(f"{name} has not come back from Colab yet")
+    return path.read_text(encoding="utf-8").splitlines()
+
+
+@pytest.mark.parametrize(
+    ("a", "b"),
+    [("Red Chairs", "chair, red"), ("bath vanity", "bath vanities"), ("grey rug", "gray rugs")],
+)
+def test_key_hashes_match_across_order_case_plural_and_spelling(a, b):
+    assert key_hashes(a) & key_hashes(b)
+
+
+def test_key_hashes_differ_for_different_queries():
+    assert not key_hashes("red chair") & key_hashes("blue chair")
+
+
+def test_frozen_fold_key_is_unchanged():
+    # Changing this key would change which queries share a fold.
+    assert token_key("bath vanities") == frozenset({"bath", "vanitie"})
+
+
+def test_planted_query_is_found_by_hash_and_by_similarity():
+    assert exact_matches(["lamp", "chairs red"], key_hashes("red chair")) == [1]
+    assert near_matches(["a1 b1 c1 d1", "zz"], ["a1 b1 c1"], 0.75) == [0]
+
+
+def test_fixture_queries_are_in_the_committed_hashes(sample):
+    hashes = load_key_hashes(KEYS)
+    assert exact_matches(sample["queries"]["query"], hashes) == list(range(5))
+
+
+@pytest.mark.parametrize("name", SEED_FILES)
+def test_seed_files_contain_no_wands_query(name):
+    assert exact_matches(seed_lines(name), load_key_hashes(KEYS)) == []
+
+
+def test_class_terms_and_taxonomy_come_from_no_query(data_cfg):
+    code = (REPO_ROOT / "shelfrank/qu/class_terms.py").read_text(encoding="utf-8")
+    assert "load_queries" not in code and "query_class" not in code
+
+
+@pytest.mark.full_data
+@pytest.mark.parametrize("name", SEED_FILES)
+def test_seed_files_contain_no_near_duplicate(name, raw_dir, data_cfg):
+    threshold = data_cfg["splits"]["near_duplicate_jaccard"]
+    assert near_matches(seed_lines(name), load_queries(raw_dir)["query"], threshold) == []
+
+
+@pytest.mark.full_data
+def test_committed_hashes_cover_every_query(raw_dir):
+    queries = load_queries(raw_dir)["query"]
+    assert set().union(*map(key_hashes, queries)) == load_key_hashes(KEYS)
+
+
+@pytest.mark.full_data
+def test_stronger_key_finds_no_cross_fold_pair(raw_dir, data_cfg, folds):
+    queries = load_queries(raw_dir).set_index("query_id")["query"].to_dict()
+    threshold = data_cfg["splits"]["near_duplicate_jaccard"]
+    keys = {q: leakage_keys(text) for q, text in queries.items()}
+    crossing = [
+        (a, b)
+        for a, b in combinations(sorted(keys), 2)
+        if folds.assignment[a] != folds.assignment[b]
+        and any(jaccard(x, y) >= threshold for x in keys[a] for y in keys[b])
+    ]
+    assert crossing == []
