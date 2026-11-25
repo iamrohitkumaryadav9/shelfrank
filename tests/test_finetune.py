@@ -8,128 +8,9 @@ import sys
 
 import numpy as np
 import pytest
+from esci_fixtures import COLORS, ITEMS, SETTINGS, data, esci, rebuilt  # noqa: F401
 
-from shelfrank.config import REPO_ROOT, load_config
 from shelfrank.dense import esci_data as ed
-from shelfrank.dense.finetune_notebook import EMBEDDED, build, commit_in
-from shelfrank.qu.seed_notebook import dumps
-
-SETTINGS = {
-    "locale": "us",
-    "split": "train",
-    "n_held_out": 4,
-    "max_bullet_chars": 20,
-    "near_duplicate_jaccard": 0.75,
-    "seed": 1,
-}
-COLORS = "red blue green black white pink brown gray teal navy".split()
-ITEMS = "lamp sofa rug desk shelf clock".split()
-
-
-@pytest.fixture
-def esci(tmp_path):
-    pa = pytest.importorskip("pyarrow")
-    import pyarrow.parquet as pq
-
-    examples, products = [], []
-    for i, (color, item) in enumerate((c, t) for t in ITEMS for c in COLORS):
-        for j, label in enumerate("EESI"):
-            product = f"P{i}_{j}"
-            row = {
-                "query_id": i,
-                "query": f"{color} {item} number{chr(97 + i % 26)}{chr(97 + i // 26)}",
-                "product_id": product,
-                "product_locale": "us",
-                "esci_label": label,
-                "small_version": 1,
-                "split": "train",
-            }
-            examples.append(row)
-            title = f"{color} {item}" if label == "E" else "other thing"
-            products.append(
-                {
-                    "product_id": product,
-                    "product_locale": "us",
-                    "product_title": title,
-                    "product_brand": "Acme",
-                    "product_color": None,
-                    "product_bullet_point": "x" * 100,
-                }
-            )
-    base = {"product_id": "Z", "product_locale": "us", "esci_label": "E"}
-    examples += [
-        base | {"query_id": 900, "query": "large one", "small_version": 0, "split": "train"},
-        base | {"query_id": 901, "query": "test one", "small_version": 1, "split": "test"},
-        base
-        | {
-            "query_id": 902,
-            "query": "spanish one",
-            "small_version": 1,
-            "split": "train",
-            "product_locale": "es",
-        },
-    ]
-    pq.write_table(pa.Table.from_pylist(examples), tmp_path / "examples.parquet")
-    pq.write_table(pa.Table.from_pylist(products), tmp_path / "products.parquet")
-    return tmp_path / "examples.parquet", tmp_path / "products.parquet"
-
-
-@pytest.fixture
-def data(esci):
-    return ed.prepare(*esci, ["red lamp numberaa"], SETTINGS)
-
-
-def test_only_small_us_training_queries_are_read(esci):
-    queries, judged = ed.read_judgments(esci[0], "us", "train")
-    assert len(queries) == len(judged) == 60
-    assert not {"900", "901", "902"} & set(queries)
-
-
-def test_lookalikes_of_protected_queries_are_removed_everywhere(data):
-    assert "red lamp numberaa" not in data.queries.values()
-    assert data.report["dropped"] == {"resembles a protected query": 1}
-
-
-def test_held_out_queries_are_not_trained_on(data):
-    assert len(data.held_out) == 4 and len(data.train) == 55
-    assert not set(data.held_out) & set(data.train)
-
-
-def test_passage_order_and_truncation():
-    row = {
-        "product_title": " A  lamp ",
-        "product_brand": "Acme",
-        "product_color": None,
-        "product_bullet_point": "abcdef",
-    }
-    assert ed.passage(row, 3) == "A lamp . Acme . abc"
-
-
-def test_data_survives_a_round_trip(data, tmp_path):
-    path = tmp_path / "d.json"
-    data.save(path)
-    assert ed.TrainingData.load(path) == data and not path.with_suffix(".partial").exists()
-
-
-def test_triplets_pair_exact_with_irrelevant_of_the_same_query(data):
-    for group in ed.make_triplets(data.train, data.passages, 1):
-        assert len({t.query for t in group}) == len(group)
-        for t in group:
-            assert data.train[t.query][t.positive] == "E"
-            assert data.train[t.query][t.negative] == "I" and t.hard
-
-
-def test_query_without_irrelevant_gets_a_marked_random_negative():
-    rounds = ed.make_triplets({"q": {"a": "E"}}, {"a": "x", "b": "y"}, 1)
-    assert rounds[0][0].hard is False
-
-
-def test_batches_are_full_have_distinct_queries_and_are_reproducible(data):
-    rounds = ed.make_triplets(data.train, data.passages, 1)
-    batches = ed.make_batches(rounds, 8, 1)
-    assert batches == ed.make_batches(rounds, 8, 1) and len(batches) == 12
-    assert all(len({t.query for t in b}) == len(b) == 8 for b in batches)
-
 
 torch = pytest.importorskip("torch")
 pytest.importorskip("transformers")
@@ -340,30 +221,6 @@ def test_agreement_is_cosine():
     assert agreement(a, a * 3) == {"mean": 1.0, "min": 1.0}
 
 
-NOTEBOOK = REPO_ROOT / "notebooks/finetune_bge_esci.ipynb"
-
-
-def rebuilt():
-    model = load_config("retrieval")["dense"]["bge_small"]
-    committed = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
-    return build(REPO_ROOT, load_config("esci"), model, commit_in(committed))
-
-
-def test_committed_notebook_matches_the_tested_modules():
-    assert NOTEBOOK.read_text(encoding="utf-8") == dumps(rebuilt())
-
-
-def test_notebook_cells_compile_and_hold_no_secret_or_output():
-    for cell in rebuilt()["cells"]:
-        source = "".join(cell["source"])
-        if cell["cell_type"] == "code":
-            assert cell["outputs"] == []
-            if source.startswith("%%writefile"):
-                source = source.split("\n", 1)[1]
-            compile(source, "cell", "exec")
-        assert "API_KEY" not in source
-
-
 def test_notebook_cells_run_outside_the_repository(base, esci, tmp_path):
     """Run the cells as Colab would, in a process that cannot see this repository's package."""
     queries = tmp_path / "wands.csv"
@@ -384,7 +241,8 @@ def test_notebook_cells_run_outside_the_repository(base, esci, tmp_path):
         )
         if "stage_data" in source:
             lines.append(
-                f"SETTINGS.update({SETTINGS!r})\nTRAINING.update(batch_size=8, checkpoint_every=4)\n"
+                f"SETTINGS.update({SETTINGS!r})\n"
+                "TRAINING.update(batch_size=8, checkpoint_every=4)\n"
                 "SOURCES = {n: {'url': n, 'sha256': ''} for n in FILES}\n"
                 "from scripts import finetune_dense as ft\n"
                 "ft.ensure_file = lambda u, t, s: shutil.copyfile(FILES[u], t)\n"
@@ -404,4 +262,3 @@ def test_notebook_cells_run_outside_the_repository(base, esci, tmp_path):
     )
     assert done.returncode == 0, done.stderr[-2000:]
     assert "finished: True" in done.stdout and (tmp_path / "k/bge_small_esci.zip").exists()
-    assert len(EMBEDDED) == 8

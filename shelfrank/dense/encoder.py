@@ -2,12 +2,15 @@
 
 import hashlib
 import json
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import pandas as pd
+
+from shelfrank.config import REPO_ROOT
+from shelfrank.data.download import sha256_of
 
 Encode = Callable[[list[str]], np.ndarray]
 
@@ -85,6 +88,17 @@ def encode_cached(
     return restored
 
 
+def model_identity(cfg: Mapping[str, Any], root: Path) -> dict[str, Any]:
+    """What the cache key and loader need. A local model is pinned by the hash of its weights."""
+    identity = {k: cfg[k] for k in ("model", "revision", "max_seq_length")}
+    if cfg["revision"] == "local":
+        weights = root / cfg["model"] / "model.safetensors"
+        if not weights.exists():
+            raise FileNotFoundError(f"{weights} is missing: see docs/COLAB.md")
+        identity["revision"] = f"sha256:{sha256_of(weights)}"
+    return identity
+
+
 def load_sentence_transformer(model: str, revision: str, max_seq_length: int) -> Encode:
     """Load a pinned model on CPU and return an encoder of unit vectors.
 
@@ -92,7 +106,10 @@ def load_sentence_transformer(model: str, revision: str, max_seq_length: int) ->
     """
     from sentence_transformers import SentenceTransformer
 
-    encoder = SentenceTransformer(model, revision=revision, device="cpu")
+    if revision.startswith("sha256:"):
+        encoder = SentenceTransformer(str(REPO_ROOT / model), device="cpu", local_files_only=True)
+    else:
+        encoder = SentenceTransformer(model, revision=revision, device="cpu")
     encoder.max_seq_length = max_seq_length
 
     def encode(texts: list[str]) -> np.ndarray:

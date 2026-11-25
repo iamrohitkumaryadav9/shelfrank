@@ -20,6 +20,13 @@ dense:
     # Instruction from the model card, for queries only.
     query_prefix: "Represent this sentence for searching relevant passages: "
 
+  # Made in Colab (docs/COLAB.md) and unpacked locally. The revision is the hash of its weights.
+  bge_small_esci:
+    model: artifacts/models/bge_small_esci
+    revision: local
+    max_seq_length: 128
+    query_prefix: "Represent this sentence for searching relevant passages: "
+
 rrf:
   k: 60                # published default, not tuned; frozen at Gate 1
 

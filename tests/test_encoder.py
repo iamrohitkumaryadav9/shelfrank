@@ -5,6 +5,7 @@ from shelfrank.dense.encoder import (
     StaleCacheError,
     encode_cached,
     fingerprint,
+    model_identity,
     product_text,
     product_texts,
 )
@@ -93,3 +94,19 @@ def test_every_fixture_product_has_text_starting_with_its_name(sample):
     texts = product_texts(sample["products"])
     names = sample["products"]["product_name"]
     assert all(t.startswith(n) for t, n in zip(texts, names, strict=True))
+
+
+def test_local_model_is_pinned_by_the_hash_of_its_weights(tmp_path):
+    cfg = {"model": "m", "revision": "local", "max_seq_length": 8}
+    with pytest.raises(FileNotFoundError, match="COLAB"):
+        model_identity(cfg, tmp_path)
+    (tmp_path / "m").mkdir()
+    (tmp_path / "m/model.safetensors").write_bytes(b"one")
+    first = model_identity(cfg, tmp_path)["revision"]
+    (tmp_path / "m/model.safetensors").write_bytes(b"two")
+    assert first.startswith("sha256:") and model_identity(cfg, tmp_path)["revision"] != first
+
+
+def test_published_model_keeps_its_revision(tmp_path):
+    cfg = {"model": "a/b", "revision": "abc", "max_seq_length": 8, "query_prefix": "x"}
+    assert model_identity(cfg, tmp_path) == {"model": "a/b", "revision": "abc", "max_seq_length": 8}
