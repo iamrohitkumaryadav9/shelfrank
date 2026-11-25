@@ -1,0 +1,384 @@
+{"id": 0, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 1, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 2, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 3, "label": {"color": ["turquoise"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 6, "label": {"color": ["clear"], "material_finish": ["acrylic"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 7, "label": {"color": [], "material_finish": ["driftwood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 10, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 11, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 12, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 13, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 14, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 15, "label": {"color": ["black"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 16, "label": {"color": ["blk"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["color", "blk"]]}
+{"id": 17, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 18, "label": {"color": [], "material_finish": ["chrome"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 21, "label": {"color": ["pearl"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 22, "label": {"color": ["light and navy blue"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 24, "label": {"color": [], "material_finish": ["wood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 25, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 26, "label": {"color": [], "material_finish": ["leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 27, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 28, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 29, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 30, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 31, "label": {"color": ["burnt orange"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 32, "label": {"color": ["dark gray"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 33, "label": {"color": [], "material_finish": [], "style": [], "room": ["shower"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["room", "shower"]]}
+{"id": 34, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 36, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 37, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 38, "label": {"color": [], "material_finish": [], "style": [], "room": ["patio"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 39, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 40, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 41, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 43, "label": {"color": [], "material_finish": ["teak"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 44, "label": {"color": [], "material_finish": ["chrome"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 45, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 47, "label": {"color": [], "material_finish": ["porcelain"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 48, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 49, "label": {"color": [], "material_finish": ["matte black"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 51, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 53, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 54, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 55, "label": {"color": ["teal"], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 57, "label": {"color": [], "material_finish": ["solid wood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 59, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 60, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 61, "label": {"color": [], "material_finish": [], "style": ["rustic"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 62, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 63, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 65, "label": {"color": [], "material_finish": [], "style": [], "room": ["garden"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 66, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 67, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 68, "label": {"color": [], "material_finish": [], "style": ["nautical"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 69, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 70, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 73, "label": {"color": [], "material_finish": ["melamine"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 74, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 76, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 77, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 79, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 80, "label": {"color": ["white"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 81, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 82, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 83, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 86, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 87, "label": {"color": [], "material_finish": [], "style": ["modular"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["style", "modular"]]}
+{"id": 88, "label": {"color": ["rose gold"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 90, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 91, "label": {"color": [], "material_finish": ["pipe"], "style": ["industrial"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["material_finish", "pipe"]]}
+{"id": 92, "label": {"color": ["silver"], "material_finish": ["antique"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 93, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 94, "label": {"color": [], "material_finish": [], "style": ["farmhouse"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 95, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 96, "label": {"color": [], "material_finish": [], "style": [], "room": ["bar room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["room", "bar room"]]}
+{"id": 97, "label": {"color": ["red"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 99, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 100, "label": {"color": [], "material_finish": ["upholstered"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 102, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 103, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 104, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 106, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 107, "label": {"color": [], "material_finish": [], "style": [], "room": ["front porch"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 109, "label": {"color": [], "material_finish": [], "style": ["oriental"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["style", "oriental"]]}
+{"id": 110, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 111, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 112, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 113, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 115, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 117, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 119, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 120, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 121, "label": {"color": [], "material_finish": ["upholstered"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 122, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 123, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 124, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 126, "label": {"color": [], "material_finish": ["leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 127, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 128, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 130, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 131, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 132, "label": {"color": [], "material_finish": [], "style": ["farmhouse"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 133, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 134, "label": {"color": ["black"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 135, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 138, "label": {"color": [], "material_finish": ["glass"], "style": [], "room": ["bath"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 139, "label": {"color": ["auburn"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["color", "auburn"]]}
+{"id": 140, "label": {"color": [], "material_finish": ["wire"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 141, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 142, "label": {"color": [], "material_finish": ["wooden"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 143, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 144, "label": {"color": ["plum"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 145, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 146, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 147, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 150, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 151, "label": {"color": [], "material_finish": ["leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 152, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 153, "label": {"color": [], "material_finish": [], "style": ["bohemian"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 155, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 157, "label": {"color": [], "material_finish": ["velvet"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 159, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 160, "label": {"color": [], "material_finish": ["marble"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 161, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 162, "label": {"color": ["turquoise"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 163, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 164, "label": {"color": [], "material_finish": [], "style": ["modern"], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 165, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 166, "label": {"color": [], "material_finish": ["feather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 167, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 168, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 169, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 170, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 173, "label": {"color": [], "material_finish": [], "style": [], "room": ["bedroom"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 174, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 176, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 177, "label": {"color": [], "material_finish": [], "style": ["rustic"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 178, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 180, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 181, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 182, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 184, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 185, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 188, "label": {"color": ["multicolored", "teal"], "material_finish": [], "style": [], "room": ["bedroom"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["color", "multicolored"]]}
+{"id": 189, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 190, "label": {"color": [], "material_finish": ["faux leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 191, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 193, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 195, "label": {"color": ["black"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 196, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 197, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 199, "label": {"color": ["blue"], "material_finish": ["faux"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["material_finish", "faux"]]}
+{"id": 200, "label": {"color": [], "material_finish": ["ceramic"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 201, "label": {"color": [], "material_finish": ["champagne bronze"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 202, "label": {"color": [], "material_finish": ["padded"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["material_finish", "padded"]]}
+{"id": 203, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 204, "label": {"color": ["bronze"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 207, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 208, "label": {"color": ["blue"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 210, "label": {"color": [], "material_finish": ["faux leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 211, "label": {"color": [], "material_finish": ["memory foam"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 212, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 213, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 214, "label": {"color": [], "material_finish": ["light wood", "silver"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 215, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 218, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 219, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 220, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 221, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 222, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 223, "label": {"color": [], "material_finish": ["stone"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 224, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 225, "label": {"color": ["white"], "material_finish": ["shiplap"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["material_finish", "shiplap"]]}
+{"id": 226, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 227, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 228, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 230, "label": {"color": ["gold"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 231, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 233, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 234, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 235, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 237, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 238, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 239, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 240, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 241, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 242, "label": {"color": [], "material_finish": ["leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 243, "label": {"color": [], "material_finish": [], "style": [], "room": ["indoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 245, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 246, "label": {"color": ["clear"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 247, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 248, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 249, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 250, "label": {"color": ["multi color"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 251, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 252, "label": {"color": [], "material_finish": [], "style": [], "room": ["living room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 253, "label": {"color": [], "material_finish": ["antique brass"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 254, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 256, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 257, "label": {"color": [], "material_finish": [], "style": [], "room": ["living room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 258, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 259, "label": {"color": [], "material_finish": [], "style": [], "room": ["nursery"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 264, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 265, "label": {"color": [], "material_finish": ["upholstered"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 266, "label": {"color": ["champagne"], "material_finish": ["velvet"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 268, "label": {"color": [], "material_finish": ["resin"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 269, "label": {"color": [], "material_finish": ["teak"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 271, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 273, "label": {"color": [], "material_finish": ["stainless steel"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 274, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 275, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 276, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 277, "label": {"color": [], "material_finish": [], "style": [], "room": ["patio"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 279, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 280, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 282, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 283, "label": {"color": [], "material_finish": ["driftwood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 284, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 285, "label": {"color": [], "material_finish": [], "style": ["barn"], "room": ["laundry"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["style", "barn"], ["room", "laundry"]]}
+{"id": 286, "label": {"color": [], "material_finish": [], "style": ["mid-century"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 287, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 290, "label": {"color": [], "material_finish": [], "style": ["mission"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["style", "mission"]]}
+{"id": 291, "label": {"color": [], "material_finish": [], "style": [], "room": ["front door"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["room", "front door"]]}
+{"id": 293, "label": {"color": [], "material_finish": ["wood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 294, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 295, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 296, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 297, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 298, "label": {"color": [], "material_finish": ["woven"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 301, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 302, "label": {"color": [], "material_finish": ["foam"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 304, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 305, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 306, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 307, "label": {"color": [], "material_finish": ["glass"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 308, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 310, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 311, "label": {"color": [], "material_finish": ["velvet"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 312, "label": {"color": [], "material_finish": [], "style": [], "room": ["bedroom"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 315, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 316, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 317, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 318, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 319, "label": {"color": [], "material_finish": [], "style": [], "room": ["bathroom"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 321, "label": {"color": ["magenta"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 322, "label": {"color": ["cream"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 323, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 324, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 325, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 327, "label": {"color": [], "material_finish": ["brushed bronze"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 331, "label": {"color": [], "material_finish": ["upholstered"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 332, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 333, "label": {"color": [], "material_finish": ["stainless steel"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 334, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 335, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 336, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 337, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 338, "label": {"color": [], "material_finish": [], "style": [], "room": ["porch"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 339, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 340, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 341, "label": {"color": [], "material_finish": ["canvas"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 342, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 344, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 345, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 346, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 347, "label": {"color": ["olive green"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 348, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 349, "label": {"color": [], "material_finish": [], "style": [], "room": ["mud room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 351, "label": {"color": ["white", "black"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 353, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 354, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 355, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 356, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 357, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 358, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 359, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 360, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 361, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 362, "label": {"color": [], "material_finish": ["brushed gold"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 363, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 364, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 365, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 366, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 367, "label": {"color": [], "material_finish": ["wooden"], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 368, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 370, "label": {"color": [], "material_finish": [], "style": [], "room": ["teen room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["room", "teen room"]]}
+{"id": 372, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 373, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 375, "label": {"color": ["pastel pink"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 376, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 377, "label": {"color": [], "material_finish": ["upholstered"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 379, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 380, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 381, "label": {"color": [], "material_finish": [], "style": ["farmhouse"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 383, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 384, "label": {"color": [], "material_finish": ["vinyl"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 385, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 387, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 388, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 389, "label": {"color": [], "material_finish": ["brush nickel"], "style": [], "room": ["bathroom"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 391, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 392, "label": {"color": [], "material_finish": ["china"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["material_finish", "china"]]}
+{"id": 393, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 394, "label": {"color": ["gray"], "material_finish": ["leather"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 395, "label": {"color": ["grey"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 397, "label": {"color": [], "material_finish": ["tufted"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["material_finish", "tufted"]]}
+{"id": 398, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 399, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 400, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 401, "label": {"color": [], "material_finish": ["glass"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 402, "label": {"color": [], "material_finish": [], "style": ["modern", "farmhouse"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 403, "label": {"color": [], "material_finish": ["wood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 404, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 405, "label": {"color": [], "material_finish": [], "style": ["queen ann"], "room": ["living room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": [["style", "queen ann"]]}
+{"id": 406, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 407, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 408, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 409, "label": {"color": ["teal"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 412, "label": {"color": [], "material_finish": ["upholstered"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 413, "label": {"color": [], "material_finish": [], "style": [], "room": ["patio"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 414, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 415, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 416, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 417, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 418, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 420, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 421, "label": {"color": [], "material_finish": [], "style": [], "room": ["dining room"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 422, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 423, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 424, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 425, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 426, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 427, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 428, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 429, "label": {"color": ["gray"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 432, "label": {"color": [], "material_finish": ["butcher block"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 433, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 434, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 435, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 437, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 438, "label": {"color": [], "material_finish": [], "style": [], "room": ["indoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 439, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 440, "label": {"color": [], "material_finish": ["wood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 441, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 442, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 443, "label": {"color": [], "material_finish": [], "style": [], "room": ["patio"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 444, "label": {"color": [], "material_finish": [], "style": [], "room": ["outdoor"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 445, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 446, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 447, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 448, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 449, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 452, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 453, "label": {"color": [], "material_finish": [], "style": ["midcentury"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 454, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 455, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 456, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 458, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 459, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 461, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 462, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 463, "label": {"color": [], "material_finish": [], "style": [], "room": ["patio"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 464, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 465, "label": {"color": ["white"], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 466, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 467, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 468, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 469, "label": {"color": [], "material_finish": [], "style": [], "room": ["garage"]}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 470, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 471, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 472, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 473, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 474, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 475, "label": {"color": [], "material_finish": ["rattan"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 476, "label": {"color": [], "material_finish": ["hardwood"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 479, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 480, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 481, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 482, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 483, "label": {"color": [], "material_finish": [], "style": ["rustic"], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 484, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 485, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 486, "label": {"color": [], "material_finish": [], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}
+{"id": 487, "label": {"color": [], "material_finish": ["glass"], "style": [], "room": []}, "rules": "slots-v1", "invented": [], "out_of_vocabulary": []}

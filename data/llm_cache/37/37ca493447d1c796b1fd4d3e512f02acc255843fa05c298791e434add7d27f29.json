@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3c9a854add008343a2a5e0a89840119dae80798a14492c70f5654ffa1e3b0c1a",
+ "response": {
+  "input_tokens": 1438,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 520,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Kids Desks\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Accent Pillows\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Floor & Wall Tile\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Towel & Robe Hooks\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Mattress Toppers and Pads\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Washer and Dryer Sets\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Wall Sconces\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Vanities\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Sofas\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Bath Rugs & Mats\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Bars & Bar Sets\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Kitchen Faucets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Nightstands\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Adjustable Beds\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Kids Beds\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Towel Bars, Racks, and Stands\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Sheets And Sheet Sets\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Dining Table Sets\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Living Room Table Sets\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "887a90b3f58f604481fa7cd7d627e3546a042a82cfba1f4383aae3b459ebfc79",
+ "response": {
+  "input_tokens": 1376,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 511,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Benches\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Dog and Cat Bowls, Feeders & Accessories\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Range Hoods\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Dining Linens\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Vases, Urns, Jars, & Bottles\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Planters\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Sectionals\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bathroom Sink Faucets\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Desks\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Wall Clocks\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Washer and Dryer Sets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Coffee & Cocktail Tables\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Pantry Cabinets\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Recliners\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Lighting Shades\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

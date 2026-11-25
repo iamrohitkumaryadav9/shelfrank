@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6c875b3574a37f1d3a8233f172e6508f73d3e1ee33f9f98ba5f1ca0f311a65af",
+ "response": {
+  "input_tokens": 826,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 587,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 2,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 3,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 4,\n      \"color\": [],\n      \"material_finish\": [\"rattan\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 5,\n      \"color\": [],\n      \"material_finish\": [\"hardwood\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 6,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 7,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 8,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 9,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 10,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [\"rustic\"],\n      \"room\": []\n    },\n    {\n      \"i\": 11,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 12,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 13,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 14,\n      \"color\": [],\n      \"material_finish\": [\"glass\"],\n      \"style\": [],\n      \"room\": []\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 940,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "slots-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1a94b82d7765a8a54a9b08569c3af052d872635baff124f382893a5cb818d276",
+ "response": {
+  "input_tokens": 875,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 852,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"color\": [],\n      \"material_finish\": [\"upholstered\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 2,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 3,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 4,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [\"farmhouse\"],\n      \"room\": []\n    },\n    {\n      \"i\": 5,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 6,\n      \"color\": [],\n      \"material_finish\": [\"vinyl\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 7,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 8,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 9,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": [\"outdoor\"]\n    },\n    {\n      \"i\": 10,\n      \"color\": [],\n      \"material_finish\": [\"brush nickel\"],\n      \"style\": [],\n      \"room\": [\"bathroom\"]\n    },\n    {\n      \"i\": 11,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 12,\n      \"color\": [],\n      \"material_finish\": [\"china\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 13,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 14,\n      \"color\": [\"gray\"],\n      \"material_finish\": [\"leather\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 15,\n      \"color\": [\"grey\"],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 16,\n      \"color\": [],\n      \"material_finish\": [\"tufted\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 17,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 18,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 19,\n      \"color\": [],\n      \"material_finish\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 20,\n      \"color\": [],\n      \"material_finish\": [\"glass\"],\n      \"style\": [],\n      \"room\": []\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1300,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "slots-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

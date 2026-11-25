@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "290156046deabfceeff811de7b6a2bd63b648e53a3419504aafa791873d1d97e",
+ "response": {
+  "input_tokens": 1386,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 508,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Sideboards & Buffets\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Bed Accessories\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Wall Art\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Accent Chests / Cabinets\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Saunas\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Furniture Cushions\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Light Bulbs\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Floor & Wall Tile\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Canisters & Jars\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Wall Art\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Hampers & Baskets\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Recliners\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Plant & Telephone Tables\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Table Lamps\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Tubs And Whirlpools\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Dressers & Chests\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

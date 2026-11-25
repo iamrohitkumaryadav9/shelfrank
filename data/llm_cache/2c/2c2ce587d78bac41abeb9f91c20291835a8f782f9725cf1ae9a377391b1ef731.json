@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5acdebadde9f6f35f4f8d7394cf88bde5d8dabe5c96c669c411382d132429162",
+ "response": {
+  "input_tokens": 1327,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 344,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Wall Décor\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Furniture Cushions\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Vanities\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Wall Art\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Range Hoods\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Bathroom Sinks\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Furniture Cushions\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Glassware & Barware\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

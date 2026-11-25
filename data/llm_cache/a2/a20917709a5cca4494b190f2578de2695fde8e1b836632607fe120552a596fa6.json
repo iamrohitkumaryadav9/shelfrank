@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5c7babb5364321a1c17cf94ecae39dc4889b45e8e9f1dea75519dc7d2a7df39b",
+ "response": {
+  "input_tokens": 1269,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 248,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Coffee & Cocktail Tables\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Accent Pillows\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Wall & Accent Mirrors\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Wall Décor\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

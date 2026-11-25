@@ -1,0 +1,34 @@
+{
+ "split": "all",
+ "n": 480,
+ "reference": "Wayfair's assigned query class",
+ "teacher": {
+  "n": 480,
+  "accuracy": 0.7375,
+  "department": 0.8208333333333333,
+  "macro_f1": 0.8131826850202009,
+  "macro_f1_classes": 29,
+  "low": 0.6979166666666666,
+  "high": 0.775,
+  "predicted_other": 49
+ },
+ "student": {
+  "n": 480,
+  "accuracy": 0.6625,
+  "top3": 0.8791666666666667,
+  "department": 0.75,
+  "macro_f1": 0.7171917583567249,
+  "macro_f1_classes": 29,
+  "low": 0.6208333333333333,
+  "high": 0.7041666666666667,
+  "predicted_other": 88
+ },
+ "student_minus_teacher": {
+  "mean": -0.075,
+  "low": -0.12083333333333333,
+  "high": -0.029166666666666667
+ },
+ "agreement_student_teacher": 0.6708333333333333,
+ "reference_other": 32,
+ "selected_arm": "both"
+}

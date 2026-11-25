@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "04fec7d434c7f84a2d284f39fb18ff5cee6cbcf73aed02f7e1326b0a65397b75",
+ "response": {
+  "input_tokens": 1361,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 505,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"End Tables\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Deck Boxes\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Floor & Wall Tile\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Pantry Cabinets\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Dressers & Chests\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Kitchen Islands\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Daybeds & Guest Beds\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Vanity Lighting\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Shoe Storage\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Kitchen Islands\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Fountains\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Dining Chairs\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Bar Stools\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Kids Desks\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Bathroom Storage\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Patio Lounge Chairs\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Indoor Chaise Lounges\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Folding Tables\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Sideboards & Buffets\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}
