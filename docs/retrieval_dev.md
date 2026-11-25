@@ -36,6 +36,18 @@ Rankings are 1000 deep, so MRR is measured within that depth.
 
 - **Dense, bge-small off the shelf** changes sign between standard and condensed nDCG@10. Its top 10 is 0.825 judged, against 0.911 for the baseline, so part of its standard deficit comes from unjudged products scored as irrelevant.
 
+The query's class is Wayfair's `query_class`, used here for analysis only. Queries without one are left
+out.
+
+| Top-10 results | In class: judged | n | Out of class: judged | n |
+| --- | --- | --- | --- | --- |
+| BM25, title only | 0.998 | 530 | 0.765 | 409 |
+| BM25, title + description | 0.935 | 551 | 0.634 | 404 |
+| BM25 multi-field, equal weights | 0.898 | 628 | 0.765 | 327 |
+| BM25 multi-field, tuned (baseline) | 0.972 | 597 | 0.824 | 358 |
+| Dense, bge-small off the shelf | 0.927 | 600 | 0.656 | 360 |
+| Hybrid, RRF of tuned BM25 and dense | 0.969 | 622 | 0.784 | 338 |
+
 ## BM25 field weights
 
 | Dev nDCG@10 | Value |

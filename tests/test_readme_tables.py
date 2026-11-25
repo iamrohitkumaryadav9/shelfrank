@@ -3,7 +3,7 @@ import json
 import pytest
 
 from shelfrank.config import REPO_ROOT
-from shelfrank.readme_tables import MissingBlockError, limitations, replace_block
+from shelfrank.readme_tables import MissingBlockError, findings, limitations, replace_block
 
 TEXT = "a\n<!-- begin:x -->\nold\n<!-- end:x -->\nb"
 
@@ -27,7 +27,22 @@ def test_missing_or_repeated_markers_fail(text):
         replace_block(text, "x", "new")
 
 
+def load(name):
+    return json.loads((REPO_ROOT / "results" / f"{name}.json").read_text(encoding="utf-8"))
+
+
 def test_committed_readme_is_up_to_date():
-    audit = json.loads((REPO_ROOT / "results/data_audit.json").read_text(encoding="utf-8"))
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    assert replace_block(readme, "limitations", limitations(audit)) == readme
+    assert replace_block(readme, "limitations", limitations(load("data_audit"))) == readme
+    body = findings(load("retrieval_dev"), load("bm25_tuning"))
+    assert replace_block(readme, "findings", body) == readme
+
+
+def test_prose_in_the_findings_holds():
+    data, tuning = load("retrieval_dev"), load("bm25_tuning")
+    dense = data["systems"]["dense_bge_small"]["versus_baseline"]
+    assert dense["ndcg10"]["mean"] < 0 < dense["condensed_ndcg10"]["mean"]
+    pool = data["judged_by_class"]["dense_bge_small"]
+    assert pool["out_of_class_judged"] < pool["in_class_judged"]
+    assert tuning["dev_ndcg10_held_out"] < tuning["dev_ndcg10_tuned_in_sample"]
+    assert tuning["weights"]["class"] == 0 < tuning["weights"]["hierarchy"]

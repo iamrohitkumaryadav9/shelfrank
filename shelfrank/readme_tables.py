@@ -4,6 +4,7 @@ import re
 from typing import Any
 
 from shelfrank.data.audit_report import pct
+from shelfrank.stats.bootstrap import paired_difference
 
 
 class MissingBlockError(KeyError):
@@ -34,3 +35,31 @@ def limitations(audit: dict[str, Any]) -> str:
   {primary["n"]}.
 - **`query_class` is itself a model prediction**, so classifier accuracy means agreement with Wayfair's
   classifier."""
+
+
+def findings(retrieval: dict[str, Any], tuning: dict[str, Any]) -> str:
+    """Development findings that shape how later results must be read."""
+    dense = retrieval["systems"]["dense_bge_small"]["versus_baseline"]
+    pool = retrieval["judged_by_class"]["dense_bge_small"]
+    held = tuning["held_out_per_query"]
+    title = retrieval["systems"]["bm25_title"]["per_query"]
+    gain = paired_difference(
+        [held[q] for q in sorted(held)], [title[q]["ndcg10"] for q in sorted(held)]
+    )
+    weights = tuning["weights"]
+    zero = sum(w["class"] == 0 for w in tuning["inner_weights"])
+    standard, condensed = dense["ndcg10"], dense["condensed_ndcg10"]
+    return f"""All on the {retrieval["n_queries"]} dev queries, exploratory and uncorrected.
+
+- **The order of dense and BM25 depends on unjudged handling.** Against tuned BM25, off-the-shelf bge-small
+  is {standard["mean"]:+.3f} [{standard["low"]:+.3f}, {standard["high"]:+.3f}] on standard nDCG@10 and
+  {condensed["mean"]:+.3f} [{condensed["low"]:+.3f}, {condensed["high"]:+.3f}] on condensed nDCG@10. Its
+  top-10 results outside the query's class are {pct(pool["out_of_class_judged"])} judged, against
+  {pct(pool["in_class_judged"])} inside it, which lowers its standard score.
+- **Tuning is optimistic, which is why results are held out.** Tuned field weights score
+  {tuning["dev_ndcg10_tuned_in_sample"]:.3f} on the queries they were tuned on and
+  {tuning["dev_ndcg10_held_out"]:.3f} on queries they were not. The held-out gain over title-only BM25 is
+  {gain.mean:+.3f} [{gain.low:+.3f}, {gain.high:+.3f}].
+- **The product class field has weight {weights["class"]:g}** once the category path has weight
+  {weights["hierarchy"]:g}, and {zero} of {len(tuning["inner_weights"])} held-out searches agree. The likely
+  reason is that the path carries the same signal."""

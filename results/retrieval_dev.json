@@ -11,7 +11,7 @@
   "features": 0.1,
   "description": 0.1
  },
- "query_encode_ms_mean": 27.485563541631564,
+ "query_encode_ms_mean": 58.079868749700836,
  "ceilings": {
   "ndcg10": {
    "mean": 1.0,
@@ -136,6 +136,44 @@
    "judged_share": 0.6293182479872685,
    "oracle_ndcg10": 0.9515924092527371,
    "oracle_exact10_share": 0.874415486915487
+  }
+ },
+ "judged_by_class": {
+  "bm25_title": {
+   "in_class_judged": 0.9981132075471698,
+   "in_class_n": 530,
+   "out_of_class_judged": 0.7652811735941321,
+   "out_of_class_n": 409
+  },
+  "bm25_title_desc": {
+   "in_class_judged": 0.9346642468239564,
+   "in_class_n": 551,
+   "out_of_class_judged": 0.6336633663366337,
+   "out_of_class_n": 404
+  },
+  "bm25_multi_equal": {
+   "in_class_judged": 0.8980891719745223,
+   "in_class_n": 628,
+   "out_of_class_judged": 0.764525993883792,
+   "out_of_class_n": 327
+  },
+  "bm25_multi": {
+   "in_class_judged": 0.9715242881072027,
+   "in_class_n": 597,
+   "out_of_class_judged": 0.8240223463687151,
+   "out_of_class_n": 358
+  },
+  "dense_bge_small": {
+   "in_class_judged": 0.9266666666666666,
+   "in_class_n": 600,
+   "out_of_class_judged": 0.6555555555555556,
+   "out_of_class_n": 360
+  },
+  "hybrid_rrf": {
+   "in_class_judged": 0.9694533762057878,
+   "in_class_n": 622,
+   "out_of_class_judged": 0.7840236686390533,
+   "out_of_class_n": 338
   }
  },
  "systems": {

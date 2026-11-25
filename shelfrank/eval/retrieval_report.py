@@ -151,6 +151,22 @@ def pool_note(data: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def class_table(data: dict[str, Any]) -> str:
+    """Judged share of the top 10 inside and outside the query's class."""
+    rows = [
+        [
+            LABELS[name],
+            _f(d["in_class_judged"]),
+            d["in_class_n"],
+            _f(d["out_of_class_judged"]),
+            d["out_of_class_n"],
+        ]
+        for name, d in data["judged_by_class"].items()
+    ]
+    header = ["Top-10 results", "In class: judged", "n", "Out of class: judged", "n"]
+    return table(header, rows)
+
+
 def render(data: dict[str, Any], tuning: dict[str, Any]) -> str:
     """Assemble the page."""
     worst = max(v for d in data["ranx_max_difference"].values() for v in d.values())
@@ -175,6 +191,11 @@ Rankings are {data["run_depth"]} deep, so MRR is measured within that depth.
 {ci_table(data)}
 
 {pool_note(data)}
+
+The query's class is Wayfair's `query_class`, used here for analysis only. Queries without one are left
+out.
+
+{class_table(data)}
 
 ## BM25 field weights
 

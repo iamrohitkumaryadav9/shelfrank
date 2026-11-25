@@ -21,7 +21,7 @@ dense:
     query_prefix: "Represent this sentence for searching relevant passages: "
 
 rrf:
-  k: 60                # the value from the original RRF paper, not tuned
+  k: 60                # published default, not tuned; frozen at Gate 1
 
 bootstrap:
   n_resamples: 10000

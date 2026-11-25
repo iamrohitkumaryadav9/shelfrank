@@ -10,7 +10,7 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
   label wins and a tie takes the lower label. All disagreements and their resolutions are listed in
   [data_audit.md](data_audit.md) section 1.
 - Primary metrics treat unjudged products as irrelevant.
-- Rankers train on judged pairs only.
+- What rankers train on is chosen on the dev fold between two variants (section 8).
 
 ## 2. Splits
 
@@ -78,19 +78,31 @@ The judgment pool was partly selected with Wayfair's query classifier ([DATA.md]
 [data_audit.md](data_audit.md) section 8). Class features can therefore gain by retrieving judged
 products. These rules apply:
 
-- Every claim about G3 (class features), and the overall LTR-versus-BM25 claim, shows condensed nDCG@10
-  and judged@10 beside the standard numbers.
-- To be copied into `configs/frozen.yaml` verbatim: "A G3 gain is claimed only if it is positive under
-  BOTH standard and condensed evaluation with the 95% CI excluding 0. Otherwise it is reported as
-  possibly pool-driven."
+- **A gain is claimed only if it is positive under both standard and condensed nDCG@10 with the 95% CI
+  excluding 0. Otherwise it is reported as "direction depends on unjudged handling".** Both intervals
+  must exclude 0. This covers every claimed gain: dense, fine-tuning, hybrid, LTR, every feature group and
+  rewriting. The sentence goes into `configs/frozen.yaml` verbatim.
+- For G3 (class features), a gain that fails the rule is also described as possibly pool-driven.
+- Every claim shows condensed nDCG@10 and judged@10 beside the standard numbers.
+- **Hard rule:** judged or unjudged status, and anything derived from WANDS's pooling, is never a feature.
 - Phase 4 reports the judged fraction of the LTR top 10 against the BM25 top 10, per department.
 
 ## 8. Ranking model
 
 - `label_gain` defaults to [0, 1, 2], matching the metric. [0, 1, 3] is a dev-fold candidate only. The
   choice goes into `configs/frozen.yaml`.
+- Candidates are the union of the tuned BM25 top 100 and the dense top 100.
+- Two training variants are compared on the dev fold, using both standard and condensed nDCG@10: (a) judged
+  pairs only, and (b) unjudged candidates added with label 0. The choice goes into `configs/frozen.yaml`
+  and the other variant is reported as an ablation.
+- The main BM25 baseline is tuned multi-field BM25. Its field weights are the ones tuned on fold 0 and are
+  not re-tuned per fold. Title-only BM25 appears in every table.
+- Reciprocal rank fusion uses k = 60, the published default. **It is not tuned** and is frozen now.
 
 ## 9. Statistics
+
+- **Primary comparison: LTR (full) against hybrid RRF**, the strongest untrained system. Secondary: LTR
+  (full) against tuned multi-field BM25. Both are in the Holm family.
 
 - Paired bootstrap over queries, 10,000 resamples, seeded. Mean difference with a 95% CI.
 - The comparison family is declared in `configs/frozen.yaml` and Holm-corrected.

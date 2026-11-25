@@ -9,12 +9,19 @@ import numpy as np
 
 from shelfrank.bm25.fields import BM25Index, combine, concat_fields, field_tokens, score_matrix
 from shelfrank.config import REPO_ROOT, load_config
-from shelfrank.data.wands import judgments, load_labels, load_products, load_queries
+from shelfrank.data.wands import (
+    judgments,
+    load_labels,
+    load_products,
+    load_queries,
+    split_classes,
+)
 from shelfrank.dense.encoder import encode_cached, load_sentence_transformer, product_texts
 from shelfrank.eval.access import queries_for
 from shelfrank.eval.crosscheck import max_differences
 from shelfrank.eval.harness import candidate_report, ceilings, evaluate, summarise, to_qrels
 from shelfrank.eval.metrics import METRIC_NAMES
+from shelfrank.eval.pool import judged_by_class
 from shelfrank.eval.splits import load_folds
 from shelfrank.ranking import rank_all, reciprocal_rank_fusion, union
 from shelfrank.stats.bootstrap import bootstrap_mean, paired_difference
@@ -33,7 +40,8 @@ def main() -> None:
     products = load_products(raw).sort_values("product_id").reset_index(drop=True)
     ids = products["product_id"].to_numpy()
     query_ids = queries_for(split, load_folds(REPO_ROOT / data_cfg["splits"]["path"]))
-    texts = load_queries(raw).set_index("query_id").loc[query_ids, "query"].tolist()
+    queries = load_queries(raw).set_index("query_id").loc[query_ids]
+    texts = queries["query"].tolist()
     qrels = to_qrels(judgments(load_labels(raw)), query_ids)
     depth = cfg["run_depth"]
 
@@ -92,6 +100,8 @@ def main() -> None:
             versus[metric] = asdict(paired_difference(ours, theirs, **boot))
         systems[name] = {"summary": summary, "versus_baseline": versus, "per_query": scores}
 
+    query_class = queries["query_class"].to_dict()
+    product_classes = dict(zip(ids, products["product_class"].map(split_classes), strict=True))
     n = cfg["candidate_depth"]
     candidates = {
         "bm25_title": {q: runs["bm25_title"][q][:n] for q in query_ids},
@@ -115,6 +125,10 @@ def main() -> None:
             name: max_differences(runs[name], qrels, per_query[name]) for name in runs
         },
         "candidates": {k: candidate_report(v, qrels) for k, v in candidates.items()},
+        "judged_by_class": {
+            name: judged_by_class(run, qrels, query_class, product_classes)
+            for name, run in runs.items()
+        },
         "systems": systems,
     }
     path = REPO_ROOT / "results" / f"retrieval_{split}.json"

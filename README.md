@@ -13,6 +13,25 @@ Query understanding and learning-to-rank for home-goods product search, evaluate
 | [docs/DATA.md](docs/DATA.md) | Source, commit, license, published baseline |
 | [docs/ENVIRONMENT.md](docs/ENVIRONMENT.md) | Pinned versions and why |
 
+## Findings so far
+
+<!-- begin:findings -->
+All on the 96 dev queries, exploratory and uncorrected.
+
+- **The order of dense and BM25 depends on unjudged handling.** Against tuned BM25, off-the-shelf bge-small
+  is -0.036 [-0.075, +0.005] on standard nDCG@10 and
+  +0.033 [-0.004, +0.075] on condensed nDCG@10. Its
+  top-10 results outside the query's class are 65.6% judged, against
+  92.7% inside it, which lowers its standard score.
+- **Tuning is optimistic, which is why results are held out.** Tuned field weights score
+  0.759 on the queries they were tuned on and
+  0.742 on queries they were not. The held-out gain over title-only BM25 is
+  +0.015 [-0.015, +0.044].
+- **The product class field has weight 0** once the category path has weight
+  0.5, and 3 of 4 held-out searches agree. The likely
+  reason is that the path carries the same signal.
+<!-- end:findings -->
+
 ## Limitations known so far
 
 <!-- begin:limitations -->
