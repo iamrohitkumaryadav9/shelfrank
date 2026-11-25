@@ -1,0 +1,4 @@
+# Written by scripts/train_slots.py, by the rule in docs/PROTOCOL.md section 6.
+kind: tagger
+path: artifacts/slot_model.joblib
+config: {"lexicon_features": true, "window": 2, "c": 10.0}

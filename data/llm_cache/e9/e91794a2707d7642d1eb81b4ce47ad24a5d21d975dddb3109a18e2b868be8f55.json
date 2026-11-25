@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "35d26868c8059539b7734af1c84eba336bf073a20115c10770121bc5a7b793b1",
+ "response": {
+  "input_tokens": 1383,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 490,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Bookcases\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Desks\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Dining Tables\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Curtain Hardware & Accessories\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Living Room Sets\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"TV Stands & Entertainment Centers\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Chandeliers\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Furniture Cushions\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Chandeliers\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Wall Clocks\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Vanities\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

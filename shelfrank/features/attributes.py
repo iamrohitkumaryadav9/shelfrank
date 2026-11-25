@@ -1,6 +1,6 @@
 """G4: attributes the query asks for against attributes the product lists.
 
-Disabled until a slot student exists (shelfrank/ltr/gates.py). Matching is key-agnostic: a colour or
+Needs a selected slot student (shelfrank/ltr/gates.py). Matching is key-agnostic: a colour or
 material is looked up in the union of the colour, finish and material keys. A product with several
 values is a family of variants, so a conflict means that none of its values matches.
 """

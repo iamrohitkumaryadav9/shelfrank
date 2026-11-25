@@ -10,7 +10,6 @@ import subprocess
 from datetime import UTC, datetime
 from typing import Any
 
-import joblib
 import numpy as np
 import pandas as pd
 
@@ -34,6 +33,7 @@ from shelfrank.eval.access import queries_for
 from shelfrank.eval.claims import compare
 from shelfrank.eval.harness import evaluate, summarise, to_qrels
 from shelfrank.eval.splits import load_folds
+from shelfrank.features.attributes import attribute_features, listed_values
 from shelfrank.features.groups import columns_of, group_of
 from shelfrank.features.lexical import lexical_features
 from shelfrank.features.priors import prior_features
@@ -41,36 +41,19 @@ from shelfrank.features.query_class import class_features
 from shelfrank.features.semantic import semantic_features
 from shelfrank.features.text_shape import shape_features
 from shelfrank.ltr.ablation import ablations, alternatives, training_choices, variants
+from shelfrank.ltr.class_for_ranking import class_model
 from shelfrank.ltr.cross_validation import grouped_folds, out_of_fold
 from shelfrank.ltr.dataset import JUDGED_ONLY, RankingData, build_data
 from shelfrank.ltr.first_stage import FirstStage, candidate_pairs, first_stage
 from shelfrank.ltr.gates import allowed_groups
 from shelfrank.ltr.model import LtrConfig
 from shelfrank.ltr.selection import FINAL, INTERIM, bug_fixes, output_path, select
-from shelfrank.qu.class_data import arm_examples, seed_parts
-from shelfrank.qu.class_student import LinearClassifier
+from shelfrank.ltr.slots_for_ranking import term_slots
+from shelfrank.qu.slot_model import load_slot_model
 from shelfrank.stats.bootstrap import bootstrap_mean
 from shelfrank.text.normalize import tokenize
 
 REPORTED = ("ndcg10", "condensed_ndcg10", "judged10", "exact10_share", "mrr_exact")
-
-
-def class_model(products: pd.DataFrame, taxonomy: list[str]) -> LinearClassifier:
-    """The student selected in results/class_dev.json, cached."""
-    results = json.loads((REPO_ROOT / "results/class_dev.json").read_text(encoding="utf-8"))
-    chosen = results["best"][results["selected"]]
-    arm, tail, share = chosen["arm"], chosen["tail"], chosen["query_share"]
-    low, high = chosen["ngrams"]
-    name = f"class_{arm}_s{share}_tail{tail}_n{low}{high}_a{chosen['alpha']:.0e}.joblib"
-    path = REPO_ROOT / "artifacts" / name
-    if path.exists():
-        return joblib.load(path)
-    model = LinearClassifier((low, high), chosen["alpha"], 60_000)
-    parts = seed_parts()
-    queries = parts[0] if parts else None
-    model.fit(arm_examples(arm, tail, share, products, taxonomy, queries))
-    joblib.dump(model, path)
-    return model
 
 
 def load_everything(
@@ -110,6 +93,14 @@ def load_everything(
     query_tokens = [tokenize(t) for t in texts]
     taxonomy = json.loads((REPO_ROOT / data_cfg["taxonomy"]["path"]).read_text(encoding="utf-8"))
     student = class_model(products, taxonomy["classes"])
+    slot_model = load_slot_model()
+    slot_of = term_slots()
+    listed = {
+        i: listed_values(
+            products["product_features"][i], products["category_hierarchy"][i], slot_of
+        )
+        for i in sorted(set(pairs["pi"].tolist()))
+    }
     features = pd.concat(
         [
             lexical_features(pairs, stage, query_tokens, tokens),
@@ -121,6 +112,7 @@ def load_everything(
                 [split_classes(c) for c in products["product_class"]],
                 department_map(products),
             ),
+            attribute_features(pairs, [slot_model.slots(t) for t in texts], listed),
             prior_features(pairs, products),
             shape_features(pairs, query_tokens, tokens),
         ],

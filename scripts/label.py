@@ -22,9 +22,10 @@ from shelfrank.qu.slot_vocab import in_vocabulary, load_vocabulary
 
 def load_source(source: str) -> list[tuple[int, str]]:
     """Return (id, query). WANDS access goes through the split lock."""
-    if source == "wands_dev":
+    if source.startswith("wands_"):
         cfg = load_config("data")
-        ids = queries_for("dev", load_folds(REPO_ROOT / cfg["splits"]["path"]))
+        split = source.removeprefix("wands_")
+        ids = queries_for(split, load_folds(REPO_ROOT / cfg["splits"]["path"]))
         texts = load_queries(REPO_ROOT / cfg["wands"]["raw_dir"]).set_index("query_id")["query"]
         return [(q, str(texts[q])) for q in ids]
     name = {"esci_dev": "esci_prompt_dev.txt", "esci_seed": "esci_seed_queries.txt"}[source]
@@ -36,7 +37,7 @@ def main() -> None:
     """Run a pilot or a batch, save the labels, and report cost."""
     parser = argparse.ArgumentParser()
     parser.add_argument("task", choices=["class", "slots"])
-    parser.add_argument("source", choices=["esci_dev", "esci_seed", "wands_dev"])
+    parser.add_argument("source", choices=["esci_dev", "esci_seed", "wands_dev", "wands_primary"])
     parser.add_argument("--pilot", action="store_true")
     parser.add_argument("--live", action="store_true", help="allow paid calls")
     parser.add_argument("--projected", type=float, help="Rs per item projected before the pilot")
@@ -110,7 +111,7 @@ def main() -> None:
             print("standing approval:", "STOP, " + "; ".join(reasons) if reasons else "holds")
         for (_, query), label in zip(rows, labels, strict=True):
             # ESCI only: a WANDS query is never printed, not even a dev one.
-            if args.source != "wands_dev":
+            if not args.source.startswith("wands_"):
                 print(
                     f"  {query!r:60s} {label if args.task == 'class' else {k: v for k, v in label.items() if v}}"
                 )

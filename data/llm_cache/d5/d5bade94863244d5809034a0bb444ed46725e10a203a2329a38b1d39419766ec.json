@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ef4654090575b464e09e455bca8877c11b766e07455b8f717ac28ee97e16e892",
+ "response": {
+  "input_tokens": 1393,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 506,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Molding & Millwork\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Accent Stools\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Desks\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Nightstands\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Foam and Latex Mattresses\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Wall Art\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Planters\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Canisters & Jars\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Office Storage Cabinets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Picture Frames\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Serving Dishes & Platters\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Covers & Carry Bags\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Wall Plates\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Bathroom Sink Faucets\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a566c5edf84a51731acc3a910d781e08f77ab8aaf40dca32ce24bda15f2e1fe0",
+ "response": {
+  "input_tokens": 900,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 537,
+  "text": "{\"items\": [{\"i\": 1, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 2, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 3, \"color\": [], \"material_finish\": [\"wood\"], \"style\": [], \"room\": []}, {\"i\": 4, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 5, \"color\": [], \"material_finish\": [\"paper\"], \"style\": [], \"room\": []}, {\"i\": 6, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 7, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 8, \"color\": [\"blue\"], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 9, \"color\": [], \"material_finish\": [\"glass\"], \"style\": [], \"room\": []}, {\"i\": 10, \"color\": [\"pink\"], \"material_finish\": [\"plastic\"], \"style\": [], \"room\": []}, {\"i\": 11, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 12, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 13, \"color\": [], \"material_finish\": [\"jade\"], \"style\": [], \"room\": []}, {\"i\": 14, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 15, \"color\": [], \"material_finish\": [], \"style\": [\"shabby chic\"], \"room\": []}, {\"i\": 16, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 17, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 18, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 19, \"color\": [], \"material_finish\": [], \"style\": [], \"room\": []}, {\"i\": 20, \"color\": [], \"material_finish\": [], \"style\": [\"rustic\"], \"room\": [\"dining room\"]}]}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1300,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "slots-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

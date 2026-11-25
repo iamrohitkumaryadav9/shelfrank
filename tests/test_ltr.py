@@ -303,7 +303,7 @@ def test_other_groups_need_nothing(tmp_path):
 
 
 def test_committed_config_is_allowed_now():
-    assert allowed_groups(load_config("ltr")["groups"])
+    assert "G4" in allowed_groups(load_config("ltr")["groups"])
 
 
 def test_committed_dev_page_is_generated_from_the_committed_results():

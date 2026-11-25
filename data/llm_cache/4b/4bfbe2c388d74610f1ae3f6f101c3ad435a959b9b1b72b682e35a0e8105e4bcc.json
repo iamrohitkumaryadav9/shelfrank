@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e989b8870f6bab8853a26d610ae52639597df36b1ff11daf4658a626d89152c2",
+ "response": {
+  "input_tokens": 1410,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 500,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Coffee & Cocktail Tables\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Bar Stools\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Chandeliers\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Crib Bedding Sets\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Folding Tables\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Bath Accessories\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Vanities\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Foam and Latex Mattresses\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Landscape Lighting\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Sofa & Console Tables\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Projector Screens\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Curtains & Drapes\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Bed Accessories\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Bed Frames\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

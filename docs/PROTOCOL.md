@@ -240,3 +240,30 @@ of four or more words appears in committed files. Each later phase adds its deri
 
 Leakage checks compare two token keys, because the key frozen with the folds misses some plurals. Under the
 stronger key no additional pair of WANDS queries crosses folds, so the folds stand.
+
+## 16. "More like this" (item-to-item recommendations, added 2026-11-26 before the freeze)
+
+Written before anything in this section was measured.
+
+- **Task.** Given a seed product, rank the rest of the catalogue by how well each product could replace it.
+- **Reference.** For each query, its Exact products form one substitute set. Sets with fewer than 2 products are skipped.
+  Every other member of the set is relevant, gain 1. The seed itself is removed from the ranking.
+- **Seeds.** At most 20 per set, a seeded draw, so that a few large sets do not decide the result.
+- **Metrics.** nDCG@10, Recall@10 (with its ceiling, because most sets have more than 10 members) and MRR, depth 100.
+  Condensed versions keep only products that were judged for the seed's query.
+- **Averaging.** Within a query over its seeds, then over queries, so every query counts once. Intervals resample
+  queries, not seeds. The seed-weighted mean is reported beside it with the same clustered bootstrap.
+- **Folds.** Design and tuning on fold 0 only. Primary results on folds 1 to 4, once, after the freeze.
+- **Systems.** BM25 (query: the seed's name and class; document: name, class and description; default k1 and b, not
+  tuned), off-the-shelf bge-small, the fine-tuned encoder, hybrid RRF (k = 60, depth 100 each) of BM25 and one encoder,
+  and a re-ranker of the RRF top 100.
+- **Encoder rule:** RRF uses the encoder with the higher mean of standard and condensed nDCG@10 on dev as a dense
+  retriever alone. An exact tie goes to off-the-shelf.
+- **Re-ranker:** RRF score scaled to [0, 1] plus weighted terms for shared class, agreement of listed attributes (color,
+  material_finish, style, room, read with the G4 code) and a rating prior. Weights come from a grid on dev by the same
+  mean, and every grid point is logged. The grid contains 0 for every term.
+- **Comparisons**, one Holm family of their own: re-ranker against RRF (primary), RRF against BM25, fine-tuned against
+  off-the-shelf. The rule of section 7 applies to each.
+- **Limits.** Sets are defined by relevance to one query, not by co-views or purchases. This measures substitutability,
+  not complementarity or engagement. Other catalogue products that could replace the seed but were never judged
+  Exact for that query count as wrong. Class features can gain from how the pool was built.

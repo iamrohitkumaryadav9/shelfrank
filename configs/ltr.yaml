@@ -1,5 +1,5 @@
-# G4 stays out until the slot student exists. shelfrank/ltr/gates.py refuses it before that.
-groups: [G1, G2, G3, G5, G6]
+# shelfrank/ltr/gates.py refuses G4 without a selected slot student.
+groups: [G1, G2, G3, G4, G5, G6]
 encoder: bge_small      # decided in results/dense_dev.json by the rule in PROTOCOL.md section 8
 # Copied into configs/frozen.yaml at the freeze. That file does not exist yet, because its existence
 # unlocks the other folds.

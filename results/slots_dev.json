@@ -1,0 +1,1576 @@
+{
+ "reference": "LLM silver labels; human verification pending",
+ "selection_rule": "mean of micro-F1 against dev silver and held-out ESCI; a tie goes to the lexicon",
+ "n_dev": 96,
+ "n_esci_train": 1600,
+ "n_esci_held": 400,
+ "queries_with_a_slot": {
+  "dev": 29,
+  "esci_held": 104
+ },
+ "selected": 16,
+ "best_student": 16,
+ "dev_queries_where_student_and_lexicon_agree": 0.90625,
+ "runs": [
+  {
+   "kind": "lexicon",
+   "config": null,
+   "silver": {
+    "color": {
+     "precision": 0.7692307692307693,
+     "recall": 0.7692307692307693,
+     "f1": 0.7692307692307693,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.75,
+     "recall": 0.5454545454545454,
+     "f1": 0.631578947368421,
+     "predicted": 8,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.6666666666666666,
+     "recall": 0.6666666666666666,
+     "f1": 0.6666666666666666,
+     "predicted": 6,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.75,
+     "recall": 0.42857142857142855,
+     "f1": 0.5454545454545454,
+     "predicted": 4,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.7419354838709677,
+     "recall": 0.6216216216216216,
+     "f1": 0.6764705882352942,
+     "predicted": 31,
+     "support": 37,
+     "low": 0.5066582278481013,
+     "high": 0.8302031930333815
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8,
+     "recall": 1.0,
+     "f1": 0.8888888888888888,
+     "predicted": 45,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8285714285714286,
+     "recall": 0.725,
+     "f1": 0.7733333333333333,
+     "predicted": 35,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.7692307692307693,
+     "recall": 0.9090909090909091,
+     "f1": 0.8333333333333334,
+     "predicted": 13,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.6666666666666666,
+     "recall": 0.5161290322580645,
+     "f1": 0.5818181818181818,
+     "predicted": 24,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.7777777777777778,
+     "recall": 0.7711864406779662,
+     "f1": 0.774468085106383,
+     "predicted": 117,
+     "support": 118,
+     "low": 0.7069767441860465,
+     "high": 0.8372093023255814
+    }
+   },
+   "latency_ms": {
+    "p50": 0.4988500149920583,
+    "p95": 0.9956250432878733
+   },
+   "silver_all_slots_right": 0.8645833333333334,
+   "selection": 0.7254693366708386
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 1,
+    "c": 0.3
+   },
+   "silver": {
+    "color": {
+     "precision": 0.7,
+     "recall": 0.5384615384615384,
+     "f1": 0.6086956521739131,
+     "predicted": 10,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.8,
+     "recall": 0.36363636363636365,
+     "f1": 0.5,
+     "predicted": 5,
+     "support": 11
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.16666666666666666,
+     "f1": 0.2857142857142857,
+     "predicted": 1,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.4,
+     "recall": 0.2857142857142857,
+     "f1": 0.3333333333333333,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.6666666666666666,
+     "recall": 0.3783783783783784,
+     "f1": 0.4827586206896552,
+     "predicted": 21,
+     "support": 37,
+     "low": 0.2857142857142857,
+     "high": 0.6557505122950817
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9333333333333333,
+     "recall": 0.7777777777777778,
+     "f1": 0.8484848484848485,
+     "predicted": 30,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7083333333333334,
+     "recall": 0.425,
+     "f1": 0.53125,
+     "predicted": 24,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.45454545454545453,
+     "f1": 0.625,
+     "predicted": 5,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.8947368421052632,
+     "recall": 0.5483870967741935,
+     "f1": 0.68,
+     "predicted": 19,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8589743589743589,
+     "recall": 0.5677966101694916,
+     "f1": 0.6836734693877551,
+     "predicted": 78,
+     "support": 118,
+     "low": 0.6010362694300518,
+     "high": 0.7577106192026705
+    }
+   },
+   "latency_ms": {
+    "p50": 0.16870000399649143,
+    "p95": 0.3666750271804631
+   },
+   "silver_all_slots_right": 0.7916666666666666,
+   "selection": 0.5832160450387052
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 1,
+    "c": 1.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.6666666666666666,
+     "recall": 0.6153846153846154,
+     "f1": 0.64,
+     "predicted": 12,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.75,
+     "recall": 0.2727272727272727,
+     "f1": 0.4,
+     "predicted": 4,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.6666666666666666,
+     "recall": 0.3333333333333333,
+     "f1": 0.4444444444444444,
+     "predicted": 3,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.7083333333333334,
+     "recall": 0.4594594594594595,
+     "f1": 0.5573770491803278,
+     "predicted": 24,
+     "support": 37,
+     "low": 0.375,
+     "high": 0.72
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9117647058823529,
+     "recall": 0.8611111111111112,
+     "f1": 0.8857142857142857,
+     "predicted": 34,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7931034482758621,
+     "recall": 0.575,
+     "f1": 0.6666666666666666,
+     "predicted": 29,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.7272727272727273,
+     "f1": 0.8421052631578947,
+     "predicted": 8,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9545454545454546,
+     "recall": 0.6774193548387096,
+     "f1": 0.7924528301886793,
+     "predicted": 22,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8924731182795699,
+     "recall": 0.7033898305084746,
+     "f1": 0.7867298578199052,
+     "predicted": 93,
+     "support": 118,
+     "low": 0.7181818181818181,
+     "high": 0.847926267281106
+    }
+   },
+   "latency_ms": {
+    "p50": 0.16785002662800252,
+    "p95": 0.33469998743385077
+   },
+   "silver_all_slots_right": 0.8125,
+   "selection": 0.6720534535001166
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 1,
+    "c": 3.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.7692307692307693,
+     "recall": 0.7692307692307693,
+     "f1": 0.7692307692307693,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.8,
+     "recall": 0.36363636363636365,
+     "f1": 0.5,
+     "predicted": 5,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.6666666666666666,
+     "recall": 0.3333333333333333,
+     "f1": 0.4444444444444444,
+     "predicted": 3,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.7692307692307693,
+     "recall": 0.5405405405405406,
+     "f1": 0.6349206349206349,
+     "predicted": 26,
+     "support": 37,
+     "low": 0.4489795918367347,
+     "high": 0.7931034482758621
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9166666666666666,
+     "recall": 0.9166666666666666,
+     "f1": 0.9166666666666666,
+     "predicted": 36,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.78125,
+     "recall": 0.625,
+     "f1": 0.6944444444444444,
+     "predicted": 32,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.8181818181818182,
+     "f1": 0.9,
+     "predicted": 9,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9545454545454546,
+     "recall": 0.6774193548387096,
+     "f1": 0.7924528301886793,
+     "predicted": 22,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8888888888888888,
+     "recall": 0.7457627118644068,
+     "f1": 0.8110599078341014,
+     "predicted": 99,
+     "support": 118,
+     "low": 0.7457627118644068,
+     "high": 0.8691588785046729
+    }
+   },
+   "latency_ms": {
+    "p50": 0.17134996596723795,
+    "p95": 0.3045749763259664
+   },
+   "silver_all_slots_right": 0.8333333333333334,
+   "selection": 0.7229902713773682
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 1,
+    "c": 10.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.7692307692307693,
+     "recall": 0.7692307692307693,
+     "f1": 0.7692307692307693,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.8333333333333334,
+     "recall": 0.45454545454545453,
+     "f1": 0.5882352941176471,
+     "predicted": 6,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.6666666666666666,
+     "recall": 0.3333333333333333,
+     "f1": 0.4444444444444444,
+     "predicted": 3,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.7777777777777778,
+     "recall": 0.5675675675675675,
+     "f1": 0.65625,
+     "predicted": 27,
+     "support": 37,
+     "low": 0.47368421052631576,
+     "high": 0.8115942028985508
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8918918918918919,
+     "recall": 0.9166666666666666,
+     "f1": 0.9041095890410958,
+     "predicted": 37,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.78125,
+     "recall": 0.625,
+     "f1": 0.6944444444444444,
+     "predicted": 32,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.8181818181818182,
+     "f1": 0.9,
+     "predicted": 9,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.875,
+     "recall": 0.6774193548387096,
+     "f1": 0.7636363636363637,
+     "predicted": 24,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8627450980392157,
+     "recall": 0.7457627118644068,
+     "f1": 0.8,
+     "predicted": 102,
+     "support": 118,
+     "low": 0.7327586206896551,
+     "high": 0.8602150537634409
+    }
+   },
+   "latency_ms": {
+    "p50": 0.16814999980852008,
+    "p95": 0.34782498551066965
+   },
+   "silver_all_slots_right": 0.84375,
+   "selection": 0.728125
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 2,
+    "c": 0.3
+   },
+   "silver": {
+    "color": {
+     "precision": 0.6363636363636364,
+     "recall": 0.5384615384615384,
+     "f1": 0.5833333333333334,
+     "predicted": 11,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.6666666666666666,
+     "recall": 0.18181818181818182,
+     "f1": 0.2857142857142857,
+     "predicted": 3,
+     "support": 11
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.16666666666666666,
+     "f1": 0.2857142857142857,
+     "predicted": 1,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.4,
+     "recall": 0.2857142857142857,
+     "f1": 0.3333333333333333,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.6,
+     "recall": 0.32432432432432434,
+     "f1": 0.42105263157894735,
+     "predicted": 20,
+     "support": 37,
+     "low": 0.23723828514456635,
+     "high": 0.5964912280701754
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9310344827586207,
+     "recall": 0.75,
+     "f1": 0.8307692307692308,
+     "predicted": 29,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7391304347826086,
+     "recall": 0.425,
+     "f1": 0.5396825396825397,
+     "predicted": 23,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.45454545454545453,
+     "f1": 0.625,
+     "predicted": 5,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.7894736842105263,
+     "recall": 0.4838709677419355,
+     "f1": 0.6,
+     "predicted": 19,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8421052631578947,
+     "recall": 0.5423728813559322,
+     "f1": 0.6597938144329897,
+     "predicted": 76,
+     "support": 118,
+     "low": 0.5784284195605954,
+     "high": 0.7346938775510204
+    }
+   },
+   "latency_ms": {
+    "p50": 0.17675000708550215,
+    "p95": 0.32787500822450966
+   },
+   "silver_all_slots_right": 0.78125,
+   "selection": 0.5404232230059685
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 2,
+    "c": 1.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.6923076923076923,
+     "recall": 0.6923076923076923,
+     "f1": 0.6923076923076923,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.75,
+     "recall": 0.2727272727272727,
+     "f1": 0.4,
+     "predicted": 4,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.5,
+     "recall": 0.16666666666666666,
+     "f1": 0.25,
+     "predicted": 2,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.6,
+     "recall": 0.42857142857142855,
+     "f1": 0.5,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.6666666666666666,
+     "recall": 0.43243243243243246,
+     "f1": 0.5245901639344263,
+     "predicted": 24,
+     "support": 37,
+     "low": 0.3404255319148936,
+     "high": 0.6909090909090909
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9090909090909091,
+     "recall": 0.8333333333333334,
+     "f1": 0.8695652173913043,
+     "predicted": 33,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8214285714285714,
+     "recall": 0.575,
+     "f1": 0.6764705882352942,
+     "predicted": 28,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.6363636363636364,
+     "f1": 0.7777777777777778,
+     "predicted": 7,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.8333333333333334,
+     "recall": 0.6451612903225806,
+     "f1": 0.7272727272727273,
+     "predicted": 24,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8695652173913043,
+     "recall": 0.6779661016949152,
+     "f1": 0.7619047619047619,
+     "predicted": 92,
+     "support": 118,
+     "low": 0.69,
+     "high": 0.8246445497630331
+    }
+   },
+   "latency_ms": {
+    "p50": 0.2069000038318336,
+    "p95": 0.3998750034952536
+   },
+   "silver_all_slots_right": 0.8020833333333334,
+   "selection": 0.6432474629195941
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 2,
+    "c": 3.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.6923076923076923,
+     "recall": 0.6923076923076923,
+     "f1": 0.6923076923076923,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.8,
+     "recall": 0.36363636363636365,
+     "f1": 0.5,
+     "predicted": 5,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.6666666666666666,
+     "recall": 0.3333333333333333,
+     "f1": 0.4444444444444444,
+     "predicted": 3,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.7307692307692307,
+     "recall": 0.5135135135135135,
+     "f1": 0.6031746031746031,
+     "predicted": 26,
+     "support": 37,
+     "low": 0.42424242424242425,
+     "high": 0.7619047619047619
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9142857142857143,
+     "recall": 0.8888888888888888,
+     "f1": 0.9014084507042254,
+     "predicted": 35,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8,
+     "recall": 0.6,
+     "f1": 0.6857142857142857,
+     "predicted": 30,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.8181818181818182,
+     "f1": 0.9,
+     "predicted": 9,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.8461538461538461,
+     "recall": 0.7096774193548387,
+     "f1": 0.7719298245614035,
+     "predicted": 26,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.87,
+     "recall": 0.7372881355932204,
+     "f1": 0.7981651376146789,
+     "predicted": 100,
+     "support": 118,
+     "low": 0.7339449541284404,
+     "high": 0.8571428571428571
+    }
+   },
+   "latency_ms": {
+    "p50": 0.2799500070977956,
+    "p95": 0.5235749995335937
+   },
+   "silver_all_slots_right": 0.8229166666666666,
+   "selection": 0.700669870394641
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": false,
+    "window": 2,
+    "c": 10.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.6923076923076923,
+     "recall": 0.6923076923076923,
+     "f1": 0.6923076923076923,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.8,
+     "recall": 0.36363636363636365,
+     "f1": 0.5,
+     "predicted": 5,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.6666666666666666,
+     "recall": 0.3333333333333333,
+     "f1": 0.4444444444444444,
+     "predicted": 3,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.7307692307692307,
+     "recall": 0.5135135135135135,
+     "f1": 0.6031746031746031,
+     "predicted": 26,
+     "support": 37,
+     "low": 0.42424242424242425,
+     "high": 0.7619047619047619
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8888888888888888,
+     "recall": 0.8888888888888888,
+     "f1": 0.8888888888888888,
+     "predicted": 36,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8064516129032258,
+     "recall": 0.625,
+     "f1": 0.704225352112676,
+     "predicted": 31,
+     "support": 40
+    },
+    "style": {
+     "precision": 1.0,
+     "recall": 0.8181818181818182,
+     "f1": 0.9,
+     "predicted": 9,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.7857142857142857,
+     "recall": 0.7096774193548387,
+     "f1": 0.7457627118644068,
+     "predicted": 28,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8461538461538461,
+     "recall": 0.7457627118644068,
+     "f1": 0.7927927927927928,
+     "predicted": 104,
+     "support": 118,
+     "low": 0.7264947683109118,
+     "high": 0.8529446612768329
+    }
+   },
+   "latency_ms": {
+    "p50": 0.19305001478642225,
+    "p95": 0.3359749825904146
+   },
+   "silver_all_slots_right": 0.8229166666666666,
+   "selection": 0.697983697983698
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 1,
+    "c": 0.3
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.75,
+     "recall": 0.42857142857142855,
+     "f1": 0.5454545454545454,
+     "predicted": 4,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8064516129032258,
+     "recall": 0.6756756756756757,
+     "f1": 0.7352941176470589,
+     "predicted": 31,
+     "support": 37,
+     "low": 0.5714285714285714,
+     "high": 0.875
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8780487804878049,
+     "recall": 1.0,
+     "f1": 0.935064935064935,
+     "predicted": 41,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8,
+     "recall": 0.7,
+     "f1": 0.7466666666666667,
+     "predicted": 35,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9,
+     "recall": 0.5806451612903226,
+     "f1": 0.7058823529411765,
+     "predicted": 20,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8598130841121495,
+     "recall": 0.7796610169491526,
+     "f1": 0.8177777777777778,
+     "predicted": 107,
+     "support": 118,
+     "low": 0.7537652028257229,
+     "high": 0.8737864077669902
+    }
+   },
+   "latency_ms": {
+    "p50": 0.7749000214971602,
+    "p95": 1.4005250268382952
+   },
+   "silver_all_slots_right": 0.8854166666666666,
+   "selection": 0.7765359477124183
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 1,
+    "c": 1.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8125,
+     "recall": 0.7027027027027027,
+     "f1": 0.7536231884057971,
+     "predicted": 32,
+     "support": 37,
+     "low": 0.6071428571428571,
+     "high": 0.8767123287671232
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8780487804878049,
+     "recall": 1.0,
+     "f1": 0.935064935064935,
+     "predicted": 41,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8055555555555556,
+     "recall": 0.725,
+     "f1": 0.7631578947368421,
+     "predicted": 36,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.8695652173913043,
+     "recall": 0.6451612903225806,
+     "f1": 0.7407407407407407,
+     "predicted": 23,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8558558558558559,
+     "recall": 0.8050847457627118,
+     "f1": 0.8296943231441049,
+     "predicted": 111,
+     "support": 118,
+     "low": 0.7699520129627322,
+     "high": 0.8828828828828829
+    }
+   },
+   "latency_ms": {
+    "p50": 0.7032000285107642,
+    "p95": 1.2915250263176858
+   },
+   "silver_all_slots_right": 0.875,
+   "selection": 0.791658755774951
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 1,
+    "c": 3.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8125,
+     "recall": 0.7027027027027027,
+     "f1": 0.7536231884057971,
+     "predicted": 32,
+     "support": 37,
+     "low": 0.6071428571428571,
+     "high": 0.8767123287671232
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8780487804878049,
+     "recall": 1.0,
+     "f1": 0.935064935064935,
+     "predicted": 41,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7837837837837838,
+     "recall": 0.725,
+     "f1": 0.7532467532467533,
+     "predicted": 37,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.8695652173913043,
+     "recall": 0.6451612903225806,
+     "f1": 0.7407407407407407,
+     "predicted": 23,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8482142857142857,
+     "recall": 0.8050847457627118,
+     "f1": 0.8260869565217391,
+     "predicted": 112,
+     "support": 118,
+     "low": 0.7655502392344498,
+     "high": 0.8793837368496901
+    }
+   },
+   "latency_ms": {
+    "p50": 0.7999000081326813,
+    "p95": 1.461824998841621
+   },
+   "silver_all_slots_right": 0.875,
+   "selection": 0.7898550724637681
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 1,
+    "c": 10.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8125,
+     "recall": 0.7027027027027027,
+     "f1": 0.7536231884057971,
+     "predicted": 32,
+     "support": 37,
+     "low": 0.6071428571428571,
+     "high": 0.8767123287671232
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8780487804878049,
+     "recall": 1.0,
+     "f1": 0.935064935064935,
+     "predicted": 41,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7837837837837838,
+     "recall": 0.725,
+     "f1": 0.7532467532467533,
+     "predicted": 37,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.875,
+     "recall": 0.6774193548387096,
+     "f1": 0.7636363636363637,
+     "predicted": 24,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8495575221238938,
+     "recall": 0.8135593220338984,
+     "f1": 0.8311688311688312,
+     "predicted": 113,
+     "support": 118,
+     "low": 0.7708307926829269,
+     "high": 0.8838951310861424
+    }
+   },
+   "latency_ms": {
+    "p50": 0.7322999881580472,
+    "p95": 1.4015499618835747
+   },
+   "silver_all_slots_right": 0.875,
+   "selection": 0.7923960097873142
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 2,
+    "c": 0.3
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.75,
+     "recall": 0.42857142857142855,
+     "f1": 0.5454545454545454,
+     "predicted": 4,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8064516129032258,
+     "recall": 0.6756756756756757,
+     "f1": 0.7352941176470589,
+     "predicted": 31,
+     "support": 37,
+     "low": 0.5714285714285714,
+     "high": 0.875
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8571428571428571,
+     "recall": 1.0,
+     "f1": 0.9230769230769231,
+     "predicted": 42,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8235294117647058,
+     "recall": 0.7,
+     "f1": 0.7567567567567568,
+     "predicted": 34,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9,
+     "recall": 0.5806451612903226,
+     "f1": 0.7058823529411765,
+     "predicted": 20,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8598130841121495,
+     "recall": 0.7796610169491526,
+     "f1": 0.8177777777777778,
+     "predicted": 107,
+     "support": 118,
+     "low": 0.7534883720930232,
+     "high": 0.8737885944196623
+    }
+   },
+   "latency_ms": {
+    "p50": 0.7601000252179801,
+    "p95": 1.374299987219274
+   },
+   "silver_all_slots_right": 0.8854166666666666,
+   "selection": 0.7765359477124183
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 2,
+    "c": 1.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.6,
+     "recall": 0.42857142857142855,
+     "f1": 0.5,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.78125,
+     "recall": 0.6756756756756757,
+     "f1": 0.7246376811594203,
+     "predicted": 32,
+     "support": 37,
+     "low": 0.5633802816901409,
+     "high": 0.8620689655172413
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.8571428571428571,
+     "recall": 1.0,
+     "f1": 0.9230769230769231,
+     "predicted": 42,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.8285714285714286,
+     "recall": 0.725,
+     "f1": 0.7733333333333333,
+     "predicted": 35,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9130434782608695,
+     "recall": 0.6774193548387096,
+     "f1": 0.7777777777777778,
+     "predicted": 23,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8648648648648649,
+     "recall": 0.8135593220338984,
+     "f1": 0.8384279475982532,
+     "predicted": 111,
+     "support": 118,
+     "low": 0.7788461538461539,
+     "high": 0.8900127737226275
+    }
+   },
+   "latency_ms": {
+    "p50": 0.7982999959494919,
+    "p95": 1.395150029566139
+   },
+   "silver_all_slots_right": 0.875,
+   "selection": 0.7815328143788367
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 2,
+    "c": 3.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8125,
+     "recall": 0.7027027027027027,
+     "f1": 0.7536231884057971,
+     "predicted": 32,
+     "support": 37,
+     "low": 0.6071428571428571,
+     "high": 0.8767123287671232
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9,
+     "recall": 1.0,
+     "f1": 0.9473684210526315,
+     "predicted": 40,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7894736842105263,
+     "recall": 0.75,
+     "f1": 0.7692307692307693,
+     "predicted": 38,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9090909090909091,
+     "recall": 0.6451612903225806,
+     "f1": 0.7547169811320755,
+     "predicted": 22,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8648648648648649,
+     "recall": 0.8135593220338984,
+     "f1": 0.8384279475982532,
+     "predicted": 111,
+     "support": 118,
+     "low": 0.7804823362134967,
+     "high": 0.8888888888888888
+    }
+   },
+   "latency_ms": {
+    "p50": 0.8108500041998923,
+    "p95": 1.4987749891588464
+   },
+   "silver_all_slots_right": 0.875,
+   "selection": 0.7960255680020252
+  },
+  {
+   "kind": "tagger",
+   "config": {
+    "lexicon_features": true,
+    "window": 2,
+    "c": 10.0
+   },
+   "silver": {
+    "color": {
+     "precision": 0.8461538461538461,
+     "recall": 0.8461538461538461,
+     "f1": 0.8461538461538461,
+     "predicted": 13,
+     "support": 13
+    },
+    "material_finish": {
+     "precision": 0.7777777777777778,
+     "recall": 0.6363636363636364,
+     "f1": 0.7,
+     "predicted": 9,
+     "support": 11
+    },
+    "style": {
+     "precision": 0.8,
+     "recall": 0.6666666666666666,
+     "f1": 0.7272727272727273,
+     "predicted": 5,
+     "support": 6
+    },
+    "room": {
+     "precision": 0.8,
+     "recall": 0.5714285714285714,
+     "f1": 0.6666666666666666,
+     "predicted": 5,
+     "support": 7
+    },
+    "all": {
+     "precision": 0.8125,
+     "recall": 0.7027027027027027,
+     "f1": 0.7536231884057971,
+     "predicted": 32,
+     "support": 37,
+     "low": 0.6071428571428571,
+     "high": 0.8767123287671232
+    }
+   },
+   "esci": {
+    "color": {
+     "precision": 0.9,
+     "recall": 1.0,
+     "f1": 0.9473684210526315,
+     "predicted": 40,
+     "support": 36
+    },
+    "material_finish": {
+     "precision": 0.7692307692307693,
+     "recall": 0.75,
+     "f1": 0.759493670886076,
+     "predicted": 39,
+     "support": 40
+    },
+    "style": {
+     "precision": 0.9090909090909091,
+     "recall": 0.9090909090909091,
+     "f1": 0.9090909090909091,
+     "predicted": 11,
+     "support": 11
+    },
+    "room": {
+     "precision": 0.9130434782608695,
+     "recall": 0.6774193548387096,
+     "f1": 0.7777777777777778,
+     "predicted": 23,
+     "support": 31
+    },
+    "all": {
+     "precision": 0.8584070796460177,
+     "recall": 0.8220338983050848,
+     "f1": 0.8398268398268398,
+     "predicted": 113,
+     "support": 118,
+     "low": 0.7829787234042553,
+     "high": 0.8898678414096917
+    }
+   },
+   "latency_ms": {
+    "p50": 0.6907000206410885,
+    "p95": 1.4478249941021204
+   },
+   "silver_all_slots_right": 0.875,
+   "selection": 0.7967250141163185
+  }
+ ]
+}

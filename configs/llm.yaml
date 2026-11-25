@@ -45,6 +45,10 @@ approvals:
   - {batch: slots_esci_dev_slots-v1, max_inr: 3, date: 2026-11-25}
   - {batch: slots_wands_dev_slots-v1, max_inr: 1, date: 2026-11-25}
   - {batch: class_esci_seed_class-v1, max_inr: 18, date: 2026-11-26}
+  # Under the standing approval of 2026-11-26 (docs/PROTOCOL.md section 14): Rs per item projected, then piloted.
+  - {batch: slots_esci_seed_slots-v1, max_inr: 23, date: 2026-11-26, basis: {projected: 0.00946, pilot: 0.00952}}
+  # max 2 and not 1: the worst case reserved before each call needs more room than the Rs 0.80 projection.
+  - {batch: class_wands_dev_class-v1, max_inr: 2, date: 2026-11-26, basis: {projected: 0.00803, pilot: 0.00801}}
 
 # Use of the Rs 200 between the planned total and the absolute limit. Same rule.
 buffer_approvals: []

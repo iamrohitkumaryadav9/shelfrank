@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e0b06a8ea6b33e2f86a4f23528dabcb6344951f199b53c9329a6f298413c7d1b",
+ "response": {
+  "input_tokens": 1243,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 156,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Benches\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Daybeds & Guest Beds\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Wall Plates\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Armoires & Wardrobes\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Office Chairs\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}
