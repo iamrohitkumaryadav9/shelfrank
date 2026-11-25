@@ -22,3 +22,20 @@ seed:
   min_share: 0.4        # and their share of the query's Exact products
   near_duplicate_jaccard: 0.75   # same rule as the WANDS folds
   seed: 20260
+
+finetune:
+  data:
+    locale: us
+    split: train
+    n_held_out: 500          # ESCI queries kept out of training, for the before/after check
+    max_bullet_chars: 400
+    near_duplicate_jaccard: 0.75
+    seed: 20260
+  training:                  # one epoch
+    batch_size: 64
+    learning_rate: 2.0e-5
+    max_query_tokens: 32
+    max_passage_tokens: 128
+    checkpoint_every: 500
+    max_minutes: 100         # stops cleanly and can be continued
+    seed: 20260

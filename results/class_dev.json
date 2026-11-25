@@ -1,0 +1,317 @@
+{
+ "reference": "Wayfair's assigned query class",
+ "esci_reference": "teacher labels, prompt-development slice",
+ "selection_rule": "mean of dev and ESCI accuracy",
+ "waiting_for_seed_labels": true,
+ "dev_reference_other": 3,
+ "best": {
+  "names": {
+   "arm": "names",
+   "query_share": null,
+   "tail": 3,
+   "ngrams": [
+    2,
+    4
+   ],
+   "alpha": 1e-05,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6666666666666666,
+    "top3": 0.8541666666666666,
+    "department": 0.71875,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.5729166666666666,
+    "high": 0.7604166666666666
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.56,
+    "top3": 0.78,
+    "department": 0.65,
+    "macro_f1": 0.6301369863013698,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 74.16487350000534,
+   "latency_ms": {
+    "p50": 55.919300008099526,
+    "p95": 70.0235250114929
+   },
+   "selection": 0.6133333333333333
+  }
+ },
+ "runs": [
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": null,
+   "ngrams": [
+    2,
+    4
+   ],
+   "alpha": 1e-06,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6770833333333334,
+    "top3": 0.8229166666666666,
+    "department": 0.7395833333333334,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.5833333333333334,
+    "high": 0.7708333333333334
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.43,
+    "top3": 0.72,
+    "department": 0.54,
+    "macro_f1": 0.38596491228070173,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 43.00714229996083,
+   "latency_ms": {
+    "p50": 36.283049965277314,
+    "p95": 43.14314997463953
+   },
+   "selection": 0.5535416666666667
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": null,
+   "ngrams": [
+    2,
+    4
+   ],
+   "alpha": 1e-05,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6458333333333334,
+    "top3": 0.84375,
+    "department": 0.7291666666666666,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.5520833333333334,
+    "high": 0.7395833333333334
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.53,
+    "top3": 0.78,
+    "department": 0.64,
+    "macro_f1": 0.6470588235294118,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 40.05548749997979,
+   "latency_ms": {
+    "p50": 37.30774999712594,
+    "p95": 48.04952499398496
+   },
+   "selection": 0.5879166666666666
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": null,
+   "ngrams": [
+    3,
+    5
+   ],
+   "alpha": 1e-06,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6875,
+    "top3": 0.8125,
+    "department": 0.7395833333333334,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.59375,
+    "high": 0.78125
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.46,
+    "top3": 0.72,
+    "department": 0.55,
+    "macro_f1": 0.45161290322580644,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 41.37487639999017,
+   "latency_ms": {
+    "p50": 47.2555999585893,
+    "p95": 69.62514999031555
+   },
+   "selection": 0.57375
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": null,
+   "ngrams": [
+    3,
+    5
+   ],
+   "alpha": 1e-05,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.65625,
+    "top3": 0.8645833333333334,
+    "department": 0.7395833333333334,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.5625,
+    "high": 0.75
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.52,
+    "top3": 0.78,
+    "department": 0.65,
+    "macro_f1": 0.647887323943662,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 45.190955300000496,
+   "latency_ms": {
+    "p50": 61.75950000761077,
+    "p95": 77.45490000525024
+   },
+   "selection": 0.588125
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": 3,
+   "ngrams": [
+    2,
+    4
+   ],
+   "alpha": 1e-06,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.7083333333333334,
+    "top3": 0.8645833333333334,
+    "department": 0.7604166666666666,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.6145833333333334,
+    "high": 0.7916666666666666
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.47,
+    "top3": 0.78,
+    "department": 0.55,
+    "macro_f1": 0.41935483870967744,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 77.69561480003176,
+   "latency_ms": {
+    "p50": 61.905950016807765,
+    "p95": 73.203924956033
+   },
+   "selection": 0.5891666666666666
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": 3,
+   "ngrams": [
+    2,
+    4
+   ],
+   "alpha": 1e-05,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6666666666666666,
+    "top3": 0.8541666666666666,
+    "department": 0.71875,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.5729166666666666,
+    "high": 0.7604166666666666
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.56,
+    "top3": 0.78,
+    "department": 0.65,
+    "macro_f1": 0.6301369863013698,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 74.16487350000534,
+   "latency_ms": {
+    "p50": 55.919300008099526,
+    "p95": 70.0235250114929
+   },
+   "selection": 0.6133333333333333
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": 3,
+   "ngrams": [
+    3,
+    5
+   ],
+   "alpha": 1e-06,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6875,
+    "top3": 0.8541666666666666,
+    "department": 0.7604166666666666,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.59375,
+    "high": 0.78125
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.51,
+    "top3": 0.77,
+    "department": 0.59,
+    "macro_f1": 0.4838709677419355,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 62.988351699954364,
+   "latency_ms": {
+    "p50": 35.69959997548722,
+    "p95": 52.10129999613855
+   },
+   "selection": 0.59875
+  },
+  {
+   "arm": "names",
+   "query_share": null,
+   "tail": 3,
+   "ngrams": [
+    3,
+    5
+   ],
+   "alpha": 1e-05,
+   "dev": {
+    "n": 96,
+    "accuracy": 0.6666666666666666,
+    "top3": 0.8541666666666666,
+    "department": 0.71875,
+    "macro_f1": NaN,
+    "macro_f1_classes": 0,
+    "low": 0.5729166666666666,
+    "high": 0.7604166666666666
+   },
+   "esci": {
+    "n": 100,
+    "accuracy": 0.56,
+    "top3": 0.78,
+    "department": 0.65,
+    "macro_f1": 0.6216216216216216,
+    "macro_f1_classes": 1
+   },
+   "fit_seconds": 62.92733259999659,
+   "latency_ms": {
+    "p50": 51.067299995338544,
+    "p95": 65.53092498506885
+   },
+   "selection": 0.6133333333333333
+  }
+ ]
+}
