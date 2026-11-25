@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5a9e4db7f9a1184ae112c2530c8e11fabc54537e330cf9245759701f95fe363e",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"mattress\",\n  \"attributes\": [\n    \"three-quarter size\"\n  ],\n  \"synonyms\": [\n    \"small double mattress\",\n    \"48-inch mattress\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

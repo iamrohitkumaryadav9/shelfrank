@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d8eb73f354e79e3167c209e85a23c084084b11b21913189f3145476dd2a332ac",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 62,
+  "text": "{\n  \"product_type\": \"headboard\",\n  \"attributes\": [\n    \"Blaylock\",\n    \"bookcase style\"\n  ],\n  \"synonyms\": [\n    \"storage headboard\",\n    \"bookshelf headboard\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

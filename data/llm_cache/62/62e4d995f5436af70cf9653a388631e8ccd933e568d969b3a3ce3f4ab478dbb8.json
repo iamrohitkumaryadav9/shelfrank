@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9d4cd0bb91a9507aceb6f3c3cda721b6645bff3f670356a59f90e8934af33fe2",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"picture frame\",\n  \"attributes\": [\n    \"black\",\n    \"22 x 36 inch\"\n  ],\n  \"synonyms\": [\n    \"photo frame\",\n    \"poster frame\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

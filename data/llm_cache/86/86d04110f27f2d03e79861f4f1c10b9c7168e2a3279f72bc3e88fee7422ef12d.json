@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0c4a37ecff8c2cb34d1358123c87e45eed8af693c77ae433aa78b1fa3cb427c9",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 66,
+  "text": "{\n  \"product_type\": \"platform bed\",\n  \"attributes\": [\n    \"geralyn\",\n    \"upholstered\",\n    \"storage\"\n  ],\n  \"synonyms\": [\n    \"storage bed\",\n    \"upholstered bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

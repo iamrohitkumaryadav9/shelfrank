@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7e3644c83d81530e3b42317bee3b91d1eadee7fcd017de98ec249f649826c171",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"subway tile\",\n  \"attributes\": [\n    \"dolomite\"\n  ],\n  \"synonyms\": [\n    \"wall tile\",\n    \"backsplash tile\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

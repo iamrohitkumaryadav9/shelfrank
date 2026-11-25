@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "73e61fbc63f4892cce02f75a082004b3fa99bdd6fc405100ba53de2a741ade33",
+ "response": {
+  "input_tokens": 240,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 67,
+  "text": "{\n  \"product_type\": \"console table\",\n  \"attributes\": [\n    \"48 inch\",\n    \"entryway\",\n    \"side by side drawers\"\n  ],\n  \"synonyms\": [\n    \"entry table\",\n    \"foyer table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

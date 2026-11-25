@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e78afe91b227ee1152cfc3fa7472856432dc3dabed476f652a1ec84e815ed5d5",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 45,
+  "text": "{\n  \"product_type\": \"body pillowcase\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"body pillow cover\",\n    \"long pillowcase\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

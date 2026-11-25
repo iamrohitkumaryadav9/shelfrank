@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bde2b7d3b2883faa82f69b6d01a31ac07f2250836cc92d5d8b32124ea949e31c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"chair mat\",\n  \"attributes\": [\"edge\"],\n  \"synonyms\": [\"floor protector\", \"desk chair mat\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

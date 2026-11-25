@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ca73106822fedab9434f3263bbf891e506ac4c70c1ea6d7b5d2c5a8e42b52ac1",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"stool\",\n  \"attributes\": [\n    \"black\",\n    \"fluffy\"\n  ],\n  \"synonyms\": [\n    \"ottoman\",\n    \"footstool\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

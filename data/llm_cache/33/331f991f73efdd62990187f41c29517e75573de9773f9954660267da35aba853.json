@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bc4e38b3302b0e3cbf6859f19f8fa9153bfebc0d2440f37db1ea46584e2cb4c7",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"faucet\",\n  \"attributes\": [\n    \"waterfall\"\n  ],\n  \"synonyms\": [\n    \"bathroom faucet\",\n    \"sink tap\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

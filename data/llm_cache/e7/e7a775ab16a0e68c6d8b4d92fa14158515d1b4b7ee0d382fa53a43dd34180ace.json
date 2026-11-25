@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0c4a4ff59dd51be7550497dc25542c7015cfb3de5a668ac05a13881ae093eab3",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"light switch\",\n  \"attributes\": [\n    \"5 gang\"\n  ],\n  \"synonyms\": [\n    \"wall switch\",\n    \"light control\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ec8c8e605807030965e860697c53ed7db3b378888c4f5b093fc6db4a60eb7b78",
+ "response": {
+  "input_tokens": 243,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 70,
+  "text": "{\n  \"product_type\": \"shag rug\",\n  \"attributes\": [\n    \"Ines\",\n    \"W003096809\"\n  ],\n  \"synonyms\": [\n    \"shaggy area rug\",\n    \"flokati rug\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

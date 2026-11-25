@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ee49348934a4bef21e66b33341de244fddbdedbbda1b5a363812f46a010dc292",
+ "response": {
+  "input_tokens": 243,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 66,
+  "text": "{\n  \"product_type\": \"ceiling fan\",\n  \"attributes\": [\n    \"62 inch\",\n    \"Oller\",\n    \"Gracie Oaks\"\n  ],\n  \"synonyms\": [\n    \"ceiling mounted fan\",\n    \"overhead fan\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

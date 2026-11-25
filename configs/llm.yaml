@@ -51,6 +51,9 @@ approvals:
   - {batch: class_wands_dev_class-v1, max_inr: 2, date: 2026-11-26, basis: {projected: 0.00803, pilot: 0.00801}}
   - {batch: class_wands_primary_class-v1, max_inr: 4, date: 2026-11-26, basis: {projected: 0.00801, pilot: 0.00794}}
   - {batch: slots_wands_primary_slots-v1, max_inr: 5, date: 2026-11-26, basis: {projected: 0.00952, pilot: 0.00954}}
+  # Rohit's "go rewriting" of 2026-11-26, after a pilot 27% above projection. Limits are the measured rate x 1.15.
+  - {batch: rewrite_wands_dev_rewrite-v1, max_inr: 1.8, date: 2026-11-26, basis: {projected: 0.0126, pilot: 0.0161}}
+  - {batch: rewrite_wands_primary_rewrite-v1, max_inr: 7.2, date: 2026-11-26, basis: {projected: 0.0161, pilot: 0.0161}}
 
 # Use of the Rs 200 between the planned total and the absolute limit. Same rule.
 buffer_approvals: []

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4da46a3611a46277d065a2319a646a041de5ef04e2c7f13dabd904dfac1b6365",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"folding table\",\n  \"attributes\": [\n    \"foldable\"\n  ],\n  \"synonyms\": [\n    \"collapsible table\",\n    \"fold-in-half table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f9c3182943f1074908fcd6b2669e2cd913428be2c9f31987a19924fe5721f0cf",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 40,
+  "text": "{\n  \"product_type\": \"outdoor movie screen\",\n  \"attributes\": [\"outdoor\"],\n  \"synonyms\": [\"projector screen\", \"inflatable movie screen\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

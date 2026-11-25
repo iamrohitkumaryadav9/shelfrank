@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bc3909a1cd3f11378dea06b6ac4e9c5d0cdad5e68346dd17e65b59e6af5a3871",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"coffee table\",\n  \"attributes\": [\n    \"westling\"\n  ],\n  \"synonyms\": [\n    \"cocktail table\",\n    \"center table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

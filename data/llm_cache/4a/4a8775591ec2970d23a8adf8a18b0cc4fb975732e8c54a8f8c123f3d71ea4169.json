@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "eb04072c3b04fe040d0f9bd5a20ff5d470ab04b04aa9a6770b37fd150a6d5bb3",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"patio furniture cover\",\n  \"attributes\": [\n    \"round\",\n    \"outdoor\"\n  ],\n  \"synonyms\": [\n    \"patio table cover\",\n    \"outdoor furniture protector\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

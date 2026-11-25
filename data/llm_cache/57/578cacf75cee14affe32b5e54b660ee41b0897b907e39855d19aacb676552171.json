@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3d0ec3071fa0018e52792d91d3082931ad1270320afbaca3969a02c21eaa1f32",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 63,
+  "text": "{\n  \"product_type\": \"bed\",\n  \"attributes\": [\n    \"aiden\",\n    \"black\",\n    \"velvet\"\n  ],\n  \"synonyms\": [\n    \"bed frame\",\n    \"upholstered bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

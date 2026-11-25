@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4adf961b630758e29299d4427b11bdd60311669cc063d2b0d600f95b003b2436",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"chandelier\",\n  \"attributes\": [\"medium\"],\n  \"synonyms\": [\"hanging light fixture\", \"pendant light\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

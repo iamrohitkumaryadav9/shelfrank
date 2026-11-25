@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3f2849f065ee480c1c496c9515e595a344fc7002e8c40c1430b6c17f180c39dd",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"retractable side awning\",\n  \"attributes\": [\n    \"retractable\",\n    \"side\"\n  ],\n  \"synonyms\": [\n    \"patio privacy screen\",\n    \"side shade\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

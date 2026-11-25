@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7b4ab3114f1f98a1b205a97a92127b5d3f338c9d65182518b600b00a9a3e0a14",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 35,
+  "text": "{\n  \"product_type\": \"furniture\",\n  \"attributes\": [\"Oliver Parsons\"],\n  \"synonyms\": [\"home furnishings\", \"decor\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

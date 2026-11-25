@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "79dfc551b770711ed044b55bdd96c5ece7162ff223903e258c98a7b8b00c9c5f",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 38,
+  "text": "{\n  \"product_type\": \"cushion insert\",\n  \"attributes\": [\"replacement\"],\n  \"synonyms\": [\"pillow form\", \"pillow insert\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3276e6f0d26c5386592a71f109801d3d403f615bc8bff1e65c638dd35265873a",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 38,
+  "text": "{\n  \"product_type\": \"bread box\",\n  \"attributes\": [\"farmhouse\"],\n  \"synonyms\": [\"bread bin\", \"bread storage container\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

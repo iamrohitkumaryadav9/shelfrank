@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "63539c88fae8440d6551d35eb41287ee9b223408947cb35d2d3575e3286b62ac",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"comforter set\",\n  \"attributes\": [\n    \"coma inducer\",\n    \"king size\"\n  ],\n  \"synonyms\": [\n    \"bedding set\",\n    \"duvet set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

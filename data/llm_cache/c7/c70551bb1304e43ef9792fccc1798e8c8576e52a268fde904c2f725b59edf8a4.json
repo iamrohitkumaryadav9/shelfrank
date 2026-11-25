@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3d27b1ce686eeb434060e9b3bb95f3f8843f7ac9594917238bee54de2fe5b8a1",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 40,
+  "text": "{\n  \"product_type\": \"tension rod\",\n  \"attributes\": [\"wayfair\"],\n  \"synonyms\": [\"spring tension curtain rod\", \"adjustable tension rod\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

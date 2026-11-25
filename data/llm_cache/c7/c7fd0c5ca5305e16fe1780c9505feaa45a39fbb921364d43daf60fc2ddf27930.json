@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "665b9abdb5021749cae4b46522f116778283eb80004d50e94500bb50e2c015b9",
+ "response": {
+  "input_tokens": 244,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 82,
+  "text": "{\n  \"product_type\": \"area rug\",\n  \"attributes\": [\n    \"animal print\",\n    \"handmade\",\n    \"tufted\",\n    \"wool\",\n    \"beige\",\n    \"black\",\n    \"allmodern\"\n  ],\n  \"synonyms\": [\n    \"floor rug\",\n    \"carpet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

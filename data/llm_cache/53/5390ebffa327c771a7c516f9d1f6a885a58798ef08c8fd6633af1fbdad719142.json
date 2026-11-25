@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bf063c5ba3d2ba376ad44eb3bf14837951c7235121e62def5292c9c6d756a987",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"shoe bench\",\n  \"attributes\": [\n    \"entryway\"\n  ],\n  \"synonyms\": [\n    \"shoe storage bench\",\n    \"entryway bench\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

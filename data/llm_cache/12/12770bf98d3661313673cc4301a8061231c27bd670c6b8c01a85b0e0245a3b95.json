@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "82724b3c5e6450a5e8b6f5b6c542b203110bd12866994ae14b811ae5393cc3d2",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"furniture\",\n  \"attributes\": [\n    \"mid-century modern\"\n  ],\n  \"synonyms\": [\n    \"mcm furniture\",\n    \"retro furniture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

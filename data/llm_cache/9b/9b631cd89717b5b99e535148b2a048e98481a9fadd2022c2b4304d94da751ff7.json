@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d945f2dfd7c16beba7715f44b24ee822af41dc9cdbf6327e95a9ccd589b87dbf",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"semi-flush mount light\",\n  \"attributes\": [\n    \"foyer\"\n  ],\n  \"synonyms\": [\n    \"semi-flush ceiling light\",\n    \"semi-flush fixture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "33a4f98ee799e1eb2e12fb23329c198ef8d630c788a32e5f768dd812b83ba4ee",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 39,
+  "text": "{\n  \"product_type\": \"storage cabinet\",\n  \"attributes\": [\"for board games\"],\n  \"synonyms\": [\"game storage unit\", \"media cabinet\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

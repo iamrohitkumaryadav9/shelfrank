@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7ec37e3c3e87005f36d8744077bce41d4197c306b2502aa5137376d698435ff5",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 48,
+  "text": "{\n  \"product_type\": \"wainscoting\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"wall paneling\",\n    \"wainscot molding\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

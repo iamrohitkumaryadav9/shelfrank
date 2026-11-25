@@ -1,0 +1,10 @@
+# Written once by scripts/evaluate_rewrite.py --split dev. Never edited.
+signal: dense_top
+threshold: 0.7938511967658997
+prompt: rewrite-v1
+rule: largest mean gain of LTR over all dev queries (mean of standard and condensed nDCG@10); fires on
+  at most half; a tie goes to fewer rewrites
+families:
+  rewriting:
+  - ltr with triggered rewriting vs ltr (primary)
+  - rrf with triggered rewriting vs rrf

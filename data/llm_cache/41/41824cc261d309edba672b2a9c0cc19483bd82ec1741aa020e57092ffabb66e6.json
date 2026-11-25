@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2fe1fde79597fbb72ff16d3349312d1b4b06f41622ac46affd4001f297fcfec0",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 58,
+  "text": "{\n  \"product_type\": \"accent chair\",\n  \"attributes\": [\n    \"cow print\",\n    \"milk cow pattern\"\n  ],\n  \"synonyms\": [\n    \"armchair\",\n    \"side chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

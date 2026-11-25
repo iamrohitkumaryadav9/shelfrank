@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "94b20a0357e94f67d5323916f6a32200f63964dd10ef8559f7e299f9c32dca6c",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 75,
+  "text": "{\n  \"product_type\": \"curtain panels\",\n  \"attributes\": [\n    \"brockham\",\n    \"solid\",\n    \"blackout\",\n    \"thermal\",\n    \"grommet\"\n  ],\n  \"synonyms\": [\n    \"drapes\",\n    \"window curtains\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

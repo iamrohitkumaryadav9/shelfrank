@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2600472f9ea9a39fad4b271db10a9632a77f2dde7c2f090ab345dc8a0faac8aa",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"ship wheel\",\n  \"attributes\": [\n    \"brown\"\n  ],\n  \"synonyms\": [\n    \"nautical steering wheel\",\n    \"maritime helm\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

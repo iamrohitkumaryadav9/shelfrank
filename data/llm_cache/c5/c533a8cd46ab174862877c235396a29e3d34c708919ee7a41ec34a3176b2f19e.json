@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4f0f51c1a464fbf39468599e9e56375775bd11e1b6fa0c369c018a8e42b3faeb",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 40,
+  "text": "{\n  \"product_type\": \"living room furniture\",\n  \"attributes\": [\"living room\"],\n  \"synonyms\": [\"living room decor\", \"lounge furniture\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

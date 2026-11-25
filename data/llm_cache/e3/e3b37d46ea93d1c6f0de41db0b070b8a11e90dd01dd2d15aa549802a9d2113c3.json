@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e8b848fffb52a0bac6c18d2d67ab5fa0dd27f76a06ab16ce2e1289b9730f6e32",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"papasan chair frame\",\n  \"attributes\": [\n    \"frame only\"\n  ],\n  \"synonyms\": [\n    \"papasan base\",\n    \"replacement papasan frame\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

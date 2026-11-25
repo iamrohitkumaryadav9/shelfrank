@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "40bbb13bf8b4c14c4d8dc622b22e344b41ec60a2442de880c9d9c9490aa94d20",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"chandelier\",\n  \"attributes\": [\n    \"8 light\"\n  ],\n  \"synonyms\": [\n    \"hanging light fixture\",\n    \"pendant light\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

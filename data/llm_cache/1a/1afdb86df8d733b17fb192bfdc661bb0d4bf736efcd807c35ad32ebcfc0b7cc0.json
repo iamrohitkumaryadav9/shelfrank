@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bf5624610d95c894a4270c787acaa68ec97c31a6ec5f7b59fd7bc8203fc8e3fb",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 58,
+  "text": "{\n  \"product_type\": \"accent chair\",\n  \"attributes\": [\n    \"tufted\",\n    \"gold legs\"\n  ],\n  \"synonyms\": [\n    \"armchair\",\n    \"occasional chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

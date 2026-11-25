@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ded58ce9606da0b49c1acaff1c46bf729f9fd7912148721c55988dbc26d59346",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 74,
+  "text": "{\n  \"product_type\": \"kitchen faucet\",\n  \"attributes\": [\n    \"Moen\",\n    \"Arbor\",\n    \"5995\",\n    \"one-handle\"\n  ],\n  \"synonyms\": [\n    \"kitchen tap\",\n    \"pull-down faucet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f0589a2cf40a16d7e771bbc2ef3fc3c68f5e00a2bf2f019eaa2db21420aa757f",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"wall plate\",\n  \"attributes\": [\n    \"music\",\n    \"plug\"\n  ],\n  \"synonyms\": [\n    \"audio wall jack\",\n    \"speaker wall plate\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

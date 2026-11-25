@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fb18c4255ec64ba26464c23b716a69a2a21b96244a7284f3e1fc0c0c5c2ad8a2",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"bed frame\",\n  \"attributes\": [\n    \"boho\"\n  ],\n  \"synonyms\": [\n    \"bed base\",\n    \"bedstead\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

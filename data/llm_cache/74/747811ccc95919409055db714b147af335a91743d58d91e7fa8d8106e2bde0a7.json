@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9121caab0531502eeab9d63146db94a5eb3fa76bc70fbe4c22e5e9a8bbeee82d",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"freestanding bathroom cabinet\",\n  \"attributes\": [\n    \"freestanding\",\n    \"bathroom\"\n  ],\n  \"synonyms\": [\n    \"bathroom storage unit\",\n    \"floor cabinet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

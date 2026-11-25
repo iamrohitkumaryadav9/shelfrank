@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "daa650c799cb3b386583778e664c8617fb3fe102b2f3b8d829c85e6b457a020e",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"bird toy\",\n  \"attributes\": [\n    \"for parakeet\"\n  ],\n  \"synonyms\": [\n    \"parrot toy\",\n    \"pet bird accessory\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

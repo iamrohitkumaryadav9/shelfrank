@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "98b8d68cb84f31ce85d36bdd2894bd32c1601f5a449a3e7954b28357a77d29b9",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"curtain rod\",\n  \"attributes\": [\n    \"small\"\n  ],\n  \"synonyms\": [\n    \"drapery rod\",\n    \"curtain pole\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

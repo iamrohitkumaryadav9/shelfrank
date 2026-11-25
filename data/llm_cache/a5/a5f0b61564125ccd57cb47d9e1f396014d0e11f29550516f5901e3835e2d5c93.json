@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1e06efe5bb6ecd5e7b9af83e31ed50ece9800c7997ab409b5ff5223862c1334d",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 62,
+  "text": "{\n  \"product_type\": \"sleeper loveseat\",\n  \"attributes\": [\n    \"pull-out\"\n  ],\n  \"synonyms\": [\n    \"convertible loveseat\",\n    \"sofa bed loveseat\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

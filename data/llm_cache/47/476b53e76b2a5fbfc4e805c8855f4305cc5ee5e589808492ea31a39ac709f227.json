@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "35ae9fe33d72d1993fb32112fb0fa1823bc650a6b7286c3d22d4ff71a8e1f42d",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 49,
+  "text": "{\n  \"product_type\": \"sofa\",\n  \"attributes\": [\n    \"2 piece\"\n  ],\n  \"synonyms\": [\n    \"sectional\",\n    \"couch\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

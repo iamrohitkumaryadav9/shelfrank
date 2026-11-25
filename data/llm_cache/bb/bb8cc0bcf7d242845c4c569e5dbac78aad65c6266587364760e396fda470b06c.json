@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d33fd60b67ac40a48aba598c69e2c0e6d2b4a46ba41535d484ac033349f1a271",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"office chair\",\n  \"attributes\": [\n    \"worn\",\n    \"leather\"\n  ],\n  \"synonyms\": [\n    \"desk chair\",\n    \"task chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

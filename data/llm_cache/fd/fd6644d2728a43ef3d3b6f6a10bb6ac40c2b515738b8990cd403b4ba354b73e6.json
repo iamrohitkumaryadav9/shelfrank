@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a6f4f936a3c0fbfb771510d293a5c5d0917246160b433e901cb8d0b275b675a5",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 69,
+  "text": "{\n  \"product_type\": \"chandelier\",\n  \"attributes\": [\n    \"cliffside\",\n    \"5 light\",\n    \"candle style\",\n    \"drum\"\n  ],\n  \"synonyms\": [\n    \"pendant light\",\n    \"hanging light fixture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

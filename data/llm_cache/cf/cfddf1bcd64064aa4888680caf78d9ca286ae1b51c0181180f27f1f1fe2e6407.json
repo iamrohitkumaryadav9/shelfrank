@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5b823f6f20ce412789e5b387eb0aef724bc9d23f77454fb935e9c3f46fa699b1",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 62,
+  "text": "{\n  \"product_type\": \"bed frame\",\n  \"attributes\": [\n    \"full size\",\n    \"metal\",\n    \"rose gold\"\n  ],\n  \"synonyms\": [\n    \"bedstead\",\n    \"bed base\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

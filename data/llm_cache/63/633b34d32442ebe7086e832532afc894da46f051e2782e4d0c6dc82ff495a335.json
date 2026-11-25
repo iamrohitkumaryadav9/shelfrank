@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3efcc01a3175f37a5c2a1ff5db200d85b94e0901b9cee33bee0f03fd958c002c",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"cake stand\",\n  \"attributes\": [\n    \"with lid\"\n  ],\n  \"synonyms\": [\n    \"cake dome\",\n    \"cake plate with cover\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

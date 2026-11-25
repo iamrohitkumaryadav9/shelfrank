@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e054117256f32b46d831b6463140865b0ab270b8fa894fd2301f5af4161de35a",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"dining table\",\n  \"attributes\": [\n    \"Golub\"\n  ],\n  \"synonyms\": [\n    \"dining room table\",\n    \"eat-in table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}
