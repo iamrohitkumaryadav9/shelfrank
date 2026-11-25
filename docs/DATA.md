@@ -35,5 +35,13 @@ claimed.
 
 ## ESCI (Amazon Shopping Queries)
 
-Not downloaded locally. Used only inside the GPU notebook, from Phase 2. Its license and source commit
-are recorded here when it is first used.
+| | |
+| --- | --- |
+| Source | https://github.com/amazon-science/esci-data |
+| Commit | `7916cdf6ab75a462e77f20ab40428a10923998d5` |
+| License | Apache-2.0 |
+| `examples.parquet` | 51,286,808 bytes, SHA-256 `4a735b693b4a424a6fc67f5be6e4c811495c488bbf66d02a602d308b2744263a` |
+| `products.parquet` | 1,108,857,465 bytes, SHA-256 `25124442d064d64b26f74082d6fa09438d679efc0c183cf28d19064a2b65a265` |
+
+Sizes and hashes come from the Git LFS pointers. The files are downloaded and processed only in Google
+Colab, never on the development laptop. Only small derived files enter this repository.

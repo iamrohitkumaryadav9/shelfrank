@@ -113,7 +113,8 @@ well short of 1.
 | --- | --- | --- |
 | pytrec_eval | ranx | pytrec_eval has no Windows wheel and needs a C++ compiler |
 | shap | LightGBM `pred_contrib` (exact TreeSHAP) | Smart App Control blocks a DLL that shap imports |
-| Local ONNX export | ONNX and optimum export inside the Kaggle notebook | Avoids more compiled wheels that Smart App Control may block |
+| Local ONNX export | ONNX and optimum export inside the Colab notebook | Avoids more compiled wheels that Smart App Control may block |
+| Kaggle GPU | Google Colab, free tier | Kaggle phone verification is unavailable. Notebooks keep every path in one config cell, so they also run on Kaggle |
 
 Smart App Control is left on.
 
