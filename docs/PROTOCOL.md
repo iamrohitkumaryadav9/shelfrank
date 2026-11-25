@@ -92,13 +92,15 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
 | A | all 96 dev queries | before the freeze | choosing the slot student, Gate 2 numbers |
 | B | 100 from folds 1 to 4, a seeded draw committed as ids | after `preregistered-v1` | **primary reported slot F1** |
 
-- A first labelling attempt was discarded after the rater misapplied the slot rules; the tool was revised and the rater retrained before the recorded pass.
+- A first labelling attempt was discarded after the rater misapplied the slot rules; the tool was revised and the rater retrained before the recorded pass. That attempt showed the teacher's answers, so Round A is not blind; Round B is.
 - Labelling is unlocked by practice on 15 invented queries with rule-derived answers (at least 13 right).
   The tool refuses words that are not in the query and a word used in two slots.
-- Round A: the tool shows no teacher answer. Round B: the query is labelled first, the teacher's answer is
-  shown afterwards and the label may be revised. Both labels are stored with timestamps, and **the first
-  label is primary.**
-- Reported: agreement with the teacher overall and per slot with its n, revisions, and the count of "unsure".
+- The tool shows no teacher answer in either round and has no code path that could. Labels are stored with
+  timestamps.
+- The room-rule check of section 6 now rests on Round A labels, which are not blind. **Round B therefore also
+  reports agreement with the room rule, and that is the clean check.** The gate of at most 2 disagreements
+  before any 2,000-query batch stays on Round A, because Round B comes after the freeze.
+- Reported: agreement with the teacher overall and per slot with its n, and the count of "unsure".
   Queries excluded from agreement are listed in `scripts/verify_slots.py` and in the result.
 - The slot student and the lexicons are frozen before Round B starts.
 - Silver labels for all 480 queries may be generated before the freeze. Nothing is scored against the
@@ -123,6 +125,19 @@ products. These rules apply:
 
 - `label_gain` defaults to [0, 1, 2], matching the metric. [0, 1, 3] is a dev-fold candidate only. The
   choice goes into `configs/frozen.yaml`.
+- **Selection rule:** among the training options (variant, stopping rule, model size), the one with the highest
+  mean of standard and condensed nDCG@10 on the dev fold. An exact tie goes to judged-only. The rule is kept in
+  `configs/ltr.yaml` and copied into `configs/frozen.yaml` at the freeze, because the existence of that file is
+  what unlocks the other folds. Dev numbers are optimistic, since options are chosen on the queries they are
+  scored on.
+- **Dev comparisons from here:** one INTERIM run (G4 off), then, after Round A and G4, one FINAL run. Nothing is
+  added after either except logged bug fixes. No option is searched for until LTR wins. Groups are not dropped
+  before the freeze: the pre-registered ablation decides.
+- **Encoder of G2** (written before the fine-tuned encoder was measured on WANDS): the fine-tuned encoder replaces
+  off-the-shelf bge-small in candidates and features only if, on dev, it is a gain over off-the-shelf as a dense
+  retriever under the rule of section 7, and hybrid RRF built with it is not a loss against hybrid RRF built
+  with off-the-shelf. Otherwise off-the-shelf stays and the fine-tuned encoder is an ablation. The hybrid RRF
+  that LTR is compared with always uses the encoder that G2 uses.
 - Candidates are the union of the tuned BM25 top 100 and the dense top 100.
 - Two training variants are compared on the dev fold, using both standard and condensed nDCG@10: (a) judged
   pairs only, and (b) unjudged candidates added with label 0. The choice goes into `configs/frozen.yaml`
@@ -136,6 +151,11 @@ products. These rules apply:
 - The main BM25 baseline is tuned multi-field BM25. Its field weights are the ones tuned on fold 0 and are
   not re-tuned per fold. Title-only BM25 appears in every table.
 - Reciprocal rank fusion uses k = 60, the published default. **It is not tuned** and is frozen now.
+
+- **Serving encoder** (written before any measurement): the demo encodes queries with int8 ONNX only if its dense
+  nDCG@10 on dev is within 0.005 of PyTorch's, and with fp32 ONNX otherwise. Product vectors come from PyTorch in
+  both cases, as they would in the demo. The rule applies to whichever encoder the demo uses. No other use of
+  int8 is made before that measurement.
 
 ## 9. Statistics
 

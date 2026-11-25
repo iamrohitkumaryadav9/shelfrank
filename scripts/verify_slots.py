@@ -46,8 +46,6 @@ ROUNDS = {
 # Labelled like the rest, but not counted in agreement: in the discarded attempt its label was
 # changed to the teacher's answer.
 EXCLUDED = {"A": frozenset({371}), "B": frozenset()}
-# Round A shows no teacher answer, so the label file is not even opened while labelling.
-REVEALS = {"A": False, "B": True}
 
 
 def load_teacher(path: Path) -> dict[int, Slots]:
@@ -124,7 +122,7 @@ def main() -> int:
     texts = load_queries(REPO_ROOT / cfg["wands"]["raw_dir"]).set_index("query_id")["query"]
     queries = {q: str(texts[q]) for q in ids}
     if args.summary:
-        done = sum(bool(s & {"label", "unsure"}) for s in log.stages().values())
+        done = len(log.finished())
         if done < len(queries):
             # Agreement seen halfway would influence the remaining labels.
             print(f"not yet: {done} of {len(queries)} finished")
@@ -133,8 +131,8 @@ def main() -> int:
         return 0
     print(slot_rules_text())
     names, terms, _ = vocabulary()
-    teacher = load_teacher(FOLDER / silver).__getitem__ if REVEALS[args.round] else None
-    session = Session(log, SLOT_VERSION, input, print, names, terms, teacher)
+    # No teacher label file is opened on this path, in either round.
+    session = Session(log, SLOT_VERSION, input, print, names, terms)
     done = run_session(session, queries, SEED)
     print(f"{done} of {len(queries)} finished")
     return 0

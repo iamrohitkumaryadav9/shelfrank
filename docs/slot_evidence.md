@@ -42,7 +42,7 @@ queries contain too few to train or evaluate one. They belong to material_finish
 A room word is part of the product type when it lies inside a phrase that names a product category and
 continues past it. The phrase list is class names and category path segments. Patio, garden, balcony and deck count as outdoor. The
 threshold of 100 was chosen while looking at these seven examples, so getting all seven right is not
-independent evidence. Agreement with the Round A labels is the check.
+independent evidence. Agreement with hand labels is the check: Round A first, and Round B, which is blind, as the clean one.
 
 | Example | Result | Expected |
 | --- | --- | --- |

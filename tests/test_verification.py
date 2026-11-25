@@ -23,7 +23,6 @@ from shelfrank.qu.verification import (
 )
 
 QUERIES = {7: "dark gray linen sofa"}
-TEACHER = {7: {"color": ["gray"], "material_finish": ["linen"], "style": [], "room": []}}
 STYLES = {("modern",), ("mid", "century")}
 
 
@@ -45,10 +44,10 @@ class Person:
         return "\n".join(t for _, t in self.seen)
 
 
-def session(tmp_path, person, queries=QUERIES, version="v1", teacher=None, styles=()):
+def session(tmp_path, person, queries=QUERIES, version="v1", styles=()):
     log = VerificationLog(tmp_path / "log.jsonl")
     names = [" ".join(s) for s in styles]
-    run = Session(log, version, person.ask, person.say, names, styles, teacher)
+    run = Session(log, version, person.ask, person.say, names, styles)
     return log, run_session(run, queries, 0)
 
 
@@ -56,39 +55,27 @@ def stages(log):
     return [e.stage for e in log.events()]
 
 
-def test_a_round_without_a_teacher_reveals_nothing_and_finishes(tmp_path):
+def test_labelling_shows_no_answer_and_finishes(tmp_path):
     person = Person("dark gray", "linen", "", "", "")
     log, done = session(tmp_path, person)
     assert done == 1 and stages(log) == ["label"]
     assert "Gemini" not in person.text() and "revise" not in person.text()
 
 
-def test_label_is_stored_before_the_teacher_is_looked_up(tmp_path):
-    log = VerificationLog(tmp_path / "log.jsonl")
-
-    def teacher(query_id):
-        assert stages(log) == ["label"]
-        return TEACHER[query_id]
-
-    person = Person("dark gray", "linen", "", "", "", "")
-    run_session(Session(log, "v1", person.ask, person.say, teacher=teacher), QUERIES, 0)
-    assert stages(log) == ["label", "kept"]
+def test_unsure_is_recorded(tmp_path):
+    log, done = session(tmp_path, Person("?"))
+    assert done == 1 and stages(log) == ["unsure"]
 
 
-def test_revision_is_kept_beside_the_first_label(tmp_path):
-    person = Person("dark gray", "", "", "", "", "r", "gray", "linen", "", "")
-    log, done = session(tmp_path, person, teacher=TEACHER.__getitem__)
-    events = log.events()
-    assert done == 1 and stages(log) == ["label", "revised"]
-    assert events[0].slots["color"] == ["dark gray"] and events[0].slots["material_finish"] == []
-    assert events[1].slots == TEACHER[7]
-    assert all(e.time and e.version == "v1" for e in events)
-
-
-def test_unsure_is_recorded_without_revealing(tmp_path):
-    person = Person("?")
-    log, done = session(tmp_path, person, teacher=TEACHER.__getitem__)
-    assert done == 1 and stages(log) == ["unsure"] and "Gemini" not in person.text()
+def test_labelling_code_has_no_way_to_receive_the_teachers_answers():
+    """No reveal in either round: the session holds nothing the answers could arrive through."""
+    assert not [f for f in Session.__dataclass_fields__ if "teacher" in f]
+    source = (REPO_ROOT / "shelfrank/qu/verification.py").read_text(encoding="utf-8")
+    labelling = source.split("def summary(")[0]
+    for word in ("reveal", "Gemini", "revise", "load_teacher"):
+        assert word not in labelling
+    script = (REPO_ROOT / "scripts/verify_slots.py").read_text(encoding="utf-8")
+    assert script.count("load_teacher(") == 2 and "REVEALS" not in script
 
 
 def test_words_outside_the_query_are_blocked_until_corrected(tmp_path):
@@ -183,14 +170,6 @@ def test_redo_during_and_after_labelling_stores_only_the_final_label(tmp_path):
 def test_quit_before_saving_stores_nothing(tmp_path, answers):
     log, done = session(tmp_path, Person(*answers))
     assert done == 0 and log.events() == []
-
-
-def test_quit_at_the_reveal_resumes_there_without_a_second_label(tmp_path):
-    teacher = TEACHER.__getitem__
-    log, done = session(tmp_path, Person("dark gray", "linen", "", "", "", "q"), teacher=teacher)
-    assert done == 0 and stages(log) == ["label"]
-    log, done = session(tmp_path, Person(""), teacher=teacher)
-    assert done == 1 and stages(log) == ["label", "kept"]
 
 
 @pytest.mark.parametrize("error", [KeyboardInterrupt, EOFError])
@@ -332,7 +311,7 @@ def test_round_a_never_opens_the_teacher_file_while_labelling(script, monkeypatc
     monkeypatch.setattr(script, "load_queries", lambda path: frame)
     monkeypatch.setattr(script, "run_session", lambda s, q, seed: used.update(s=s, q=q) or 0)
     assert script.main() == 0
-    assert used["s"].teacher is None and len(used["s"].style_names) == 57
+    assert len(used["s"].style_names) == 57
 
 
 def test_summary_is_refused_before_every_query_is_finished(script, monkeypatch, capsys):
@@ -362,7 +341,6 @@ def test_summary_scores_the_first_label_and_counts_the_rest(tmp_path):
     rows = [
         event(1, "label", ["red"]),
         event(2, "label", ["blue"]),
-        event(2, "revised", ["Navy"]),
         event(3, "unsure"),
     ]
     empty = {s: [] for s in SLOTS}
@@ -375,7 +353,6 @@ def test_summary_scores_the_first_label_and_counts_the_rest(tmp_path):
         "unsure": 1,
         "agree_all_slots": 1,
         "agreement": 0.5,
-        "revised": 1,
     }
     assert per_slot["color"] == {"agreement": 0.5, "support": 2, "teacher_spans": 2, "f1": 0.5}
     assert per_slot["room"]["agreement"] == 1.0 and math.isnan(per_slot["room"]["f1"])
@@ -395,7 +372,5 @@ def test_room_check_compares_labels_with_the_rule_on_room_queries_only(tmp_path)
     queries = {1: "dining table", 2: "bathroom rug", 3: "red chair", 4: "bedroom lamp"}
     rows = [event(q, "label") for q in (1, 2, 3, 4)]
     rows[3]["slots"]["room"] = ["Bedroom"]
-    rows.append(event(2, "revised"))
-    rows[-1]["slots"]["room"] = ["bathroom"]
     out = room_check(write_log(tmp_path, rows), queries, {("dining", "table")})
     assert out == {"cases": 3, "disagreements": 1, "query_ids": [2]}

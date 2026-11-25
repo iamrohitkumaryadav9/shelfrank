@@ -1,7 +1,6 @@
 """Slot verification by hand: guided labelling, practice, and agreement with the teacher.
 
-A round with no teacher callable never shows the teacher's answers. With one, the label is stored
-first, the answer is shown afterwards, and a revision is stored beside the label.
+Labelling never sees the teacher: nothing here takes its answers except the summary.
 """
 
 import json
@@ -54,7 +53,7 @@ class Unsure(Exception):
 
 
 class VerificationLog:
-    """Append-only file of decisions, so that a blind label can never be overwritten."""
+    """Append-only file of decisions, so that a label can never be overwritten."""
 
     def __init__(self, path: Path) -> None:
         """Use ``path``, created on the first event."""
@@ -73,12 +72,9 @@ class VerificationLog:
         with self.path.open("a", encoding="utf-8", newline="\n") as handle:
             handle.write(json.dumps(asdict(event), ensure_ascii=False) + "\n")
 
-    def stages(self) -> dict[int, set[str]]:
-        """Stages recorded per query."""
-        out: dict[int, set[str]] = {}
-        for event in self.events():
-            out.setdefault(event.query_id, set()).add(event.stage)
-        return out
+    def finished(self) -> set[int]:
+        """Queries with a label or an "unsure"."""
+        return {event.query_id for event in self.events()}
 
 
 def order(query_ids: Sequence[int], seed: int) -> list[int]:
@@ -138,7 +134,6 @@ def ask_slots(
     query: str,
     ask: Ask,
     say: Say,
-    allow_unsure: bool = True,
     style_names: Collection[str] = (),
     style_terms: Collection[Term] = (),
 ) -> Slots:
@@ -153,7 +148,7 @@ def ask_slots(
                 raise Quit
             if answer == REDO:
                 raise Redo
-            if answer == UNSURE and allow_unsure:
+            if answer == UNSURE:
                 raise Unsure
             spans = read_spans(answer)
             found = problems(query, slots, spans)
@@ -186,26 +181,19 @@ class Session:
     say: Say
     style_names: Collection[str] = ()
     style_terms: Collection[Term] = ()
-    teacher: Callable[[int], Slots] | None = None
 
     def record(self, query_id: int, stage: str, slots: Slots | None) -> None:
         """Store one decision at once."""
         now = datetime.now(UTC).isoformat(timespec="seconds")
         self.log.append(Event(query_id, stage, slots, now, self.version))
 
-    def slots(self, query: str, allow_unsure: bool = True) -> Slots:
+    def slots(self, query: str) -> Slots:
         """Ask for all slots of a query."""
-        names, terms = self.style_names, self.style_terms
-        return ask_slots(query, self.ask, self.say, allow_unsure, names, terms)
-
-    @property
-    def finishing(self) -> set[str]:
-        """Stages that end a query."""
-        return {"unsure", "label"} if self.teacher is None else {"unsure", "kept", "revised"}
+        return ask_slots(query, self.ask, self.say, self.style_names, self.style_terms)
 
 
-def label_query(session: Session, query_id: int, query: str) -> Slots | None:
-    """Take a label and store it. None means unsure."""
+def label_query(session: Session, query_id: int, query: str) -> None:
+    """Take a label, or "unsure", and store it."""
     while True:
         session.say(f'\n"{query}"')
         try:
@@ -214,30 +202,14 @@ def label_query(session: Session, query_id: int, query: str) -> Slots | None:
             continue
         except Unsure:
             session.record(query_id, "unsure", None)
-            return None
+            return
         session.say(f"  yours : {show(slots)}")
         choice = session.ask(f"  save? Enter = yes, {REDO} = redo, {QUIT} = quit > ").strip()
         if choice == QUIT:
             raise Quit
         if choice != REDO:
             session.record(query_id, "label", slots)
-            return slots
-
-
-def reveal(session: Session, query_id: int, query: str, label: Slots) -> None:
-    """Show the teacher's answer for a stored label and take a revision."""
-    assert session.teacher is not None
-    session.say(f"  Gemini: {show(session.teacher(query_id))}")
-    choice = session.ask("  keep yours? Enter = keep, r = revise > ").strip().lower()
-    if choice == QUIT:
-        raise Quit
-    while choice == "r":
-        try:
-            session.record(query_id, "revised", session.slots(query, allow_unsure=False))
             return
-        except Redo:
-            continue
-    session.record(query_id, "kept", label)
 
 
 def run_session(session: Session, queries: Mapping[int, str], seed: int) -> int:
@@ -246,25 +218,16 @@ def run_session(session: Session, queries: Mapping[int, str], seed: int) -> int:
     versions = {e.version for e in events}
     if versions - {session.version}:
         raise ValueError(f"the log holds labels under other rules: {sorted(versions)}")
-    stages = session.log.stages()
-    labels = {e.query_id: e.slots or {} for e in events if e.stage == "label"}
-    todo = [q for q in order(list(queries), seed) if not stages.get(q, set()) & session.finishing]
+    done = session.log.finished()
+    todo = [q for q in order(list(queries), seed) if q not in done]
     session.say(f"{len(queries) - len(todo)} of {len(queries)} done. {HELP}")
     try:
         for query_id in todo:
-            query = queries[query_id]
-            label = labels.get(query_id)
-            if label is None:
-                label = label_query(session, query_id, query)
-            else:
-                session.say(f'\n"{query}"\n  yours : {show(label)}')
-            if label is not None and session.teacher is not None:
-                reveal(session, query_id, query, label)
+            label_query(session, query_id, queries[query_id])
     except (Quit, EOFError, KeyboardInterrupt):
         # Every finished step is already on disk, so stopping at any point loses only this query.
         session.say("\nSaved. Run the same command to continue.")
-    finished = session.log.stages().values()
-    return sum(bool(s & session.finishing) for s in finished)
+    return len(session.log.finished())
 
 
 def run_practice(
@@ -283,7 +246,7 @@ def run_practice(
         while answer is None:
             say(f'\n{number}/{len(items)}  "{item.query}"')
             try:
-                answer = ask_slots(item.query, ask, say, True, style_names, style_terms)
+                answer = ask_slots(item.query, ask, say, style_names, style_terms)
             except Redo:
                 continue
             except Unsure:
@@ -324,12 +287,11 @@ def summary(
 ) -> dict[str, Any]:
     """Agreement with the teacher overall and per slot, with the n it rests on.
 
-    Agreement uses the label given before any reveal. Per slot, agreement alone would look high
-    because most slots are empty, so the F1 of the teacher's spans is given with its support.
+    Per slot, agreement alone would look high because most slots are empty, so the F1 of the
+    teacher's spans is given with its support.
     """
     events = log.events()
     labels = scored_labels(log, excluded)
-    revised = {e.query_id: e.slots or {} for e in events if e.stage == "revised"}
     scored = sorted(q for q in labels if q in teacher)
     per_slot = {}
     for slot in SLOTS:
@@ -349,7 +311,6 @@ def summary(
         "unsure": sum(e.stage == "unsure" for e in events),
         "agree_all_slots": agree,
         "agreement": agree / len(scored) if scored else float("nan"),
-        "revised": len(revised),
         "per_slot": per_slot,
     }
 
@@ -362,8 +323,8 @@ def room_check(
 ) -> dict[str, Any]:
     """Compare room labels with the room rule, on queries that contain a room word.
 
-    This is the independent test of the rule, whose thresholds were chosen while looking at seven
-    examples.
+    The thresholds of the rule were chosen while looking at seven examples, so it needs labels made
+    without it. Round B gives the clean check; Round A labels are not blind.
     """
     disagree = []
     cases = 0
