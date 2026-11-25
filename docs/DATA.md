@@ -28,10 +28,10 @@
 
 ### Published baseline
 
-No numeric table of nDCG exists in the paper or the repository. Figure 4 plots nDCG@10 for BM25 over
-title and description (Solr). **Read off the plot, BM25 is about 0.72** and random ranking is about 0.04.
-The BM25 parameters, analyser and treatment of repeated judgments are not given. Phase 1 reports ours
-next to this approximate value as a sanity check and does not claim a reproduction.
+No numeric table of nDCG exists in the paper or the repository. The paper plots BM25 (Solr, title and
+description) at roughly 0.72 nDCG@10 with unstated settings (Figure 4, read by eye). Ours is reported on
+the same queries beside it as a visual sanity check. BM25 is not tuned toward it and no reproduction is
+claimed.
 
 ## ESCI (Amazon Shopping Queries)
 
