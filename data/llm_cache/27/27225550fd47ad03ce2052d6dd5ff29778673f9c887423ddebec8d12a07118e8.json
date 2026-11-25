@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1ce719ebd6d76623b7e5fbe6fd15097b0a4f9594b74e274d71f2b083d1902c2b",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"fountain\",\n  \"attributes\": [\n    \"brick look\"\n  ],\n  \"synonyms\": [\n    \"water feature\",\n    \"garden fountain\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

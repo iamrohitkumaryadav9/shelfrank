@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3b68d7728ca5c3e45a9bb6032c7ecde97c85de058fcd0086843dec2fb2b785f0",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"end table\",\n  \"attributes\": [\n    \"Stoneford\",\n    \"white\",\n    \"wood\"\n  ],\n  \"synonyms\": [\n    \"side table\",\n    \"accent table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

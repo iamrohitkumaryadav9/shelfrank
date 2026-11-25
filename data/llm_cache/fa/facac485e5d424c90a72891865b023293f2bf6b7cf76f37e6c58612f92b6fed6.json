@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "835175dcbea5e08bd239b4567938a47a17341bac1f3828c981f2863d970212e3",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"sofa\",\n  \"attributes\": [\n    \"with ottoman\"\n  ],\n  \"synonyms\": [\n    \"couch\",\n    \"settee\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

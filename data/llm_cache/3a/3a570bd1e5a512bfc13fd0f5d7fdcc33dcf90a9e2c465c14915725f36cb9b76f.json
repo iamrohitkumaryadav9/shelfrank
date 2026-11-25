@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "15b424e689471962026730efe55a1dd79fb2b2298b89f5da217092d41637fda6",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"toddler sofa\",\n  \"attributes\": [\n    \"fold out\"\n  ],\n  \"synonyms\": [\n    \"convertible toddler chair\",\n    \"flip open sofa\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

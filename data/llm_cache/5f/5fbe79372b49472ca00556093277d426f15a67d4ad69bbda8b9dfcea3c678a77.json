@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f0698325c0b1d0858a011942f74a5e82f23205be958fbb7c773103f74edf5051",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 48,
+  "text": "{\n  \"product_type\": \"fire pit coffee table\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"gas fire pit table\",\n    \"outdoor fire table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

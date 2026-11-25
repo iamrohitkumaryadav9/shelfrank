@@ -70,8 +70,9 @@ def lexical_features(
     stage: FirstStage,
     query_tokens: Sequence[Sequence[str]],
     tokens: Mapping[str, list[list[str]]],
+    idf: Mapping[str, float] | None = None,
 ) -> pd.DataFrame:
-    """Columns g1_*."""
+    """Columns g1_*. ``idf`` may be given, because counting the catalogue takes long in serving."""
     qi, pi = pairs["qi"].to_numpy(), pairs["pi"].to_numpy()
     out: dict[str, object] = {}
     for name, matrix in stage.fields.items():
@@ -81,7 +82,8 @@ def lexical_features(
     out["g1_bm25_tuned_rel"] = relative(stage.tuned)[qi, pi]
     out["g1_rr_bm25"] = reciprocal_ranks(pairs, stage.runs["bm25_multi"])
 
-    idf = idf_table(tokens["name"])
+    if idf is None:
+        idf = idf_table(tokens["name"])
     wanted = sorted(set(pi.tolist()))
     sets = {f: {p: set(tokens[f][p]) for p in wanted} for f in COVERED}
     rows = []
