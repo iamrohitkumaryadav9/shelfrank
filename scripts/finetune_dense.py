@@ -15,11 +15,19 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import torch
 
 from shelfrank.data.download import ensure_file
 from shelfrank.dense.esci_data import TrainingData, make_batches, make_triplets, prepare
-from shelfrank.dense.finetune import Checkpoints, TrainConfig, encode, held_out_ndcg, train
+from shelfrank.dense.finetune import (
+    Checkpoints,
+    RunLog,
+    TrainConfig,
+    encode,
+    held_out_scores,
+    train,
+)
 from shelfrank.dense.onnx_export import agreement, export_fp32, onnx_encode, quantize
 
 Log = Callable[[str], None]
@@ -33,6 +41,29 @@ MODEL_FILES = (
     "sentence_bert_config.json",
     "config_sentence_transformers.json",
     "1_Pooling/config.json",
+)
+# Invented, so that vectors made on the GPU machine can be compared with vectors made elsewhere.
+REFERENCE_TEXTS = (
+    "tangerine ukulele case with zipper",
+    "two person kayak paddle set",
+    "left handed fountain pen purple ink",
+    "stainless steel bicycle bell",
+    "gluten free sourdough starter kit",
+    "waterproof hiking gaiters size medium",
+    "usb c to ethernet adapter gigabit",
+    "wooden chess pieces weighted no board",
+    "toddler rain boots with dinosaurs",
+    "replacement strap for a diving watch",
+    "noise cancelling earbuds for running",
+    "telescopic fishing rod saltwater",
+    "dog harness reflective extra small",
+    "refillable deodorant cedar scent",
+    "mechanical keyboard with quiet switches",
+    "Ukulele . Acme . tangerine . Concert size with a padded carrying bag",
+    "Kayak paddle . Acme . Two pieces that lock together, 220 cm, fibreglass",
+    "Fountain pen . Acme . purple . Fine nib for left handed writers, two cartridges",
+    "Bicycle bell . Acme . silver . Fits handlebars from 22 to 32 mm",
+    "Keyboard . Acme . black . 87 keys, hot swappable, quiet linear switches",
 )
 
 
@@ -57,6 +88,11 @@ class Paths:
     def results(self) -> Path:
         """Measurements so far."""
         return self.keep / "finetune_results.json"
+
+    @property
+    def run_log(self) -> Path:
+        """Sessions, resumes and every step's loss."""
+        return self.keep / "run_log.json"
 
     @property
     def output(self) -> Path:
@@ -137,8 +173,9 @@ def stage_train(
     """Measure the base model once, then train or continue training."""
     model, tokenizer = load_base(base)
     if "held_out_ndcg_before" not in read_results(paths):
-        before = held_out_ndcg(model, tokenizer, data, config, query_prefix, device)
-        write_results(paths, held_out_ndcg_before=before)
+        scores = held_out_scores(model, tokenizer, data, config, query_prefix, device)
+        before = sum(scores.values()) / len(scores)
+        write_results(paths, held_out_ndcg_before=before, held_out_before_per_query=scores)
         log(f"held-out ESCI nDCG of the base model: {before:.4f}")
     batches = make_batches(
         make_triplets(data.train, data.passages, config.seed), config.batch_size, config.seed
@@ -153,7 +190,10 @@ def stage_train(
         "query_prefix": query_prefix,
     }
     checkpoints = Checkpoints(paths.checkpoints, identity)
-    out = train(model, tokenizer, data, batches, config, checkpoints, query_prefix, device, log)
+    record = RunLog(paths.run_log)
+    out = train(
+        model, tokenizer, data, batches, config, checkpoints, query_prefix, device, log, record
+    )
     write_results(
         paths,
         train=out,
@@ -192,8 +232,9 @@ def stage_evaluate(
 ) -> None:
     """Held-out ESCI nDCG of the trained model."""
     model, tokenizer = trained_model(paths, base)
-    after = held_out_ndcg(model, tokenizer, data, config, query_prefix, device)
-    write_results(paths, held_out_ndcg_after=after)
+    scores = held_out_scores(model, tokenizer, data, config, query_prefix, device)
+    after = sum(scores.values()) / len(scores)
+    write_results(paths, held_out_ndcg_after=after, held_out_after_per_query=scores)
     log(f"held-out ESCI nDCG: {read_results(paths)['held_out_ndcg_before']:.4f} -> {after:.4f}")
 
 
@@ -264,6 +305,9 @@ def stage_package(
         log(f"{name}: {exports[name]}")
     versions = {"python": platform.python_version(), "torch": torch.__version__}
     write_results(paths, onnx=exports, provenance=dict(provenance), versions=versions)
+    if paths.run_log.exists():
+        write_results(paths, run=json.loads(paths.run_log.read_text(encoding="utf-8")))
+    save_reference(model, tokenizer, config.max_passage_tokens, target)
     results = read_results(paths)
     (target / "training.json").write_text(json.dumps(results, indent=1) + "\n", encoding="utf-8")
     (target / "README.md").write_text(model_card(results), encoding="utf-8")
@@ -272,9 +316,40 @@ def stage_package(
     return Path(archive)
 
 
+def save_reference(model: Any, tokenizer: Any, limit: int, target: Path) -> None:  # noqa: ANN401
+    """Vectors of fixed texts, to check that another machine reproduces this model."""
+    vectors = encode(model, tokenizer, REFERENCE_TEXTS, limit, "cpu")
+    body = {"texts": list(REFERENCE_TEXTS), "max_tokens": limit, "vectors": vectors.tolist()}
+    path = target / "reference_embeddings.json"
+    path.write_text(json.dumps(body) + "\n", encoding="utf-8")
+
+
+def run_lines(results: Mapping[str, Any]) -> str:
+    """Wall time and resumes, or "not logged". Never an estimate."""
+    run = results.get("run")
+    if not run:
+        return "Wall time: not logged. Resume history: not logged."
+    minutes = ", ".join(f"{s['seconds'] / 60:.1f}" for s in run["sessions"])
+    resumes = "; ".join(r["message"] for r in run["resumes"]) or "none"
+    return f"Training minutes per session: {minutes}. Resumes: {resumes}."
+
+
+def held_out_lines(results: Mapping[str, Any]) -> str:
+    """The in-domain check, with a paired interval only when per-query scores were kept."""
+    before, after = results["held_out_ndcg_before"], results.get("held_out_ndcg_after")
+    text = "not measured" if after is None else f"{before:.4f} before, {after:.4f} after"
+    rows = [results.get(f"held_out_{x}_per_query") for x in ("before", "after")]
+    if rows[0] and rows[1]:
+        difference = np.array([rows[1][q] - rows[0][q] for q in sorted(rows[0])])
+        pick = np.random.default_rng(20260).integers(0, len(difference), (10_000, len(difference)))
+        low, high = np.percentile(difference[pick].mean(axis=1), [2.5, 97.5])
+        return f"{text}. Paired difference {difference.mean():+.4f} [{low:+.4f}, {high:+.4f}]."
+    return f"{text}. Per-query scores were not saved, so there is no confidence interval."
+
+
 def model_card(results: Mapping[str, Any]) -> str:
     """Plain description of what was trained, on what, and what was measured."""
-    data, before = results["data"], results["held_out_ndcg_before"]
+    data = results["data"]
     config = "\n".join(f"| {k} | {v} |" for k, v in results["config"].items())
     return f"""# bge-small-en-v1.5 fine-tuned on ESCI (US, small version)
 
@@ -286,9 +361,11 @@ Trained on {results["triplets"]:,} triplets from {data["train_queries"]:,} ESCI 
 {results["hard_negative_share"]:.0%} of them). Queries that resemble a WANDS query were removed.
 No WANDS data was used.
 
-Held-out ESCI nDCG over judged products, {data["held_out_queries"]:,} queries:
-{before:.4f} before, {results.get("held_out_ndcg_after", float("nan")):.4f} after. This says nothing
-about WANDS, which is measured separately.
+Held-out ESCI nDCG over judged products, {data["held_out_queries"]:,} queries set aside, of which those
+without an Exact product are skipped: {held_out_lines(results)}
+This is an in-domain check. It says nothing about WANDS, which is measured separately.
+
+Steps: {results["train"]["step"]:,} of {results["train"]["total"]:,}. {run_lines(results)}
 
 | Setting | Value |
 | --- | --- |

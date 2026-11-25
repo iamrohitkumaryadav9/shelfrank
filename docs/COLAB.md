@@ -57,7 +57,8 @@ Expand-Archive "$HOME\Downloads\bge_small_esci.zip" artifacts\models
 | | |
 | --- | --- |
 | Data | ESCI US small version, training split. Queries that resemble a WANDS query are removed, and 500 ESCI queries are held out |
-| Time | One session stops itself after 100 minutes of training and can be continued. The real time is printed |
+| Time | One session stops itself after 100 minutes of training and can be continued. Wall time per session, every resume and every step's loss go to `MyDrive/shelfrank_ft/run_log.json`, and into `training.json` |
+| Check on another machine | `reference_embeddings.json` holds the vectors of 20 invented texts |
 | Checkpoints | Every 500 steps, two alternating files, so a crash while saving keeps the previous one |
 | Same result after a break | A test shows that interrupted and uninterrupted training give identical weights on CPU |
 | If the int8 export fails | The weights are packaged anyway, and the error is recorded in `training.json` |

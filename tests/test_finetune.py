@@ -145,6 +145,91 @@ def test_only_two_checkpoint_files_ever_exist(tmp_path):
     assert len(list(tmp_path.glob("*.pt"))) == 2 and saved.latest()["step"] == 5
 
 
+def test_run_log_keeps_sessions_resumes_and_every_loss(base, data, tmp_path, monkeypatch):
+    torch.manual_seed(5)
+    rounds = ed.make_triplets(data.train, data.passages, CONFIG.seed)
+    batches = ed.make_batches(rounds, CONFIG.batch_size, CONFIG.seed)
+
+    def go(folder):
+        model, tokenizer = ft.load_base(base)
+        saved = tune.Checkpoints(folder, {})
+        record = tune.RunLog(folder / "run_log.json")
+        args = (model, tokenizer, data, batches, CONFIG, saved, "find: ", "cpu", lambda m: None)
+        return tune.train(*args, record)
+
+    go(tmp_path / "whole")
+    real, calls = tune.contrastive_loss, []
+
+    def crash(*args):
+        calls.append(1)
+        if len(calls) == 7:
+            raise RuntimeError("session ended")
+        return real(*args)
+
+    monkeypatch.setattr(tune, "contrastive_loss", crash)
+    with pytest.raises(RuntimeError, match="session ended"):
+        go(tmp_path / "parts")
+    monkeypatch.setattr(tune, "contrastive_loss", real)
+    go(tmp_path / "parts")
+    go(tmp_path / "parts")  # already finished: not a session
+
+    whole = json.loads((tmp_path / "whole/run_log.json").read_text(encoding="utf-8"))
+    parts = json.loads((tmp_path / "parts/run_log.json").read_text(encoding="utf-8"))
+    assert [s["ended"] for s in whole["sessions"]] == ["finished"] and whole["resumes"] == []
+    assert [s["ended"] for s in parts["sessions"]] == ["still running or lost", "finished"]
+    assert [s["first_step"] for s in parts["sessions"]] == [0, 4]
+    assert [r["message"] for r in parts["resumes"]] == ["resumed at step 4"]
+    assert len(whole["loss_per_step"]) == 12
+    assert parts["loss_per_step"] == pytest.approx(whole["loss_per_step"], abs=1e-6)
+    assert all(s["seconds"] >= 0 for s in parts["sessions"])
+
+
+def test_run_log_records_the_time_limit(base, data, tmp_path):
+    config = tune.TrainConfig(batch_size=8, max_minutes=0.0)
+    model, tokenizer = ft.load_base(base)
+    rounds = ed.make_triplets(data.train, data.passages, config.seed)
+    batches = ed.make_batches(rounds, 8, config.seed)
+    record = tune.RunLog(tmp_path / "run_log.json")
+    saved = tune.Checkpoints(tmp_path / "c", {})
+    args = (model, tokenizer, data, batches, config, saved, "", "cpu", lambda m: None)
+    tune.train(*args, record)
+    assert tune.RunLog(record.path).body["sessions"][0]["ended"] == "time limit"
+
+
+def test_model_card_says_not_logged_and_never_estimates():
+    assert ft.run_lines({}) == "Wall time: not logged. Resume history: not logged."
+    run = {"sessions": [{"seconds": 90.0}, {"seconds": 30.0}], "resumes": [{"message": "m"}]}
+    assert ft.run_lines({"run": run}) == "Training minutes per session: 1.5, 0.5. Resumes: m."
+
+
+def test_held_out_interval_needs_per_query_scores():
+    means = {"held_out_ndcg_before": 0.5, "held_out_ndcg_after": 0.6}
+    assert "no confidence interval" in ft.held_out_lines(means)
+    rows = {
+        "held_out_before_per_query": {"a": 0.4, "b": 0.6},
+        "held_out_after_per_query": {"a": 0.5, "b": 0.7},
+    }
+    assert "+0.1000 [+0.1000, +0.1000]" in ft.held_out_lines(means | rows)
+
+
+def test_reference_texts_are_twenty_and_resemble_no_wands_query():
+    from shelfrank.config import REPO_ROOT
+    from shelfrank.eval.leakage import exact_matches, load_key_hashes
+
+    assert len(set(ft.REFERENCE_TEXTS)) == 20
+    keys = load_key_hashes(REPO_ROOT / "data/splits/wands_query_keys.json")
+    assert exact_matches(ft.REFERENCE_TEXTS, keys) == []
+
+
+@pytest.mark.full_data
+def test_reference_texts_are_not_near_duplicates_of_wands_queries(raw_dir, data_cfg):
+    from shelfrank.data.wands import load_queries
+    from shelfrank.eval.leakage import near_matches
+
+    threshold = data_cfg["splits"]["near_duplicate_jaccard"]
+    assert near_matches(ft.REFERENCE_TEXTS, load_queries(raw_dir)["query"], threshold) == []
+
+
 def test_encode_returns_unit_vectors_in_input_order(base):
     model, tokenizer = ft.load_base(base)
     texts = ["red lamp with a long name", "sofa", "blue rug"]
@@ -193,7 +278,13 @@ def test_whole_job_trains_improves_and_packages(base, paths, monkeypatch):
         results["hard_negative_share"] == 1.0
         and "no onnx" in results["onnx"]["bge_small_esci"]["error"]
     )
+    assert results["run"]["sessions"][0]["ended"] == "finished"
+    assert len(results["run"]["loss_per_step"]) == 12
+    assert results["held_out_before_per_query"].keys() == results["held_out_after_per_query"].keys()
+    reference = json.loads((folder / "reference_embeddings.json").read_text(encoding="utf-8"))
+    assert np.array(reference["vectors"]).shape == (20, 32)
     card = (folder / "README.md").read_text(encoding="utf-8")
+    assert "Training minutes per session" in card and "Paired difference" in card
     assert "commit abc" in card and "No WANDS data" in card
     model, tokenizer = ft.load_base(folder)
     trained, _ = ft.trained_model(paths, base)

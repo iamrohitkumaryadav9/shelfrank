@@ -110,3 +110,60 @@ def test_local_model_is_pinned_by_the_hash_of_its_weights(tmp_path):
 def test_published_model_keeps_its_revision(tmp_path):
     cfg = {"model": "a/b", "revision": "abc", "max_seq_length": 8, "query_prefix": "x"}
     assert model_identity(cfg, tmp_path) == {"model": "a/b", "revision": "abc", "max_seq_length": 8}
+
+
+@pytest.fixture
+def tiny_model(tmp_path):
+    """A random BERT saved without a pooler, in the layout of our fine-tuned model."""
+    torch = pytest.importorskip("torch")
+    pytest.importorskip("sentence_transformers")
+    from sentence_transformers import SentenceTransformer, models
+    from transformers import BertConfig, BertModel, BertTokenizerFast
+
+    words = ["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]", "red", "lamp", "blue", "sofa"]
+    (tmp_path / "vocab.txt").write_text("\n".join(words), encoding="utf-8")
+    BertTokenizerFast(str(tmp_path / "vocab.txt")).save_pretrained(tmp_path / "bert")
+    torch.manual_seed(0)
+    shape = {"hidden_size": 16, "num_hidden_layers": 1, "num_attention_heads": 2}
+    config = BertConfig(vocab_size=len(words), intermediate_size=16, **shape)
+    BertModel(config, add_pooling_layer=False).save_pretrained(tmp_path / "bert")
+    body = models.Transformer(
+        str(tmp_path / "bert"), model_args={"add_pooling_layer": False}, max_seq_length=8
+    )
+    pooling = models.Pooling(16, pooling_mode="cls")
+    SentenceTransformer(modules=[body, pooling, models.Normalize()], device="cpu").save(
+        str(tmp_path / "m")
+    )
+    return tmp_path
+
+
+def test_local_model_loads_without_a_pooler_and_without_a_warning(tiny_model, monkeypatch, caplog):
+    import logging
+
+    from shelfrank.dense import encoder as en
+
+    monkeypatch.setattr(en, "REPO_ROOT", tiny_model)
+    logging.getLogger("transformers").propagate = True
+    encode = en.load_sentence_transformer("m", "sha256:x", 8)
+    body = encode.__closure__[0].cell_contents[0].auto_model
+    assert body.pooler is None and "newly initialized" not in caplog.text
+
+
+def test_embeddings_do_not_depend_on_the_pooler(tiny_model, monkeypatch):
+    """Bit-identical with the layer removed, freshly random, and overwritten with noise."""
+    import torch
+    from sentence_transformers import SentenceTransformer
+
+    from shelfrank.dense import encoder as en
+
+    monkeypatch.setattr(en, "REPO_ROOT", tiny_model)
+    texts = ["red lamp", "blue sofa", "lamp"]
+    removed = en.load_sentence_transformer("m", "sha256:x", 8)(texts)
+    with_layer = SentenceTransformer(str(tiny_model / "m"), device="cpu")
+    pooler = with_layer[0].auto_model.pooler
+    assert pooler is not None
+    np.testing.assert_array_equal(with_layer.encode(texts, normalize_embeddings=True), removed)
+    with torch.no_grad():
+        pooler.dense.weight.normal_(0, 100)
+        pooler.dense.bias.normal_(0, 100)
+    np.testing.assert_array_equal(with_layer.encode(texts, normalize_embeddings=True), removed)

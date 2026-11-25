@@ -107,7 +107,14 @@ def load_sentence_transformer(model: str, revision: str, max_seq_length: int) ->
     from sentence_transformers import SentenceTransformer
 
     if revision.startswith("sha256:"):
-        encoder = SentenceTransformer(str(REPO_ROOT / model), device="cpu", local_files_only=True)
+        # Our own file has no pooler layer. bge pools the first token, so nothing ever reads that
+        # layer, and creating it with random weights would only raise a warning.
+        encoder = SentenceTransformer(
+            str(REPO_ROOT / model),
+            device="cpu",
+            local_files_only=True,
+            model_kwargs={"add_pooling_layer": False},
+        )
     else:
         encoder = SentenceTransformer(model, revision=revision, device="cpu")
     encoder.max_seq_length = max_seq_length

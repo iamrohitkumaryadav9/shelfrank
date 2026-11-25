@@ -9,6 +9,7 @@ import math
 import time
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -130,6 +131,47 @@ class Checkpoints:
         return torch.load(slots[-1][1], map_location="cpu", weights_only=True)
 
 
+class RunLog:
+    """What happened in each session, kept on Drive because a closed tab loses the printed output.
+
+    Written at every logging step, so a session that dies still shows how long it ran. The losses
+    after a checkpoint are dropped on resuming, because those steps run again.
+    """
+
+    def __init__(self, path: Path) -> None:
+        """Continue the log at ``path``, or start one."""
+        self.path = path
+        self.body: dict[str, Any] = {"sessions": [], "resumes": [], "loss_per_step": []}
+        if path.exists():
+            self.body = json.loads(path.read_text(encoding="utf-8"))
+
+    @staticmethod
+    def _now() -> str:
+        return datetime.now(UTC).isoformat(timespec="seconds")
+
+    def start(self, step: int) -> None:
+        """Open a session at ``step``. A step above 0 is a resume."""
+        self.started = time.monotonic()
+        self.body["loss_per_step"] = self.body["loss_per_step"][:step]
+        if step:
+            self.body["resumes"].append({"time": self._now(), "message": f"resumed at step {step}"})
+        session = {"started": self._now(), "first_step": step, "last_step": step, "seconds": 0.0}
+        self.body["sessions"].append(session | {"ended": "still running or lost"})
+        self.write(step)
+
+    def write(self, step: int, ended: str | None = None) -> None:
+        """Save the state so far, replacing the file in one move."""
+        session = self.body["sessions"][-1]
+        session["last_step"] = step
+        session["seconds"] = round(time.monotonic() - self.started, 1)
+        if ended:
+            session["ended"] = ended
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        partial = self.path.with_suffix(".partial")
+        partial.write_text(json.dumps(self.body, indent=1) + "\n", encoding="utf-8")
+        partial.replace(self.path)
+
+
 def train(
     model: nn.Module,
     tokenizer: Any,  # noqa: ANN401 - transformers tokenizers share no base type worth importing
@@ -140,6 +182,7 @@ def train(
     query_prefix: str,
     device: str,
     log: Log = print,
+    record: RunLog | None = None,
 ) -> dict[str, Any]:
     """Run until the epoch ends or the time limit is reached. Call again to continue."""
     started = time.monotonic()
@@ -165,6 +208,9 @@ def train(
         step, history = int(state["step"]), list(state["history"])
         log(f"resumed at step {step} of {total}")
 
+    if record and step < total:
+        record.start(step)
+
     def save() -> None:
         checkpoints.save(
             step,
@@ -189,6 +235,8 @@ def train(
     while step < total:
         if (time.monotonic() - started) / 60 >= config.max_minutes:
             save()
+            if record:
+                record.write(step, "time limit")
             log(f"time limit reached at step {step} of {total}; run the cell again to continue")
             break
         batch = batches[step]
@@ -222,6 +270,8 @@ def train(
         scaler.update()
         step += 1
         running.append(float(loss.detach()))
+        if record:
+            record.body["loss_per_step"].append(running[-1])
         if step % config.log_every == 0 or step == total:
             history.append([step, sum(running) / len(running)])
             minutes = (time.monotonic() - started) / 60
@@ -231,6 +281,8 @@ def train(
                 f"{minutes:.0f} min, about {left:.0f} min left"
             )
             running = []
+            if record:
+                record.write(step, "finished" if step == total else None)
         if step % config.checkpoint_every == 0 or step == total:
             save()
     return {"step": step, "total": total, "finished": step >= total, "history": history}
@@ -271,15 +323,18 @@ def ndcg(gains: Sequence[float]) -> float:
     return got / best if best else 0.0
 
 
-def held_out_ndcg(
+def held_out_scores(
     model: nn.Module,
     tokenizer: Any,  # noqa: ANN401
     data: TrainingData,
     config: TrainConfig,
     query_prefix: str,
     device: str,
-) -> float:
-    """Rank the judged products of each held-out ESCI query. Queries with no Exact are skipped."""
+) -> dict[str, float]:
+    """NDCG per held-out ESCI query over its judged products. Queries with no Exact are skipped.
+
+    Per query and not only the mean, so that a paired interval can be computed later.
+    """
     ids = sorted(q for q, v in data.held_out.items() if "E" in v.values())
     products = sorted({p for q in ids for p in data.held_out[q]})
     row = {p: i for i, p in enumerate(products)}
@@ -287,10 +342,10 @@ def held_out_ndcg(
     queries = encode(model, tokenizer, texts, config.max_query_tokens, device)
     passages = [data.passages[p] for p in products]
     vectors = encode(model, tokenizer, passages, config.max_passage_tokens, device)
-    scores = []
+    scores = {}
     for q, vector in zip(ids, queries, strict=True):
         judged = sorted(data.held_out[q])
         values = vectors[[row[p] for p in judged]] @ vector
         ranked = sorted(zip(values.tolist(), judged, strict=True), key=lambda x: (-x[0], x[1]))
-        scores.append(ndcg([ESCI_GAINS[data.held_out[q][p]] for _, p in ranked]))
-    return sum(scores) / len(scores)
+        scores[q] = ndcg([ESCI_GAINS[data.held_out[q][p]] for _, p in ranked])
+    return scores
