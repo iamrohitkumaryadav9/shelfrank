@@ -1,4 +1,4 @@
-"""Verify slot labels by hand, blind first.
+"""Label slots by hand. Practice comes first and unlocks the rounds.
 
 Practice:  .venv\\Scripts\\python.exe scripts\\verify_slots.py --practice
 Round A:   .venv\\Scripts\\python.exe scripts\\verify_slots.py --round A
@@ -7,30 +7,47 @@ Summary:   .venv\\Scripts\\python.exe scripts\\verify_slots.py --round A --summa
 
 import argparse
 import json
+import random
 import sys
-import tempfile
+from collections.abc import Collection
+from dataclasses import asdict
 from pathlib import Path
+from typing import Any
 
 from shelfrank.config import REPO_ROOT, load_config
 from shelfrank.data.wands import load_queries
 from shelfrank.eval.access import ProtocolError, queries_for
 from shelfrank.eval.splits import load_folds
+from shelfrank.qu.annotator import PASS_MARK, PRACTICE, read_attempts, unlocked
 from shelfrank.qu.guidelines import (
-    SLOT_EXAMPLES,
     SLOT_VERSION,
     RulesNotFinalError,
     require_final,
     slot_rules_text,
 )
-from shelfrank.qu.slot_vocab import load_vocabulary
-from shelfrank.qu.verification import Slots, VerificationLog, room_check, run_session, summary
+from shelfrank.qu.slot_vocab import Term, load_vocabulary
+from shelfrank.qu.verification import (
+    Session,
+    Slots,
+    VerificationLog,
+    room_check,
+    run_practice,
+    run_session,
+    summary,
+)
 
 SEED = 20260
 FOLDER = REPO_ROOT / "data" / "labels"
+PRACTICE_LOG = FOLDER / "slots_practice.jsonl"
 ROUNDS = {
     "A": ("dev", f"slots_wands_dev_{SLOT_VERSION}.jsonl"),
     "B": ("primary", f"slots_wands_round_b_{SLOT_VERSION}.jsonl"),
 }
+# Labelled like the rest, but not counted in agreement: in the discarded attempt its label was
+# changed to the teacher's answer.
+EXCLUDED = {"A": frozenset({371}), "B": frozenset()}
+# Round A shows no teacher answer, so the label file is not even opened while labelling.
+REVEALS = {"A": False, "B": True}
 
 
 def load_teacher(path: Path) -> dict[int, Slots]:
@@ -39,16 +56,42 @@ def load_teacher(path: Path) -> dict[int, Slots]:
     return {int(row["id"]): row["label"] for row in rows}
 
 
+def vocabulary() -> tuple[list[str], Collection[Term], set[Term]]:
+    """Style names to show, style terms to check against, and product-type phrases."""
+    raw = json.loads((REPO_ROOT / "data/slot_vocab.json").read_text(encoding="utf-8"))
+    _, styles, phrases = load_vocabulary(raw)
+    return list(raw["styles"]), styles.keys(), phrases
+
+
 def practice() -> int:
-    """Try the tool on invented queries. Nothing is saved."""
-    queries = {i: q for i, (q, _) in enumerate(SLOT_EXAMPLES)}
-    answers = {i: a for i, (_, a) in enumerate(SLOT_EXAMPLES)}
-    print(slot_rules_text(), "\n\nPractice: invented queries, nothing is saved.")
-    with tempfile.TemporaryDirectory() as folder:
-        log = VerificationLog(Path(folder) / "practice.jsonl")
-        run_session(queries, answers.__getitem__, log, SLOT_VERSION, SEED, input, print)
-        print(summary(log, answers))
+    """Run the practice queries with feedback and record the score."""
+    names, terms, _ = vocabulary()
+    attempts = read_attempts(PRACTICE_LOG)
+    # A new order per attempt, so a retry is not answered from memory of the sequence.
+    items = random.Random(SEED + len(attempts)).sample(PRACTICE, len(PRACTICE))
+    print(slot_rules_text(), "\n")
+    attempt = run_practice(items, SLOT_VERSION, input, print, names, terms)
+    if attempt is None:
+        return 1
+    with PRACTICE_LOG.open("a", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(asdict(attempt)) + "\n")
+    passed = attempt.unlocks(SLOT_VERSION)
+    print(f"\nScore {attempt.correct}/{attempt.total}. Needed {PASS_MARK}.")
+    print("Round A is unlocked." if passed else "Not yet. Read the answers above and try again.")
     return 0
+
+
+def write_summary(name: str, log: VerificationLog, queries: dict[int, str], path: Path) -> None:
+    """Save and print agreement. The teacher's labels are read only here."""
+    out: dict[str, Any] = {
+        "rules": SLOT_VERSION,
+        "practice": [f"{a.correct}/{a.total}" for a in read_attempts(PRACTICE_LOG)],
+        **summary(log, load_teacher(path), EXCLUDED[name]),
+        "room_rule": room_check(log, queries, vocabulary()[2], EXCLUDED[name]),
+    }
+    target = REPO_ROOT / "results" / f"slots_round_{name.lower()}.json"
+    target.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(json.dumps(out, indent=1))
 
 
 def main() -> int:
@@ -62,35 +105,37 @@ def main() -> int:
         return practice()
     if not args.round:
         parser.error("choose --practice or --round A")
+    if not unlocked(PRACTICE_LOG, SLOT_VERSION):
+        print(f"locked: score at least {PASS_MARK}/{len(PRACTICE)} in --practice first")
+        return 1
+    split, silver = ROUNDS[args.round]
     try:
         require_final(SLOT_VERSION)
-        split, silver = ROUNDS[args.round]
         cfg = load_config("data")
         ids = queries_for(split, load_folds(REPO_ROOT / cfg["splits"]["path"]))
     except (RulesNotFinalError, ProtocolError) as error:
         print(f"not yet: {error}")
         return 1
-    teacher_path = FOLDER / silver
-    if not teacher_path.exists():
-        print(f"not yet: {teacher_path.name} does not exist")
+    if args.round == "B":
+        # The committed draw of 100 ids does not exist before the freeze.
+        print("not yet: round B has no committed query draw")
         return 1
-    teacher = load_teacher(teacher_path)
     log = VerificationLog(FOLDER / f"slots_round_{args.round.lower()}.jsonl")
     texts = load_queries(REPO_ROOT / cfg["wands"]["raw_dir"]).set_index("query_id")["query"]
-    queries = {q: str(texts[q]) for q in ids if q in teacher}
+    queries = {q: str(texts[q]) for q in ids}
     if args.summary:
-        raw = json.loads((REPO_ROOT / "data/slot_vocab.json").read_text(encoding="utf-8"))
-        out = {
-            "rules": SLOT_VERSION,
-            **summary(log, teacher),
-            "room_rule": room_check(log, queries, load_vocabulary(raw)[2]),
-        }
-        path = REPO_ROOT / "results" / f"slots_round_{args.round.lower()}.json"
-        path.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8", newline="\n")
-        print(json.dumps(out, indent=1))
+        done = sum(bool(s & {"label", "unsure"}) for s in log.stages().values())
+        if done < len(queries):
+            # Agreement seen halfway would influence the remaining labels.
+            print(f"not yet: {done} of {len(queries)} finished")
+            return 1
+        write_summary(args.round, log, queries, FOLDER / silver)
         return 0
     print(slot_rules_text())
-    done = run_session(queries, teacher.__getitem__, log, SLOT_VERSION, SEED, input, print)
+    names, terms, _ = vocabulary()
+    teacher = load_teacher(FOLDER / silver).__getitem__ if REVEALS[args.round] else None
+    session = Session(log, SLOT_VERSION, input, print, names, terms, teacher)
+    done = run_session(session, queries, SEED)
     print(f"{done} of {len(queries)} finished")
     return 0
 

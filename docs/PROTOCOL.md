@@ -75,8 +75,7 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
 - Room rule: a room word is part of the product type when it lies inside a category name and the name
   continues past it. Category names are classes with at least 30 products and path segments with at least
   100. Patio, garden, balcony and deck count as outdoor. **The threshold of 100 was chosen while looking at 7
-  examples, so 7 of 7 is not independent evidence.** The independent check is agreement with the blind
-  Round A room labels. More than 2 disagreements force a new rules version before any 2,000-query batch.
+  examples, so 7 of 7 is not independent evidence.** The check is agreement with the Round A room labels. More than 2 disagreements force a new rules version before any 2,000-query batch.
 - If the rules change, labels are paid for again under the new version. The old ones stay in the cache.
 - Room values come from category paths plus a small hand list. The hand list is written from
   catalogue-side text only (category names, product names, feature values), never from queries.
@@ -93,9 +92,14 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
 | A | all 96 dev queries | before the freeze | choosing the slot student, Gate 2 numbers |
 | B | 100 from folds 1 to 4, a seeded draw committed as ids | after `preregistered-v1` | **primary reported slot F1** |
 
-- The annotator sees only the query and labels it first. The teacher's answer is shown afterwards and the
-  label may be revised. Both labels are stored with timestamps. **The blind label is primary.**
-- Reported: blind agreement with the teacher, how often the label was revised, and the count of "unsure".
+- A first labelling attempt was discarded after the rater misapplied the slot rules; the tool was revised and the rater retrained before the recorded pass.
+- Labelling is unlocked by practice on 15 invented queries with rule-derived answers (at least 13 right).
+  The tool refuses words that are not in the query and a word used in two slots.
+- Round A: the tool shows no teacher answer. Round B: the query is labelled first, the teacher's answer is
+  shown afterwards and the label may be revised. Both labels are stored with timestamps, and **the first
+  label is primary.**
+- Reported: agreement with the teacher overall and per slot with its n, revisions, and the count of "unsure".
+  Queries excluded from agreement are listed in `scripts/verify_slots.py` and in the result.
 - The slot student and the lexicons are frozen before Round B starts.
 - Silver labels for all 480 queries may be generated before the freeze. Nothing is scored against the
   non-dev ones until after it.
