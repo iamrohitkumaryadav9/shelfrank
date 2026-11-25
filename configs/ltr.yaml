@@ -1,0 +1,16 @@
+# G4 stays out until the slot student exists. shelfrank/ltr/gates.py refuses it before that.
+groups: [G1, G2, G3, G5, G6]
+inner_folds: 4          # inside the dev fold, for dev decisions only
+seed: 20260
+rounds: 600
+patience: 60
+valid_share: 0.2        # of the training queries, picks the number of trees
+seeds: [20260, 20261, 20262]   # scores are averaged
+params:
+  learning_rate: 0.05
+  num_leaves: 15
+  min_data_in_leaf: 50
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  lambda_l2: 1.0

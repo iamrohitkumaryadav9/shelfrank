@@ -14,6 +14,7 @@ from shelfrank.eval.splits import load_folds
 from shelfrank.llm.batch import project, run_batch
 from shelfrank.llm.budget import PILOT_ITEMS
 from shelfrank.llm.setup import make_client, make_request
+from shelfrank.ltr.gates import slot_blockers
 from shelfrank.qu import teacher
 from shelfrank.qu.guidelines import CLASS_VERSION, SLOT_VERSION, SLOTS, require_final
 from shelfrank.qu.slot_vocab import in_vocabulary, load_vocabulary
@@ -42,6 +43,8 @@ def main() -> None:
 
     version = CLASS_VERSION if args.task == "class" else SLOT_VERSION
     require_final(version)
+    if (args.task, args.source) == ("slots", "esci_seed") and (blockers := slot_blockers()):
+        raise SystemExit("the slot seed batch must wait: " + "; ".join(blockers))
     rows = load_source(args.source)
     everything = len(rows)
     if args.pilot:
