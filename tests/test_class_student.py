@@ -131,3 +131,49 @@ def test_linear_classifier_learns_and_returns_probabilities():
     assert [r[0] for r in ranked_labels(p, model.classes, 1)] == ["Sofas", "Beds"]
     again = LinearClassifier(ngrams=(2, 4), alpha=1e-5).fit(data).probabilities(["pink sofas"])
     assert np.array_equal(again, model.probabilities(["pink sofas"]))
+
+
+def test_arms_train_on_what_their_name_says():
+    from shelfrank.qu.class_data import BOTH, NAMES, QUERIES, arm_examples
+
+    frame = products(("red sofa", "Sofas"), ("oak bed", "Beds"))
+    seed = query_examples(["couch"], ["Sofas"])
+    assert arm_examples(NAMES, None, None, frame, TAXONOMY, seed).texts == ["red sofa", "oak bed"]
+    assert arm_examples(QUERIES, None, None, frame, TAXONOMY, seed).texts == ["couch"]
+    both = arm_examples(BOTH, None, 0.5, frame, TAXONOMY, seed)
+    assert len(both.texts) == 3 and both.weights[-1] == pytest.approx(sum(both.weights) / 2)
+
+
+def test_held_out_seed_queries_are_not_trained_on():
+    from shelfrank.qu.class_data import seed_parts
+
+    parts = seed_parts()
+    assert parts is not None
+    train, (held, labels) = parts
+    assert len(held) == len(labels) == 400 and len(train.texts) >= 1590
+    assert not {clean(q) for q in held} & set(train.texts)
+
+
+def committed_class_results():
+    import json
+
+    from shelfrank.config import REPO_ROOT
+
+    return json.loads((REPO_ROOT / "results/class_dev.json").read_text(encoding="utf-8"))
+
+
+def test_committed_selection_follows_the_rule_over_every_configuration():
+    data = committed_class_results()
+    best = max(data["runs"], key=lambda r: r["selection"])
+    assert data["selected"] == best["arm"] and data["best"][best["arm"]] == best
+    for run in data["runs"]:
+        mean = (run["dev"]["accuracy"] + run["esci"]["accuracy"]) / 2
+        assert run["selection"] == pytest.approx(mean)
+
+
+def test_committed_class_page_is_up_to_date():
+    from shelfrank.config import REPO_ROOT
+    from shelfrank.qu.class_report import render
+
+    page = (REPO_ROOT / "docs/class_dev.md").read_text(encoding="utf-8")
+    assert page == render(committed_class_results())

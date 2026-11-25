@@ -8,6 +8,7 @@ from shelfrank.dense.checks_report import render as render_checks
 from shelfrank.eval.dense_report import render as render_dense
 from shelfrank.eval.retrieval_report import render
 from shelfrank.ltr.report import render as render_ltr
+from shelfrank.qu.class_report import render as render_class
 from shelfrank.readme_tables import findings, limitations, replace_block
 
 
@@ -31,6 +32,8 @@ def main() -> None:
         if (REPO_ROOT / "results" / f"{name}.json").exists():
             page = render_ltr(_load(name), name)
             (REPO_ROOT / f"docs/{name}.md").write_text(page, encoding="utf-8", newline="\n")
+    page = render_class(_load("class_dev"))
+    (REPO_ROOT / "docs/class_dev.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_dense(_load("dense_dev"))
     (REPO_ROOT / "docs/dense_dev.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_checks(_load("phase3_checks"), _load("finetune_esci"))
