@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3e049c4fdf471f88cb1cfa0669b293564ea46c1e036986abf142f2485cf2c2cd",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 63,
+  "text": "{\n  \"product_type\": \"writing desk\",\n  \"attributes\": [\n    \"with hutch\",\n    \"Hulmeville\"\n  ],\n  \"synonyms\": [\n    \"secretary desk\",\n    \"computer desk with hutch\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "049b1f3826390d160cbad2a79329efe9b61afea2aeb7d726a4ab0d0b2d153e39",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"faucet\",\n  \"attributes\": [\n    \"antique brass\"\n  ],\n  \"synonyms\": [\n    \"tap\",\n    \"spigot\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

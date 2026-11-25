@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f0f76e89f51e83f2e7901c883557dd62a267d0c524e2681630cbceb490bef86f",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"executive chair\",\n  \"attributes\": [\n    \"elegant\"\n  ],\n  \"synonyms\": [\n    \"office chair\",\n    \"desk chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

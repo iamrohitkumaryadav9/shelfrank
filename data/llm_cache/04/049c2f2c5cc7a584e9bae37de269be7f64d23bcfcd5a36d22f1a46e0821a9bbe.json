@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "555e0bf67eb3056c9608cdd90f10aab973b4cdad0870d06cc8a9b2d48d3a13d0",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 62,
+  "text": "{\n  \"product_type\": \"valet rod\",\n  \"attributes\": [\n    \"closet\",\n    \"pull-out\"\n  ],\n  \"synonyms\": [\n    \"closet valet\",\n    \"retractable clothes rod\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

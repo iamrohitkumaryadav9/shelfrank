@@ -147,7 +147,15 @@ encoder. On the primary queries it is better. int8 lost 0.010 nDCG@10 on dev, mo
 ## Query rewriting
 
 <!-- begin:rewriting -->
-Not evaluated yet: the paid batch is waiting for approval. The code, trigger search and tests are in place.
+Gemini rewrites a query when `dense_top` looks hard. The trigger was chosen on dev and fires on 171 of 384 primary
+queries.
+
+- All queries, LTR with triggered rewriting against LTR: -0.009 [-0.017, -0.001] standard, -0.006 [-0.014, +0.001] condensed, Holm p 0.2536:
+  **direction depends on unjudged handling**.
+- Triggered queries only: -0.019 [-0.039, -0.002] standard, -0.012 [-0.030, +0.003] condensed. 63 got worse, 38 better, 70 stayed the same.
+- Rs 15.8 per 1,000 rewritten queries. API time p50 870 ms, p95 1176 ms.
+
+Harm analysis and bounds: [docs/rewriting.md](docs/rewriting.md).
 <!-- end:rewriting -->
 
 ## Search suggestions
@@ -302,7 +310,7 @@ The final ranker run itself is `scripts/run_final.py` at the tag `preregistered-
 ([docs/COLAB.md](docs/COLAB.md)).
 
 <!-- begin:spend -->
-LLM spend, whole project: **Rs 38.87** of a Rs 500 limit in code (labelling Rs 38.70, rewriting Rs 0.16, smoke Rs 0.01). Costs include a 24% margin for tax and card fees. Every response is cached and committed, so results rebuild at no cost.
+LLM spend, whole project: **Rs 46.30** of a Rs 500 limit in code (labelling Rs 38.70, rewriting Rs 7.59, smoke Rs 0.01). Costs include a 24% margin for tax and card fees. Every response is cached and committed, so results rebuild at no cost.
 <!-- end:spend -->
 
 ## Project layout

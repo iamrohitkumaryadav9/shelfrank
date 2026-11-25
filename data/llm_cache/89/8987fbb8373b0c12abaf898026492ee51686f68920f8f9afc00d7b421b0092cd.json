@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8c0db17926e3161c06bdebf47545611b4857612b5b6502fb10b5ca23eccb0450",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"throw pillow\",\n  \"attributes\": [\n    \"cortez\"\n  ],\n  \"synonyms\": [\n    \"decorative pillow\",\n    \"cushion\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

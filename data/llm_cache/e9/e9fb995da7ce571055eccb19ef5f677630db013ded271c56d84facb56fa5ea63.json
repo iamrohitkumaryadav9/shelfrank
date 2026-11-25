@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "96fcc1352cf6329420bda87610d026351e259eca23bff061d39678240032f1b0",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"decorative vase\",\n  \"attributes\": [\"Allium Way\"],\n  \"synonyms\": [\"flower vase\", \"floral container\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

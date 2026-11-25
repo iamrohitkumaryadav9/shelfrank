@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "458fc9f868e7a5d6b47d515958ea8ac4684651238c8a7c5d326511c06c3073bd",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"cabinet pulls\",\n  \"attributes\": [\n    \"circular\"\n  ],\n  \"synonyms\": [\n    \"cabinet handles\",\n    \"drawer knobs\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

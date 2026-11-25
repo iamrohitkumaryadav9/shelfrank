@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f80145c7f785481bc084afd6a16ec86ab5073d059e2a477460d8cff7731b714f",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"playhouse\",\n  \"attributes\": [\n    \"pennfield\"\n  ],\n  \"synonyms\": [\n    \"play tent\",\n    \"kids playhouse\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

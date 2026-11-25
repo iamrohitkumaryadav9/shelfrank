@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b595f43b3e379babf8ce1e0807c5213eb810a60fd53e3314409ae5cada2068b3",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"coffee table\",\n  \"attributes\": [\n    \"wood\",\n    \"with storage\"\n  ],\n  \"synonyms\": [\n    \"cocktail table\",\n    \"center table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

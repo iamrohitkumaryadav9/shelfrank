@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f2cea474794e2e8df13c9b642647ab04144a014ceda486395da66611e2607c70",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"nightstand\",\n  \"attributes\": [\n    \"platform bed style\"\n  ],\n  \"synonyms\": [\n    \"bedside table\",\n    \"night table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

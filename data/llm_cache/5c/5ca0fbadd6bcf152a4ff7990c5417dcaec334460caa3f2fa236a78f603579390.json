@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b10e4b58544f1714987a82ff72d870beb43ca8b171fc09fffa3001b52a9aa28b",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"patio chair\",\n  \"attributes\": [\n    \"Calvin\"\n  ],\n  \"synonyms\": [\n    \"outdoor chair\",\n    \"garden chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

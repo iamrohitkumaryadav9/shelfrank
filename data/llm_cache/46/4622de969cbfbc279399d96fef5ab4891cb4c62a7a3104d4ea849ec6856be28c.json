@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b27ac0980dffbfd29ff01f37065d1fb4d8e513f10e361e18bf31cdc8a48078b6",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"indoor water fountain\",\n  \"attributes\": [\n    \"indoor\"\n  ],\n  \"synonyms\": [\n    \"tabletop fountain\",\n    \"water feature\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

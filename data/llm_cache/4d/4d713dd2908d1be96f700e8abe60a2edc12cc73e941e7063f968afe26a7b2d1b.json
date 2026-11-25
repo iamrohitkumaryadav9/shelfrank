@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f53594e343bd403c7ec13fcac57560ae44ed1d6ba90f4ce537c2d1a6199430b1",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"bedroom accessories\",\n  \"attributes\": [\n    \"bedroom\"\n  ],\n  \"synonyms\": [\n    \"bedroom decor\",\n    \"bedroom accents\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

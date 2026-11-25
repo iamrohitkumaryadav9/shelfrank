@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "afcc1ab8edc6ff079976f03cf75db0db545137d66ad87f453d9e6ca310b537a1",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 39,
+  "text": "{\n  \"product_type\": \"decorative figurine\",\n  \"attributes\": [\"peacock\"],\n  \"synonyms\": [\"peacock statue\", \"peacock ornament\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

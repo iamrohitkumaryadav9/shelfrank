@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b95cbc4a564dae167efff02f3ba7c3b7098ae846586c64381d4142c34adc7812",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"outdoor rug\",\n  \"attributes\": [\n    \"teal\",\n    \"toilette\"\n  ],\n  \"synonyms\": [\n    \"patio rug\",\n    \"deck rug\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

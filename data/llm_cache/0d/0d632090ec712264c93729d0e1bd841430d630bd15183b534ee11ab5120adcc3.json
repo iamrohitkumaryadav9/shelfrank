@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "c2d4bdba4fec186db08dcd1bf891c9c89f7ed5c0f12d5f804e430db72569da81",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"artificial orchid arrangement\",\n  \"attributes\": [\n    \"artificial\"\n  ],\n  \"synonyms\": [\n    \"faux orchid plant\",\n    \"silk orchid centerpiece\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

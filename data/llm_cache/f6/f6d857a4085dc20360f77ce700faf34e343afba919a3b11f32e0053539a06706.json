@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b3d952604de5a7ec42e3b4a5d37f8f5ec14d17e43f8b3cf33b300f97ca1efe09",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"sectional sofa\",\n  \"attributes\": [\n    \"Huntsville\"\n  ],\n  \"synonyms\": [\n    \"sectional couch\",\n    \"modular sofa\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

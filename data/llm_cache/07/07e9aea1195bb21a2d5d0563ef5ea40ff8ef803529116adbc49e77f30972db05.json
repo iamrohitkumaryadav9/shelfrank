@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "44b3cb71408f2aa1e4653069972b7fb2cfff46a89ae8bee5c1fb7cf51155d332",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 43,
+  "text": "{\n  \"product_type\": \"chaise lounge\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"chaise\",\n    \"daybed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

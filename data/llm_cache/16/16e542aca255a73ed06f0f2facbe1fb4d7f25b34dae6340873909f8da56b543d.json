@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1075f254265f85db1b998571bb09f8ef58d5309e378e27fc1d1ac88614840fc9",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"bed frame\",\n  \"attributes\": [\n    \"Minnestrista\"\n  ],\n  \"synonyms\": [\n    \"bedstead\",\n    \"bed base\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

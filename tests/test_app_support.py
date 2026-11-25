@@ -250,3 +250,43 @@ def test_committed_app_data_files_stay_below_the_git_limit():
     for path in folder.iterdir():
         if path.name != "catalog.duckdb":
             assert path.stat().st_size < 95e6, path.name
+
+
+@pytest.mark.parametrize("ranker", ["ltr", "rrf"])
+@pytest.mark.parametrize("query", ["table lamp", "oak table with red lamp", "zzz", "modern rug"])
+def test_precomputed_path_ranks_exactly_like_the_plain_one(app_folder, engine, ranker, query):
+    plain = Engine(app_folder, fake_encode, precomputed=False)
+    a = engine.search(query, 30, ranker, explain=True)
+    b = plain.search(query, 30, ranker, explain=True)
+    assert [(h.product.product_id, h.score, h.contributions) for h in a.hits] == [
+        (h.product.product_id, h.score, h.contributions) for h in b.hits
+    ]
+
+
+def test_precomputed_features_are_identical(app_folder, engine, sample):
+    from shelfrank.ltr.first_stage import candidate_pairs
+
+    plain = Engine(app_folder, fake_encode, precomputed=False)
+    stage = engine._first_stage("oak table with red lamp", fake_encode("oak table with red lamp"))
+    pairs = candidate_pairs(stage, 10)
+    pd.testing.assert_frame_equal(engine.features(stage, pairs), plain.features(stage, pairs))
+
+
+def test_token_table_round_trip(tmp_path):
+    from shelfrank.app_support.product_side import TokenTable
+
+    tokens = {f: [["a", "b"], [], ["b"]] for f in ("name", "class", "features", "description")}
+    TokenTable.build(tokens).save(tmp_path / "t.npz")
+    table = TokenTable.load(tmp_path / "t.npz")
+    assert [table.row("name", r) for r in range(3)] == [["a", "b"], [], ["b"]]
+    assert table.view("description")[0] == ["a", "b"]
+
+
+def test_committed_fast_path_check_covers_every_query():
+    from shelfrank.config import REPO_ROOT
+
+    path = REPO_ROOT / "results/fast_path.json"
+    if not path.exists():
+        pytest.skip("not checked yet")
+    body = json.loads(path.read_text(encoding="utf-8"))
+    assert body == {"queries": 480, "depth": 100, "identical": 480}

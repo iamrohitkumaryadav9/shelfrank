@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e82d1c06a4a3f4416ad775cb023c725dd3b79a3640fb4dc7f61416c06706dee6",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"greenhouse\",\n  \"attributes\": [\n    \"Palram\",\n    \"Harmony\"\n  ],\n  \"synonyms\": [\n    \"glasshouse\",\n    \"garden conservatory\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

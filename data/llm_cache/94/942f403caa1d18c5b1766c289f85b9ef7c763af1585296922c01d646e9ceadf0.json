@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5cb651473f5d6d4f7c95215b8fdec674cbbd45ed5b44931860fd55efd647767c",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"comforter\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"duvet\",\n    \"bedspread\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

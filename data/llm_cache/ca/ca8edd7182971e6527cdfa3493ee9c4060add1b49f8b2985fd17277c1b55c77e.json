@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3e0cda9f679e379bf0d4c3a2f73d1b4f27ee160ddf811396ae9e8a7afcbcf52d",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"coat hooks\",\n  \"attributes\": [\"deer shaped\"],\n  \"synonyms\": [\"wall hooks\", \"coat rack\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

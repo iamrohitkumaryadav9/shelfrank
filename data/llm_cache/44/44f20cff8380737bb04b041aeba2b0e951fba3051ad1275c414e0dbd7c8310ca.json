@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "20539a6febd6a0bcee003e947127cce6d839b75974fa01af97ce5a86781dadcf",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 70,
+  "text": "{\n  \"product_type\": \"recliner\",\n  \"attributes\": [\n    \"small\",\n    \"ladies\",\n    \"rocker\",\n    \"swivel\"\n  ],\n  \"synonyms\": [\n    \"swivel rocker chair\",\n    \"nursery glider\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

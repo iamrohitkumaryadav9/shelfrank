@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3e12de3a22e475d2424e25e9c51a74af47f69ff2e8b2b3c288a006e05f68ae13",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 64,
+  "text": "{\n  \"product_type\": \"vanity light\",\n  \"attributes\": [\n    \"chrome\",\n    \"bathroom\",\n    \"4 light\"\n  ],\n  \"synonyms\": [\n    \"bathroom wall light\",\n    \"vanity fixture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

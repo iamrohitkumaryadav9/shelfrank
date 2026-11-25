@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5e684d157f602aeb9776821d037fb2a2c694476e55448219cff7006166ac4304",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"faucet\",\n  \"attributes\": [\n    \"delta\",\n    \"trinsic\"\n  ],\n  \"synonyms\": [\n    \"tap\",\n    \"fixture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

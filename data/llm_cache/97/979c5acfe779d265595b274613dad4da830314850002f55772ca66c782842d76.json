@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f19bc2ed5956d4969d0d2fb5487162449a2234ec13651dd2c2431790c3a99e35",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"kitchen shelving unit\",\n  \"attributes\": [\n    \"kitchen\",\n    \"storage\"\n  ],\n  \"synonyms\": [\n    \"kitchen rack\",\n    \"kitchen shelves\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

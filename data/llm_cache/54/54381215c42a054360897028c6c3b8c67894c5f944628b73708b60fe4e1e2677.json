@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "95f9ebae55cf7226868f28e0f950f4af9fd7d621c3b6e88007a4cc7e19dbe2cb",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"string lights\",\n  \"attributes\": [\n    \"luau theme\"\n  ],\n  \"synonyms\": [\n    \"party lights\",\n    \"decorative lights\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "06f634aad36370abfad6b191d8259c81ec809b90c6c920748dc5feb8515f61af",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"candelabra\",\n  \"attributes\": [\n    \"E12 base\"\n  ],\n  \"synonyms\": [\n    \"candle holder\",\n    \"candelabrum\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8ef05f601ecdec74b91260fc3344ea58030c0a88f43ae00283cfa08ad1425496",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 64,
+  "text": "{\n  \"product_type\": \"top load washing machine\",\n  \"attributes\": [\n    \"GE\",\n    \"4.5 cubic feet\"\n  ],\n  \"synonyms\": [\n    \"top loading washer\",\n    \"top load laundry machine\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

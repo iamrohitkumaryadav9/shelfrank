@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7441bb5a081039761c36ca0a5dbbc0b8d6f36fc9b326def163e9e774ed68953a",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"bed sheets\",\n  \"attributes\": [\n    \"twin xl\"\n  ],\n  \"synonyms\": [\n    \"bedding set\",\n    \"sheet set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

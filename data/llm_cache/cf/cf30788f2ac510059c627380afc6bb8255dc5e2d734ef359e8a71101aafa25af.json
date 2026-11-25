@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "32ed14a84a530261bd3b569d08adf7ad9e3411d29305f4fbf41fca7e9d15829a",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"daybed\",\n  \"attributes\": [\n    \"Indian style\"\n  ],\n  \"synonyms\": [\n    \"day bed\",\n    \"chaise lounge\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

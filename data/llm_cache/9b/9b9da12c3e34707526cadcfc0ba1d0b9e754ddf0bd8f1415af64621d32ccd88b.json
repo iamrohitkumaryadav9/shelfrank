@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d8e0b3d8f102075c3c4d247bf28d2f596ddebb0783091b9d70577ec46abee05a",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 45,
+  "text": "{\n  \"product_type\": \"shower curtain hooks\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"shower curtain rings\",\n    \"shower curtain hangers\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "df9658a99839a57efd709a9d9cafd356cbcd4f5ddc273b577de9dd00e1322246",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"wall art\",\n  \"attributes\": [\n    \"large\",\n    \"spoon\",\n    \"fork\"\n  ],\n  \"synonyms\": [\n    \"wall decor\",\n    \"kitchen wall hanging\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

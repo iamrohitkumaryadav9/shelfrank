@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7b23137c99fadae93690ccbe3941c4fd0cb84643d10c3d489675f507a3158f1d",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 43,
+  "text": "{\n  \"product_type\": \"salon chair\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"styling chair\",\n    \"barber chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

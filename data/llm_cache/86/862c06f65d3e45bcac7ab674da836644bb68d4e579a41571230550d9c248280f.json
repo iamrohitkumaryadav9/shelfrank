@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "db4112e5de7bfb3387752c883bc33ae23f4a634226def127fca35c28d88158a2",
+ "response": {
+  "input_tokens": 231,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"marble decor\",\n  \"attributes\": [\n    \"marble\"\n  ],\n  \"synonyms\": [\n    \"marble accessories\",\n    \"stone decor\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b78966bb4ef1a17eae72a2468f039d92ae3eafe435615181401db62f6a52f554",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"bed frame\",\n  \"attributes\": [\"floating\"],\n  \"synonyms\": [\"platform bed\", \"levitating bed\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

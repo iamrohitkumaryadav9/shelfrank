@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5d2cbdfb4c815706e4c6b4d145c25577ff56caa0b6d5f7a9145d92b8e1fc1f1e",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"cabinet\",\n  \"attributes\": [\n    \"farmhouse\"\n  ],\n  \"synonyms\": [\n    \"cupboard\",\n    \"storage unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a1746a0d7711ce4505c2861d682083cee72b1e2b523317a00aa40df09ff191f7",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"storage cabinet\",\n  \"attributes\": [\n    \"Berenice\",\n    \"4-door\"\n  ],\n  \"synonyms\": [\n    \"storage unit\",\n    \"cupboard\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

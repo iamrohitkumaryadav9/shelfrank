@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e0b643c2e794831d2bf256b84dd1c8cbd5d4e7a828662539dcea651b1a852a69",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 45,
+  "text": "{\n  \"product_type\": \"parsons chair\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"dining chair\",\n    \"upholstered chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bf4913d266f55cad6a9326558ecea254dd6307cb43e43e45f03ca7a620de8a64",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"decorative tile\",\n  \"attributes\": [\n    \"ceramic\",\n    \"sea shell pattern\"\n  ],\n  \"synonyms\": [\n    \"wall tile\",\n    \"accent tile\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

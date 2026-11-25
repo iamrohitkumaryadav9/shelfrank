@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4203e183b69f6e8e0b0ee46189b9bf6843be633a83440f17ceba55b24287a5b6",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"side table\",\n  \"attributes\": [\n    \"with storage\"\n  ],\n  \"synonyms\": [\n    \"end table\",\n    \"accent table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

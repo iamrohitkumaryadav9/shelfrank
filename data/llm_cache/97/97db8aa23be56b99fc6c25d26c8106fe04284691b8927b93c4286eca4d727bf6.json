@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0e624233287c24c0f481be113e1b034678f60830ecd08270771b52506517aec3",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"LED light bulb\",\n  \"attributes\": [\n    \"60 watt equivalent\"\n  ],\n  \"synonyms\": [\n    \"LED lamp\",\n    \"LED bulb\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

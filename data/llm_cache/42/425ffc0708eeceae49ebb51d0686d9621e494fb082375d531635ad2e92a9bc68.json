@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f8b1996813cdb4e8a4631f6091ae8a3b32561189158ef5c1a4ac8aa823356381",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 58,
+  "text": "{\n  \"product_type\": \"outdoor chair\",\n  \"attributes\": [\n    \"large\",\n    \"cushioned\"\n  ],\n  \"synonyms\": [\n    \"patio chair\",\n    \"garden chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

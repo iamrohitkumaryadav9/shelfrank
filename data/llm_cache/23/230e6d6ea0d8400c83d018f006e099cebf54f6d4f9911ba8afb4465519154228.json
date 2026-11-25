@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "579a8ceaff64b333d31ed95d1bf9447414c83ac263074766b97f060024992792",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 49,
+  "text": "{\n  \"product_type\": \"chair\",\n  \"attributes\": [\n    \"teal\"\n  ],\n  \"synonyms\": [\n    \"accent chair\",\n    \"armchair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

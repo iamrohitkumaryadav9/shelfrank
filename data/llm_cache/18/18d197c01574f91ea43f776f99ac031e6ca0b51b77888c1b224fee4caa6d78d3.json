@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a52bee5c26a2ad1bfd8c42a3e4943287bf34772ad63ae4cf8d0fe559f3d601a7",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"duvet cover\",\n  \"attributes\": [\n    \"cream\",\n    \"queen size\"\n  ],\n  \"synonyms\": [\n    \"quilt cover\",\n    \"comforter cover\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "32d1d9c0fd20c342a19881429ffc51e61524a8eb6568877a6e8d83c37a1cda98",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"bathroom light fixture\",\n  \"attributes\": [\n    \"bathroom\"\n  ],\n  \"synonyms\": [\n    \"vanity light\",\n    \"bathroom wall sconce\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

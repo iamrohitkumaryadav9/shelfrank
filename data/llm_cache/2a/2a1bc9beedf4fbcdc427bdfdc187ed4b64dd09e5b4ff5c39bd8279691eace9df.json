@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "24a2f67c49de29370313b6ba14498fad7d225fd74ad0f7134f06671e4453b74d",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"bar stool\",\n  \"attributes\": [\n    \"with backrest\"\n  ],\n  \"synonyms\": [\n    \"counter stool\",\n    \"high chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

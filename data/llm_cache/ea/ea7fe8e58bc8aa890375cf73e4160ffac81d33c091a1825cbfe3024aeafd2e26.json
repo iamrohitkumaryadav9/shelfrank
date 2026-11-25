@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "cb0d69584150db43333ffd4fce7906320be3be954abe6723c17ddbf0eb3ceb86",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"chair cushion\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"seat pad\",\n    \"chair pillow\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

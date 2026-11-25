@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4cf4aa845c965e18cdd7e6d6758a7e940deb099f1248ca7ea0709ce06c5d0579",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"cabinet hardware\",\n  \"attributes\": [\n    \"Liberty Hardware\",\n    \"Francisco collection\"\n  ],\n  \"synonyms\": [\n    \"cabinet pulls\",\n    \"drawer knobs\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

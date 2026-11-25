@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7f46a14ff994f320088c602c985c0e9bbb5889b6c20b494e54e6646ca4305a7d",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"armchair\",\n  \"attributes\": [\n    \"sancroft\"\n  ],\n  \"synonyms\": [\n    \"accent chair\",\n    \"living room chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

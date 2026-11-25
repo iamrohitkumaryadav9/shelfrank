@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e41f66d3d4dfa03898763b15f020b3e9f293a1ed1131f95c57eca90d5ad0ec1a",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 48,
+  "text": "{\n  \"product_type\": \"clips\",\n  \"attributes\": [\n    \"medium\"\n  ],\n  \"synonyms\": [\n    \"clamps\",\n    \"fasteners\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

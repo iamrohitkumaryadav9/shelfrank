@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "49a961712b81949f2cb99df0f1d21cab9d490a0c73e990deb80eff32e50e7bcc",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"curtains\",\n  \"attributes\": [\n    \"burnt orange\"\n  ],\n  \"synonyms\": [\n    \"drapes\",\n    \"window panels\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

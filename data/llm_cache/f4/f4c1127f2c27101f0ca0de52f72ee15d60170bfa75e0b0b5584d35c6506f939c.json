@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ee8dd51672da0e9b1cf45df4be5c326ce668a89f91f8dfcaf0e3f49925801492",
+ "response": {
+  "input_tokens": 231,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 39,
+  "text": "{\n  \"product_type\": \"zen decor\",\n  \"attributes\": [\"zen style\"],\n  \"synonyms\": [\"meditation decor\", \"minimalist decor\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

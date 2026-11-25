@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3080ac2aacbb6c5c569b993bf32ab980aef23277a922bfb743d952f3740d69bc",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"bathroom vanity\",\n  \"attributes\": [\n    \"48 inch\",\n    \"trough sink\"\n  ],\n  \"synonyms\": [\n    \"bathroom cabinet\",\n    \"vanity unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

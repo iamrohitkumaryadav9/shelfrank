@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a22eba15171cee93a137405892ab1db7ee9f35937cfaf554913ebdf6e71c4440",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"laundry basket\",\n  \"attributes\": [\n    \"large\"\n  ],\n  \"synonyms\": [\n    \"laundry hamper\",\n    \"clothes bin\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

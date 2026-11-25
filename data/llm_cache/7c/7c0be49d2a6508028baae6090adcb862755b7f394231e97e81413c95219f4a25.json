@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "860d2d2b45e7655bf9bd00a1c067c28c78e517339d9bd4f655a926c5647187d6",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"monitor stand\",\n  \"attributes\": [\n    \"dual\"\n  ],\n  \"synonyms\": [\n    \"dual monitor riser\",\n    \"double monitor mount\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

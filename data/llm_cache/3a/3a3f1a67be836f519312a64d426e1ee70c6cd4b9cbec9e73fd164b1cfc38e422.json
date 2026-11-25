@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "29d790df05f9a275dff130d0a9a327a32fea9a73ae396983be57af5bcbd87f85",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"wall art\",\n  \"attributes\": [\n    \"drum theme\"\n  ],\n  \"synonyms\": [\n    \"framed print\",\n    \"wall decor\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d5f468cd4af3088c8ec6da0cb60073ecbc5e1008c66e718f6784a83b534aae1e",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"bowl\",\n  \"attributes\": [\n    \"iittala\"\n  ],\n  \"synonyms\": [\n    \"serving bowl\",\n    \"dish\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

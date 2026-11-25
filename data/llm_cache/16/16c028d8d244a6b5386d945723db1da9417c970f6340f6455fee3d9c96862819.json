@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b2dbb9d339f66211207a104f74cbf7fd85c7c50076931b83ebbe4527406af061",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"ottoman bed\",\n  \"attributes\": [\n    \"queen size\"\n  ],\n  \"synonyms\": [\n    \"convertible ottoman\",\n    \"sleeper ottoman\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

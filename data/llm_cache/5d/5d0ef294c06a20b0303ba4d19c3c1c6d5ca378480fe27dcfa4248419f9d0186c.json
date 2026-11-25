@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "cec5d2538a56af51c6d6d4912fd5200d040e7327d6d2a28337ec4f1dac55bf33",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"table lamp\",\n  \"attributes\": [\n    \"arwen\"\n  ],\n  \"synonyms\": [\n    \"desk lamp\",\n    \"accent lamp\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

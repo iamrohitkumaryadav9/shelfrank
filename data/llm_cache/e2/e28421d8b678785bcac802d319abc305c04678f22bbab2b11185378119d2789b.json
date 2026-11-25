@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d925ed7adc56e0306e8a9c3c8ac362a504c3787c49d29262e4b30a98372ccc5f",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"range hood\",\n  \"attributes\": [\n    \"48 inch\",\n    \"kitchen\"\n  ],\n  \"synonyms\": [\n    \"vent hood\",\n    \"range vent\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

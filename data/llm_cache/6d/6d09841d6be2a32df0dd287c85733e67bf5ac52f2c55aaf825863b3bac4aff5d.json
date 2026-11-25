@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4d865007f03e1834b5496736c0942cfe4f6e9417ea3050d33a5e43e3683e214b",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"coffee table\",\n  \"attributes\": [\n    \"block\"\n  ],\n  \"synonyms\": [\n    \"cocktail table\",\n    \"coffee desk\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

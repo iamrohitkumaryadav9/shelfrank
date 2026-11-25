@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2016753c742434e8ce7034a98d85f8a649ad2384bcfac9a6e183b37f01cebec3",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 63,
+  "text": "{\n  \"product_type\": \"adjustable bed\",\n  \"attributes\": [\n    \"mobley\",\n    \"zero gravity\",\n    \"wireless remote\"\n  ],\n  \"synonyms\": [\n    \"adjustable base\",\n    \"power bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

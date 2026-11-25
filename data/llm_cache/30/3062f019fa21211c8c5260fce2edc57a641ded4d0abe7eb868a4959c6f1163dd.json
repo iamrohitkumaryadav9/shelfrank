@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5439139c1dda6dfc37bdce10a8d2a4ed1151b94a55c9daecfb3dccf2b8d114a2",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"buffet cabinet\",\n  \"attributes\": [\n    \"tall\"\n  ],\n  \"synonyms\": [\n    \"sideboard\",\n    \"credenza\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

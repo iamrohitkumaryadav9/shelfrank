@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "922c5a4df165959778e0fab73e4c51eb7f4282051dc750f5f143d1916d98ed4e",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"entertainment console\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"media console\",\n    \"tv stand\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "471b780390e45a20e074208ff644967598f2d7666f3f04bb706f1e3e74ba620d",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"throw pillow\",\n  \"attributes\": [\n    \"auburn\"\n  ],\n  \"synonyms\": [\n    \"decorative pillow\",\n    \"accent pillow\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

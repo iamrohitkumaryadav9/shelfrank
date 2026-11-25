@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e916c459653a4b863d9e8cdee2ec87294207a1cfde767f1946a6565c91919e58",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"bathroom vanity\",\n  \"attributes\": [\n    \"white\",\n    \"black hardware\"\n  ],\n  \"synonyms\": [\n    \"bathroom cabinet\",\n    \"vanity unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

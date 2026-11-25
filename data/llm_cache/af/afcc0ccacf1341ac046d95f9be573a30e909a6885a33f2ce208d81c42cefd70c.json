@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "82adb579a6e3d92d2beae7186d4c3b85a7ef41d5d76d89cacbe7510abffa489c",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"loaf pan\",\n  \"attributes\": [\n    \"porcelain\"\n  ],\n  \"synonyms\": [\n    \"bread pan\",\n    \"baking dish\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

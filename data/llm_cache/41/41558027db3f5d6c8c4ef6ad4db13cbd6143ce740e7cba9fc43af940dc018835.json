@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e24f6311a82b1d7047a2ffbcbbf31ebaa28f2b377169747f5362c3007ed6f146",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"bathroom vanity\",\n  \"attributes\": [\n    \"laundry room\"\n  ],\n  \"synonyms\": [\n    \"vanity cabinet\",\n    \"bathroom sink cabinet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

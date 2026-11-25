@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "970497fdfe0581b04a68d0625e943060a9b19492319dfe8bea1deeeac8a1fde3",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 66,
+  "text": "{\n  \"product_type\": \"upholstered bed\",\n  \"attributes\": [\n    \"tufted\",\n    \"diamond tufted\"\n  ],\n  \"synonyms\": [\n    \"upholstered bed frame\",\n    \"tufted headboard bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

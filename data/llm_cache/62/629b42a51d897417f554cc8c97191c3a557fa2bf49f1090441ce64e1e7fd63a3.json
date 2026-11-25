@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ef2b56d6e6102e6cb2da4565dcced72c8a51ab0efcd6231ec4c0ba2b3d7c5433",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 41,
+  "text": "{\n  \"product_type\": \"light bulb\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"lamp\",\n    \"light globe\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

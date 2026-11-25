@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9f3f5a4eab8e84b3e7bf7d016a2dc429e31a74cb986e56e159930a2d64b5b6d8",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 65,
+  "text": "{\n  \"product_type\": \"bathroom vanity\",\n  \"attributes\": [\n    \"36 inch\",\n    \"blue\",\n    \"Fawkes\"\n  ],\n  \"synonyms\": [\n    \"bathroom cabinet\",\n    \"vanity unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

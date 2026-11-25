@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8d28a92cde28540def4b2de7359a5f4edb6c3a2d71a9a8973d2fd63311445ffe",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"bookcase\",\n  \"attributes\": [\n    \"large\"\n  ],\n  \"synonyms\": [\n    \"bookshelf\",\n    \"bookcase unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

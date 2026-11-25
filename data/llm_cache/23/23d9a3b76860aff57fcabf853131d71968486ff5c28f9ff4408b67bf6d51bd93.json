@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "c6881731398a26b83dd23faef6bdf47ed4f14cc28d04adcdf2a28e78fdc7d59d",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"slow cooker\",\n  \"attributes\": [\n    \"7 quart\"\n  ],\n  \"synonyms\": [\n    \"crock pot\",\n    \"electric cooker\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

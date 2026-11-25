@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4204e5b0c95bec63f7dd4b31ec5169393d65c6d83053d5ca28396c9deda502b0",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"outdoor furniture\",\n  \"attributes\": [\n    \"modern\"\n  ],\n  \"synonyms\": [\n    \"patio furniture\",\n    \"garden furniture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

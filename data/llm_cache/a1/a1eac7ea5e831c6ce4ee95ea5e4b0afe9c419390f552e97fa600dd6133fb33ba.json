@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6199bac3be5a68e2e3b5b3a93647393834dbbbe68a0f885c9fefa0ae34d7e570",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"dining table\",\n  \"attributes\": [\n    \"industrial\",\n    \"pipe\"\n  ],\n  \"synonyms\": [\n    \"dining room table\",\n    \"kitchen table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

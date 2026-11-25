@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d6b9513e162ec481b04598c1870d469646323b315a7b85a3f0f7ee265c42bf86",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"wall art\",\n  \"attributes\": [\n    \"Mexican style\"\n  ],\n  \"synonyms\": [\n    \"wall decor\",\n    \"artwork\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

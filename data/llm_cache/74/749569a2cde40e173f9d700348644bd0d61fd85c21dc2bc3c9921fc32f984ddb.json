@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1e16695181400acd39881b13d82feef179c636dc693a7c0e20bd24236d316cc5",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"chest of drawers\",\n  \"attributes\": [\n    \"capricorn\"\n  ],\n  \"synonyms\": [\n    \"dresser\",\n    \"bureau\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

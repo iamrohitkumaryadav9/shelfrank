@@ -174,7 +174,7 @@ product type, and near-identical product types.
 - **Fine-tuned encoder:** [dense_dev.md](dense_dev.md) for dev, and the retrieval table in [final_results.md](final_results.md). By the dev rule it was
   not used in the ranker. On the primary queries it is better than off-the-shelf under both evaluations. The rule was written to
   avoid choosing on noise, and here it left a gain unused.
-- **Rewriting:** Not evaluated yet.
+- **Rewriting:** See [rewriting.md](rewriting.md) for gains, harm, oracle bounds, cost and latency.
 - **Search suggestions:** MRR of the next word after one typed word is 0.127, against 0.048 for the most
   frequent words. No popularity data exists, and the class prior did not help ([suggest.md](suggest.md)).
 - **More like this:** rerank against rrf: -0.001 [-0.004, +0.001] nDCG@10, no clear difference; rrf against bm25: +0.041 [+0.031, +0.052] nDCG@10, gain; bge_small_esci against bge_small: +0.022 [+0.013, +0.031] nDCG@10, gain ([similar.md](similar.md)).

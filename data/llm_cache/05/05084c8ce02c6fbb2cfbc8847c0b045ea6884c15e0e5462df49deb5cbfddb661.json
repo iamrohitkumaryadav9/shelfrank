@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9f5ca3cbec2ee600464a646c933ea7f4a1aeb9297b32addfb3d1effb18e54d9b",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"wall art\",\n  \"attributes\": [\n    \"bar room theme\"\n  ],\n  \"synonyms\": [\n    \"wall decor\",\n    \"wall hanging\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

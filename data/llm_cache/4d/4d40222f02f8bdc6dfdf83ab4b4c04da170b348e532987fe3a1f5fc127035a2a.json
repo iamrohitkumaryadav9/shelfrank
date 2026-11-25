@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b557e065b09e06e8457cb0e8e66e1afc7b38b47781abadda8c30f3532dde5ca4",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"accent chair\",\n  \"attributes\": [\n    \"comfortable\"\n  ],\n  \"synonyms\": [\n    \"occasional chair\",\n    \"armchair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5cabe41b441eed2cc81d7aaa35f2539ea372ab7eecd8510011de22176495ddde",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"dresser\",\n  \"attributes\": [\n    \"dark gray\"\n  ],\n  \"synonyms\": [\n    \"chest of drawers\",\n    \"bedroom bureau\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

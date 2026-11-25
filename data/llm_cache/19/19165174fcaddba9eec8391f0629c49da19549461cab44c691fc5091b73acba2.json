@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5997a1396da4ebd798547809ffb4951bf96a35720cd0dda2545c2631444941c4",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"curtains\",\n  \"attributes\": [\n    \"living room\",\n    \"pearl\"\n  ],\n  \"synonyms\": [\n    \"drapes\",\n    \"window panels\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

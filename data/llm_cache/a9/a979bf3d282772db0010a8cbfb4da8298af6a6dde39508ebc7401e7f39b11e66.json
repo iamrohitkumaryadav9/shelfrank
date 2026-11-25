@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "69eade9f1035d6f197730dc5530e0bf286bf37b4f279d865ba87178371f183b4",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"kitchen island\",\n  \"attributes\": [\n    \"with seating\"\n  ],\n  \"synonyms\": [\n    \"kitchen cart\",\n    \"kitchen workstation\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

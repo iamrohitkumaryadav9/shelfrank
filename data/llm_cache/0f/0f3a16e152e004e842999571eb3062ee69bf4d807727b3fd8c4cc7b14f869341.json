@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "17f6215195c6975f2ce0432ccb56fdb4f7ff6082511506b9bdd3b4ef2729341c",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"sectional sofa\",\n  \"attributes\": [\n    \"modular\",\n    \"vlad\"\n  ],\n  \"synonyms\": [\n    \"modular sofa\",\n    \"sectional couch\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6fd428a77c7e8fbbdc91f7b01ff4dc4683258ec615f0b11f806855ca8cf1eeec",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 44,
+  "text": "{\n  \"product_type\": \"penny round tile\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"penny tile\",\n    \"round mosaic tile\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

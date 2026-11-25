@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "41cf5bc671c61f5d3683c275b1b404506e44bb03ad2c00ff2f6c0ef2ef87060e",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"mattress pad\",\n  \"attributes\": [\n    \"full size\",\n    \"padded\"\n  ],\n  \"synonyms\": [\n    \"mattress protector\",\n    \"mattress topper\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

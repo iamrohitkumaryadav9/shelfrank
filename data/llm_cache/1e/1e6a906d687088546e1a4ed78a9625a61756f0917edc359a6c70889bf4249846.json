@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d6164a782c632e808ee7fc846326d270bdd7e42be42311d174fae3210c1609ea",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"curtains\",\n  \"attributes\": [\n    \"town & country living\"\n  ],\n  \"synonyms\": [\n    \"drapes\",\n    \"window panels\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

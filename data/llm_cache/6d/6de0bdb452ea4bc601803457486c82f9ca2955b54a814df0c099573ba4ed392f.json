@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "04fedd1f43efc44445dd944c99f5c3bc700368e907a38e2a183da726f2156f89",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"freestanding bathtub\",\n  \"attributes\": [\n    \"black\",\n    \"with faucet\"\n  ],\n  \"synonyms\": [\n    \"soaking tub\",\n    \"standalone tub\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

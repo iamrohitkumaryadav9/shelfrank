@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "72ac3205f999ed1cfa83d1ed6adf6ef815435115a320225db33fe14c52df86ec",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"console table\",\n  \"attributes\": [\n    \"olive green\"\n  ],\n  \"synonyms\": [\n    \"entryway table\",\n    \"sofa table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8e7b84ab621b0dd9b871548f6cb81e2a1790ba5191e2d40ecfdb640296d7e9c9",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 38,
+  "text": "{\n  \"product_type\": \"cremation urn\",\n  \"attributes\": [\"memorial\"],\n  \"synonyms\": [\"funeral urn\", \"keepsake urn\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

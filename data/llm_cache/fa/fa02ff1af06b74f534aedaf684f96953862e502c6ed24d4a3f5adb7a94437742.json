@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fb1c425c74e16be7a34a4a7ebfc24ea727d7d1aff3f9de9257eacd9a0dc2f18e",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"dresser\",\n  \"attributes\": [\n    \"7 drawer\",\n    \"white\"\n  ],\n  \"synonyms\": [\n    \"chest of drawers\",\n    \"bedroom bureau\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7a7a9fa4138f1e08a744614b3dce72b141bce1f7909cc428ccc72461d6a45438",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"bookshelf\",\n  \"attributes\": [\n    \"black\",\n    \"hanging\"\n  ],\n  \"synonyms\": [\n    \"wall-mounted bookshelf\",\n    \"floating bookshelf\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

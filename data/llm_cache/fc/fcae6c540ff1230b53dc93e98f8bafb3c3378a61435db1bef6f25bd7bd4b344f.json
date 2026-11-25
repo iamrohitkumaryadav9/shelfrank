@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "54fdcd7dcf9a4e97f4a8f367d96da249863094202f6831e5a0253f4e2e9cccbe",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"serving platter\",\n  \"attributes\": [\n    \"nautical\"\n  ],\n  \"synonyms\": [\n    \"serving tray\",\n    \"decorative platter\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

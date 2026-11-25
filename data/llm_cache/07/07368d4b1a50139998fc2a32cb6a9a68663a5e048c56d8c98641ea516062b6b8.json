@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9bace48d572387146b1039fe20f3df424fa770e820a386d720ed93f3ae9566f4",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"adjustable bed\",\n  \"attributes\": [\n    \"king size\",\n    \"includes mattress\"\n  ],\n  \"synonyms\": [\n    \"adjustable base\",\n    \"electric bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

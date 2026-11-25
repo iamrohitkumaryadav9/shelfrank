@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "21fc9d2c48deb551f83e67cd3e91918f99503a3631e404e8eb30842159c0a74f",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"closet door\",\n  \"attributes\": [\n    \"46 inch\"\n  ],\n  \"synonyms\": [\n    \"wardrobe door\",\n    \"closet panel\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

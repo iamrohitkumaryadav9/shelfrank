@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5316bf4cfa9e468b5ca64fd79878d927138d991198a200a3e797b8447dff010a",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"podium\",\n  \"attributes\": [\n    \"locking cabinet\"\n  ],\n  \"synonyms\": [\n    \"lectern\",\n    \"pulpit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

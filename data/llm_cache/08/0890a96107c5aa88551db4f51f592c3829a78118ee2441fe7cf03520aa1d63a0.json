@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fba122bd408fec8ce6cafbcf94ddc778326e36d1020ec630e8933e4108d99ba0",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"shower curtain\",\n  \"attributes\": [\n    \"clear\"\n  ],\n  \"synonyms\": [\n    \"shower liner\",\n    \"bath curtain\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

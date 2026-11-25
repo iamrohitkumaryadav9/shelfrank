@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2f5ab84388fae8cfedc78f0bcd4c33c2ad206ce29ee4f7f4c66dab46ab7156e2",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"nightstand\",\n  \"attributes\": [\n    \"bedside\"\n  ],\n  \"synonyms\": [\n    \"bedside table\",\n    \"end table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

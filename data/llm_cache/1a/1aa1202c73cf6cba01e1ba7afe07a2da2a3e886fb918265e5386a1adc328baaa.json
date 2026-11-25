@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ec30615cd62c19c7787e1e0ea98321484b412333580e37d521e51bc16e71e2ca",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"laundry cart\",\n  \"attributes\": [\n    \"utility\",\n    \"chase\"\n  ],\n  \"synonyms\": [\n    \"laundry hamper\",\n    \"rolling laundry basket\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

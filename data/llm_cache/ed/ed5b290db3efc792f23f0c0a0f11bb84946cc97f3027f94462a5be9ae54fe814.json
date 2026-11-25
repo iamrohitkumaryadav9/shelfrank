@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "38e8cae98fb99817e16f5cd2b5675b6f8eb1cb2ec23ad3f9736e851a4e64c4dc",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 44,
+  "text": "{\n  \"product_type\": \"meditation cushion\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"zafu\",\n    \"meditation pillow\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

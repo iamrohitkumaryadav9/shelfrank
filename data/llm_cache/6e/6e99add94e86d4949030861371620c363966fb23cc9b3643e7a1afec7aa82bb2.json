@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "166f8ffa65cd849457e74f234c48661371b1f6226b9cb630b2af1fa4c7b345b5",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"outdoor lounge cushions\",\n  \"attributes\": [\n    \"outdoor\"\n  ],\n  \"synonyms\": [\n    \"patio seat cushions\",\n    \"outdoor furniture pads\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

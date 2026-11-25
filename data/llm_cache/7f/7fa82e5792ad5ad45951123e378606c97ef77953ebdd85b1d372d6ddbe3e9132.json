@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "24be539ba472f551d09fb33e3fec7e68ed3e486290f626e99725cf37b14a7fb2",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"decorative pillow\",\n  \"attributes\": [\n    \"light blue\",\n    \"navy blue\"\n  ],\n  \"synonyms\": [\n    \"throw pillow\",\n    \"accent pillow\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

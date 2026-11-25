@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "aa85f69db91b4981b501c98bf33eb6788a4663a07785dea9a206f9475c6ae780",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 40,
+  "text": "{\n  \"product_type\": \"sofa\",\n  \"attributes\": [\"Serta\", \"Kleinmon\"],\n  \"synonyms\": [\"couch\", \"settee\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "16c35bf7e5f2f4daa21fac980c0ca6d66fb1071c53ca6bd21092ea81d96fe411",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"doormat\",\n  \"attributes\": [\n    \"outdoor\",\n    \"welcome\"\n  ],\n  \"synonyms\": [\n    \"welcome mat\",\n    \"entryway rug\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

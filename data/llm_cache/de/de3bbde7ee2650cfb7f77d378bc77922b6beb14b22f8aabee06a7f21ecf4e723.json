@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "545fca4a3f4e9f8fc84c48e63970b0fa490a4028a1741ae126db677e45e3c581",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"surge protector\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"power strip\",\n    \"surge suppressor\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

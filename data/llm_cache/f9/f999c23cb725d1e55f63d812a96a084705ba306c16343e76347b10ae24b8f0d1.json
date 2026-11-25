@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "91ab61a0823b33373ad07436fcdeeb8db4132d8e6fa81e1a82f14d30408a3659",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"pouf\",\n  \"attributes\": [\n    \"small\",\n    \"woven\"\n  ],\n  \"synonyms\": [\n    \"ottoman\",\n    \"floor cushion\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

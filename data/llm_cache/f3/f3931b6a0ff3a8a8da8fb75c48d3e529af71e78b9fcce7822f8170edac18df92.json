@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "362dbc66e4f59869702a7700768b0cd74b54601eb9e6925bb54e53b21d52a919",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"artist stool\",\n  \"attributes\": [\n    \"adjustable height\"\n  ],\n  \"synonyms\": [\n    \"drafting stool\",\n    \"studio chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

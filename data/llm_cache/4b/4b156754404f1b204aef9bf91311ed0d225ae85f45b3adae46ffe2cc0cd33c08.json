@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9ae70bf418c17c1d8cfd7d6c157fddc22477a7a55dfe1c36c0c3e529ad116a27",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"pantry cabinet\",\n  \"attributes\": [\n    \"grey\"\n  ],\n  \"synonyms\": [\n    \"storage cabinet\",\n    \"kitchen cupboard\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

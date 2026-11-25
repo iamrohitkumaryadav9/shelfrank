@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a0f21b42c4078a042908b9f3e3b1f7d4934750740663dca002abe0c0f6e22a1d",
+ "response": {
+  "input_tokens": 246,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 79,
+  "text": "{\n  \"product_type\": \"kitchen faucet\",\n  \"attributes\": [\n    \"Kraus\",\n    \"Oletto\",\n    \"KPF-2820\",\n    \"spot free stainless steel\"\n  ],\n  \"synonyms\": [\n    \"kitchen sink tap\",\n    \"pull-down faucet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

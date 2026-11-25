@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9fc0c4d2ec6eeb5ac39496e4eca51a9b3dc6716bd970e9b08179cf522a2a5f1e",
+ "response": {
+  "input_tokens": 240,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 72,
+  "text": "{\n  \"product_type\": \"wall sconce\",\n  \"attributes\": [\n    \"fleur de lis\",\n    \"living\",\n    \"candle\",\n    \"bronze\"\n  ],\n  \"synonyms\": [\n    \"wall candle holder\",\n    \"wall light fixture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

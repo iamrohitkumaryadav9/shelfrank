@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fbda2bd8b33c3a30b0bcd05fe2ab3f3b9cc6e1060a8254a01ca97db2b34b2349",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"desk chair\",\n  \"attributes\": [\n    \"pastel pink\"\n  ],\n  \"synonyms\": [\n    \"office chair\",\n    \"computer chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

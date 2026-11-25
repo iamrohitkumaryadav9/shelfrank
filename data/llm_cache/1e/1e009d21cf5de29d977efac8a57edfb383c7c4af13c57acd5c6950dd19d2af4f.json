@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "be5d532bf6c5486c45af4bfd9ca4fc215272eabe816b24993a8658e6c86f8297",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"plant stand\",\n  \"attributes\": [\n    \"Chinese style\"\n  ],\n  \"synonyms\": [\n    \"pedestal stand\",\n    \"flower display stand\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

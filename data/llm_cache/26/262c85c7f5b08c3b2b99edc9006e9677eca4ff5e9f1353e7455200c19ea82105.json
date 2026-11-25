@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8b8e62898bd1a12826820773ac5bc166fa8d2e87e163890e8ce6d511e9a1a164",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"sofa\",\n  \"attributes\": [\n    \"teak\",\n    \"Donaldson\"\n  ],\n  \"synonyms\": [\n    \"couch\",\n    \"settee\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

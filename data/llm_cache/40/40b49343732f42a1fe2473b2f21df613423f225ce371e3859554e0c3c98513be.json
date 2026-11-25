@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ddffa89f8eda56db5bb2b0fc2d46ae7018fa5ff49425c21c7180ffeea39f18c2",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"rocking chair\",\n  \"attributes\": [\n    \"mahogany\",\n    \"porch\"\n  ],\n  \"synonyms\": [\n    \"rocker\",\n    \"outdoor rocking chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

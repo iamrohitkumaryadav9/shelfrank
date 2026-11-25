@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "07457a6b2592f04d8fd43e62366bc8d27483416fc540fba40e1bfca2ab0baf69",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"umbrella stand\",\n  \"attributes\": [\n    \"resin\",\n    \"free standing\"\n  ],\n  \"synonyms\": [\n    \"umbrella holder\",\n    \"umbrella rack\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

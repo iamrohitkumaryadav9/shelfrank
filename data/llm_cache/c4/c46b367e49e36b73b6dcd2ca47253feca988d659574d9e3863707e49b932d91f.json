@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7f9224de0ae84dcf06a2eb400e289fcbf593b0c02e82853a5b1504402c485ecb",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"coffee table\",\n  \"attributes\": [\n    \"island estate\"\n  ],\n  \"synonyms\": [\n    \"cocktail table\",\n    \"center table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

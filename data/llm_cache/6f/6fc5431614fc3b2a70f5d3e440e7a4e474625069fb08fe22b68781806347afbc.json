@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "18fa005a30c069a416fdb3dbf11b83f4aad32a13c7c5ca89cebdd91ffbd545bb",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"wire basket\",\n  \"attributes\": [\n    \"with dividers\"\n  ],\n  \"synonyms\": [\n    \"wire storage bin\",\n    \"metal organizer basket\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

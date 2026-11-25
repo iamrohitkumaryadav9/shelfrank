@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "62c373e2039a76f87a06a082deb0fec76ccfb482c3c0d3dc78deed5ea2f11a97",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 64,
+  "text": "{\n  \"product_type\": \"bed\",\n  \"attributes\": [\n    \"queen size\",\n    \"tufted\",\n    \"Maryford\"\n  ],\n  \"synonyms\": [\n    \"bed frame\",\n    \"upholstered bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

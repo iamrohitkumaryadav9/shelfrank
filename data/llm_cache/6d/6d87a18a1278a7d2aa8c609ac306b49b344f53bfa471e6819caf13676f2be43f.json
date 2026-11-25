@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fa89debf02df43a72249c2d901caefc584c0c8b544c56771921286bb9c4dd7f5",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"entryway cabinet\",\n  \"attributes\": [\n    \"front door\",\n    \"with doors\"\n  ],\n  \"synonyms\": [\n    \"foyer cabinet\",\n    \"hallway storage cabinet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

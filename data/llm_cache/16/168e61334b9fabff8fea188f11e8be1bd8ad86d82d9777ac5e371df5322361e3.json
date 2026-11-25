@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0e45c0e308585a09b695d9c7cd68f19aaf0a539c0659328d4b911b81cb945165",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"wall art\",\n  \"attributes\": [\n    \"feather\"\n  ],\n  \"synonyms\": [\n    \"wall decor\",\n    \"wall hanging\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

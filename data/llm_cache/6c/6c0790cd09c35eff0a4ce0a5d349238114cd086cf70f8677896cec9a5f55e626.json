@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f1abfe87fca8efa24b673a39c6ac86dcb0e5b1786e982e5931d66e4e7e5ec3e5",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"privacy screen\",\n  \"attributes\": [\n    \"outdoor\"\n  ],\n  \"synonyms\": [\n    \"privacy partition\",\n    \"outdoor room divider\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

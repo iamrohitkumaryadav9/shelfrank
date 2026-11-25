@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a2fbe1a4dc7c3a59de97f6c4245b45ceac3ffc9671948c40febf2e5bc1ad1da2",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"mirror\",\n  \"attributes\": [\n    \"Meade\"\n  ],\n  \"synonyms\": [\n    \"looking glass\",\n    \"wall mirror\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

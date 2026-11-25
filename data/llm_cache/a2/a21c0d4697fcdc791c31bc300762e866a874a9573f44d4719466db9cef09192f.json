@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b51ae93da5eab23d33c573a2e5101e5de2b39452c4fa8c8c02049800de68d48d",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 62,
+  "text": "{\n  \"product_type\": \"cabinet pull\",\n  \"attributes\": [\n    \"wisdom stone river\",\n    \"3-3/4 inch\"\n  ],\n  \"synonyms\": [\n    \"drawer handle\",\n    \"cabinet hardware\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

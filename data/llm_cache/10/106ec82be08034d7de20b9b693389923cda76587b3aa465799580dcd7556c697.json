@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fcbd52516afc2e1ea4279e374dab986d7e6d4599e85626569782e9879c4fe584",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"throw blanket\",\n  \"attributes\": [\n    \"blue\",\n    \"faux\",\n    \"with pillows\"\n  ],\n  \"synonyms\": [\n    \"throw\",\n    \"decorative blanket\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

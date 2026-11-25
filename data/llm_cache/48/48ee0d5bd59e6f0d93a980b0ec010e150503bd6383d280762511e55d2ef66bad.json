@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "94c494ed09095c276a1910fc5dd17654123353bd786331cc1ed4b6a349eaf522",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"bed frame\",\n  \"attributes\": [\n    \"twin size\"\n  ],\n  \"synonyms\": [\n    \"bed base\",\n    \"mattress foundation\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

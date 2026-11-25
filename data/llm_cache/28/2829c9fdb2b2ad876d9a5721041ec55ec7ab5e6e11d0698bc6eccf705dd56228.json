@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "cdb2e4be0cc1d0a19eed37f847143c3e22b4f4981ee423e30879fca8f96c7171",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"shower head and valve\",\n  \"attributes\": [\n    \"chrome\"\n  ],\n  \"synonyms\": [\n    \"shower faucet set\",\n    \"shower trim kit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

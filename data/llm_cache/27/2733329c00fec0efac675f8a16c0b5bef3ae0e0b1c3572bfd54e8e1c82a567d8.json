@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a2578f7dc126aa17f052005320834ec3a5ee63528b22a647ed74538710c00a81",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"duvet cover\",\n  \"attributes\": [\n    \"tie-dye\"\n  ],\n  \"synonyms\": [\n    \"quilt cover\",\n    \"comforter cover\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

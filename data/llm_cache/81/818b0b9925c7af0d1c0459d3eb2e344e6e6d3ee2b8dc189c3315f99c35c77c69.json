@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d80af22c62ee5d48883650a0904aa21aa8ca9d8f9e8708567b44e06995c58686",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"area rug\",\n  \"attributes\": [\n    \"tressler\"\n  ],\n  \"synonyms\": [\n    \"floor rug\",\n    \"carpet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

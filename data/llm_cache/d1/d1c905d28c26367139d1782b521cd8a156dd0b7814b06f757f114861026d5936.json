@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "cb804f9b207a1fa470dde2d4300884d1ff98381bdae7f569fc74c42c8fbbce57",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"coffee table set\",\n  \"attributes\": [\n    \"living room\"\n  ],\n  \"synonyms\": [\n    \"coffee table collection\",\n    \"living room table set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

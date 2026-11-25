@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6ba7f4748233036e6990f323dd5c90dfef150ae56687ecb8503ad012ab0ad54e",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 61,
+  "text": "{\n  \"product_type\": \"patio sectional\",\n  \"attributes\": [\n    \"burruss\",\n    \"with cushions\"\n  ],\n  \"synonyms\": [\n    \"outdoor sectional sofa\",\n    \"patio corner sofa\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "179d44c7226c1eb651be3ae46829aaf6299a1e074f154f59339a48b0ebddd74e",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"card table\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"folding table\",\n    \"game table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

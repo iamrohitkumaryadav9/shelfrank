@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f6cbdec9b55ac646c28017b2a7c243f31c346b97b0f7ccdca41c6b3ea1281a04",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"ergonomic chair\",\n  \"attributes\": [\n    \"ergonomic\"\n  ],\n  \"synonyms\": [\n    \"office chair\",\n    \"desk chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

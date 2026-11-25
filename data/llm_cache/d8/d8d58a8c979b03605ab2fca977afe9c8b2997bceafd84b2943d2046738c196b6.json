@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7a0f8f2fcd8bfbfb597857861eb3c405a429337f1df0d469f622ad1afee0c232",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"pergola\",\n  \"attributes\": [\n    \"novara\"\n  ],\n  \"synonyms\": [\n    \"garden pavilion\",\n    \"outdoor canopy\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

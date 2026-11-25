@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "812e7038677a13e0b06a15dc85fea7775583dca480923739bd292b7f48f007d2",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"bar set\",\n  \"attributes\": [\n    \"5 piece\",\n    \"Nettie\"\n  ],\n  \"synonyms\": [\n    \"bar table set\",\n    \"pub table set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

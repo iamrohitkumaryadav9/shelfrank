@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8e8880117160eb87717d9077a6bb36d5d8c95def6210f3e82bce225562ee21ee",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"area rug\",\n  \"attributes\": [\n    \"Hillsby\",\n    \"oriental\"\n  ],\n  \"synonyms\": [\n    \"carpet\",\n    \"floor rug\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

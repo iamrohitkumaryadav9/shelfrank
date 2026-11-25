@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4e1f7a0243d01f8d1f877a2a9ebf37735c5dc463150b0f4a0e6219384ad13b05",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 39,
+  "text": "{\n  \"product_type\": \"swivel chair\",\n  \"attributes\": [\"mystic\"],\n  \"synonyms\": [\"swivel armchair\", \"rotating chair\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

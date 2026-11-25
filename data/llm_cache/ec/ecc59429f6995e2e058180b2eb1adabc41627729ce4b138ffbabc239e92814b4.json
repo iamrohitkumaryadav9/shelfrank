@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fc9ffd709089b96708b426958931aea062490f6dfe24b7fcc9705966352b37c0",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 67,
+  "text": "{\n  \"product_type\": \"platform bed\",\n  \"attributes\": [\n    \"tufted\",\n    \"upholstered\",\n    \"low profile\"\n  ],\n  \"synonyms\": [\n    \"upholstered bed\",\n    \"tufted bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

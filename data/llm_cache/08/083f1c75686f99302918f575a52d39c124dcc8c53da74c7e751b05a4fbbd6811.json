@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "51cb18bc3ec858b79c8d901103666f7cf9a720be2d27bcc4b4ed469293d5cf85",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"standing desk\",\n  \"attributes\": [\n    \"height adjustable\"\n  ],\n  \"synonyms\": [\n    \"sit-stand desk\",\n    \"adjustable height desk\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

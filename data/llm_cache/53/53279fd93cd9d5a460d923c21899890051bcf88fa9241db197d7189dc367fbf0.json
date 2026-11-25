@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ebaf1518c936baf2524755456ddf793a75fdf4c2ebcb89a9acf362e58dabdae3",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 65,
+  "text": "{\n  \"product_type\": \"bed\",\n  \"attributes\": [\n    \"marlon\",\n    \"tufted\",\n    \"queen size\"\n  ],\n  \"synonyms\": [\n    \"bed frame\",\n    \"upholstered bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

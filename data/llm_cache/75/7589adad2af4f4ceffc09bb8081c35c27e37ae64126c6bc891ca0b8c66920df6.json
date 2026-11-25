@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "eac800832ec89ebd1044aebeca0a84ff9cf5a79cd45a288c888b2712061b9b7c",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"shower floor tile\",\n  \"attributes\": [\n    \"non-slip\"\n  ],\n  \"synonyms\": [\n    \"shower floor mosaic\",\n    \"bathroom floor tile\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

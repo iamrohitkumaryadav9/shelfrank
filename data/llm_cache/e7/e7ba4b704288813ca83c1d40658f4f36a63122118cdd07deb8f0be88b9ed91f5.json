@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "570dac9e0048b97048b4b7ad2dbedb34150f1dc8626224a6a6a2f89dc445498c",
+ "response": {
+  "input_tokens": 231,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"pineapple decor\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"pineapple ornament\",\n    \"pineapple figurine\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

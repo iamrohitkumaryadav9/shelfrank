@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a5faea843f33fabbed316685f16e5c64a6c1a92e4eac1576362a0e0d03009d6a",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"counter stool\",\n  \"attributes\": [\n    \"brendon\"\n  ],\n  \"synonyms\": [\n    \"counter height stool\",\n    \"kitchen stool\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

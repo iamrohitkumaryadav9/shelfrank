@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e9208262c2ebae769bb010df1d40aa4b02de33f9b85831df2fdb6666b4ad0869",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 43,
+  "text": "{\n  \"product_type\": \"wine cabinet\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"wine rack\",\n    \"wine storage unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

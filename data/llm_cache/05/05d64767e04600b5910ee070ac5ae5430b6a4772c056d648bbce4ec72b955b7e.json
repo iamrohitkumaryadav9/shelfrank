@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a78432441eeb0e8bda8456884124c37a3c562f475072d53064ab47bd8af39e99",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 36,
+  "text": "{\n  \"product_type\": \"light fixture\",\n  \"attributes\": [\"Kelly Clarkson brand\"],\n  \"synonyms\": [\"lighting\", \"lamp\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "979ae5c42648ee3f9a7d950963199f2d2a71295bdebe3a17524d64edf8cb96c4",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 49,
+  "text": "{\n  \"product_type\": \"chair\",\n  \"attributes\": [\n    \"ruckus\"\n  ],\n  \"synonyms\": [\n    \"seat\",\n    \"armchair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

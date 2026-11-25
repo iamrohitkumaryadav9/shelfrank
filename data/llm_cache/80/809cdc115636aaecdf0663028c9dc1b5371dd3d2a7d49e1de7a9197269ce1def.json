@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f67949b890a4d53456d7be86c970d5d5e7033ae2c84b7963388309eb28d56205",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 36,
+  "text": "{\n  \"product_type\": \"coat rack\",\n  \"attributes\": [\"bedroom\"],\n  \"synonyms\": [\"coat stand\", \"hall tree\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

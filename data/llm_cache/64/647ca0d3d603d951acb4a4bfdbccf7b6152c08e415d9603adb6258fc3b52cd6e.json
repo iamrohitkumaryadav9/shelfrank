@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2bf3de011118914ce59530412704706caf5e419fde5a534ecd7f72ca5df77863",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 40,
+  "text": "{\n  \"product_type\": \"nautical decor\",\n  \"attributes\": [\"anchor themed\"],\n  \"synonyms\": [\"anchor ornament\", \"nautical wall art\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

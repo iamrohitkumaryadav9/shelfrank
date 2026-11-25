@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4a15cc6e47b836846e10c1f03fc5301351517906e29d581bfcef230afd7b4f7f",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"outdoor sofa\",\n  \"attributes\": [\n    \"filaret\"\n  ],\n  \"synonyms\": [\n    \"patio sofa\",\n    \"outdoor couch\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

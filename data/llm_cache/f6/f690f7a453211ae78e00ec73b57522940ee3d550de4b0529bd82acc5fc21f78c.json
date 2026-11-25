@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "240b93d7501c87618a65ca4b393d2fac39d3b31ec13cec753aecabdfb4f63183",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"kitchen island\",\n  \"attributes\": [\n    \"butcher block\"\n  ],\n  \"synonyms\": [\n    \"kitchen cart\",\n    \"butcher block table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

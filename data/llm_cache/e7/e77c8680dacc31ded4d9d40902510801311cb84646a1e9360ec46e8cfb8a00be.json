@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "aa54059c231502110b696d028324cfbe083c0f7911b79916ca8886bf53a6fd06",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"chair\",\n  \"attributes\": [\n    \"bubble guppies theme\"\n  ],\n  \"synonyms\": [\n    \"seat\",\n    \"armchair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

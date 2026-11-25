@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3d51200e2582da759cdc3c1fcd01476e996677b2860b26c11a15c50e54e87a55",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"rug\",\n  \"attributes\": [\n    \"handmade\",\n    \"tufted\",\n    \"magenta\"\n  ],\n  \"synonyms\": [\n    \"area rug\",\n    \"carpet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

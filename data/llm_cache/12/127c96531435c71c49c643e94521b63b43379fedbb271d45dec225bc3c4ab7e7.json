@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "13861ad3897f1954447d50f50c4fe88926aff16c9ecb95691c346f635c011710",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"storage cabinet\",\n  \"attributes\": [\n    \"tall\"\n  ],\n  \"synonyms\": [\n    \"tall cupboard\",\n    \"tall pantry\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

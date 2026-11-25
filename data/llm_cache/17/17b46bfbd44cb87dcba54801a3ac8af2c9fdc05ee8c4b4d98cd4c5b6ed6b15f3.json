@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "04be8fe838c3e47525d53d062b513c9bdfac099643b9a7d43c5fa0118759f0af",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"coffee table\",\n  \"attributes\": [\n    \"attleboro\",\n    \"drum\"\n  ],\n  \"synonyms\": [\n    \"cocktail table\",\n    \"center table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

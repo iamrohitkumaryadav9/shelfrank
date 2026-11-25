@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "246aa3a29445bb45565e8cd298c2eb30d0be78d15a27e0d3db69bd0a8ee6d0d4",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 65,
+  "text": "{\n  \"product_type\": \"artificial floral arrangement\",\n  \"attributes\": [\n    \"real touch\",\n    \"roses\",\n    \"glass vase\"\n  ],\n  \"synonyms\": [\n    \"faux flower arrangement\",\n    \"silk flower centerpiece\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

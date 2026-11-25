@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e6f19c578b5d874b257b98f2d7aea1677fe3e203a34c381186a6641e8e29b1a8",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 36,
+  "text": "{\n  \"product_type\": \"wall shelf\",\n  \"attributes\": [\"decorative\"],\n  \"synonyms\": [\"floating shelf\", \"wall ledge\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ca2765f2bb7e0a7de61f492af4c4e3eb80019ffd8108e17437f1c6ecc9d3a337",
+ "response": {
+  "input_tokens": 240,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 65,
+  "text": "{\n  \"product_type\": \"desk\",\n  \"attributes\": [\n    \"L-shaped\",\n    \"floating\",\n    \"with hutch\"\n  ],\n  \"synonyms\": [\n    \"corner desk\",\n    \"wall-mounted desk\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ac242b69e23abe67713b222c41f06e3c68c8020c2699a8b9edc067406640463d",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"drawer pull\",\n  \"attributes\": [\n    \"3 1/2 inch\"\n  ],\n  \"synonyms\": [\n    \"drawer handle\",\n    \"cabinet pull\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

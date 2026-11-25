@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5959c60e513516ac989caf3bd7bf000a345d352b3c897aec1a1a0e033297e403",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"outdoor sectional dining set\",\n  \"attributes\": [\n    \"outdoor\",\n    \"sectional\"\n  ],\n  \"synonyms\": [\n    \"patio dining set\",\n    \"garden dining furniture\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

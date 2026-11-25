@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f0a9cceddd168e922a16dd7f3d184f7d2620ea31c385b16a7ceebed72978e4bf",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"tablecloth\",\n  \"attributes\": [\n    \"dining\",\n    \"vinyl\"\n  ],\n  \"synonyms\": [\n    \"table cover\",\n    \"table linen\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

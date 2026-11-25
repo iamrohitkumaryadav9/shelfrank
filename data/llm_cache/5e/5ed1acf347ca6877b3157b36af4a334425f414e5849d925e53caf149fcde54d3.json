@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7b22b50ecdcc1bc454f6c4d18bdff3101e2cfec7a218e0f2149a12ca9db36d98",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 43,
+  "text": "{\n  \"product_type\": \"backsplash tile\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"wall tile\",\n    \"kitchen tile\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

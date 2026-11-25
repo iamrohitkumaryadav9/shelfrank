@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "42894f435eba41e7c85c53bc39e46d6032eb5673aa47409bb3135d0466bac46e",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"patio bar set\",\n  \"attributes\": [\n    \"outdoor\"\n  ],\n  \"synonyms\": [\n    \"bar height patio furniture\",\n    \"outdoor bar table and stools\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

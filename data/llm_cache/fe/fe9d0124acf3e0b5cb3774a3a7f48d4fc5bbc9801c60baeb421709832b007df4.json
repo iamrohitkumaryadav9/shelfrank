@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fcc2d988b09391e30de1164875592d424807e50c626577e8b58b190e71bfff20",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"bistro set\",\n  \"attributes\": [\n    \"patio\"\n  ],\n  \"synonyms\": [\n    \"bistro table and chairs\",\n    \"outdoor bistro set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

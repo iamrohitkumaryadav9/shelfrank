@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7002e0dec24104ca7d1769120095dd6d1960cd29de38e7eaa0b7c07e9c5d8594",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 63,
+  "text": "{\n  \"product_type\": \"farmhouse kitchen sink\",\n  \"attributes\": [\n    \"Kohler\",\n    \"Whitehaven\"\n  ],\n  \"synonyms\": [\n    \"apron-front sink\",\n    \"apron sink\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6ced4a81174fc2f8ad12b1000c3646b00174dc06ade9faba417a329882724504",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"bench cushion\",\n  \"attributes\": [\n    \"54 inch\"\n  ],\n  \"synonyms\": [\n    \"bench pad\",\n    \"bench seat cushion\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

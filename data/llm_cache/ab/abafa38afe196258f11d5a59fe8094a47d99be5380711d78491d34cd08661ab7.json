@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8917554621b6973be18d178007091a93bc7e991c97d652cb4c87a4fe0ec00c7f",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"outdoor chair\",\n  \"attributes\": [\n    \"wooden\"\n  ],\n  \"synonyms\": [\n    \"patio chair\",\n    \"garden chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

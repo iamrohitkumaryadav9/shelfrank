@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f4473b6aae4afc849dc0dfeb18705c10d2af0da4a85ff3bf33a176e4d9d0e9b6",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"armchair\",\n  \"attributes\": [\n    \"leather\"\n  ],\n  \"synonyms\": [\n    \"leather accent chair\",\n    \"leather lounge chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

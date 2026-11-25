@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "af2de609c81098e9b4f19a29f73679ef10f5f98115632f576e524c63007dd71d",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"bistro set\",\n  \"attributes\": [\n    \"table\",\n    \"chairs\"\n  ],\n  \"synonyms\": [\n    \"bistro table and chair set\",\n    \"cafe set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

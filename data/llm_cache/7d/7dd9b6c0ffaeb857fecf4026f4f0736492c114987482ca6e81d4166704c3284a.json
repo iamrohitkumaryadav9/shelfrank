@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0999653af4cd1ca51f81a3d69df247c035fc0e3876c903971abf215c6bef6d1f",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"garden gnome\",\n  \"attributes\": [\"fairy garden\"],\n  \"synonyms\": [\"lawn gnome\", \"garden ornament\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a43e5d718ab5c68d81c03a3f3e575ded96e362261c45e214d205c5d1a4dc72be",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"bathroom vanity\",\n  \"attributes\": [\n    \"with counter space\"\n  ],\n  \"synonyms\": [\n    \"bathroom cabinet\",\n    \"vanity unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

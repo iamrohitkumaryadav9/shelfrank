@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ce83c45c1881b088419217193e37a4bdf81731030af443ed4930e0ac73825c5b",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 41,
+  "text": "{\n  \"product_type\": \"tile\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"flooring\",\n    \"wall tile\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

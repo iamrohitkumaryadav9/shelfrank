@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8c60fb8deb5bdde09cf4214eb48b7a7e32fbc369fb9cc4b03489c1371d0ef53e",
+ "response": {
+  "input_tokens": 241,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 70,
+  "text": "{\n  \"product_type\": \"barn door\",\n  \"attributes\": [\n    \"48 inch\",\n    \"sliding\",\n    \"single track\",\n    \"laundry room\"\n  ],\n  \"synonyms\": [\n    \"sliding door\",\n    \"rustic door\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

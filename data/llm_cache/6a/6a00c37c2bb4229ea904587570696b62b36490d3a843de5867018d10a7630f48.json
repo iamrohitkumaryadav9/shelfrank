@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0779f3ea9707f4196b39c232486bcbbd3093c22d4c3c319f8d7be4f76067a47c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"headboard\",\n  \"attributes\": [\n    \"emma\"\n  ],\n  \"synonyms\": [\n    \"bed head\",\n    \"headboard panel\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

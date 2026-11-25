@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3ceb591ba9b178607edaafea8b67be1e4eba665c4ecbfd19f0464cd6f0112cf6",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"full length mirror\",\n  \"attributes\": [\n    \"leaning\",\n    \"hub\"\n  ],\n  \"synonyms\": [\n    \"floor mirror\",\n    \"standing mirror\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

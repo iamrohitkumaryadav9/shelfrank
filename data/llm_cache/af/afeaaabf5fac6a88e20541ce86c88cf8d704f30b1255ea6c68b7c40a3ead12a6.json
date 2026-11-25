@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "607bfee5b29da1342ff19c882d6076a393a20897125d3122ac4cbb22bf09ffa1",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"lounge chair\",\n  \"attributes\": [\n    \"outdoor\"\n  ],\n  \"synonyms\": [\n    \"patio chair\",\n    \"deck chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

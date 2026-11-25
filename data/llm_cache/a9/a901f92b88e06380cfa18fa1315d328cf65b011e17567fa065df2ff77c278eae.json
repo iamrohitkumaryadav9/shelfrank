@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "145751ae5fe2e2a9dd0dda0b121d3d8438a46444a06e47d2079caf8384244580",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 66,
+  "text": "{\n  \"product_type\": \"refrigerator\",\n  \"attributes\": [\n    \"ice dispenser\",\n    \"water dispenser\",\n    \"in-door dispenser\"\n  ],\n  \"synonyms\": [\n    \"fridge\",\n    \"refrigerator freezer\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

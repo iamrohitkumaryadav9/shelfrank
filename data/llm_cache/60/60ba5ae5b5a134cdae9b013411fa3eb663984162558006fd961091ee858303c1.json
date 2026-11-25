@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fa7da6d69dff60c8b00d50bd8b47468d63316c2742f62b7109fe7dbb7585b54c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"task chair\",\n  \"attributes\": [\n    \"mila\"\n  ],\n  \"synonyms\": [\n    \"office chair\",\n    \"desk chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

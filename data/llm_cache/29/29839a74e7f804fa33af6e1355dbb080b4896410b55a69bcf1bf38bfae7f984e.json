@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ce4396917bb5cf70c6d74a72072a338537750ace3e45d9de3a9614e9c47d91e4",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"wall hook\",\n  \"attributes\": [\n    \"matte black\",\n    \"Moen\"\n  ],\n  \"synonyms\": [\n    \"coat hook\",\n    \"robe hook\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b478a91e234beacb635a8d529b0acd7b99bebbb3b0e5e9066ec6ffdf6cbebb1c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"storage trunk\",\n  \"attributes\": [\n    \"rattan\"\n  ],\n  \"synonyms\": [\n    \"wicker chest\",\n    \"rattan storage box\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

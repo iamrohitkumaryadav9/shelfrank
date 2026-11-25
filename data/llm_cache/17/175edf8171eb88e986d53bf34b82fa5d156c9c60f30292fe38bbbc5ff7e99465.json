@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ecc6abc5e6cbd2566846ae234d78c9bb2307fe42b444f28c3756590545097212",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 35,
+  "text": "{\n  \"product_type\": \"light fixture\",\n  \"attributes\": [\"high brightness\"],\n  \"synonyms\": [\"lamp\", \"lighting\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a46863f271926c1628f7215744c487b065c587c67a97a4c58e517eae8709e4d6",
+ "response": {
+  "input_tokens": 241,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"kids desk\",\n  \"attributes\": [\n    \"for 10 year old\"\n  ],\n  \"synonyms\": [\n    \"childrens desk\",\n    \"student desk\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

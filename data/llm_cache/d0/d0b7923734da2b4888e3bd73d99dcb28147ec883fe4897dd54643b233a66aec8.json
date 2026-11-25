@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1cb720e3b0274e6a015afd1c2b5d3f34c79f8578a85b1d409b5c42a8e0c169b0",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 44,
+  "text": "{\n  \"product_type\": \"breakfast bar table\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"pub table\",\n    \"high top table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

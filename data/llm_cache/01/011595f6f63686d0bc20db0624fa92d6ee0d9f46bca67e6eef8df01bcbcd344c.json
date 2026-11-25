@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "245a427fc8b8bf77bec379d94bca73891282c5c0bcca2724fd89eb0c38f3912c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 37,
+  "text": "{\n  \"product_type\": \"wall sign\",\n  \"attributes\": [\"mudroom\"],\n  \"synonyms\": [\"wall plaque\", \"decorative sign\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

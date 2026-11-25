@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e3ce0e3fce6ef684cf5e92dab41b69dabe548a6f794bc8f230cc7524414f57a7",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"closet organizer\",\n  \"attributes\": [\n    \"zipper\"\n  ],\n  \"synonyms\": [\n    \"garment rack cover\",\n    \"storage bag\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

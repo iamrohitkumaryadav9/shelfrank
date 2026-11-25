@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e37d0d005fbb726b9e2d8ad33d6f62305cee7b9dbe1ec3054999b40d5de29cfc",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"bunk bed\",\n  \"attributes\": [\n    \"wood\"\n  ],\n  \"synonyms\": [\n    \"bunk beds\",\n    \"double decker bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f6b786de31a6268feb4461565b801bc3d4573d984b59cb592fcd22ebca94e0b0",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"dresser\",\n  \"attributes\": [\n    \"kohen\",\n    \"5 drawer\"\n  ],\n  \"synonyms\": [\n    \"chest of drawers\",\n    \"bedroom chest\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6765594398be8b56e4b698a7ddbd9e3c6fc2256604c5708560aa7d6764ffd415",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"media console\",\n  \"attributes\": [\n    \"mid-century\"\n  ],\n  \"synonyms\": [\n    \"tv stand\",\n    \"entertainment center\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

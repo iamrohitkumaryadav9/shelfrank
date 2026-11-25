@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0e388530776f4ab9237dfd5080fd7022936ed3c566974aa70c174f6a2c99cf86",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"planter\",\n  \"attributes\": [\n    \"self-enclosed\"\n  ],\n  \"synonyms\": [\n    \"plant pot\",\n    \"flower container\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

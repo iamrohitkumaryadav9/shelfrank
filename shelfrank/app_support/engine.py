@@ -6,7 +6,7 @@ of its own fold, which never trained on it, so what the demo shows is what was e
 
 import json
 import time
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 from functools import cached_property
 from pathlib import Path
@@ -17,10 +17,12 @@ import pandas as pd
 
 from shelfrank.app_support.catalog import Catalog, Product
 from shelfrank.app_support.char_tfidf import PlainClassifier
+from shelfrank.app_support.product_side import FIELDS as PRODUCT_FIELDS
+from shelfrank.app_support.product_side import TokenTable, load_listed
 from shelfrank.app_support.sparse_bm25 import SparseBM25
 from shelfrank.bm25.fields import FIELDS, combine, feature_text
 from shelfrank.data.wands import split_classes
-from shelfrank.features.attributes import attribute_features, listed_values
+from shelfrank.features.attributes import Listed, attribute_features, listed_values
 from shelfrank.features.groups import group_of
 from shelfrank.features.lexical import lexical_features
 from shelfrank.features.query_class import class_features
@@ -86,9 +88,20 @@ class _Tokens:
 class Engine:
     """Loaded once per process."""
 
-    def __init__(self, folder: Path, encode: Callable[[str], np.ndarray]) -> None:
-        """Read every artifact. ``encode`` is passed in, so tests need no model download."""
+    def __init__(
+        self, folder: Path, encode: Callable[[str], np.ndarray], precomputed: bool = True
+    ) -> None:
+        """Read every artifact. ``encode`` is passed in, so tests need no model download.
+
+        ``precomputed=False`` reads tokens and attributes from the catalogue on every search. It is
+        the slower path that the precomputed one must equal exactly.
+        """
         self.folder, self.encode = folder, encode
+        self.tokens: TokenTable | None = None
+        self.listed: list[Listed] | None = None
+        if precomputed:
+            self.tokens = TokenTable.load(folder / "product_tokens.npz")
+            self.listed = load_listed(folder / "product_attributes.json.gz")
         self.meta = json.loads((folder / "meta.json").read_text(encoding="utf-8"))
         self.catalog = Catalog(folder / "catalog.duckdb")
         self.product_ids = np.array(self.catalog.column("product_id"))
@@ -153,20 +166,26 @@ class Engine:
 
     def features(self, stage: FirstStage, pairs: pd.DataFrame) -> pd.DataFrame:
         """Every feature of the candidates of one query."""
-        rows = sorted(set(pairs["pi"].tolist()))
-        products = self.catalog.products(rows)
-        tokens = {
-            "name": _Tokens(lambda r: products[r].name),
-            "class": _Tokens(lambda r: products[r].product_class),
-            "features": _Tokens(lambda r: feature_text(products[r].features)),
-            "description": _Tokens(lambda r: products[r].description),
-        }
+        tokens: dict[str, Any]
+        listed: Mapping[int, Listed] | list[Listed]
+        if self.tokens is not None and self.listed is not None:
+            tokens = {name: self.tokens.view(name) for name in PRODUCT_FIELDS}
+            listed = self.listed
+        else:
+            rows = sorted(set(pairs["pi"].tolist()))
+            products = self.catalog.products(rows)
+            tokens = {
+                "name": _Tokens(lambda r: products[r].name),
+                "class": _Tokens(lambda r: products[r].product_class),
+                "features": _Tokens(lambda r: feature_text(products[r].features)),
+                "description": _Tokens(lambda r: products[r].description),
+            }
+            listed = {
+                r: listed_values(p.features, p.hierarchy or None, self.slot_of)
+                for r, p in products.items()
+            }
         query = stage.texts[0]
         query_tokens = [tokenize(query)]
-        listed = {
-            r: listed_values(p.features, p.hierarchy or None, self.slot_of)
-            for r, p in products.items()
-        }
         return pd.concat(
             [
                 lexical_features(pairs, stage, query_tokens, tokens, self.idf),  # type: ignore[arg-type]

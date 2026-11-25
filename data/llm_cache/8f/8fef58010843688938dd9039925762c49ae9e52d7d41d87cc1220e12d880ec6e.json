@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6f574ad258526a6c5bf2603336c22ddda5b5404c35c9d65d9fd8bd90a1d97b5f",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"jewelry organizer\",\n  \"attributes\": [\n    \"over-the-door\"\n  ],\n  \"synonyms\": [\n    \"jewelry storage\",\n    \"jewelry cabinet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "be8c66d6583ab048f3dd020264e455ee553a21ab80649e134226091d455e8d78",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"bench\",\n  \"attributes\": [\n    \"upholstered\",\n    \"glinda\"\n  ],\n  \"synonyms\": [\n    \"entryway bench\",\n    \"ottoman bench\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

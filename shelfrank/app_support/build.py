@@ -14,11 +14,13 @@ import pandas as pd
 
 from shelfrank.app_support.char_tfidf import PlainClassifier
 from shelfrank.app_support.engine import save_tagger
+from shelfrank.app_support.product_side import TokenTable, save_listed
 from shelfrank.app_support.sparse_bm25 import SparseBM25
 from shelfrank.bm25.fields import FIELDS, BM25Index
 from shelfrank.data.departments import departments_of
 from shelfrank.data.product_features import parse_features
 from shelfrank.data.wands import split_classes
+from shelfrank.features.attributes import listed_values
 from shelfrank.features.lexical import idf_table
 from shelfrank.features.priors import prior_features
 from shelfrank.qu.slot_model import WordTagger
@@ -123,6 +125,14 @@ def build(folder: Path, data: Inputs) -> None:
     for name in FIELDS:
         index = BM25Index(data.tokens[name], data.k1, data.b)
         SparseBM25.from_index(index).save(folder / f"bm25_{name}.npz")
+    TokenTable.build(data.tokens).save(folder / "product_tokens.npz")
+    listed = [
+        listed_values(f, h, data.slot_of)
+        for f, h in zip(
+            data.products["product_features"], data.products["category_hierarchy"], strict=True
+        )
+    ]
+    save_listed(listed, folder / "product_attributes.json.gz")
     data.classifier.save(folder / "class_student.npz")
     save_tagger(data.tagger, folder / "slot_student.npz", folder / "slot_student.json")
     priors = prior_features(pd.DataFrame({"pi": range(len(data.products))}), data.products)

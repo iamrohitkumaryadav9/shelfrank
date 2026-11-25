@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "314025884107b6063a59da41b00b2cea3c5e03642f09c93dd57e7cc1bc0f8f4b",
+ "response": {
+  "input_tokens": 239,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 67,
+  "text": "{\n  \"product_type\": \"towel hook\",\n  \"attributes\": [\n    \"double\",\n    \"champagne bronze\",\n    \"delta trinsic\"\n  ],\n  \"synonyms\": [\n    \"towel rack\",\n    \"towel hanger\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

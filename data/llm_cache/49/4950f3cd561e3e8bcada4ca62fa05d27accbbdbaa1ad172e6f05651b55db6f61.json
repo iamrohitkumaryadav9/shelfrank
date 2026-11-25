@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f9b7fac3dff0a81eadec392669e50e68688ecf8c9a53e060e1353fe08bf9c29c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"poster bed\",\n  \"attributes\": [\n    \"king size\"\n  ],\n  \"synonyms\": [\n    \"four-poster bed\",\n    \"canopy bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "c074d170bbedde0b3143b50a99d0a64c2e8d31d161ebb7eb1da05a902e5f9ea6",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"abstract wall art\",\n  \"attributes\": [\n    \"white\"\n  ],\n  \"synonyms\": [\n    \"abstract painting\",\n    \"abstract decor\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

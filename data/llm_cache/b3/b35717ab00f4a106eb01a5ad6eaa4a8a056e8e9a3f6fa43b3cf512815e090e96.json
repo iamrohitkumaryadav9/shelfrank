@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9c9bbef8038fdc96b1a265e4700d6685aa9a5d9303bf749229528bb20ccdc19f",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"daybed\",\n  \"attributes\": [\n    \"trundle\"\n  ],\n  \"synonyms\": [\n    \"trundle bed\",\n    \"day bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

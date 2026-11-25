@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "33ed7bfa203d9f66362fa6957ae671a74b3fc6c08dbb0e817af9fc2623bd05bf",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"dumbbells\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"hand weights\",\n    \"free weights\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

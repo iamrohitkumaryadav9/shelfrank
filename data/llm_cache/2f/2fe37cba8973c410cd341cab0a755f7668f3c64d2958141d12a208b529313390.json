@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "18c55810e2b86cf66f7066cb461e4384cfbab9d6f1976cca10876ed2027f3e86",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 42,
+  "text": "{\n  \"product_type\": \"news website\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"news aggregator\",\n    \"media outlet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

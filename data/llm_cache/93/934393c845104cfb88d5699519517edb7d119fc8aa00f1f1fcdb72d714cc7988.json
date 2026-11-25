@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0d2f4455393276fadff654b7bd37446075eb9562fbb6ec0bf30cd414dc16963a",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"cabinet knob\",\n  \"attributes\": [\n    \"bathroom\"\n  ],\n  \"synonyms\": [\n    \"drawer pull\",\n    \"cabinet hardware\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

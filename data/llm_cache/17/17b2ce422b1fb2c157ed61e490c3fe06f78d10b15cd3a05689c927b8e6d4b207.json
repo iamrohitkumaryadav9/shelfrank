@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "93587618fc62f897b8ecf319f960b2b04c67eb50af68b559a3906efbf4508185",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 60,
+  "text": "{\n  \"product_type\": \"bunk bed\",\n  \"attributes\": [\n    \"twin over full\",\n    \"cool designs\"\n  ],\n  \"synonyms\": [\n    \"bunk beds\",\n    \"loft bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

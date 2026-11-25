@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4484b14c5cfa58e0b2d617697fa039a70a0a64cd22c3a81f692f82022da4632d",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"clock\",\n  \"attributes\": [\n    \"porcelain\"\n  ],\n  \"synonyms\": [\n    \"timepiece\",\n    \"mantel clock\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

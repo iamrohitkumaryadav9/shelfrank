@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "32655ddd2f9d0601579ddb22e1222bca86bff7ec2c4f0a6846089c0bb8064b71",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 38,
+  "text": "{\n  \"product_type\": \"plant stand\",\n  \"attributes\": [\"bicycle shaped\"],\n  \"synonyms\": [\"bicycle planter\", \"bike plant holder\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

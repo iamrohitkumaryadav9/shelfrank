@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "a840841313936c86a3c0019de01454eb067032fa8f423827fda8fdc3593e93c7",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"area rug\",\n  \"attributes\": [\n    \"Star Wars themed\"\n  ],\n  \"synonyms\": [\n    \"floor mat\",\n    \"carpet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

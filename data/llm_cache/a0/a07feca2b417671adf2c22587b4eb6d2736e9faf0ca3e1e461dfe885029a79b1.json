@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7378555f2d978ab1c1b3bb1fb02f442b2f0a852a0dca8c35f708dc9039215ac9",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"double vanity\",\n  \"attributes\": [\n    \"mission style\"\n  ],\n  \"synonyms\": [\n    \"double bathroom vanity\",\n    \"double sink vanity\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

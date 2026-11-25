@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "499fcc43a2af7440df999f5f6443072a8b17d9cb80c6ff3eaf1cddff46378a46",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"wall sconce\",\n  \"attributes\": [\n    \"with usb port\"\n  ],\n  \"synonyms\": [\n    \"wall lamp\",\n    \"wall light\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

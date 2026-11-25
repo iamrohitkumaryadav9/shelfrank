@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6846dcd0ed1c77bfaf137e2dd0fc439a59de64b3fdfe6c76edb00afe33dcd14d",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"lounge chair\",\n  \"attributes\": [\n    \"rose gold\"\n  ],\n  \"synonyms\": [\n    \"accent chair\",\n    \"armchair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

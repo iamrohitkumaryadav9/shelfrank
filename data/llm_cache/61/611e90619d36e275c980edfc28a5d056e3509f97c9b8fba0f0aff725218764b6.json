@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f3b9b2543cfa49248a039607b0a850a7541f5f1c59aa5f7cd15e20dc5f383e8f",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 40,
+  "text": "{\n  \"product_type\": \"duvet cover\",\n  \"attributes\": [\"Urban Outfitters\"],\n  \"synonyms\": [\"duvet set\", \"comforter cover\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "aaf4dc9885c964bc94044bc1868ca99157142744192b8d6458982c5adb4b99aa",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 36,
+  "text": "{\n  \"product_type\": \"wastebasket\",\n  \"attributes\": [\"bathroom\"],\n  \"synonyms\": [\"trash can\", \"garbage bin\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

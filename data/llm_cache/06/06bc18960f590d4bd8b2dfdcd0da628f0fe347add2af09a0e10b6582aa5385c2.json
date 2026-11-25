@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "bf29eda512a6335c1c43797279ee4f0a522e4525a182dae6e39f53048c8d3cd6",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"wall shelf\",\n  \"attributes\": [\n    \"Hitchcock\",\n    \"mid-century\"\n  ],\n  \"synonyms\": [\n    \"floating shelf\",\n    \"wall ledge\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

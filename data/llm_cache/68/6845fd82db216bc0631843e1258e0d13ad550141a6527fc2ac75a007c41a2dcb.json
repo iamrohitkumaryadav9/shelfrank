@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "60e87f6a0769a3e639741909d9c0216a0c0a825ecce797e347a2bd6386c5cbec",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"bed frame\",\n  \"attributes\": [\n    \"king size\"\n  ],\n  \"synonyms\": [\n    \"bedstead\",\n    \"bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

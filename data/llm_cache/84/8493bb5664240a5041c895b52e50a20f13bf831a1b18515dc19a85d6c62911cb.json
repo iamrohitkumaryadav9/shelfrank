@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b515dba4a93607a764e37841a54880d7df818ccd3a6e323169e2fdc73c138aa8",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"lounge chair\",\n  \"attributes\": [\n    \"togo\"\n  ],\n  \"synonyms\": [\n    \"armchair\",\n    \"accent chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

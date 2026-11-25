@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "635f89a5ae7a568271c13b3a128c3cf4b68ce04d128015f74960957f0b344a86",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"rack\",\n  \"attributes\": [\n    \"wood\",\n    \"wide\"\n  ],\n  \"synonyms\": [\n    \"shelf\",\n    \"storage unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

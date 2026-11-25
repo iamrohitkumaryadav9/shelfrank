@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8d31bb0ed996e054b2f43b3a56e785084c72c897811a80e9f2903bf483772a4d",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 45,
+  "text": "{\n  \"product_type\": \"toilet paper stand\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"toilet paper holder\",\n    \"toilet tissue dispenser\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

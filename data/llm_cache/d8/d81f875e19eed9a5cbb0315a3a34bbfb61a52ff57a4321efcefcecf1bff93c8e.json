@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "3ca3be3ebfdbdbcf6d95cabbab3bc54bce5818375d90164f07eb8db92b0e2076",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 46,
+  "text": "{\n  \"product_type\": \"cake serving set\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"cake knife and server\",\n    \"cake cutting set\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "88bf6c844f7de7a80109e7449271a03ff28186ecace123ebab50caf73d7d9e4c",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"decor\",\n  \"attributes\": [\n    \"bohemian\"\n  ],\n  \"synonyms\": [\n    \"boho\",\n    \"bohemian style\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8c9e4d58c7e06eb3c3e7b2a1ed8bf16cf84b5d8ce0e6cb3790bf460742b38f59",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 36,
+  "text": "{\n  \"product_type\": \"lift chair\",\n  \"attributes\": [\"power\"],\n  \"synonyms\": [\"recliner\", \"mobility chair\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

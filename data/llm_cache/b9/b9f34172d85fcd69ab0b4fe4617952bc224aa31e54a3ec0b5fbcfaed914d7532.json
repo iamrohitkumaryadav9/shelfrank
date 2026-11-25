@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f8fcdb616acad6e58d1355f06c3bdd9b0ea46d6a8b93f725b9e7f4bcf3d1c119",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 62,
+  "text": "{\n  \"product_type\": \"console table\",\n  \"attributes\": [\n    \"antique\",\n    \"silver\",\n    \"entryway\"\n  ],\n  \"synonyms\": [\n    \"foyer table\",\n    \"hall table\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

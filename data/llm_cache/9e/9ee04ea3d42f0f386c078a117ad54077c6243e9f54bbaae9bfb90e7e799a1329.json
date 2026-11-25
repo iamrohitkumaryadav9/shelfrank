@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b42be75c870396bbc453dbb862250a7510afe5d10c916e49698773e347e8278d",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 64,
+  "text": "{\n  \"product_type\": \"upholstered bed\",\n  \"attributes\": [\n    \"wingback\",\n    \"Candace\"\n  ],\n  \"synonyms\": [\n    \"upholstered bed frame\",\n    \"padded headboard bed\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

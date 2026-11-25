@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9fa4a80e76ff33afc5d6409ab58fdd4f456c29d059762b1d5be04e8bc0bd6bf5",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 48,
+  "text": "{\n  \"product_type\": \"rug\",\n  \"attributes\": [\n    \"plum\"\n  ],\n  \"synonyms\": [\n    \"area rug\",\n    \"carpet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

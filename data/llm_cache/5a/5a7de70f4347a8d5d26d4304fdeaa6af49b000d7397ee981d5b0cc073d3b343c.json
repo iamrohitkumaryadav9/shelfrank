@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1d7a5235f5fceb111881cbf2fbfaa117ed0643882cdbda77b115996df470169c",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 52,
+  "text": "{\n  \"product_type\": \"bathroom faucet\",\n  \"attributes\": [\n    \"single hole\"\n  ],\n  \"synonyms\": [\n    \"bathroom tap\",\n    \"lavatory faucet\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

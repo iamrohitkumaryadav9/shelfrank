@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "30c286400f66b4cc29a13ac07965611ac3ad5ae3c697191dc521525b0fb27c8d",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"storage rack\",\n  \"attributes\": [\n    \"garage\",\n    \"sports\"\n  ],\n  \"synonyms\": [\n    \"sports equipment organizer\",\n    \"garage storage unit\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

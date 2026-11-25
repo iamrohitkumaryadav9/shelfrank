@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7943f0ad9ae3bc76d239e1c3afa4993a88c6e85f9cb87cd080b90d7410642af9",
+ "response": {
+  "input_tokens": 238,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 65,
+  "text": "{\n  \"product_type\": \"loveseat\",\n  \"attributes\": [\n    \"wide\",\n    \"faux leather\",\n    \"tuxedo arm\"\n  ],\n  \"synonyms\": [\n    \"small sofa\",\n    \"settee\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

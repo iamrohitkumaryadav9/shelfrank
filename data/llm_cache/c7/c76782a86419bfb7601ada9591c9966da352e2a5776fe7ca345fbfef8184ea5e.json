@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "e2dd317efae9915cce07d97522bad95c24526bb3695ce78980c360c3d3802d87",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"floor protector mat\",\n  \"attributes\": [\n    \"wood\"\n  ],\n  \"synonyms\": [\n    \"floor mat\",\n    \"hardwood floor protector\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

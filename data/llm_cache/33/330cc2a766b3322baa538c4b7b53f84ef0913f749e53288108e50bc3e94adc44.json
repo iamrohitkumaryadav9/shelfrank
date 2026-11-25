@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "339580167d18b9cdc30b1432b3cc1c68ed1ee70f5e13949d872e94341b36e54a",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 59,
+  "text": "{\n  \"product_type\": \"armchair\",\n  \"attributes\": [\n    \"queen anne style\",\n    \"living room\"\n  ],\n  \"synonyms\": [\n    \"accent chair\",\n    \"occasional chair\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

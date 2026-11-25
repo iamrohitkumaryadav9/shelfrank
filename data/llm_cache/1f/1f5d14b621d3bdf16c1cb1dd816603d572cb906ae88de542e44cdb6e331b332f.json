@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8593d30ddfbb12c143fc41ca1397b739f5185504d8d2b2d4a451349489466094",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 48,
+  "text": "{\n  \"product_type\": \"anti-fatigue mat\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"standing desk mat\",\n    \"comfort floor mat\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "8a5482ba07c1d99c33325856ff7d32bccbe26c74e92f87f554b4f3b854f1cb78",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"mattress protector\",\n  \"attributes\": [\n    \"zippered\"\n  ],\n  \"synonyms\": [\n    \"mattress encasement\",\n    \"mattress cover\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

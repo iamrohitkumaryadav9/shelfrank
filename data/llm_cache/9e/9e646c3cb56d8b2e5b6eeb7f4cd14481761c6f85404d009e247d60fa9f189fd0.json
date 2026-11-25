@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "122c7863e813be0676c3e2c721af7ace19560a750a04d8e2ca519a2be2f705d9",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 51,
+  "text": "{\n  \"product_type\": \"throw pillow\",\n  \"attributes\": [\n    \"zodiac\"\n  ],\n  \"synonyms\": [\n    \"decorative pillow\",\n    \"accent pillow\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

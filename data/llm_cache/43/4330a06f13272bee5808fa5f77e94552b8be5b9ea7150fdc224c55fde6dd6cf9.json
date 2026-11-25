@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "62794da76da904f48cd963607c390a1e668de44fa6b34a102adc9501e74c4137",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"climbing wall\",\n  \"attributes\": [\n    \"kids\"\n  ],\n  \"synonyms\": [\n    \"climbing frame\",\n    \"bouldering wall\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

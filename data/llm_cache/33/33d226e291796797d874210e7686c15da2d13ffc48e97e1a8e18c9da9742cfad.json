@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "555d105125988b8dba2cf06b81422bf8a2fd0498191931e0e86e12a89a31f3b1",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"chest of drawers\",\n  \"attributes\": [\n    \"5 drawer\",\n    \"chabely\"\n  ],\n  \"synonyms\": [\n    \"dresser\",\n    \"chest\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

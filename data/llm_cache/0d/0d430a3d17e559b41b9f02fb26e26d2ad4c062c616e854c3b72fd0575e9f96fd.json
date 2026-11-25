@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "eccc593d7e7ab4edaf9d48fd457e54cee3028aa09f8b4bce8e5dcfbc20523938",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 53,
+  "text": "{\n  \"product_type\": \"bathroom faucet\",\n  \"attributes\": [\n    \"brushed nickel\"\n  ],\n  \"synonyms\": [\n    \"lavatory faucet\",\n    \"sink tap\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

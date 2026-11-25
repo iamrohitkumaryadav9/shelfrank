@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "80deed6a8784c5a1951d80a53efd92f8fd6e445dbc84a789885bcd357fa72e36",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"bathroom cabinet\",\n  \"attributes\": [\n    \"above toilet\"\n  ],\n  \"synonyms\": [\n    \"over-the-toilet storage\",\n    \"bathroom space saver\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

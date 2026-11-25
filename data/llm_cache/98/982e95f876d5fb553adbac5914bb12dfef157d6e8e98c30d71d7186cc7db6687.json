@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7b98610ed09b452f7d515e439e22982b2f343481e3730f8b00ce42eb345fc2cd",
+ "response": {
+  "input_tokens": 236,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 58,
+  "text": "{\n  \"product_type\": \"bathroom shelf\",\n  \"attributes\": [\n    \"wall mounted\",\n    \"landis\"\n  ],\n  \"synonyms\": [\n    \"bathroom wall rack\",\n    \"bathroom ledge\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

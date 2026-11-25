@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d5493cd26db2a6f59f674d5028fdbda2070b757c6c79b7b48dfef5a5ce745066",
+ "response": {
+  "input_tokens": 232,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 43,
+  "text": "{\n  \"product_type\": \"coffee canister\",\n  \"attributes\": [],\n  \"synonyms\": [\n    \"coffee storage jar\",\n    \"coffee tin\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

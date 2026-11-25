@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5a0891d491e41b10f1b949d6d4f9e593b0de58f79daa1daacd15ef39d66a19bd",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 38,
+  "text": "{\n  \"product_type\": \"recliner\",\n  \"attributes\": [\"accent\"],\n  \"synonyms\": [\"reclining chair\", \"lounge chair\"]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

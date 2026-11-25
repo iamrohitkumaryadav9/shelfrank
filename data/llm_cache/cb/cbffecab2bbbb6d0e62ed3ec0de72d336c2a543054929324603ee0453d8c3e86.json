@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9c10d90264bac6ae45e5edf340986d66dbd72fa44c95d56f55569b37717502c7",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 50,
+  "text": "{\n  \"product_type\": \"seat cushion\",\n  \"attributes\": [\n    \"desk\"\n  ],\n  \"synonyms\": [\n    \"chair pad\",\n    \"seat pad\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

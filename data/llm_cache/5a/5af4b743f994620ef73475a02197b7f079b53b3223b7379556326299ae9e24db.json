@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "306b52fb52afbb3bc759f9095b00bc0e0478007d458149f723d7f4d50a8b1005",
+ "response": {
+  "input_tokens": 234,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 56,
+  "text": "{\n  \"product_type\": \"ottoman\",\n  \"attributes\": [\n    \"hinged\",\n    \"square\"\n  ],\n  \"synonyms\": [\n    \"storage ottoman\",\n    \"footstool\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

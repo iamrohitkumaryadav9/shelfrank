@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "b982aba12e7928b3a48e45b07a5b2d6f58f6669468c1e1f11772132701d4119e",
+ "response": {
+  "input_tokens": 235,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 57,
+  "text": "{\n  \"product_type\": \"pet gate\",\n  \"attributes\": [\n    \"tall\",\n    \"freestanding\"\n  ],\n  \"synonyms\": [\n    \"dog gate\",\n    \"pet barrier\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

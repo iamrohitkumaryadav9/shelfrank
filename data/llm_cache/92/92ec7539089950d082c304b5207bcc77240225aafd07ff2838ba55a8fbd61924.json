@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4f34371af0ec7be1f2b67a4ee87d95036707522f5ff71afc9a4f344fdec73db6",
+ "response": {
+  "input_tokens": 237,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 64,
+  "text": "{\n  \"product_type\": \"shower head\",\n  \"attributes\": [\n    \"Moen\",\n    \"multi-function\",\n    \"dual\"\n  ],\n  \"synonyms\": [\n    \"shower fixture\",\n    \"shower spray head\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

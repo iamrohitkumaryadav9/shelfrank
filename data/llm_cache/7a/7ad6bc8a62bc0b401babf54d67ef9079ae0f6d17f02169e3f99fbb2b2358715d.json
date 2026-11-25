@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9590b124ce2cc45e9b2b26f5b85e5db53baf75c8fd111b66fc72acbaacc3be97",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 54,
+  "text": "{\n  \"product_type\": \"chair\",\n  \"attributes\": [\n    \"acrylic\",\n    \"clear\"\n  ],\n  \"synonyms\": [\n    \"ghost chair\",\n    \"transparent seat\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "909135117dd8c1c410c2dadf5cdb1280e2cdd2688c85796dfe980340a6e96538",
+ "response": {
+  "input_tokens": 233,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 55,
+  "text": "{\n  \"product_type\": \"rooster figurine\",\n  \"attributes\": [\n    \"rooster themed\"\n  ],\n  \"synonyms\": [\n    \"rooster ornament\",\n    \"rooster statue\"\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 200,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "rewrite-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}
