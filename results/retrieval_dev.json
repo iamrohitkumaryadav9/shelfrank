@@ -11,7 +11,7 @@
   "features": 0.1,
   "description": 0.1
  },
- "query_encode_ms_mean": 58.079868749700836,
+ "query_encode_ms_mean": 28.54491354203977,
  "ceilings": {
   "ndcg10": {
    "mean": 1.0,

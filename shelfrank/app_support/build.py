@@ -1,6 +1,8 @@
 """Write app_data: everything the API and the demo read."""
 
+import gzip
 import json
+import shutil
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -54,7 +56,7 @@ class Inputs:
 
 
 def write_catalog(path: Path, data: Inputs) -> None:
-    """The DuckDB file: products, exploded attributes, judgments, queries, substitutes, rewrites."""
+    """The DuckDB file: products, exploded attributes, judgments, queries, substitutes."""
     path.unlink(missing_ok=True)
     products = data.products.reset_index(drop=True)
     rows = range(len(products))
@@ -88,10 +90,7 @@ def write_catalog(path: Path, data: Inputs) -> None:
     frames["similar_products"] = pd.DataFrame(
         near, columns=["product_id", "similar_id", "position"]
     )
-    texts = [(q, t, i) for q, found in data.rewrites.items() for i, t in enumerate(found, 1)]
-    frames["rewrites"] = pd.DataFrame(texts, columns=["query_id", "rewrite", "position"])
     types = {
-        "rewrites": "query_id BIGINT, rewrite VARCHAR, position BIGINT",
         "similar_products": "product_id BIGINT, similar_id BIGINT, position BIGINT",
     }
     connection = duckdb.connect(str(path))
@@ -114,6 +113,12 @@ def build(folder: Path, data: Inputs) -> None:
     """Write every file."""
     folder.mkdir(parents=True, exist_ok=True)
     write_catalog(folder / "catalog.duckdb", data)
+    packed = folder / "catalog.duckdb.gz"
+    with (
+        (folder / "catalog.duckdb").open("rb") as source,
+        gzip.GzipFile(packed, "wb", 6, mtime=0) as out,
+    ):
+        shutil.copyfileobj(source, out)
     np.save(folder / "vectors.npy", data.vectors.astype(np.float16))
     for name in FIELDS:
         index = BM25Index(data.tokens[name], data.k1, data.b)
@@ -139,6 +144,8 @@ def build(folder: Path, data: Inputs) -> None:
     }
     texts = {
         "meta.json": json.dumps(meta, indent=1),
+        # Beside the database and not in it: a new set of rewrites must not change a large file.
+        "rewrites.json": json.dumps({str(q): list(t) for q, t in data.rewrites.items()}),
         "idf.json": json.dumps(idf_table(data.tokens["name"])),
         "rankers.json": json.dumps({str(f): list(m) for f, m in data.rankers.items()}),
         "suggest_queries.txt": "\n".join(data.suggest_queries),

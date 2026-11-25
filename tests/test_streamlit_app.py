@@ -58,7 +58,19 @@ def test_switching_to_ltr_explains_results(page):
     assert any(e.label == "Why this ranked here" for e in page.expander)
 
 
-def test_product_text_is_escaped(page):
+def test_markup_in_text_is_shown_as_written():
+    from shelfrank.app_support.text import plain
+
+    assert plain("a & b") == "a \\& b" and plain("[x](http://y)") == "\\[x\\]\\(http\\://y\\)"
+    assert plain("**bold** $x$ <b>") == "\\*\\*bold\\*\\* \\$x\\$ \\<b\\>"
+
+
+def test_page_never_allows_html():
+    source = (REPO_ROOT / "app.py").read_text(encoding="utf-8")
+    assert "unsafe_allow_html" not in source and "st.html" not in source
+
+
+def test_hostile_query_does_not_break_the_page(page):
     page.run()
-    page.text_input(key="query").set_value("<script>alert(1)</script> lamp").run()
-    assert not page.exception and "<script>" not in text_of(page)
+    page.text_input(key="query").set_value("<script>alert(1)</script> [x](y) $$ lamp").run()
+    assert not page.exception

@@ -5,6 +5,7 @@ Writes results/latency.json. Dev queries only for timing; agreement covers every
 
 import json
 import platform
+import sys
 import time
 
 import numpy as np
@@ -28,11 +29,34 @@ STAGES = {
 REPEATS = 3
 
 
+def peak_memory_mb() -> float:
+    """Peak resident memory of this process."""
+    if sys.platform != "win32":
+        import resource
+
+        return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e3
+    import ctypes
+    from ctypes import wintypes
+
+    class Counters(ctypes.Structure):
+        _fields_ = [  # noqa: RUF012
+            ("cb", wintypes.DWORD),
+            ("faults", wintypes.DWORD),
+            *((n, ctypes.c_size_t) for n in ("peak", "now", "a", "b", "c", "d", "e", "f")),
+        ]
+
+    counters = Counters()
+    counters.cb = ctypes.sizeof(counters)
+    kernel = ctypes.WinDLL("kernel32")
+    kernel.GetCurrentProcess.restype = wintypes.HANDLE
+    query = kernel.K32GetProcessMemoryInfo
+    query.argtypes = [wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD]
+    query(kernel.GetCurrentProcess(), ctypes.byref(counters), counters.cb)
+    return counters.peak / 1e6
+
+
 def main() -> None:
     """Time and compare."""
-    import psutil
-
-    process = psutil.Process()
     start = time.perf_counter()
     folder = REPO_ROOT / "app_data"
     engine = Engine(
@@ -80,7 +104,7 @@ def main() -> None:
         "queries": 96,
         "load_seconds": load_seconds,
         "first_query_seconds": first_seconds,
-        "memory_mb": process.memory_info().rss / 1e6,
+        "memory_mb": peak_memory_mb(),
         "stages": out,
         "agreement_with_evaluation": agreement,
     }

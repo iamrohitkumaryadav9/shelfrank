@@ -104,6 +104,8 @@ class Engine:
         self.idf: dict[str, float] = json.loads((folder / "idf.json").read_text(encoding="utf-8"))
         with np.load(folder / "priors.npz", allow_pickle=False) as body:
             self.priors = pd.DataFrame(body["values"], columns=[str(c) for c in body["columns"]])
+        saved = json.loads((folder / "rewrites.json").read_text(encoding="utf-8"))
+        self.rewrites: dict[int, list[str]] = {int(q): t for q, t in saved.items()}
         trigger = self.meta.get("rewrite_trigger")
         self.trigger = Trigger(trigger["signal"], trigger["threshold"]) if trigger else None
 
@@ -200,7 +202,7 @@ class Engine:
         if self.trigger and stage is not None:
             signals = query_signals(stage, self.student, self.tagger)  # type: ignore[arg-type]
             fires = self.trigger.fires(signals[QUERY])
-        rewrites = self.catalog.rewrites(known[0]) if fires and known else []
+        rewrites = self.rewrites.get(known[0], []) if fires and known else []
         fold = known[1] if known else None
         return Understanding(classes, self.tagger.slots(query), fires, rewrites, fold)
 

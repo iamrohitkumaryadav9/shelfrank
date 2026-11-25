@@ -9,6 +9,7 @@ COPY configs configs
 COPY app_data app_data
 ENV SHELFRANK_MODELS=/srv/models PYTHONPATH=/srv
 RUN python -c "from pathlib import Path; from shelfrank.app_support.encoder import fetch_model; fetch_model(Path('/srv/models'))"
+RUN python -c "from pathlib import Path; from shelfrank.app_support.catalog import unpack; unpack(Path('app_data/catalog.duckdb'))" && rm app_data/catalog.duckdb.gz
 RUN useradd --system runner && chown -R runner /srv
 USER runner
 EXPOSE 8000

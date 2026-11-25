@@ -1,0 +1,102 @@
+{
+ "454": {
+  "cause": "number in the query",
+  "would_fix": "G6 / G1",
+  "diagnosis": "A rug size. Every judged-relevant product is a Partial, and BM25 ranks them by the word carpet. The text splits 5x6 into 5 and 6, so number features match tile sizes and chair mats that happen to carry a 5 or a 6. Parsing sizes as one value would fix it."
+ },
+ "475": {
+  "cause": "ambiguous product type",
+  "would_fix": "G3",
+  "diagnosis": "A toy truck meets the hardware sense of truck. Both rankers return hand trucks, which are labelled Partial. LTR also follows the word rattan into outdoor seating, which is unjudged. The class model has no strong prediction here."
+ },
+ "485": {
+  "cause": "misspelling and unjudged results",
+  "would_fix": "G1 (spelling), rewriting",
+  "diagnosis": "Pedistole matches nothing, so only sink is left. Almost everything both systems return is unjudged, so the comparison rests on one or two products. Spelling correction before retrieval is the fix."
+ },
+ "301": {
+  "cause": "shape word without a slot",
+  "would_fix": "G4 (shape)",
+  "diagnosis": "Circle is a shape, which has no slot. LTR picks round and half circle pulls, of which one is labelled Irrelevant and the rest Partial, and drops the ring pull that is Exact. Only 2 of 148 judged products are Exact."
+ },
+ "417": {
+  "cause": "head noun matched inside another product type",
+  "would_fix": "G3",
+  "diagnosis": "A bed frame and a platform bed are different classes. LTR rewards twin, platform and bed frame together and lifts platform beds (Partial). BM25 keeps plain frames (Exact). A stronger class feature would separate them."
+ },
+ "290": {
+  "cause": "unjudged results",
+  "would_fix": "evaluation, not a feature",
+  "diagnosis": "Condensed nDCG@10 is 1.0 for both. LTR puts two unjudged double vanities in the top 10, and they count as wrong."
+ },
+ "394": {
+  "cause": "no exact product, attribute conflict",
+  "would_fix": "G4",
+  "diagnosis": "No product is Exact, and BM25 already orders the Partials perfectly. LTR lets in a sectional because it is gray faux leather: the attributes agree and the product type does not. Attribute match should not count without a class match."
+ },
+ "429": {
+  "cause": "colour named in the attributes only",
+  "would_fix": "G4",
+  "diagnosis": "Many dressers carry the colour only as an attribute value, such as oak-gray finishes. LTR and BM25 both order by text, and G4 gives a small push. A graded colour match (gray oak against gray) could help."
+ },
+ "213": {
+  "cause": "model number",
+  "would_fix": "G1 (exact codes)",
+  "diagnosis": "A brand and model number. The exact product is the only Exact label. LTR adds a sink of the same brand as noise. An exact-code feature would decide this query."
+ },
+ "441": {
+  "cause": "unjudged results",
+  "would_fix": "evaluation, not a feature",
+  "diagnosis": "Condensed nDCG@10 is 1.0 for both. LTR shows two desk and chair sets that were never judged."
+ },
+ "331": {
+  "cause": "unjudged results",
+  "would_fix": "evaluation, not a feature",
+  "diagnosis": "LTR is better under condensed evaluation (0.83 against 0.77) and worse under standard, because half of its top 10 is unjudged. Both miss girls, which no attribute covers."
+ },
+ "242": {
+  "cause": "unjudged results",
+  "would_fix": "evaluation, not a feature",
+  "diagnosis": "LTR is much better under condensed evaluation (0.90 against 0.76). Four of its top 10 are leather chairs that were never judged, so standard evaluation counts them as wrong."
+ },
+ "93": {
+  "cause": "two product types in one query",
+  "would_fix": "G3",
+  "diagnosis": "A sectional and a dining set at once. Products that are both are rare. LTR moves to wide sectionals without a dining table, which are Partial."
+ },
+ "221": {
+  "cause": "near the ceiling",
+  "would_fix": "none",
+  "diagnosis": "BM25 is perfect here. LTR loses a little order among dining sets, most of which are Exact or Partial."
+ },
+ "83": {
+  "cause": "unjudged results",
+  "would_fix": "evaluation, not a feature",
+  "diagnosis": "A place name that the catalogue does not hold. No product is Exact, and condensed nDCG@10 is 1.0 for both. LTR generalises to other tropical art, some of which was never judged."
+ },
+ "447": {
+  "cause": "unjudged results",
+  "would_fix": "evaluation, not a feature",
+  "diagnosis": "Condensed nDCG@10 is equal (0.68). LTR ranks three unjudged buffets high."
+ },
+ "22": {
+  "cause": "two colours in one query",
+  "would_fix": "G4 (several values)",
+  "diagnosis": "The slot model reads navy blue only. Light blue is lost, and LTR follows the word light into pillows that are merely called light decorative. Reading both colours and requiring a colour match would fix it."
+ },
+ "482": {
+  "cause": "number in the query",
+  "would_fix": "G6",
+  "diagnosis": "48 means a width. LTR lifts a 36 inch hood whose series is called WS-48. A number should match a dimension and not any digit in the name."
+ },
+ "298": {
+  "cause": "size and material words",
+  "would_fix": "G4 / G1",
+  "diagnosis": "Small has no slot, and woven is not treated as a material. LTR spreads to hand woven cotton poufs (Partial) and drops the plain woven poufs that are Exact."
+ },
+ "385": {
+  "cause": "theme word",
+  "would_fix": "none",
+  "diagnosis": "No product is Exact. LTR prefers products named mom, which are labelled Irrelevant or Partial, over plain urns."
+ }
+}

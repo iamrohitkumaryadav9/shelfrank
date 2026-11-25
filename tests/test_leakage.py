@@ -84,6 +84,11 @@ def test_no_primary_query_text_in_committed_files(raw_dir, folds):
     assert len(needles) > 50
     # Taxonomy and audit class names are catalogue vocabulary, not queries.
     skip = {"uv.lock", "taxonomy.json"}
+    # The failure analysis shows queries. It was written after the freeze and the final run.
+    assert (REPO_ROOT / "configs/frozen.yaml").exists() or not (
+        REPO_ROOT / "results/failure_cases.json"
+    ).exists()
+    skip |= {"failure_cases.json", "failure_diagnoses.json", "RESULTS.md"}
     found = []
     for folder in ("configs", "data/splits", "docs", "results", "shelfrank", "scripts", "tests"):
         for path in (REPO_ROOT / folder).rglob("*"):

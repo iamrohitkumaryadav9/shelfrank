@@ -1,5 +1,8 @@
 """The catalogue in DuckDB. Every read of product data goes through SQL here."""
 
+import gzip
+import os
+import shutil
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -25,7 +28,21 @@ SIMILAR_SQL = (
     "SELECT s.similar_id, s.position FROM similar_products s "
     "WHERE s.product_id = ? ORDER BY s.position LIMIT ?"
 )
-REWRITE_SQL = "SELECT rewrite FROM rewrites WHERE query_id = ? ORDER BY position"
+
+
+def unpack(path: Path) -> Path:
+    """Write the database from its compressed copy when it is missing.
+
+    The committed copy is compressed because GitHub refuses files above 100 MB. The move is atomic,
+    so two processes starting together cannot see half a file.
+    """
+    packed = path.with_name(path.name + ".gz")
+    if not path.exists() and packed.exists():
+        partial = path.with_name(f"{path.name}.{os.getpid()}.partial")
+        with gzip.open(packed, "rb") as source, partial.open("wb") as target:
+            shutil.copyfileobj(source, target)
+        partial.replace(path)
+    return path
 
 
 @dataclass(frozen=True)
@@ -50,7 +67,7 @@ class Catalog:
 
     def __init__(self, path: Path) -> None:
         """Open the file."""
-        self.connection = duckdb.connect(str(path), read_only=True)
+        self.connection = duckdb.connect(str(unpack(path)), read_only=True)
 
     def _rows(self, sql: str, parameters: Sequence[Any]) -> list[tuple[Any, ...]]:
         return self.connection.cursor().execute(sql, list(parameters)).fetchall()
@@ -81,10 +98,6 @@ class Catalog:
         """Id and fold of a WANDS query."""
         found = self._rows(QUERY_SQL, [query])
         return (int(found[0][0]), int(found[0][1])) if found else None
-
-    def rewrites(self, query_id: int) -> list[str]:
-        """Cached rewrites of a WANDS query."""
-        return [r[0] for r in self._rows(REWRITE_SQL, [query_id])]
 
     def similar(self, product_id: int, k: int) -> list[int]:
         """Precomputed substitutes, best first."""

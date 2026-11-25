@@ -1,6 +1,5 @@
 """ShelfRank demo. Run: streamlit run app.py"""
 
-import html
 import os
 from pathlib import Path
 
@@ -10,6 +9,7 @@ from shelfrank.app_support import catalog as sql
 from shelfrank.app_support.encoder import QueryEncoder, fetch_model
 from shelfrank.app_support.engine import BM25, LTR, RRF, Engine, Hit, Result
 from shelfrank.app_support.gemini import live_rewrites
+from shelfrank.app_support.text import plain
 from shelfrank.config import REPO_ROOT
 
 DATA = Path(os.environ.get("SHELFRANK_APP_DATA", REPO_ROOT / "app_data"))
@@ -51,8 +51,8 @@ def show_hit(engine: Engine, hit: Hit, rank: int, label: str | None, side: str, 
     product = hit.product
     stars = f"★ {product.average_rating:.1f}" if product.average_rating else "no rating"
     reviews = f"({int(product.review_count)} reviews)" if product.review_count else ""
-    st.markdown(f"**{rank}. {html.escape(product.name)}**  \n{badge(label)} · {stars} {reviews}")
-    st.caption(html.escape(product.product_class or "no class"))
+    st.markdown(f"**{rank}. {plain(product.name)}**  \n{badge(label)} · {stars} {reviews}")
+    st.caption(plain(product.product_class or "no class"))
     if hit.contributions:
         with st.expander("Why this ranked here"):
             st.caption("Sum of SHAP values per feature group. Positive values move it up.")
@@ -61,7 +61,7 @@ def show_hit(engine: Engine, hit: Hit, rank: int, label: str | None, side: str, 
     with st.expander("More like this"):
         if st.button("Show substitutes", key=f"similar-{side}-{product.product_id}-{query}"):
             for other in engine.similar(product.product_id, 5) or []:
-                st.write(f"- {other.name}")
+                st.write(f"- {plain(other.name)}")
             st.caption("Precomputed substitutes. Measured as substitutability, not as engagement.")
 
 
@@ -89,7 +89,7 @@ def rewrite_panel(query: str, result: Result) -> list[str] | None:
         return None
     with st.expander("Query rewriting (triggered: this query looks hard)", expanded=True):
         if u.rewrites:
-            st.write("Cached rewrites: " + ", ".join(f"`{r}`" for r in u.rewrites))
+            st.write("Cached rewrites: " + ", ".join(plain(r) for r in u.rewrites))
             return u.rewrites
         st.write("No cached rewrite for this query.")
         key = st.text_input(
@@ -104,7 +104,7 @@ def rewrite_panel(query: str, result: Result) -> list[str] | None:
                 st.session_state["live"] = (query, found)
         saved = st.session_state.get("live")
         if saved and saved[0] == query:
-            st.write("Rewrites: " + ", ".join(f"`{r}`" for r in saved[1]))
+            st.write("Rewrites: " + ", ".join(plain(r) for r in saved[1]))
             return list(saved[1])
     return None
 
@@ -158,11 +158,15 @@ def main() -> None:
         with a:
             st.markdown("**Predicted class**")
             for name, p in u.classes:
-                st.write(f"{name}: {p:.0%}")
+                st.write(f"{plain(name)}: {p:.0%}")
         with b:
             st.markdown("**Attributes in the query**")
             found = {s: v for s, v in u.slots.items() if v}
-            st.write(found or "none")
+            if found:
+                for slot, values in found.items():
+                    st.write(f"{plain(slot)}: {plain(', '.join(values))}")
+            else:
+                st.write("none")
             st.caption("Slot model trained on LLM labels; human verification pending.")
     labels = engine.catalog.labels(query)
     if labels:

@@ -9,3 +9,4 @@ notebooks
 tests
 docs
 **/__pycache__
+app_data/catalog.duckdb

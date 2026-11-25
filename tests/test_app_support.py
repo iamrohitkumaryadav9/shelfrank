@@ -226,3 +226,27 @@ def test_serving_code_imports_no_heavy_library():
 def test_meta_is_readable_json(app_folder):
     meta = json.loads((app_folder / "meta.json").read_text(encoding="utf-8"))
     assert meta["default_ranker"] in ("ltr", "rrf")
+
+
+def test_database_is_unpacked_once_from_its_compressed_copy(app_folder, tmp_path):
+    import shutil
+
+    from shelfrank.app_support.catalog import unpack
+
+    shutil.copyfile(app_folder / "catalog.duckdb.gz", tmp_path / "catalog.duckdb.gz")
+    path = unpack(tmp_path / "catalog.duckdb")
+    assert len(Catalog(path).column("name")) == 30
+    before = path.stat().st_mtime_ns
+    assert unpack(path).stat().st_mtime_ns == before
+    assert not list(tmp_path.glob("*.partial"))
+
+
+def test_committed_app_data_files_stay_below_the_git_limit():
+    from shelfrank.config import REPO_ROOT
+
+    folder = REPO_ROOT / "app_data"
+    if not folder.exists():
+        pytest.skip("app_data is not built")
+    for path in folder.iterdir():
+        if path.name != "catalog.duckdb":
+            assert path.stat().st_size < 95e6, path.name

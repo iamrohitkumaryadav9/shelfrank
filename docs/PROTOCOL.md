@@ -209,6 +209,8 @@ it is flagged at the next gate.
 | 2 (so far) | None. The seed notebook reads all WANDS queries by code, to remove look-alikes, and never prints or saves them. Hashed token keys of all queries are committed for the leakage tests | No |
 | 3 | None. The fine-tuning notebook reads all WANDS queries by code, to remove look-alikes from ESCI, and never prints or saves them | No |
 | 3 (dev) | None. The encoder comparison used the 96 dev queries only. Five invented check queries are not WANDS queries | No |
+| 2, after the freeze | Gemini labelled the 384 primary queries with classes and slots by code. No text was displayed | No |
+| 4, after the final run | `scripts/failure_cases.py` displayed 20 primary queries with their rankings, for the failure analysis | No: every setting was frozen and the run was made |
 | 4 (dev) | None. Features, training and ablations used the 96 dev queries only | No |
 | 2 | The leakage test found that one style word in a draft of the slot rules is a dev query. It was removed before any call used that draft | No |
 

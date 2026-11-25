@@ -1,0 +1,3022 @@
+{
+ "n": 20,
+ "cases": [
+  {
+   "query_id": 454,
+   "query": "carpet 5x6",
+   "department": "Rugs",
+   "query_class": "Area Rugs",
+   "slots": {},
+   "judged": 110,
+   "exact": 0,
+   "relevant": 80,
+   "ndcg10": {
+    "bm25_multi": 1.0,
+    "hybrid_rrf": 0.6274092458891772,
+    "dense": 0.7059054020403311,
+    "ltr_full": 0.5231737964779628
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.5231737964779628
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "boucherouite carpets brown/red area rug",
+      "class": "Area Rugs",
+      "label": "Partial"
+     },
+     {
+      "name": "9 '' x 36 '' level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "12 '' x 12 '' level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "alicia carpet berber area rug",
+      "class": "Area Rugs",
+      "label": "Partial"
+     },
+     {
+      "name": "alicia carpet blue area rug",
+      "class": "Area Rugs",
+      "label": "Partial"
+     },
+     {
+      "name": "alicia carpet burgundy area rug",
+      "class": "Area Rugs",
+      "label": "Partial"
+     },
+     {
+      "name": "alicia carpet khaki area rug",
+      "class": "Area Rugs",
+      "label": "Partial"
+     },
+     {
+      "name": "alicia red area carpet rug",
+      "class": "Area Rugs",
+      "label": "Partial"
+     },
+     {
+      "name": "19.7 '' x 39.4 '' multi level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "23.6 '' x 23.6 '' multi level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "19.7 '' x 39.4 '' multi level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "23.6 '' x 23.6 '' multi level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "medium/plush pile carpet beveled edge chair mat",
+      "class": "Chairmats",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "9 '' x 36 '' level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "low pile carpet beveled edge chair mat",
+      "class": "Chairmats",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "medium pile carpet beveled rectangular edge chair mat",
+      "class": "Chairmats",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "economat low pile carpet straight edge chair mat",
+      "class": "Chairmats",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "12 '' x 12 '' level loop carpet tile",
+      "class": "Carpet Tile",
+      "label": "Partial"
+     },
+     {
+      "name": "supermat medium pile carpet beveled edge chair mat",
+      "class": "Chairmats",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "lipped linear medium pile carpet straight edge chair mat",
+      "class": "Chairmats",
+      "label": "Irrelevant"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 475,
+   "query": "rattan truck",
+   "department": "Outdoor",
+   "query_class": "Ride-On Toys",
+   "slots": {
+    "material_finish": [
+     "rattan"
+    ]
+   },
+   "judged": 70,
+   "exact": 0,
+   "relevant": 33,
+   "ndcg10": {
+    "bm25_multi": 0.9266360779006398,
+    "hybrid_rrf": 0.1731866333482261,
+    "dense": 0.0,
+    "ltr_full": 0.6332196796270029
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.914856882358379
+   },
+   "judged10": {
+    "bm25_multi": 0.9,
+    "ltr_full": 0.6
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "hand truck dolly",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "2 piece truck dolly set",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "stack hand truck dolly",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "3-ton hand truck",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "500 lbs . capacity aluminum hand truck dolly",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "550 lb . capacity hand truck",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "440 lb . capacity platform hand truck dolly",
+      "class": "Dollies",
+      "label": "unjudged"
+     },
+     {
+      "name": "500 lbs . capacity hand truck dolly",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "cambon truck",
+      "class": "Decorative Objects",
+      "label": "Partial"
+     },
+     {
+      "name": "truck",
+      "class": "Decorative Objects",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "550 lb . capacity hand truck",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "cambon truck",
+      "class": "Decorative Objects",
+      "label": "Partial"
+     },
+     {
+      "name": "stack hand truck dolly",
+      "class": "Dollies",
+      "label": "Partial"
+     },
+     {
+      "name": "legros metal and wood truck",
+      "class": "Decorative Objects",
+      "label": "Partial"
+     },
+     {
+      "name": "shamavi 4 piece rattan sofa seating group with cushions",
+      "class": "Outdoor Conversation Sets",
+      "label": "unjudged"
+     },
+     {
+      "name": "pickup truck with checkered bow 18 '' polyethylene ( pe ) wreath",
+      "class": "Wreaths",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "gutha outdoor patio furniture 3 piece rattan seating group with cushions",
+      "class": "Outdoor Conversation Sets",
+      "label": "unjudged"
+     },
+     {
+      "name": "truck",
+      "class": "Decorative Objects",
+      "label": "Partial"
+     },
+     {
+      "name": "charmain 4 piece rattan sofa seating group with cushions",
+      "class": "Outdoor Conversation Sets",
+      "label": "unjudged"
+     },
+     {
+      "name": "cosper 4 piece rattan sofa seating group with cushions",
+      "class": "Outdoor Conversation Sets",
+      "label": "unjudged"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 485,
+   "query": "pedistole sink",
+   "department": "Home Improvement",
+   "query_class": "Kitchen Sinks",
+   "slots": {},
+   "judged": 255,
+   "exact": 0,
+   "relevant": 152,
+   "ndcg10": {
+    "bm25_multi": 0.2489083270225946,
+    "hybrid_rrf": 0.0,
+    "dense": 0.11004588314904008,
+    "ltr_full": 0.0
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.7799082337019198
+   },
+   "judged10": {
+    "bm25_multi": 0.2,
+    "ltr_full": 0.1
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "ceramic rectangular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "kohler vault sink",
+      "class": "Kitchen Sinks",
+      "label": "Partial"
+     },
+     {
+      "name": "36 '' x 21 '' apron kitchen sink with sink grid and basket strainer",
+      "class": "Kitchen Sinks",
+      "label": "Partial"
+     },
+     {
+      "name": "white oval undermount bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "rectangular undermount bathroom sink with overflow",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "tempered glass circular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "rectangular undermount lavatory sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "oval undermount bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "white ceramic oval vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "white ceramic circular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "white ceramic rectangular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "forster metal oval undermount bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "white ceramic square vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "white ceramic circular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "ceramic rectangular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "white ceramic oval vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "black ceramic rectangular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "tempered glass circular vessel bathroom sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     },
+     {
+      "name": "pekoe stainless steel 33 '' l x 22 '' w farmhouse/apron kitchen sink",
+      "class": "Kitchen Sinks",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "rectangular undermount lavatory sink",
+      "class": "Bathroom Sinks",
+      "label": "unjudged"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 301,
+   "query": "circle cabinet pulls",
+   "department": "Home Improvement",
+   "query_class": "Cabinet and Drawer Pulls",
+   "slots": {},
+   "judged": 148,
+   "exact": 2,
+   "relevant": 146,
+   "ndcg10": {
+    "bm25_multi": 0.8978166866593569,
+    "hybrid_rrf": 0.6336766534743541,
+    "dense": 0.3294699109518918,
+    "ltr_full": 0.6548816068928177
+   },
+   "condensed": {
+    "bm25_multi": 0.8978166866593569,
+    "ltr_full": 0.6548816068928177
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "taryn cabinet ring pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Exact"
+     },
+     {
+      "name": "cabinet center to center finger pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "cabinet 5 '' center to center finger pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "soho 3 '' center to center cabinet bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "cabinet 5 '' center to center bar pull multipack",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "square cabinet 5 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "square cabinet 8 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "square cabinet 10 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "sanctuary half circle open 3 1/2 '' center to center arch pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "deco base cabinet 5 '' center bar pull multipack",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "sanctuary half circle open 3 1/2 '' center to center arch pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "cabinet 1 '' center to center finger pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "3 1/2 '' round cabinet bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "square cabinet 8 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "square cabinet 5 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "square cabinet 10 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "cabinet center to center finger pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "cabinet 3 '' center to center finger pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "vintage cabinet 3 1/2 '' center to center finger pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     },
+     {
+      "name": "square cabinet 12 1/2 '' center to center bar pull",
+      "class": "Cabinet and Drawer Pulls",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 417,
+   "query": "twin bed frame",
+   "department": "Furniture",
+   "query_class": "Bed Frames",
+   "slots": {},
+   "judged": 567,
+   "exact": 188,
+   "relevant": 562,
+   "ndcg10": {
+    "bm25_multi": 0.9652843890316114,
+    "hybrid_rrf": 0.7189034280378321,
+    "dense": 0.6475058560197635,
+    "ltr_full": 0.7347272351230146
+   },
+   "condensed": {
+    "bm25_multi": 0.9652843890316114,
+    "ltr_full": 0.7347272351230146
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "giancarlo twin/full/queen bed frame ( with glides )",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "giancola bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "black bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "adjustable bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "4 '' bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "59.8 '' bed frame",
+      "class": "Bed Frames",
+      "label": "Partial"
+     },
+     {
+      "name": "berryman platform bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "mantua wood bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "giancarlo twin/full/queen bed frame ( with glides )",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "platform twin bed frame",
+      "class": "Bed Frames",
+      "label": "Partial"
+     },
+     {
+      "name": "twin size bed frame platform",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "metal bed frame twin size , black",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "bed frame",
+      "class": "Bed Frames",
+      "label": "Exact"
+     },
+     {
+      "name": "twin wood frame slat bed",
+      "class": "Kids Beds",
+      "label": "Partial"
+     },
+     {
+      "name": "moorcroft twin over twin over twin bed triple bed",
+      "class": "Teen Beds|Kids Beds",
+      "label": "Partial"
+     },
+     {
+      "name": "twin size metal bed frame black",
+      "class": "Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "glynn twin platform bed with drawers",
+      "class": "Beds|Kids Beds",
+      "label": "Partial"
+     },
+     {
+      "name": "tekoa twin over twin bunk bed",
+      "class": "Kids Beds",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 290,
+   "query": "mission double vanity",
+   "department": "Home Improvement",
+   "query_class": "Vanities",
+   "slots": {},
+   "judged": 168,
+   "exact": 0,
+   "relevant": 168,
+   "ndcg10": {
+    "bm25_multi": 0.914856882358379,
+    "hybrid_rrf": 0.650033222048579,
+    "dense": 0.7136540102475307,
+    "ltr_full": 0.685119869332369
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "judged10": {
+    "bm25_multi": 0.9,
+    "ltr_full": 0.8
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "60 '' double bathroom vanity top in white with sink",
+      "class": "Vanity Tops",
+      "label": "Partial"
+     },
+     {
+      "name": "60 '' double vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "furlow 48 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "madi 72 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "cecily 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "unjudged"
+     },
+     {
+      "name": "60 '' double sink bathroom vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "braden 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "brady 72 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "skye 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "sheffield 60 '' double bathroom vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "cecily 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "unjudged"
+     },
+     {
+      "name": "madi 72 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "braden 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "nashua 72 '' double bathroom vanity set",
+      "class": "Vanities",
+      "label": "unjudged"
+     },
+     {
+      "name": "dovercourt 72 '' double bathroom vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "nashua 60 '' double bathroom vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "appie 60 '' double bathroom vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "skye 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "60 '' double vanity set",
+      "class": "Vanities",
+      "label": "Partial"
+     },
+     {
+      "name": "chestnut 60 '' double bathroom vanity",
+      "class": "Vanities",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 394,
+   "query": "gray leather cocktail table",
+   "department": "Furniture",
+   "query_class": "Coffee & Cocktail Tables",
+   "slots": {
+    "color": [
+     "gray"
+    ],
+    "material_finish": [
+     "leather"
+    ]
+   },
+   "judged": 117,
+   "exact": 0,
+   "relevant": 103,
+   "ndcg10": {
+    "bm25_multi": 1.0,
+    "hybrid_rrf": 1.0,
+    "dense": 0.4690000933206748,
+    "ltr_full": 0.7759944384848244
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.905211635630449
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.9
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "radersburg leather cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "mesa cocktail table , heather grey",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "boston cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "deblois cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "rosmeer cocktail table with storage",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "cocktail coffee table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "driskill cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "need a cocktail coffee table",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "jasper cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "radersburg leather cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "shadow play tatum solid coffee table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "unjudged"
+     },
+     {
+      "name": "mesa cocktail table , heather grey",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "boston cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "gallup 28 '' wide faux leather square cocktail ottoman with storage",
+      "class": "Ottomans|Coffee & Cocktail Tables",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "driskill cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "rosmeer cocktail table with storage",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "cocktail coffee table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "cocktail table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     },
+     {
+      "name": "perfectable cocktail coffee table",
+      "class": "Coffee & Cocktail Tables",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 429,
+   "query": "gray dresser",
+   "department": "Furniture",
+   "query_class": "Dressers & Chests",
+   "slots": {
+    "color": [
+     "gray"
+    ]
+   },
+   "judged": 860,
+   "exact": 94,
+   "relevant": 513,
+   "ndcg10": {
+    "bm25_multi": 0.858143722751484,
+    "hybrid_rrf": 0.7360783533123736,
+    "dense": 0.4614994415504743,
+    "ltr_full": 0.6526174419698506
+   },
+   "condensed": {
+    "bm25_multi": 0.858143722751484,
+    "ltr_full": 0.6526174419698506
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "yardley 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "arwin grey oak 6-drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "kiran 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "kenric 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "loree 6 drawer double dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "anees 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "abdulazeez 6 drawer double dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "savell 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "jeffries 6 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "acme louis mickens dresser , dark gray",
+      "class": "nan",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "arwin grey oak 6-drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "yardley 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "khaled 7 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "marquesa 9 drawer dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "loree 6 drawer double dresser",
+      "class": "Dressers & Chests",
+      "label": "Exact"
+     },
+     {
+      "name": "kirchoff 6 drawer double dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "acme louis mickens dresser , dark gray",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "extra wide dresser with 5 drawer in light grey",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "bramblett 6 drawer standard dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     },
+     {
+      "name": "montag mirrored filigree 3 door standard dresser",
+      "class": "Dressers & Chests",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 213,
+   "query": "kraus kitchen sink faucet oletto kpf 2820 sfs",
+   "department": "Home Improvement",
+   "query_class": "Kitchen Faucets",
+   "slots": {},
+   "judged": 271,
+   "exact": 1,
+   "relevant": 139,
+   "ndcg10": {
+    "bm25_multi": 0.9098052407296101,
+    "hybrid_rrf": 0.7878767842398642,
+    "dense": 0.22423499389675938,
+    "ltr_full": 0.7313426390905139
+   },
+   "condensed": {
+    "bm25_multi": 0.9098052407296101,
+    "ltr_full": 0.7834869039370718
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.9
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "oletto single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "oletto filter combination pull down single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "oletto pull down single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Exact"
+     },
+     {
+      "name": "oletto pull down single handle kitchen faucet with quickdock",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "purist semiprofessional kitchen sink faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "carafe filtered water kitchen sink faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "classic single handle kitchen sink faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "simplice semi-professional kitchen sink faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "purist deck mount kitchen sink faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "graze semi-professional kitchen sink faucet",
+      "class": "nan",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "oletto filter combination pull down single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "quarza 33 '' l x 22 '' w dual mount kitchen sink",
+      "class": "Kitchen Sinks",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "oletto single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "oletto pull down single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Exact"
+     },
+     {
+      "name": "oletto pull down single handle kitchen faucet with quickdock",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "esina pull down single handle kitchen faucet",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "graze single-handle semi-professional kitchen sink faucet with 24-5/16-in spout",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "purist two-hole kitchen sink faucet with 8 '' spout and matching finish sidespray",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "kitchen faucet with pull down sprayer single handle kitchen sink faucets solid brass taps",
+      "class": "Kitchen Faucets",
+      "label": "Partial"
+     },
+     {
+      "name": "copper arcus centerset single hole faucet bathroom faucet",
+      "class": "nan",
+      "label": "unjudged"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 441,
+   "query": "desk for kids",
+   "department": "Baby & Kids",
+   "query_class": "Kids Desks",
+   "slots": {},
+   "judged": 1385,
+   "exact": 78,
+   "relevant": 997,
+   "ndcg10": {
+    "bm25_multi": 1.0,
+    "hybrid_rrf": 1.0,
+    "dense": 0.7385567757549498,
+    "ltr_full": 0.8268133666517739
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.8
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "willette kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "kaleb kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "kids wrting desk wood",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "willison kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "bobbi kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "crampton kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "glaser kids writing desk and chair set with kids hutch",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "poulan kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "sikorsky kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "aadhya kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "bram solid wood kids study desk",
+      "class": "Kids Desks|Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "glaser kids writing desk and chair set with kids hutch",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "kaleb kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "onley kids art desk with chair set height adjustable writing desk",
+      "class": "Kids Desks",
+      "label": "unjudged"
+     },
+     {
+      "name": "kids 23 '' writing desk and chair set",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "onley kids study desk chair set height adjustable desktop",
+      "class": "Kids Desks",
+      "label": "unjudged"
+     },
+     {
+      "name": "sikorsky kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "adalyn kids study 35.44 '' writing desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "bobbi kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     },
+     {
+      "name": "crampton kids study desk",
+      "class": "Kids Desks",
+      "label": "Exact"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 331,
+   "query": "upholstered girls bed",
+   "department": "Furniture",
+   "query_class": "Beds",
+   "slots": {
+    "material_finish": [
+     "upholstered"
+    ]
+   },
+   "judged": 533,
+   "exact": 52,
+   "relevant": 530,
+   "ndcg10": {
+    "bm25_multi": 0.6093289324659269,
+    "hybrid_rrf": 0.19836890896902362,
+    "dense": 0.21577102270624224,
+    "ltr_full": 0.44447517865335295
+   },
+   "condensed": {
+    "bm25_multi": 0.7694428460914032,
+    "ltr_full": 0.8284907541469431
+   },
+   "judged10": {
+    "bm25_multi": 0.6,
+    "ltr_full": 0.5
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "jojo siwa upholstered twin platform bed",
+      "class": "Licensed Products|Beds|Kids Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "ector upholstered sleigh bed",
+      "class": "Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "upholstered standard bed",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "erskine platform bed with trundle",
+      "class": "Kids Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "strahan upholstered bed",
+      "class": "Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "aylin upholstered bed",
+      "class": "Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "portsmouth upholstered bed",
+      "class": "nan",
+      "label": "unjudged"
+     },
+     {
+      "name": "olsson upholstered standard bed",
+      "class": "Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "gheorghita upholstered platform bed",
+      "class": "Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "acamar upholstered standard bed",
+      "class": "Beds",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "jojo siwa upholstered twin platform bed",
+      "class": "Licensed Products|Beds|Kids Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "arianna upholstered standard bed",
+      "class": "Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "skylar upholstered platform bed",
+      "class": "Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "dipika tufted upholstered standard bed",
+      "class": "Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "amara upholstered standard bed",
+      "class": "Teen Beds|Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "improv upholstered standard bed",
+      "class": "Beds",
+      "label": "unjudged"
+     },
+     {
+      "name": "angelita upholstered standard bed",
+      "class": "Beds",
+      "label": "Partial"
+     },
+     {
+      "name": "ector upholstered sleigh bed",
+      "class": "Beds",
+      "label": "Exact"
+     },
+     {
+      "name": "upham upholstered standard bed",
+      "class": "Beds|Kids Beds",
+      "label": "Partial"
+     },
+     {
+      "name": "kamiya upholstered platform bed",
+      "class": "Beds",
+      "label": "unjudged"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 242,
+   "query": "accent leather chair",
+   "department": "Furniture",
+   "query_class": "Accent Chairs",
+   "slots": {
+    "material_finish": [
+     "leather"
+    ]
+   },
+   "judged": 283,
+   "exact": 175,
+   "relevant": 281,
+   "ndcg10": {
+    "bm25_multi": 0.6808342357497595,
+    "hybrid_rrf": 0.6563033086078545,
+    "dense": 0.8899541168509599,
+    "ltr_full": 0.5314102331185296
+   },
+   "condensed": {
+    "bm25_multi": 0.7576440054872406,
+    "ltr_full": 0.8975828762407045
+   },
+   "judged10": {
+    "bm25_multi": 0.9,
+    "ltr_full": 0.6
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "23.25 '' w leather lounge chair with metal frame",
+      "class": "Reception Seating Chairs",
+      "label": "Partial"
+     },
+     {
+      "name": "faux leather single sofa accent chair with ottoman foot rest for living room ( beige )",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "coolmore accent barrel chair living room chair with nailheads and solid wood legs white pu leather",
+      "class": "Accent Chairs",
+      "label": "Partial"
+     },
+     {
+      "name": "club leather chair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "delphi 26.5 '' w leather lounge chair with wood frame",
+      "class": "Reception Seating Chairs|Accent Chairs",
+      "label": "Partial"
+     },
+     {
+      "name": "gable top grain leather barrel chair",
+      "class": "Accent Chairs",
+      "label": "unjudged"
+     },
+     {
+      "name": "40.5 '' wide genuine leather club chair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "nakale top grain leather club chair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "28.5 '' wide top grain leather club chair",
+      "class": "Accent Chairs",
+      "label": "Partial"
+     },
+     {
+      "name": "32 '' wide full grain leather club chair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "dougherty 36.25 '' wide top grain leather lounge chair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "gable top grain leather barrel chair",
+      "class": "Accent Chairs",
+      "label": "unjudged"
+     },
+     {
+      "name": "caffrey 40 '' wide tufted genuine leather top grain leather armchair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "woodham 30 '' wide tufted top grain leather lounge chair",
+      "class": "Accent Chairs",
+      "label": "unjudged"
+     },
+     {
+      "name": "razmig 31.5 '' wide top grain leather butterfly chair",
+      "class": "Accent Chairs",
+      "label": "unjudged"
+     },
+     {
+      "name": "wallace 34 '' wide full grain leather armchair",
+      "class": "Accent Chairs",
+      "label": "unjudged"
+     },
+     {
+      "name": "coolmore accent barrel chair living room chair with nailheads and solid wood legs white pu leather",
+      "class": "Accent Chairs",
+      "label": "Partial"
+     },
+     {
+      "name": "leather upholstered arm chair",
+      "class": "Dining Chairs",
+      "label": "Partial"
+     },
+     {
+      "name": "32 '' wide full grain leather club chair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     },
+     {
+      "name": "amillian 32 '' w faux leather armchair",
+      "class": "Accent Chairs",
+      "label": "Exact"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 93,
+   "query": "outdoor sectional dining",
+   "department": "Outdoor",
+   "query_class": "Patio Sofas",
+   "slots": {
+    "room": [
+     "outdoor"
+    ]
+   },
+   "judged": 233,
+   "exact": 58,
+   "relevant": 221,
+   "ndcg10": {
+    "bm25_multi": 0.6045246837452631,
+    "hybrid_rrf": 0.44497705842547997,
+    "dense": 0.1941220263834955,
+    "ltr_full": 0.4633180389503199
+   },
+   "condensed": {
+    "bm25_multi": 0.6045246837452631,
+    "ltr_full": 0.5318103940994758
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.9
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "tahoe outdoor wicker patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "montclaire outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "catalina outdoor right arm sectional piece with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "kendall outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "boyce outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "jibe outdoor patio sectional with cushions",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "rockdale outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Exact"
+     },
+     {
+      "name": "lilith 76.8 '' wide outdoor wicker symmetrical patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Exact"
+     },
+     {
+      "name": "cregan outdoor garden patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Exact"
+     },
+     {
+      "name": "paille outdoor sofa patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "kendall outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "ansel outdoor 5 piece sectional seating group with cushion",
+      "class": "Patio Sofas|Outdoor Conversation Sets",
+      "label": "Partial"
+     },
+     {
+      "name": "montclaire outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "alp patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "ammamaria 138 '' wide outdoor u-shaped patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "burruss 83.5 '' wide outdoor reversible patio sectional",
+      "class": "Patio Sofas|Outdoor Conversation Sets",
+      "label": "Partial"
+     },
+     {
+      "name": "hampton patio sectional with cushions",
+      "class": "Patio Sofas|Outdoor Conversation Sets",
+      "label": "unjudged"
+     },
+     {
+      "name": "boyce outdoor patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "paille outdoor sofa patio sectional with cushions",
+      "class": "Patio Sofas",
+      "label": "Partial"
+     },
+     {
+      "name": "outdoor patio 7 piece rattan sectional seating group with cushions",
+      "class": "Outdoor Conversation Sets",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 221,
+   "query": "small space dining table and chairs sets",
+   "department": "Furniture",
+   "query_class": "Dining Table Sets",
+   "slots": {},
+   "judged": 1719,
+   "exact": 73,
+   "relevant": 1128,
+   "ndcg10": {
+    "bm25_multi": 1.0,
+    "hybrid_rrf": 0.9652843890316114,
+    "dense": 0.8433575915491295,
+    "ltr_full": 0.8701249883466592
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.8701249883466592
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "mid-century 5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "iromel mid-century 5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces , gray",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "mid-century 5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces , gray",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "modern 5-piece dining table set for 4 with foldable drop leaf , 4 chairs , and metal frame for small spaces , white",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "5 piece counter height dining table set , wooden bar table set with 4 pub stool , modern compact breakfast table set for 4 with 3 storage shelf , space saving , perfect for small space , kitchen , dining room",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "4-piece counter height dining room table set , bar table with one bench and 2 stools , industrial table with wine rack for kitchen counter , small space table and chairs set , rustic brown",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "dining table with four chairs set",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "wilsad 5 pieces dining room bar table set with 4 bar stools , sturdy and durable，water/ oil，small space/ small apartment/ kitchenette/ studio ( counter height , dark coffee )",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "stella 3 piece dining table set , wooden kitchen table set with wine rack and metal frame , small dining room table and 2 chairs set for breakfast , home , kitchen studio ( 1x 32inch table + 2x chairs )",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "modern 5-piece dining table set for 4 with foldable drop leaf , 4 chairs , and metal frame for small spaces , white",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "4-piece counter height dining room table set , bar table with one bench and 2 stools , industrial table with wine rack for kitchen counter , small space table and chairs set , rustic brown",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "5 piece counter height dining table set , wooden bar table set with 4 pub stool , modern compact breakfast table set for 4 with 3 storage shelf , space saving , perfect for small space , kitchen , dining room",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "iromel mid-century 5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces , gray",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "stella 3 piece dining table set , wooden kitchen table set with wine rack and metal frame , small dining room table and 2 chairs set for breakfast , home , kitchen studio ( 1x 32inch table + 2x chairs )",
+      "class": "Dining Table Sets",
+      "label": "Exact"
+     },
+     {
+      "name": "mid-century 5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "mid-century 5 piece wooden dining set with 4 padded dining chairs , kitchen table set for small spaces , gray",
+      "class": "nan",
+      "label": "Exact"
+     },
+     {
+      "name": "3 piece outdoor bistro set all-weather table and chairs metal frame modern patio furniture for small space deck , lawn , porch garden , black",
+      "class": "Patio Dining Sets",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "5 piece dining bar table set counter height with 4 pub stool , modern compact breakfast table set of 4 with 3 storage shelf , perfect for small kitchen dining room oak finish",
+      "class": "nan",
+      "label": "Irrelevant"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 83,
+   "query": "wall art fiji",
+   "department": "Décor & Pillows",
+   "query_class": "Wall Art",
+   "slots": {},
+   "judged": 103,
+   "exact": 0,
+   "relevant": 97,
+   "ndcg10": {
+    "bm25_multi": 0.8611375561264454,
+    "hybrid_rrf": 0.22476126319537007,
+    "dense": 0.0,
+    "ltr_full": 0.7411902110103872
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "judged10": {
+    "bm25_multi": 0.9,
+    "ltr_full": 0.7
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "sunny stag wall art on canvas",
+      "class": "Licensed Products|Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "fiji shower hooks",
+      "class": "Shower Curtain Hooks and Accessories",
+      "label": "unjudged"
+     },
+     {
+      "name": "painted sunflowers wall art",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "blue waves abstract - wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "eiffel tower textual art wall plaque",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "abstract sunset wall art print on wood",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "dove wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "framed painting print wall art",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "corrida ii wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "painting prints wall art on canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "blue waves abstract - wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "guitar and soul wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "hawaii graphic art",
+      "class": "Wall Art",
+      "label": "unjudged"
+     },
+     {
+      "name": "corrida ii wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "canadian pacific graphic art",
+      "class": "Wall Art",
+      "label": "unjudged"
+     },
+     {
+      "name": "abstract sunset wall art print on wood",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "framed painting print wall art",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "sunset ii wall art on wrapped canvas",
+      "class": "Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "sunny stag wall art on canvas",
+      "class": "Licensed Products|Wall Art",
+      "label": "Partial"
+     },
+     {
+      "name": "latin graphic art",
+      "class": "Wall Art",
+      "label": "unjudged"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 447,
+   "query": "tall buffet cabinet",
+   "department": "Furniture",
+   "query_class": "Sideboards & Buffets",
+   "slots": {},
+   "judged": 212,
+   "exact": 3,
+   "relevant": 208,
+   "ndcg10": {
+    "bm25_multi": 0.6307937501936974,
+    "hybrid_rrf": 0.495118991222385,
+    "dense": 0.34529478950939346,
+    "ltr_full": 0.5125727424908195
+   },
+   "condensed": {
+    "bm25_multi": 0.6807351507646947,
+    "ltr_full": 0.6807351507646947
+   },
+   "judged10": {
+    "bm25_multi": 0.9,
+    "ltr_full": 0.7
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "jennifer buffet cabinet",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "boise cabinet buffet sideboard",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "abduljabbar large buffet table",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "sunstand wooded top 4drw 4dr buffet cabinet",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "pandora buffet",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "hershberger buffet table",
+      "class": "Sideboards & Buffets|Accent Chests / Cabinets",
+      "label": "Partial"
+     },
+     {
+      "name": "trevion buffet table",
+      "class": "Sideboards & Buffets",
+      "label": "unjudged"
+     },
+     {
+      "name": "abbas buffet table",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "kitchen storage sideboard and buffet server cabinet-brown color",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "eliana 40 '' wide wood sideboard buffet server cabinet",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "boise cabinet buffet sideboard",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "eliana 40 '' wide wood sideboard buffet server cabinet",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "kulap 52 '' wide buffet table",
+      "class": "Sideboards & Buffets|Accent Chests / Cabinets",
+      "label": "unjudged"
+     },
+     {
+      "name": "jennifer buffet cabinet",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "sunstand wooded top 4drw 4dr buffet cabinet",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "slattery 52 '' wide 2 drawer buffet table",
+      "class": "Sideboards & Buffets|TV Stands & Entertainment Centers",
+      "label": "Partial"
+     },
+     {
+      "name": "tobia 51.87 '' wide buffet table",
+      "class": "Sideboards & Buffets",
+      "label": "unjudged"
+     },
+     {
+      "name": "69 inch wooden sideboard buffet storage cabinet with 2 doors & 3 drawers",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "abduljabbar large buffet table",
+      "class": "Sideboards & Buffets",
+      "label": "Partial"
+     },
+     {
+      "name": "vacacion mid century modern buffet table",
+      "class": "Sideboards & Buffets",
+      "label": "unjudged"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 22,
+   "query": "light and navy blue decorative pillow",
+   "department": "Décor & Pillows",
+   "query_class": "Accent Pillows",
+   "slots": {
+    "color": [
+     "navy blue"
+    ]
+   },
+   "judged": 251,
+   "exact": 22,
+   "relevant": 196,
+   "ndcg10": {
+    "bm25_multi": 0.717554947796521,
+    "hybrid_rrf": 0.6061131829864573,
+    "dense": 0.5268596631159667,
+    "ltr_full": 0.6012416160362531
+   },
+   "condensed": {
+    "bm25_multi": 0.717554947796521,
+    "ltr_full": 0.6012416160362531
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "solid navy blue throw pillows",
+      "class": "Accent Pillows",
+      "label": "Exact"
+     },
+     {
+      "name": "stripe collection navy blue throw pillows - set of 2",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "navy throw pillow",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "aurelie throw pillow in light blue",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "charlie decorative cotton lumbar pillow",
+      "class": "Accent Pillows",
+      "label": "Exact"
+     },
+     {
+      "name": "croscill valentina boudoir pillow 22x11 , navy",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "decorative pescado square pillow",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "anchors away decorative accent cotton throw pillow",
+      "class": "Accent Pillows",
+      "label": "Exact"
+     },
+     {
+      "name": "exaucet morrow throw pillow in navy",
+      "class": "Accent Pillows",
+      "label": "Exact"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "stripe collection navy blue throw pillows - set of 2",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "solid navy blue throw pillows",
+      "class": "Accent Pillows",
+      "label": "Exact"
+     },
+     {
+      "name": "scores light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "service light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "sensational light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "matchless light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "flair light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "exotic light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "galore light decorative square pillow cover & insert",
+      "class": "Accent Pillows",
+      "label": "Partial"
+     },
+     {
+      "name": "charlie decorative cotton lumbar pillow",
+      "class": "Accent Pillows",
+      "label": "Exact"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 482,
+   "query": "48 inch kitchen hood",
+   "department": "Appliances",
+   "query_class": "Range Hoods",
+   "slots": {},
+   "judged": 104,
+   "exact": 12,
+   "relevant": 99,
+   "ndcg10": {
+    "bm25_multi": 1.0,
+    "hybrid_rrf": 0.892490935352519,
+    "dense": 0.8611477487156033,
+    "ltr_full": 0.8840645190798293
+   },
+   "condensed": {
+    "bm25_multi": 1.0,
+    "ltr_full": 0.8840645190798293
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "48 '' island range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' 400 cfm convertible wall mount range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' 1200 cfm ducted island range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' professional 900cfm ducted island range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' professional 1000 cfm ducted wall mount range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' hand crafted designer wood island hood series 700 cfm ducted range hood in walnut",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' 1200 cfm ducted wall mount range hood in brushed 430 stainless steel",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' 400 cfm ducted wall mount range hood in brushed 430 stainless steel",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' ducted island range hood",
+      "class": "Large Appliance Accessories",
+      "label": "Exact"
+     },
+     {
+      "name": "48 inch wall mount chimney range hood with 600 cfm internal blower",
+      "class": "Range Hoods",
+      "label": "Exact"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "48 '' hand crafted designer wood island hood series 700 cfm ducted range hood in walnut",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' 1200 cfm ducted wall mount range hood in brushed 430 stainless steel",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' 400 cfm ducted wall mount range hood in brushed 430 stainless steel",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' island range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "36 '' ws-48 series 500 cfm ducted under cabinet range hood",
+      "class": "Range Hoods",
+      "label": "Partial"
+     },
+     {
+      "name": "48 '' professional 900cfm ducted island range hood",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "sorens swanscombe 48 '' kitchen pantry",
+      "class": "Pantry Cabinets",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "48 inch wall mount chimney range hood with 600 cfm internal blower",
+      "class": "Range Hoods",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' ducted island range hood",
+      "class": "Large Appliance Accessories",
+      "label": "Exact"
+     },
+     {
+      "name": "48 '' professional stainless 1200 cfm ducted wall mount range hood in brushed 430 stainless steel",
+      "class": "Range Hoods",
+      "label": "Exact"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 298,
+   "query": "small woven pouf",
+   "department": "Furniture",
+   "query_class": "Ottomans",
+   "slots": {},
+   "judged": 98,
+   "exact": 9,
+   "relevant": 98,
+   "ndcg10": {
+    "bm25_multi": 0.6626969080626088,
+    "hybrid_rrf": 0.6286272365628435,
+    "dense": 0.599594635569363,
+    "ltr_full": 0.5522839820936143
+   },
+   "condensed": {
+    "bm25_multi": 0.6626969080626088,
+    "ltr_full": 0.5522839820936143
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "woven pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "banas small pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "jahiem woven pouf",
+      "class": "Ottomans",
+      "label": "Exact"
+     },
+     {
+      "name": "colt woven pouf",
+      "class": "Ottomans",
+      "label": "Exact"
+     },
+     {
+      "name": "cael woven pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "kiki woven pouf",
+      "class": "Ottomans",
+      "label": "Exact"
+     },
+     {
+      "name": "wetumka woven pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "small pouf",
+      "class": "Patio Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "witter small pouf",
+      "class": "Patio Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "hallatrow round hand woven pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "hoffman pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "kyleigh pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "benson gobi hand woven 100 % cotton 18-inch pouf ottoman , natural",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "woven pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "benny zona hand woven 100 % cotton 18-inch pouf ottoman , natural",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "leachville pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "small pouf",
+      "class": "Patio Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "mayes round water hyacinth woven pouf",
+      "class": "Ottomans",
+      "label": "Exact"
+     },
+     {
+      "name": "peete pouf",
+      "class": "Ottomans",
+      "label": "Partial"
+     },
+     {
+      "name": "witter small pouf",
+      "class": "Patio Ottomans",
+      "label": "Partial"
+     }
+    ]
+   }
+  },
+  {
+   "query_id": 385,
+   "query": "mom urn",
+   "department": "Décor & Pillows",
+   "query_class": "Vases, Urns, Jars, & Bottles",
+   "slots": {},
+   "judged": 55,
+   "exact": 0,
+   "relevant": 27,
+   "ndcg10": {
+    "bm25_multi": 0.8899541168509599,
+    "hybrid_rrf": 0.905211635630449,
+    "dense": 0.8318477135310891,
+    "ltr_full": 0.7799082337019198
+   },
+   "condensed": {
+    "bm25_multi": 0.8899541168509599,
+    "ltr_full": 0.7799082337019198
+   },
+   "judged10": {
+    "bm25_multi": 1.0,
+    "ltr_full": 1.0
+   },
+   "top": {
+    "bm25_multi": [
+     {
+      "name": "urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "phillip mom bud table vase",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "erith obliqui urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "48 '' urn",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "kiantone urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "barcino urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "rathjen urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "aveza urn",
+      "class": "nan",
+      "label": "Partial"
+     },
+     {
+      "name": "oxyoke urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     }
+    ],
+    "ltr_full": [
+     {
+      "name": "phillip mom bud table vase",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Irrelevant"
+     },
+     {
+      "name": "mothers day gift - “ sun flowers in vase ornament ” dipped in 24k gold & crafted with stunning clear crystals , comes in luxury packaging – great gifts idea for mom from daughter",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "urn",
+      "class": "Decorative Objects",
+      "label": "Partial"
+     },
+     {
+      "name": "urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "blethyn urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "zev garden and peacock porcelain urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "oxyoke urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "erith obliqui urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     },
+     {
+      "name": "lensing urn",
+      "class": "Vases, Urns, Jars, & Bottles",
+      "label": "Partial"
+     }
+    ]
+   }
+  }
+ ],
+ "slot_values": {
+  "0": 0,
+  "1": 0,
+  "2": 0,
+  "3": 1,
+  "6": 1,
+  "7": 1,
+  "10": 0,
+  "11": 0,
+  "12": 0,
+  "13": 1,
+  "14": 0,
+  "15": 1,
+  "16": 0,
+  "17": 0,
+  "18": 1,
+  "21": 1,
+  "22": 1,
+  "24": 1,
+  "25": 0,
+  "26": 1,
+  "27": 1,
+  "28": 0,
+  "29": 0,
+  "30": 0,
+  "31": 0,
+  "32": 1,
+  "33": 0,
+  "34": 0,
+  "36": 0,
+  "37": 0,
+  "38": 1,
+  "39": 0,
+  "40": 0,
+  "41": 0,
+  "43": 1,
+  "44": 1,
+  "45": 0,
+  "47": 1,
+  "48": 0,
+  "49": 1,
+  "51": 0,
+  "53": 0,
+  "54": 0,
+  "55": 2,
+  "57": 1,
+  "59": 0,
+  "60": 0,
+  "61": 1,
+  "62": 0,
+  "63": 0,
+  "65": 1,
+  "66": 0,
+  "67": 0,
+  "68": 1,
+  "69": 0,
+  "70": 0,
+  "73": 0,
+  "74": 0,
+  "76": 0,
+  "77": 0,
+  "79": 0,
+  "80": 1,
+  "81": 0,
+  "82": 0,
+  "83": 0,
+  "86": 0,
+  "87": 0,
+  "88": 1,
+  "90": 1,
+  "91": 1,
+  "92": 1,
+  "93": 1,
+  "94": 1,
+  "95": 0,
+  "96": 0,
+  "97": 1,
+  "99": 0,
+  "100": 1,
+  "102": 0,
+  "103": 0,
+  "104": 0,
+  "106": 0,
+  "107": 1,
+  "109": 0,
+  "110": 0,
+  "111": 0,
+  "112": 0,
+  "113": 0,
+  "115": 0,
+  "117": 0,
+  "119": 0,
+  "120": 0,
+  "121": 1,
+  "122": 0,
+  "123": 0,
+  "124": 0,
+  "126": 1,
+  "127": 0,
+  "128": 0,
+  "130": 0,
+  "131": 0,
+  "132": 1,
+  "133": 1,
+  "134": 1,
+  "135": 0,
+  "138": 2,
+  "139": 0,
+  "140": 1,
+  "141": 0,
+  "142": 1,
+  "143": 0,
+  "144": 1,
+  "145": 0,
+  "146": 0,
+  "147": 0,
+  "150": 0,
+  "151": 1,
+  "152": 0,
+  "153": 1,
+  "155": 0,
+  "157": 1,
+  "159": 0,
+  "160": 1,
+  "161": 0,
+  "162": 1,
+  "163": 0,
+  "164": 2,
+  "165": 0,
+  "166": 1,
+  "167": 0,
+  "168": 0,
+  "169": 0,
+  "170": 0,
+  "173": 1,
+  "174": 0,
+  "176": 0,
+  "177": 1,
+  "178": 0,
+  "180": 1,
+  "181": 0,
+  "182": 0,
+  "184": 0,
+  "185": 0,
+  "188": 3,
+  "189": 0,
+  "190": 1,
+  "191": 0,
+  "193": 0,
+  "195": 1,
+  "196": 0,
+  "197": 0,
+  "199": 2,
+  "200": 1,
+  "201": 1,
+  "202": 0,
+  "203": 0,
+  "204": 1,
+  "207": 0,
+  "208": 1,
+  "210": 1,
+  "211": 1,
+  "212": 0,
+  "213": 0,
+  "214": 3,
+  "215": 0,
+  "218": 0,
+  "219": 0,
+  "220": 0,
+  "221": 0,
+  "222": 0,
+  "223": 0,
+  "224": 0,
+  "225": 1,
+  "226": 0,
+  "227": 0,
+  "228": 0,
+  "230": 1,
+  "231": 0,
+  "233": 0,
+  "234": 0,
+  "235": 0,
+  "237": 0,
+  "238": 1,
+  "239": 0,
+  "240": 0,
+  "241": 0,
+  "242": 1,
+  "243": 1,
+  "245": 0,
+  "246": 0,
+  "247": 0,
+  "248": 0,
+  "249": 0,
+  "250": 1,
+  "251": 0,
+  "252": 1,
+  "253": 1,
+  "254": 0,
+  "256": 0,
+  "257": 1,
+  "258": 0,
+  "259": 1,
+  "264": 0,
+  "265": 1,
+  "266": 2,
+  "268": 1,
+  "269": 1,
+  "271": 0,
+  "273": 1,
+  "274": 0,
+  "275": 0,
+  "276": 0,
+  "277": 1,
+  "279": 0,
+  "280": 0,
+  "282": 0,
+  "283": 1,
+  "284": 0,
+  "285": 0,
+  "286": 1,
+  "287": 1,
+  "290": 0,
+  "291": 0,
+  "293": 1,
+  "294": 0,
+  "295": 0,
+  "296": 0,
+  "297": 0,
+  "298": 0,
+  "301": 0,
+  "302": 1,
+  "304": 0,
+  "305": 0,
+  "306": 0,
+  "307": 2,
+  "308": 0,
+  "310": 0,
+  "311": 1,
+  "312": 1,
+  "315": 0,
+  "316": 0,
+  "317": 0,
+  "318": 0,
+  "319": 1,
+  "321": 0,
+  "322": 1,
+  "323": 0,
+  "324": 0,
+  "325": 1,
+  "327": 1,
+  "331": 1,
+  "332": 0,
+  "333": 1,
+  "334": 0,
+  "335": 0,
+  "336": 0,
+  "337": 0,
+  "338": 0,
+  "339": 0,
+  "340": 0,
+  "341": 1,
+  "342": 0,
+  "344": 0,
+  "345": 0,
+  "346": 0,
+  "347": 1,
+  "348": 0,
+  "349": 1,
+  "351": 2,
+  "353": 0,
+  "354": 0,
+  "355": 0,
+  "356": 0,
+  "357": 0,
+  "358": 0,
+  "359": 0,
+  "360": 0,
+  "361": 0,
+  "362": 1,
+  "363": 0,
+  "364": 0,
+  "365": 0,
+  "366": 0,
+  "367": 2,
+  "368": 0,
+  "370": 0,
+  "372": 0,
+  "373": 0,
+  "375": 1,
+  "376": 0,
+  "377": 1,
+  "379": 0,
+  "380": 0,
+  "381": 1,
+  "383": 0,
+  "384": 1,
+  "385": 0,
+  "387": 0,
+  "388": 1,
+  "389": 1,
+  "391": 0,
+  "392": 0,
+  "393": 0,
+  "394": 2,
+  "395": 1,
+  "397": 0,
+  "398": 0,
+  "399": 0,
+  "400": 0,
+  "401": 1,
+  "402": 1,
+  "403": 1,
+  "404": 1,
+  "405": 1,
+  "406": 0,
+  "407": 0,
+  "408": 0,
+  "409": 1,
+  "412": 1,
+  "413": 1,
+  "414": 0,
+  "415": 0,
+  "416": 0,
+  "417": 0,
+  "418": 0,
+  "420": 0,
+  "421": 0,
+  "422": 0,
+  "423": 0,
+  "424": 0,
+  "425": 0,
+  "426": 1,
+  "427": 0,
+  "428": 0,
+  "429": 1,
+  "432": 1,
+  "433": 0,
+  "434": 0,
+  "435": 0,
+  "437": 0,
+  "438": 1,
+  "439": 0,
+  "440": 1,
+  "441": 0,
+  "442": 0,
+  "443": 1,
+  "444": 1,
+  "445": 0,
+  "446": 0,
+  "447": 0,
+  "448": 0,
+  "449": 1,
+  "452": 0,
+  "453": 1,
+  "454": 0,
+  "455": 0,
+  "456": 0,
+  "458": 0,
+  "459": 0,
+  "461": 0,
+  "462": 0,
+  "463": 1,
+  "464": 0,
+  "465": 1,
+  "466": 0,
+  "467": 1,
+  "468": 0,
+  "469": 0,
+  "470": 0,
+  "471": 0,
+  "472": 0,
+  "473": 0,
+  "474": 0,
+  "475": 1,
+  "476": 1,
+  "479": 0,
+  "480": 0,
+  "481": 0,
+  "482": 0,
+  "483": 1,
+  "484": 0,
+  "485": 0,
+  "486": 0,
+  "487": 1
+ }
+}

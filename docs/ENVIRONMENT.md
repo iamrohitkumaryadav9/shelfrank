@@ -17,6 +17,7 @@ established reputation, which affects some recent wheels. Observed in this proje
 | --- | --- |
 | Rejected | scipy from an unpinned install (`scipy.linalg`), on every attempt |
 | Rejected | the `sklearn.cluster` extension in scikit-learn 1.5.1, which breaks `import shap` |
+| Rejected | the launcher `streamlit.exe`; `python -m streamlit` works |
 | Rejected once, then accepted | pandas 3.1.1, Python's own `pyexpat` |
 | Accepted | every version pinned in `pyproject.toml` |
 
