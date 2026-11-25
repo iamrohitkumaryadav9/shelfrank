@@ -138,3 +138,28 @@ def test_lexicon_terms_map_to_one_slot():
         "color",
         "material_finish",
     }
+
+
+def test_committed_page_and_dev_choices_follow_the_rules():
+    import json
+
+    from shelfrank.config import REPO_ROOT
+    from shelfrank.similar.report import render
+
+    def load(name):
+        path = REPO_ROOT / f"results/{name}.json"
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+    dev, primary = load("similar_dev"), load("similar_primary")
+    assert (REPO_ROOT / "docs/similar.md").read_text(encoding="utf-8") == render(dev, primary)
+
+    def value(name):
+        means = dev["systems"][name]["query_mean"]
+        return means["ndcg10"]["mean"] + means["condensed_ndcg10"]["mean"]
+
+    assert value(dev["encoder"]) == max(value("bge_small"), value("bge_small_esci"))
+    best = max(dev["grid"], key=lambda r: r["objective"])
+    assert dev["weights"] == best["weights"] and len(dev["grid"]) == 60
+    assert any(not any(r["weights"].values()) for r in dev["grid"])
+    if primary:
+        assert (primary["encoder"], primary["weights"]) == (dev["encoder"], dev["weights"])

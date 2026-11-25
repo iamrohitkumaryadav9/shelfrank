@@ -41,6 +41,7 @@ from shelfrank.similar.systems import (
     rerank,
     shared_class,
 )
+from shelfrank.stats.bootstrap import bootstrap_p
 
 ENCODERS = ("bge_small", "bge_small_esci")
 GRID = {
@@ -154,6 +155,16 @@ def main() -> None:
         parts = {m: difference(per[system], per[baseline], m, **boot) for m in METRICS}
         out |= {m: asdict(v) for m, v in parts.items()}
         out["verdict"] = verdict(parts["ndcg10"], parts["condensed_ndcg10"])
+        gaps = [
+            [
+                float(np.mean(values))
+                for values in by_query(
+                    {s: {m: per[system][s][m] - per[baseline][s][m]} for s in per[system]}, m
+                ).values()
+            ]
+            for m in ("ndcg10", "condensed_ndcg10")
+        ]
+        out["p"] = max(bootstrap_p(g, **boot) for g in gaps)
         return out
 
     ceiling = clustered_mean(by_query(per["bm25"], "recall10_ceiling"), False, **boot).mean

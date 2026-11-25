@@ -171,6 +171,15 @@ class Ranker:
         parts = [b.predict(table, num_iteration=b.best_iteration) for b in self.boosters]
         return np.mean(parts, axis=0)
 
+    def contributions(self, data: RankingData, rows: np.ndarray) -> np.ndarray:
+        """Exact TreeSHAP values per row and feature, averaged over seeds."""
+        table = data.features.iloc[rows][list(self.config.columns)]
+        parts = [
+            b.predict(table, num_iteration=b.best_iteration, pred_contrib=True)[:, :-1]
+            for b in self.boosters
+        ]
+        return np.mean(parts, axis=0)
+
     def gain_importance(self) -> dict[str, float]:
         """Share of total split gain per feature."""
         parts = [b.feature_importance("gain", iteration=b.best_iteration) for b in self.boosters]

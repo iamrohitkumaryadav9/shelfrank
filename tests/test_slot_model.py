@@ -128,3 +128,20 @@ def test_protocol_states_the_selection_rule_and_the_dropped_round():
     assert "Round A was then dropped before any recorded pass, because of rater time" in text
     assert "the mean of two exact-span F1 scores over all slots" in text
     assert "vs LLM silver labels; human verification pending" in text
+
+
+def test_committed_slot_page_is_generated_and_every_score_is_marked_silver():
+    from shelfrank.qu.slot_report import render
+
+    data = json.loads((REPO_ROOT / "results/slots_dev.json").read_text(encoding="utf-8"))
+    page = (REPO_ROOT / "docs/slots_dev.md").read_text(encoding="utf-8")
+    assert page == render(data) and "vs LLM silver labels; human verification pending" in page
+
+
+def test_committed_slot_selection_follows_the_rule():
+    data = json.loads((REPO_ROOT / "results/slots_dev.json").read_text(encoding="utf-8"))
+    scores = [r["selection"] for r in data["runs"]]
+    assert data["selected"] == scores.index(max(scores)) and data["runs"][0]["kind"] == "lexicon"
+    for run in data["runs"]:
+        mean = (run["silver"]["all"]["f1"] + run["esci"]["all"]["f1"]) / 2
+        assert run["selection"] == pytest.approx(mean)

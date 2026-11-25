@@ -37,6 +37,22 @@ def bootstrap_mean(
     return Interval(float(data.mean()), float(low), float(high), int(data.size))
 
 
+def bootstrap_p(values: Sequence[float], n_resamples: int = 10_000, seed: int = 20260) -> float:
+    """Two-sided p for a mean of 0, from the same resamples as the interval.
+
+    One is added to both counts, so a p of exactly 0 is never reported from finite resamples.
+    """
+    data = np.asarray(values, dtype=float)
+    rng = np.random.default_rng(seed)
+    low = high = 0
+    for start in range(0, n_resamples, 1000):
+        stop = min(start + 1000, n_resamples)
+        means = data[rng.integers(0, data.size, size=(stop - start, data.size))].mean(axis=1)
+        low += int((means <= 0).sum())
+        high += int((means >= 0).sum())
+    return min(1.0, 2 * (min(low, high) + 1) / (n_resamples + 1))
+
+
 def paired_difference(
     system: Sequence[float],
     baseline: Sequence[float],

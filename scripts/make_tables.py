@@ -6,10 +6,14 @@ from typing import Any
 from shelfrank.config import REPO_ROOT
 from shelfrank.dense.checks_report import render as render_checks
 from shelfrank.eval.dense_report import render as render_dense
+from shelfrank.eval.final_report import render as render_final
 from shelfrank.eval.retrieval_report import render
 from shelfrank.ltr.report import render as render_ltr
 from shelfrank.qu.class_report import render as render_class
+from shelfrank.qu.slot_report import render as render_slots
 from shelfrank.readme_tables import findings, limitations, replace_block
+from shelfrank.similar.report import render as render_similar
+from shelfrank.suggest.report import render as render_suggest
 
 
 def _load(name: str) -> dict[str, Any]:
@@ -32,8 +36,24 @@ def main() -> None:
         if (REPO_ROOT / "results" / f"{name}.json").exists():
             page = render_ltr(_load(name), name)
             (REPO_ROOT / f"docs/{name}.md").write_text(page, encoding="utf-8", newline="\n")
-    page = render_class(_load("class_dev"))
+    paths = sorted((REPO_ROOT / "results").glob("class_ceiling_*.json"))
+    ceilings = {p.stem.removeprefix("class_ceiling_"): _load(p.stem) for p in paths}
+    page = render_class(_load("class_dev"), ceilings)
     (REPO_ROOT / "docs/class_dev.md").write_text(page, encoding="utf-8", newline="\n")
+    (REPO_ROOT / "docs/slots_dev.md").write_text(
+        render_slots(_load("slots_dev")), encoding="utf-8", newline="\n"
+    )
+    primary = REPO_ROOT / "results/similar_primary.json"
+    page = render_similar(
+        _load("similar_dev"), _load("similar_primary") if primary.exists() else None
+    )
+    (REPO_ROOT / "docs/similar.md").write_text(page, encoding="utf-8", newline="\n")
+    if (REPO_ROOT / "results/final_run.json").exists():
+        page = render_final(_load("final_run"))
+        (REPO_ROOT / "docs/final_results.md").write_text(page, encoding="utf-8", newline="\n")
+    if (REPO_ROOT / "results/suggest.json").exists():
+        page = render_suggest(_load("suggest"))
+        (REPO_ROOT / "docs/suggest.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_dense(_load("dense_dev"))
     (REPO_ROOT / "docs/dense_dev.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_checks(_load("phase3_checks"), _load("finetune_esci"))

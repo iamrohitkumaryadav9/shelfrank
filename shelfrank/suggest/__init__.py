@@ -1,1 +1,1 @@
-"""Prefix autocomplete (stretch)."""
+"""Prefix autocomplete, without popularity data."""

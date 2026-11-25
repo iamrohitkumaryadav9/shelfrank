@@ -166,7 +166,9 @@ products. These rules apply:
   (full) against tuned multi-field BM25. Both are in the Holm family.
 
 - Paired bootstrap over queries, 10,000 resamples, seeded. Mean difference with a 95% CI.
-- The comparison family is declared in `configs/frozen.yaml` and Holm-corrected.
+- The comparison families are declared in `configs/frozen.yaml` and Holm-corrected within each family. The p-value is
+  a two-sided bootstrap p. A claim needs both metrics, so its p is the larger of the two. The verdict of section 7 and
+  the Holm-adjusted p are reported side by side, and a claimed gain needs both.
 
 ## 10. Published baseline
 

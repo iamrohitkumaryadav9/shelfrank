@@ -33,7 +33,41 @@ def _f1(part: Mapping[str, Any]) -> str:
     return f"{part['macro_f1']:.3f} ({part['macro_f1_classes']} classes)"
 
 
-def render(data: Mapping[str, Any]) -> str:
+def ceiling_table(ceilings: Mapping[str, Mapping[str, Any]]) -> str:
+    """Gemini zero-shot against the student, per split."""
+    rows = []
+    for split, c in ceilings.items():
+        for name, label in (("teacher", "Gemini zero-shot (teacher)"), ("student", "Student")):
+            s = c[name]
+            f1 = _f1(s)
+            rows.append(
+                [
+                    split,
+                    f"{label}",
+                    s["n"],
+                    _level(s),
+                    f"{s['department']:.3f}",
+                    f1,
+                    s["predicted_other"],
+                ]
+            )
+        gap = c["student_minus_teacher"]
+        rows.append(
+            [
+                split,
+                "Student minus teacher",
+                "",
+                f"{gap['mean']:+.3f} [{gap['low']:+.3f}, {gap['high']:+.3f}]",
+                "",
+                "",
+                "",
+            ]
+        )
+    header = ["Split", "Model", "n", "Accuracy", "Department", "Macro-F1", 'Said "other"']
+    return table(header, rows)
+
+
+def render(data: Mapping[str, Any], ceilings: Mapping[str, Mapping[str, Any]]) -> str:
     """Build the page."""
     best = [(arm, data["best"][arm]) for arm in ARMS if arm in data["best"]]
     rows = [
@@ -97,4 +131,11 @@ Selected: **{ARMS[data["selected"]]}**. {note}
 {table(split_header, split_rows)}
 
 Macro-F1 covers classes with at least 5 reference queries.
+
+## The teacher as a ceiling
+
+Gemini labels the same queries with the same class list and no examples from WANDS. The reference is itself a model
+prediction, so the teacher's score is agreement too and not a true ceiling on quality.
+
+{ceiling_table(ceilings)}
 """

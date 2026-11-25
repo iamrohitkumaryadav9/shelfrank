@@ -63,6 +63,15 @@ def test_compare_is_paired_and_signed():
         compare(scores([0.1]), scores([0.1, 0.2]))
 
 
+def test_claim_p_is_the_larger_of_both_metrics():
+    from shelfrank.eval.claims import compare_with_p
+
+    a = {q: {"ndcg10": 0.5 + 0.01 * q, "condensed_ndcg10": 0.5} for q in range(8)}
+    b = {q: {"ndcg10": 0.4, "condensed_ndcg10": 0.5} for q in range(8)}
+    p = compare_with_p(a, b, n_resamples=200)["p"]
+    assert p["ndcg10"] < 0.05 and p["condensed_ndcg10"] == 1.0 and p["claim"] == 1.0
+
+
 def test_holm_by_hand_and_monotone():
     out = holm({"a": 0.01, "b": 0.04, "c": 0.03})
     assert out == pytest.approx({"a": 0.03, "c": 0.06, "b": 0.06})
@@ -375,3 +384,25 @@ def test_selection_rule_and_encoder_are_recorded_before_the_freeze():
     assert "mean of standard and condensed nDCG@10" in cfg["selection_rule"]
     dense = json.loads((REPO_ROOT / "results/dense_dev.json").read_text(encoding="utf-8"))
     assert cfg["encoder"] == dense["encoder"]
+
+
+def test_contributions_and_base_value_add_up_to_the_score():
+    rng = np.random.default_rng(0)
+    n = 240
+    frame = pd.DataFrame({"g1_a": rng.normal(size=n), "g2_b": rng.normal(size=n)})
+    grade = (frame["g1_a"] > 0).astype(float).to_numpy()
+    data = RankingData(np.repeat(np.arange(12), 20), np.arange(n), frame, grade)
+    config = LtrConfig(
+        ("g1_a", "g2_b"),
+        UNJUDGED_ZERO,
+        rounds=10,
+        patience=5,
+        seeds=(1, 2),
+        params={"min_data_in_leaf": 5},
+    )
+    ranker = Ranker(config).fit(data, list(range(12)))
+    rows = data.rows([0, 1])
+    shap = ranker.contributions(data, rows)
+    assert shap.shape == (40, 2)
+    gap = ranker.scores(data, rows) - shap.sum(axis=1)
+    assert np.allclose(gap, gap[0])

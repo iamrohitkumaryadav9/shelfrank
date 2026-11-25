@@ -176,4 +176,11 @@ def test_committed_class_page_is_up_to_date():
     from shelfrank.qu.class_report import render
 
     page = (REPO_ROOT / "docs/class_dev.md").read_text(encoding="utf-8")
-    assert page == render(committed_class_results())
+    import json
+
+    paths = sorted((REPO_ROOT / "results").glob("class_ceiling_*.json"))
+    ceilings = {
+        p.stem.removeprefix("class_ceiling_"): json.loads(p.read_text(encoding="utf-8"))
+        for p in paths
+    }
+    assert page == render(committed_class_results(), ceilings)

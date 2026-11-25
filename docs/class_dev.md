@@ -29,3 +29,14 @@ Selected: **Both**. The best dev accuracy of any configuration is 0.708 (Product
 | Both | 0.634 (n = 93) | 0.667 (n = 3) | undefined (0 classes) | 0.651 (7 classes) |
 
 Macro-F1 covers classes with at least 5 reference queries.
+
+## The teacher as a ceiling
+
+Gemini labels the same queries with the same class list and no examples from WANDS. The reference is itself a model
+prediction, so the teacher's score is agreement too and not a true ceiling on quality.
+
+| Split | Model | n | Accuracy | Department | Macro-F1 | Said "other" |
+| --- | --- | --- | --- | --- | --- | --- |
+| dev | Gemini zero-shot (teacher) | 96 | 0.688 [0.594, 0.781] | 0.781 | undefined (0 classes) | 13 |
+| dev | Student | 96 | 0.635 [0.542, 0.729] | 0.708 | undefined (0 classes) | 21 |
+| dev | Student minus teacher |  | -0.052 [-0.146, +0.042] |  |  |  |

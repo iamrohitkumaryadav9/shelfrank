@@ -1,0 +1,176 @@
+# Written once by scripts/freeze.py. Tag: preregistered-v1. Never edited.
+date: '2026-11-26'
+pool_rule: A gain is claimed only if it is positive under both standard and condensed nDCG@10 with the
+  95% CI excluding 0. Otherwise it is reported as 'direction depends on unjudged handling'.
+retrieval:
+  k1: 1.2
+  b: 0.75
+  bm25_weights:
+    name: 1.0
+    class: 0.0
+    hierarchy: 0.5
+    features: 0.1
+    description: 0.1
+  rrf_k: 60
+  run_depth: 1000
+  candidate_depth: 100
+  encoder: bge_small
+ltr:
+  option: full_unjudged_zero__stop_cv
+  selection_rule: highest mean of standard and condensed nDCG@10 on the dev fold; an exact tie goes to
+    judged-only
+  groups:
+  - G1
+  - G2
+  - G3
+  - G4
+  - G5
+  - G6
+  columns:
+  - g1_bm25_name
+  - g1_bm25_name_rel
+  - g1_bm25_class
+  - g1_bm25_class_rel
+  - g1_bm25_hierarchy
+  - g1_bm25_hierarchy_rel
+  - g1_bm25_features
+  - g1_bm25_features_rel
+  - g1_bm25_description
+  - g1_bm25_description_rel
+  - g1_bm25_tuned
+  - g1_bm25_tuned_rel
+  - g1_rr_bm25
+  - g1_cover_name
+  - g1_cover_class
+  - g1_cover_features
+  - g1_cover_description
+  - g1_cover_any
+  - g1_cover_name_idf
+  - g1_bigrams_name
+  - g1_phrase_name
+  - g1_last_word_in_name
+  - g1_last_word_in_class
+  - g2_cosine
+  - g2_cosine_gap
+  - g2_rr_dense
+  - g2_rrf
+  - g2_rrf_rank
+  - g3_p_class
+  - g3_p_class_rel
+  - g3_class_rank
+  - g3_is_top_class
+  - g3_p_department
+  - g3_confidence
+  - g4_color_match
+  - g4_color_conflict
+  - g4_color_not_mentioned
+  - g4_material_finish_match
+  - g4_material_finish_conflict
+  - g4_material_finish_not_mentioned
+  - g4_style_match
+  - g4_style_conflict
+  - g4_style_not_mentioned
+  - g4_room_match
+  - g4_room_conflict
+  - g4_room_not_mentioned
+  - g4_asked
+  - g4_matches
+  - g4_conflicts
+  - g4_match_share
+  - g5_log_ratings
+  - g5_average_rating
+  - g5_shrunk_rating
+  - g5_log_reviews
+  - g5_features
+  - g5_has_description
+  - g6_query_words
+  - g6_query_numbers
+  - g6_name_words
+  - g6_log_description_words
+  - g6_numbers_in_name
+  - g6_numbers_anywhere
+  variant: unjudged_zero
+  objective: lambdamart
+  label_gain:
+  - 0
+  - 1
+  - 2
+  params:
+    learning_rate: 0.05
+    num_leaves: 15
+    min_data_in_leaf: 50
+    feature_fraction: 0.8
+    bagging_fraction: 0.8
+    bagging_freq: 1
+    lambda_l2: 1.0
+  rounds: 600
+  patience: 60
+  valid_share: 0.2
+  stopping: cv
+  seeds:
+  - 20260
+  - 20261
+  - 20262
+  stopping_folds: 4
+class_student:
+  selection_rule: mean of dev and ESCI accuracy
+  rules: class-v1
+  arm: both
+  query_share: 0.2
+  tail: null
+  ngrams:
+  - 2
+  - 4
+  alpha: 1.0e-05
+slot_student:
+  selection_rule: mean of micro-F1 against dev silver and held-out ESCI; a tie goes to the lexicon
+  rules: slots-v1
+  kind: tagger
+  config:
+    lexicon_features: true
+    window: 2
+    c: 10.0
+  reference: LLM silver labels; human verification pending
+serving:
+  query_encoder_format: fp32
+similar:
+  encoder: bge_small_esci
+  weights:
+    shared_class: 0.0
+    attributes: 0.1
+    prior: 0.0
+evaluation:
+  folds: data/splits/wands_folds.json
+  scheme: 5-fold out-of-fold; each fold is ranked by a model trained on the other four
+  primary_queries: folds 1 to 4
+  bootstrap:
+    n_resamples: 10000
+    seed: 20260
+  p_value: two-sided bootstrap; for a claim, the larger of standard and condensed nDCG@10
+  correction: Holm within each family
+  families:
+    main:
+    - ltr_full vs hybrid_rrf (primary)
+    - ltr_full vs bm25_multi (secondary)
+    retrieval:
+    - dense vs bm25_multi
+    - hybrid_rrf vs bm25_multi
+    - dense_esci vs dense
+    - hybrid_rrf_esci vs hybrid_rrf
+    - bm25_multi vs bm25_title
+    ablation:
+    - without_G1 vs ltr_full
+    - without_G2 vs ltr_full
+    - without_G3 vs ltr_full
+    - without_G4 vs ltr_full
+    - without_G5 vs ltr_full
+    - without_G6 vs ltr_full
+    - only_G1 vs ltr_full
+    - pointwise vs ltr_full
+    - other_variant vs ltr_full
+    - ltr_other_encoder vs ltr_full
+    similar:
+    - rerank vs rrf (primary)
+    - rrf vs bm25
+    - bge_small_esci vs bge_small
+rewriting: trigger tuned on fold 0 and frozen in configs/frozen_rewrite.yaml before its run

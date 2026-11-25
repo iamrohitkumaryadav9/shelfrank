@@ -61,3 +61,19 @@ def test_no_difference_does_not_exclude_zero():
 
 def test_an_interval_touching_zero_does_not_exclude_it():
     assert not Interval(0.1, 0.0, 0.2, 5).excludes_zero()
+
+
+def test_p_value_is_small_for_a_clear_effect_large_for_none_and_never_zero():
+    from shelfrank.stats.bootstrap import bootstrap_p
+
+    clear = bootstrap_p([0.1, 0.12, 0.09, 0.11] * 10, 2000)
+    none = bootstrap_p([0.1, -0.1] * 20, 2000)
+    assert 0 < clear < 0.01 and none > 0.5
+    assert bootstrap_p([0.0] * 5, 100) == 1.0
+
+
+def test_p_value_is_symmetric_in_sign():
+    from shelfrank.stats.bootstrap import bootstrap_p
+
+    values = [0.3, -0.1, 0.2, 0.05, -0.02]
+    assert bootstrap_p(values, 500) == bootstrap_p([-v for v in values], 500)

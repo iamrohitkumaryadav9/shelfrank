@@ -375,7 +375,8 @@
     "high": 0.004446980138182772,
     "n": 64
    },
-   "verdict": "no clear difference"
+   "verdict": "no clear difference",
+   "p": 0.6115388461153884
   },
   {
    "system": "rrf",
@@ -410,7 +411,8 @@
     "high": 0.07135021197917382,
     "n": 64
    },
-   "verdict": "gain"
+   "verdict": "gain",
+   "p": 0.00019998000199980003
   },
   {
    "system": "bge_small_esci",
@@ -445,7 +447,8 @@
     "high": 0.026606405137958686,
     "n": 64
    },
-   "verdict": "no clear difference"
+   "verdict": "no clear difference",
+   "p": 0.9323067693230677
   }
  ],
  "grid": [

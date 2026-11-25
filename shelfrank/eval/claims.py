@@ -5,7 +5,7 @@ from dataclasses import asdict
 from typing import Any
 
 from shelfrank.eval.harness import PerQuery
-from shelfrank.stats.bootstrap import Interval, paired_difference
+from shelfrank.stats.bootstrap import Interval, bootstrap_p, paired_difference
 
 GAIN, LOSS, NONE = "gain", "loss", "no clear difference"
 UNCLEAR = "direction depends on unjudged handling"
@@ -39,6 +39,20 @@ def compare(system: PerQuery, baseline: PerQuery, **bootstrap: int) -> dict[str,
         intervals.append(paired_difference(ours, theirs, **bootstrap))
         out[metric] = asdict(intervals[-1])
     return out | {"verdict": verdict(*intervals)}
+
+
+def compare_with_p(system: PerQuery, baseline: PerQuery, **bootstrap: int) -> dict[str, Any]:
+    """As ``compare``, with a p-value for the whole claim.
+
+    A claim needs both metrics, so its p is the larger of the two (an intersection-union test).
+    """
+    out = compare(system, baseline, **bootstrap)
+    ids = sorted(baseline)
+    p = {}
+    for metric in ("ndcg10", "condensed_ndcg10"):
+        gaps = [float(system[q][metric] or 0) - float(baseline[q][metric] or 0) for q in ids]
+        p[metric] = bootstrap_p(gaps, **bootstrap)
+    return out | {"p": p | {"claim": max(p.values())}}
 
 
 def holm(p_values: Mapping[str, float]) -> dict[str, float]:
