@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ddd3a4fc1a3662637e31d231d03df18957bd205edcddeb25214825c25e92de55",
+ "response": {
+  "input_tokens": 1376,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 494,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Dining Linens\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Mailboxes\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Toilet Paper Holders\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Wall Mounted Shelves\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Projector Screens\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Bathroom Storage\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Wall & Accent Mirrors\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Landscape Lighting\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Dressers & Chests\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Chandeliers\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Flatware & Silverware Serving Pieces\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Wine Racks\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

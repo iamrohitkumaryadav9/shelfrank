@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5e4c872924e3d6d1d5b21dd0319258c64764bf3496de6c776fe21da211983305",
+ "response": {
+  "input_tokens": 1386,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 508,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Dining Bowls\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Nightstands\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Coffee & Cocktail Tables\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Bath Accessories\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Coat Racks and Hooks\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Curtain Hardware & Accessories\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Flatware & Silverware Serving Pieces\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Licensed Products\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Wall Mounted Shelves\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Kitchen Faucets\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Bath Rugs & Mats\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Planters\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Mugs & Teacups\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Shower & Tub Accessories\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Dressers & Chests\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

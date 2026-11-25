@@ -27,6 +27,10 @@ def main() -> None:
     (REPO_ROOT / "docs/retrieval_dev.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_ltr(_load("ltr_dev"))
     (REPO_ROOT / "docs/ltr_dev.md").write_text(page, encoding="utf-8", newline="\n")
+    for name in ("ltr_interim", "ltr_final"):
+        if (REPO_ROOT / "results" / f"{name}.json").exists():
+            page = render_ltr(_load(name), name)
+            (REPO_ROOT / f"docs/{name}.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_dense(_load("dense_dev"))
     (REPO_ROOT / "docs/dense_dev.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_checks(_load("phase3_checks"), _load("finetune_esci"))

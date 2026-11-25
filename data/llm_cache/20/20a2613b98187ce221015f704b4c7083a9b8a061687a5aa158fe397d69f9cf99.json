@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "6acc0894cd69f46ba2787854c77614cb3600a53f6a51ac52e4d1d7e42acbe951",
+ "response": {
+  "input_tokens": 1384,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 500,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Bar Stools\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Towel & Robe Hooks\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Chairmats\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Planters\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Vanity Lighting\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Chandeliers\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Sofa & Console Tables\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Trash Cans & Recycling\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Outdoor Wall Lights\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Wine Racks\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Boxes, Bins, Baskets, & Buckets\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Bookcases\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

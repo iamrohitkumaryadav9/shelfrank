@@ -27,6 +27,7 @@ from shelfrank.ltr.model import (
     split_queries,
     to_run,
 )
+from shelfrank.ltr.selection import bug_fixes, output_path, select
 from shelfrank.stats.bootstrap import Interval
 
 
@@ -336,6 +337,11 @@ def test_committed_dev_page_is_generated_from_the_committed_results():
     results = json.loads((REPO_ROOT / "results/ltr_dev.json").read_text(encoding="utf-8"))
     page = (REPO_ROOT / "docs/ltr_dev.md").read_text(encoding="utf-8")
     assert page == render(results)
+    for path in (REPO_ROOT / "results").glob("ltr_interim.json"):
+        interim = json.loads(path.read_text(encoding="utf-8"))
+        page = (REPO_ROOT / "docs/ltr_interim.md").read_text(encoding="utf-8")
+        assert page == render(interim, "ltr_interim") and "INTERIM" in page
+        assert "G4" not in interim["groups"]
     assert "G4" not in results["groups"] and results["split"] == "dev"
 
 
@@ -346,3 +352,50 @@ def test_every_reported_configuration_is_in_the_log():
     lines = (REPO_ROOT / "results/ltr_dev_log.jsonl").read_text(encoding="utf-8").splitlines()
     logged = {json.loads(line)["name"] for line in lines}
     assert set(results["systems"]) - {"bm25_multi", "dense", "hybrid_rrf"} <= logged
+
+
+def system(standard, condensed):
+    return {"ndcg10": {"mean": standard}, "condensed_ndcg10": {"mean": condensed}}
+
+
+def test_selection_is_the_mean_of_both_metrics_and_ties_go_to_judged_only():
+    options = {
+        "zero": LtrConfig(("g1_a",), UNJUDGED_ZERO),
+        "judged": LtrConfig(("g1_a",), JUDGED_ONLY),
+    }
+    assert select({"zero": system(0.9, 0.5), "judged": system(0.6, 0.7)}, options) == "zero"
+    assert select({"zero": system(0.5, 0.75), "judged": system(0.75, 0.5)}, options) == "judged"
+
+
+def test_each_dev_stage_runs_once_unless_a_bug_fix_is_logged(tmp_path):
+    (tmp_path / "results").mkdir()
+    path = output_path("interim", ["G1"], "", tmp_path)
+    path.write_text('{"bug_fixes": []}', encoding="utf-8")
+    with pytest.raises(ProtocolError, match="bug-fix"):
+        output_path("interim", ["G1"], "", tmp_path)
+    assert output_path("interim", ["G1"], "wrong sign", tmp_path) == path
+    assert bug_fixes(path, "wrong sign") == ["wrong sign"] and bug_fixes(path, "") == []
+
+
+@pytest.mark.parametrize(("stage", "groups"), [("interim", ["G1", "G4"]), ("final", ["G1"])])
+def test_g4_is_off_in_the_interim_run_and_on_in_the_final_one(tmp_path, stage, groups):
+    with pytest.raises(ProtocolError, match="G4"):
+        output_path(stage, groups, "", tmp_path)
+
+
+def test_no_interim_run_after_the_final_one(tmp_path):
+    (tmp_path / "results").mkdir()
+    (tmp_path / "results/ltr_final.json").write_text("{}", encoding="utf-8")
+    with pytest.raises(ProtocolError, match="final"):
+        output_path("interim", ["G1"], "x", tmp_path)
+
+
+def test_selection_rule_and_encoder_are_recorded_before_the_freeze():
+    from shelfrank.config import REPO_ROOT
+
+    cfg = load_config("ltr")
+    protocol = " ".join((REPO_ROOT / "docs/PROTOCOL.md").read_text(encoding="utf-8").split())
+    assert "mean of standard and condensed nDCG@10 on the dev fold" in protocol
+    assert "mean of standard and condensed nDCG@10" in cfg["selection_rule"]
+    dense = json.loads((REPO_ROOT / "results/dense_dev.json").read_text(encoding="utf-8"))
+    assert cfg["encoder"] == dense["encoder"]

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "1345ecbaeebf9bab74d24d9b87fff2118359af3637fb72be42141d03a2db8942",
+ "response": {
+  "input_tokens": 1389,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 491,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Wall Stickers\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Pendant Lights\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Shower Curtains\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Curtains & Drapes\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Slow Cookers\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Bookcases\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Light Bulbs\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Curtains & Drapes\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Strainers, Colanders, & Salad Spinners\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

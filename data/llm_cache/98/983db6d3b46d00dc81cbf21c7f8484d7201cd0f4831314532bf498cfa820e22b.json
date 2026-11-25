@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "cc121967d0b57db7967bc357ec8b9e238bb9d1ac250573d11fe66b07d92d1b38",
+ "response": {
+  "input_tokens": 1392,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 502,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Closet Storage & Organization\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Cabinet and Drawer Knobs\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Foam and Latex Mattresses\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Wine Racks\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Cooking Utensils\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Sectionals\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Mattress Toppers and Pads\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Landscape Lighting\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Sofa & Console Tables\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Coat Racks and Hooks\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Plates & Saucers\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

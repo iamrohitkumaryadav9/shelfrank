@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "149d2b11604ccbd81875bbc18d50d649f72fa3d4f637344d88e0ad562b95ffea",
+ "response": {
+  "input_tokens": 1400,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 490,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Sofa & Console Tables\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Hybrid Mattresses\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Flush Mount Lighting\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Sofa & Console Tables\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Hybrid Mattresses\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bed Accessories\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Shelving & Racks\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Wall Clocks\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Carts & Stands\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

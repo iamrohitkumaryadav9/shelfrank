@@ -1,5 +1,9 @@
 # G4 stays out until the slot student exists. shelfrank/ltr/gates.py refuses it before that.
 groups: [G1, G2, G3, G5, G6]
+encoder: bge_small      # decided in results/dense_dev.json by the rule in PROTOCOL.md section 8
+# Copied into configs/frozen.yaml at the freeze. That file does not exist yet, because its existence
+# unlocks the other folds.
+selection_rule: "highest mean of standard and condensed nDCG@10 on the dev fold; an exact tie goes to judged-only"
 learning_curve: [18, 36, 54]   # training queries; the full inner training set is 72
 inner_folds: 4          # inside the dev fold, for dev decisions only
 seed: 20260

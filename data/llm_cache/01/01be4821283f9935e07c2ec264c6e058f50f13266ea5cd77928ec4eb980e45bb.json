@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "08440a53f6437fffad38bbbacbf0734453864a0d074b082570460d136e8f1393",
+ "response": {
+  "input_tokens": 1388,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 516,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Decorative Trays\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Closet Storage & Organization\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Boxes, Bins, Baskets, & Buckets\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Curtains & Drapes\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Cabinet and Drawer Knobs\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Desks\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Ottomans\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Closet Storage & Organization\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Trash Cans & Recycling\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Patio Umbrella Stands & Bases\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Closet Storage & Organization\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

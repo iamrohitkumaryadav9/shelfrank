@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "7bb28633e26e1a809200b0f63a8cda987d0ebfab8a9eaa56698600d71ab0108a",
+ "response": {
+  "input_tokens": 1379,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 486,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Rocking Chairs\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Greenhouses\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Kitchen Sinks\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Chairmats\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Crib Bedding Sets\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Recliners\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Coat Racks and Hooks\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Office Chairs\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Table Lamps\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

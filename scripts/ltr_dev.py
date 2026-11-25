@@ -1,6 +1,7 @@
 """Build features, train LambdaMART and compare variants and ablations, on the dev fold only.
 
-Writes results/ltr_dev.json and appends every configuration to results/ltr_dev_log.jsonl.
+Writes results/ltr_<stage>.json and appends every configuration to results/ltr_dev_log.jsonl. The
+interim and the final comparison run once each; see shelfrank/ltr/selection.py.
 """
 
 import argparse
@@ -45,7 +46,9 @@ from shelfrank.ltr.dataset import JUDGED_ONLY, RankingData, build_data
 from shelfrank.ltr.first_stage import FirstStage, candidate_pairs, first_stage
 from shelfrank.ltr.gates import allowed_groups
 from shelfrank.ltr.model import LtrConfig
-from shelfrank.qu.class_student import LinearClassifier, name_examples
+from shelfrank.ltr.selection import FINAL, INTERIM, bug_fixes, output_path, select
+from shelfrank.qu.class_data import arm_examples, seed_parts
+from shelfrank.qu.class_student import LinearClassifier
 from shelfrank.stats.bootstrap import bootstrap_mean
 from shelfrank.text.normalize import tokenize
 
@@ -53,32 +56,37 @@ REPORTED = ("ndcg10", "condensed_ndcg10", "judged10", "exact10_share", "mrr_exac
 
 
 def class_model(products: pd.DataFrame, taxonomy: list[str]) -> LinearClassifier:
-    """The names-only student chosen in results/class_dev.json, cached."""
-    best = json.loads((REPO_ROOT / "results/class_dev.json").read_text(encoding="utf-8"))["best"]
-    chosen = best["names"]
+    """The student selected in results/class_dev.json, cached."""
+    results = json.loads((REPO_ROOT / "results/class_dev.json").read_text(encoding="utf-8"))
+    chosen = results["best"][results["selected"]]
+    arm, tail, share = chosen["arm"], chosen["tail"], chosen["query_share"]
     low, high = chosen["ngrams"]
-    name = f"class_names_tail{chosen['tail']}_n{low}{high}_a{chosen['alpha']:.0e}.joblib"
+    name = f"class_{arm}_s{share}_tail{tail}_n{low}{high}_a{chosen['alpha']:.0e}.joblib"
     path = REPO_ROOT / "artifacts" / name
     if path.exists():
         return joblib.load(path)
     model = LinearClassifier((low, high), chosen["alpha"], 60_000)
-    model.fit(name_examples(products, taxonomy, chosen["tail"]))
+    parts = seed_parts()
+    queries = parts[0] if parts else None
+    model.fit(arm_examples(arm, tail, share, products, taxonomy, queries))
     joblib.dump(model, path)
     return model
 
 
-def load_everything() -> tuple[RankingData, FirstStage, dict[int, dict[int, int]], dict[int, str]]:
-    """Dev queries, candidates, features and grades."""
+def load_everything(
+    encoder: str,
+) -> tuple[RankingData, FirstStage, dict[int, dict[int, int]], dict[int, str]]:
+    """Dev queries, candidates, features and grades, with the named encoder in G2 and candidates."""
     data_cfg, cfg = load_config("data"), load_config("retrieval")
     raw = REPO_ROOT / data_cfg["wands"]["raw_dir"]
     products = load_products(raw).sort_values("product_id").reset_index(drop=True)
     ids = queries_for("dev", load_folds(REPO_ROOT / data_cfg["splits"]["path"]))
     texts = load_queries(raw).set_index("query_id").loc[ids, "query"].tolist()
 
-    dense_cfg = cfg["dense"]["bge_small"]
+    dense_cfg = cfg["dense"][encoder]
     identity = model_identity(dense_cfg, REPO_ROOT)
     encode = load_sentence_transformer(**identity)
-    folder = REPO_ROOT / "artifacts/embeddings/bge_small"
+    folder = REPO_ROOT / "artifacts/embeddings" / encoder
     vectors = encode_cached(product_texts(products), folder, identity, encode)
     # One at a time, as in run_retrieval.py: padding changes a vector in the last digits.
     prefix = dense_cfg["query_prefix"]
@@ -126,11 +134,14 @@ def load_everything() -> tuple[RankingData, FirstStage, dict[int, dict[int, int]
 def main() -> None:
     """Run every configuration."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--note", default="", help="why this run was made, kept in the log")
-    note = parser.parse_args().note
+    parser.add_argument("stage", choices=[INTERIM, FINAL])
+    parser.add_argument("--bug-fix", default="", help="reason for a rerun, kept in the result")
+    args = parser.parse_args()
     cfg, retrieval = load_config("ltr"), load_config("retrieval")
     groups = allowed_groups(cfg["groups"])
-    data, stage, qrels, texts = load_everything()
+    path = output_path(args.stage, groups, args.bug_fix, REPO_ROOT)
+    note = args.stage.upper() + (f", bug fix: {args.bug_fix}" if args.bug_fix else "")
+    data, stage, qrels, texts = load_everything(cfg["encoder"])
     columns = columns_of(data.features.columns, groups)
     near = load_config("data")["splits"]["near_duplicate_jaccard"]
     folds = grouped_folds(texts, cfg["inner_folds"], cfg["seed"], near)
@@ -171,8 +182,14 @@ def main() -> None:
             flush=True,
         )
 
-    def run(name: str, config: LtrConfig, reference: str, limit: int | None = None) -> None:
-        result = out_of_fold(data, folds, config, limit)
+    def run(
+        name: str,
+        config: LtrConfig,
+        reference: str,
+        limit: int | None = None,
+        source: RankingData = data,
+    ) -> None:
+        result = out_of_fold(source, folds, config, limit)
         per_query[name] = evaluate(result.run, qrels)
         importance = {c: float(np.mean([g[c] for g in result.gain])) for c in config.columns}
         by_group: dict[str, float] = {}
@@ -199,10 +216,6 @@ def main() -> None:
     for name, config in variants(base).items():
         run(name, config, "hybrid_rrf")
 
-    # A dev decision that both metrics share. On an exact tie judged-only stays.
-    def both(name: str) -> float:
-        return systems[name]["ndcg10"]["mean"] + systems[name]["condensed_ndcg10"]["mean"]
-
     # Stopping rule and size are chosen per variant first, so that neither variant is judged under
     # a rule that happens to suit the other.
     options = dict(variants(base))
@@ -210,7 +223,7 @@ def main() -> None:
         for name, choice in training_choices(config).items():
             options[f"{variant}__{name}"] = choice
             run(f"{variant}__{name}", choice, "hybrid_rrf")
-    chosen = max(options, key=both)
+    chosen = select(systems, options)
     full = options[chosen]
     sizes = [n for n in cfg["learning_curve"] if n < len(texts) - max(map(len, folds))]
     for size in sizes:
@@ -219,7 +232,21 @@ def main() -> None:
         run(name, config, chosen)
     for name, config in ablations(full, columns, groups).items():
         run(name, config, chosen)
+    # The encoder that the rule did not choose: in candidates and features, with its own RRF.
+    other = next(e for e in retrieval["dense"] if e != cfg["encoder"])
+    other_data, other_stage, _, _ = load_everything(other)
+    per_query["hybrid_rrf_other_encoder"] = evaluate(other_stage.runs["hybrid_rrf"], qrels)
+    report("hybrid_rrf_other_encoder", "hybrid_rrf", {})
+    run("other_encoder", full, chosen, source=other_data)
+    own = compare(per_query["other_encoder"], per_query["hybrid_rrf_other_encoder"], **boot)
+    systems["other_encoder"]["versus"]["hybrid_rrf_other_encoder"] = own
+    class_results = json.loads((REPO_ROOT / "results/class_dev.json").read_text(encoding="utf-8"))
     payload = {
+        "stage": args.stage,
+        "bug_fixes": bug_fixes(path, args.bug_fix),
+        "selection_rule": cfg["selection_rule"],
+        "encoder": cfg["encoder"],
+        "other_encoder": other,
         "split": "dev",
         "n_queries": len(texts),
         "rows": len(data.query_id),
@@ -227,12 +254,11 @@ def main() -> None:
         "groups": groups,
         "features": columns,
         "inner_folds": [len(f) for f in folds],
-        "class_student": "names only, provisional",
+        "class_student": class_results["selected"],
         "chosen": chosen,
         "learning_curve": sizes,
         "systems": systems,
     }
-    path = REPO_ROOT / "results/ltr_dev.json"
     path.write_text(json.dumps(payload, indent=1) + "\n", encoding="utf-8", newline="\n")
     print("wrote", path.name)
 

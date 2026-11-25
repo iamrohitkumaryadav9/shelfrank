@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9b5823e8d8920fd46bf6ad5973e96d2460a68ecd71e88fea3468c75bb8e07314",
+ "response": {
+  "input_tokens": 1385,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 498,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Bed Accessories\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Curtain Hardware & Accessories\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Dining Linens\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Wall Clocks\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Doormats\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Wall Décor\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Toilet Paper Holders\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Sectionals\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Licensed Products\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"End Tables\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Office Storage Cabinets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Fountains\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Serving Dishes & Platters\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Bathroom Sink Faucets\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Wall & Accent Mirrors\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Pet Gates\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d0ff1b8bcc03a67e674687ec672bd37cafb3421a9cb76bc2544bfa022bc5a790",
+ "response": {
+  "input_tokens": 1374,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 506,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Pendant Lights\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Glassware & Barware\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Desktop Organizers & Desk Pads\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Mailboxes\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Patio Tables\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Closet Storage & Organization\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Coffee & Cocktail Tables\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Bookcases\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Dog and Cat Bowls, Feeders & Accessories\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Ornaments & Tree Décor\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Landscape Lighting\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Planters\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Living Room Table Sets\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Table Lamps\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "ac148febf76d2dcb80302fe2e0910b3a2cdb0b163c5b77072a4f79412d9cdae1",
+ "response": {
+  "input_tokens": 1401,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 497,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Office Chairs\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Glassware & Barware\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Dining Linens\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Bathroom Storage\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Jewelry Boxes\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Crib Bedding Sets\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Shower Curtains\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Wall & Accent Mirrors\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Accent Chests / Cabinets\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

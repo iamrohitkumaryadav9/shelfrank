@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "d9afe6abb93654350638a8b8f63a358f07c9af0bb06af935db8955420debcd18",
+ "response": {
+  "input_tokens": 1386,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 498,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Sofa & Console Tables\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Bread & Loaf Pans\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Wall Mounted Shelves\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Dining Tables\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Specialty Serving\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Wine Racks\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Wall & Accent Mirrors\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Desktop Organizers & Desk Pads\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Serving Dishes & Platters\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

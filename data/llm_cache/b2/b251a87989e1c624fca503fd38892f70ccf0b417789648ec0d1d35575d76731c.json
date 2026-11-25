@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "794d54983f9f46ca6f974e306810e789b19732b9a96da329f2312d9fa4ce0b8e",
+ "response": {
+  "input_tokens": 1400,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 506,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Wall Décor\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Dining Table Sets\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Patio Tables\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Boxes, Bins, Baskets, & Buckets\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Game Chairs\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Outdoor Wall Lights\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Glassware & Barware\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Curtains & Drapes\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Towel Bars, Racks, and Stands\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Dining Table Sets\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Accent Stools\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

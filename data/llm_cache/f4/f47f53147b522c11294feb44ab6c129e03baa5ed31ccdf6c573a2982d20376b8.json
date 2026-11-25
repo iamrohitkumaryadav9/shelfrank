@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "9c3e8635a0073e51fbd9aac9df3c89adfe5f7ddfe0a76ae187cc7adc5b10c0e4",
+ "response": {
+  "input_tokens": 1385,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 493,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Sofas\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Bookcases\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Ornaments & Tree Décor\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Dining Table Sets\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Bird Cages\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Game Chairs\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Office Storage Cabinets\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Pet Gates\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Office Chairs\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Folding Tables\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Outdoor Fireplaces\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"TV Stands & Entertainment Centers\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Benches\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Mailboxes\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

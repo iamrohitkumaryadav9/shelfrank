@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "f2ad05d578f845fcb3f839d9d0166ccb78d66b213f28b10c05810870abd9ec66",
+ "response": {
+  "input_tokens": 1386,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 508,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Serving Dishes & Platters\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Kids Wall Décor\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Cooking Utensils\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Flags\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Curtains & Drapes\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bed Accessories\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Food Storage & Dispensers\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Shoe Storage\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Sideboards & Buffets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Garden Accents\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Holiday Lighting\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Sheds\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Fixture Parts And Components\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

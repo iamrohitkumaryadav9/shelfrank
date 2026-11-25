@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "fee33ac7dbe2cc06dbd18cf775904d7666409e05e982fb50460dc290fbdede76",
+ "response": {
+  "input_tokens": 1389,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 502,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Nightstands\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Landscape Lighting\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Sideboards & Buffets\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Shelving & Racks\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Slow Cookers\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Futons\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Chairmats\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Hampers & Baskets\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Cooking Utensils\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Office Storage Cabinets\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

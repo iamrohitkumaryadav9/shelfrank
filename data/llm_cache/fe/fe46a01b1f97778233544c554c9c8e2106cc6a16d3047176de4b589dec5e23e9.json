@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2136547422d8f183e9e0b955a2b174abd2f6d9fc64e2cd6220a33878d8f9a59a",
+ "response": {
+  "input_tokens": 1381,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 493,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Shoe Storage\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Serving Dishes & Platters\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Accent Chairs\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Dining Table Sets\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Wall Mounted Shelves\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Kids Beds\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Curtain Hardware & Accessories\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Sofa & Console Tables\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

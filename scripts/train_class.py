@@ -16,35 +16,28 @@ from shelfrank.data.departments import department_map
 from shelfrank.data.wands import load_products, load_queries
 from shelfrank.eval.access import queries_for
 from shelfrank.eval.splits import load_folds
+from shelfrank.qu.class_data import (
+    BOTH,
+    NAMES,
+    QUERIES,
+    SEED,
+    arm_examples,
+    labelled,
+    seed_parts,
+)
 from shelfrank.qu.class_student import (
     Examples,
     LinearClassifier,
     evaluate_classes,
-    mix,
-    name_examples,
-    query_examples,
     ranked_labels,
-    split_seed,
     to_reference,
 )
-from shelfrank.qu.guidelines import CLASS_VERSION
 from shelfrank.stats.bootstrap import bootstrap_mean
 
-SEED, HELD_SHARE = 20260, 0.2
 NGRAMS = ((2, 4), (3, 5))
 ALPHAS = (1e-6, 1e-5)
 TAILS = (None, 3)
 QUERY_SHARES = (0.2, 0.5, 0.8)
-
-
-def labelled(source: str, text_file: str) -> tuple[list[str], list[str | None]] | None:
-    """Teacher-labelled ESCI queries, or None before they exist."""
-    path = REPO_ROOT / "data/labels" / f"class_{source}_{CLASS_VERSION}.jsonl"
-    if not path.exists():
-        return None
-    rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
-    texts = (REPO_ROOT / "data/esci" / text_file).read_text(encoding="utf-8").splitlines()
-    return [texts[row["id"]] for row in rows], [row["label"] for row in rows]
 
 
 def latency_ms(model: LinearClassifier, queries: list[str]) -> dict[str, float]:
@@ -72,28 +65,26 @@ def main() -> None:
     truth = [to_reference(c, taxonomy) for c in frame["query_class"]]
 
     slice_texts, slice_labels = labelled("esci_dev", "esci_prompt_dev.txt") or ([], [])
-    seed = labelled("esci_seed", "esci_seed_queries.txt")
+    parts = seed_parts()
     seeded: set[str] | None = None
     train_queries: Examples | None = None
     esci_texts, esci_labels = slice_texts, slice_labels
-    if seed:
-        train, held = split_seed(len(seed[0]), HELD_SHARE, SEED)
-        train_queries = query_examples([seed[0][i] for i in train], [seed[1][i] for i in train])
-        esci_texts, esci_labels = [seed[0][i] for i in held], [seed[1][i] for i in held]
+    if parts:
+        train_queries, (esci_texts, esci_labels) = parts
         seeded = set(train_queries.labels)
 
-    def arms(tail: int | None) -> dict[str, tuple[Examples, float | None]]:
-        names = name_examples(products, taxonomy, tail)
-        out: dict[str, tuple[Examples, float | None]] = {"names": (names, None)}
+    def arms(tail: int | None) -> list[tuple[str, float | None]]:
+        out: list[tuple[str, float | None]] = [(NAMES, None)]
         if train_queries:
-            out |= {f"both_{s}": (mix(names, train_queries, s), s) for s in QUERY_SHARES}
-            if tail is None:
-                out["queries"] = (train_queries, None)
+            out += [(BOTH, share) for share in QUERY_SHARES]
+            # Seed queries alone do not depend on the tail of product names.
+            out += [(QUERIES, None)] if tail is None else []
         return out
 
     runs: list[dict[str, Any]] = []
     for tail in TAILS:
-        for arm, (examples, share) in arms(tail).items():
+        for arm, share in arms(tail):
+            examples = arm_examples(arm, tail, share, products, taxonomy, train_queries)
             for ngrams in NGRAMS:
                 for alpha in ALPHAS:
                     start = time.perf_counter()
@@ -101,7 +92,7 @@ def main() -> None:
                     top = ranked_labels(model.probabilities(dev), model.classes, 3)
                     esci = ranked_labels(model.probabilities(esci_texts), model.classes, 3)
                     run: dict[str, Any] = {
-                        "arm": arm.split("_")[0],
+                        "arm": arm,
                         "query_share": share,
                         "tail": tail,
                         "ngrams": ngrams,
@@ -116,10 +107,15 @@ def main() -> None:
                     right = [float(t == p[0]) for t, p in zip(truth, top, strict=True)]
                     interval = bootstrap_mean(right, seed=SEED)
                     run["dev"] |= {"low": interval.low, "high": interval.high}
+                    right = [
+                        float(t == p[0]) for t, p in zip(map(str, esci_labels), esci, strict=True)
+                    ]
+                    interval = bootstrap_mean(right, seed=SEED)
+                    run["esci"] |= {"low": interval.low, "high": interval.high}
                     run["selection"] = (run["dev"]["accuracy"] + run["esci"]["accuracy"]) / 2
                     runs.append(run)
                     print(
-                        f"{arm:9s} tail {tail!s:5s} {ngrams} {alpha:.0e}  dev {run['dev']['accuracy']:.3f}"
+                        f"{arm:8s} share {share!s:4s} tail {tail!s:5s} {ngrams} {alpha:.0e}  dev {run['dev']['accuracy']:.3f}"
                         f"  esci {run['esci']['accuracy']:.3f}  {run['fit_seconds']:.0f}s",
                         flush=True,
                     )
@@ -127,19 +123,23 @@ def main() -> None:
     for run in runs:
         if run["arm"] not in best or run["selection"] > best[run["arm"]]["selection"]:
             best[run["arm"]] = run
+    selected = max(best.values(), key=lambda r: r["selection"])["arm"]
     payload = {
         "reference": "Wayfair's assigned query class",
         "esci_reference": "teacher labels, "
-        + ("held-out seed queries" if seed else "prompt-development slice"),
+        + ("held-out seed queries" if parts else "prompt-development slice"),
         "selection_rule": "mean of dev and ESCI accuracy",
-        "waiting_for_seed_labels": seed is None,
+        "waiting_for_seed_labels": parts is None,
         "dev_reference_other": truth.count("other"),
+        "seed_training_queries": len(train_queries.texts) if train_queries else 0,
+        "seeded_classes": len(seeded or ()),
+        "selected": selected,
         "best": best,
         "runs": runs,
     }
     path = REPO_ROOT / "results/class_dev.json"
     path.write_text(json.dumps(payload, indent=1) + "\n", encoding="utf-8", newline="\n")
-    print(json.dumps(best, indent=1))
+    print("selected", selected, json.dumps(best, indent=1))
 
 
 if __name__ == "__main__":

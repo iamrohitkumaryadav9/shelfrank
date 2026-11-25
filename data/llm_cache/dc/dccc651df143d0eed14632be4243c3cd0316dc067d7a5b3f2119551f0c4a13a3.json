@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "5fa4064c5d51ec6b96446623a787e20cf8d6dcd81eef759b0507d1b0e7e2d626",
+ "response": {
+  "input_tokens": 1376,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 494,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Patio Tables\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Poker & Casino Tables\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Curtain Hardware & Accessories\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Chandeliers\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Bookcases\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Bird Cages\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"TV Stands & Entertainment Centers\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Kitchen Faucets\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Towel & Robe Hooks\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Area Rugs\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

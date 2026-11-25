@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "903ffa7dfebbbe94504fde284d977e2624fcee140ee42b0b95e2e90055950f86",
+ "response": {
+  "input_tokens": 1396,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 493,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"TV Stands & Entertainment Centers\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Jewelry Boxes\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Signs & Sign Holders\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Toilet Paper Holders\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Wall Stickers\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Desks\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Office Chairs\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Ottomans\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Carts & Stands\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Daybeds & Guest Beds\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Bath Accessories\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Saunas\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Bar Stools\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Pendant Lights\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

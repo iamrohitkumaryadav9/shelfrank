@@ -116,6 +116,23 @@ def test_semantic_features_by_hand(pairs, stage):
     assert best["g2_rrf"] == pytest.approx(1 / 61 + 1 / (60 + position))
 
 
+def test_fused_rank_and_score_reproduce_hybrid_rrf(pairs, stage):
+    out = semantic.semantic_features(pairs, stage, 60)
+    for q in (7, 3):
+        part = pairs["query_id"] == q
+        products, ranks = pairs["product_id"][part], out["g2_rrf_rank"][part]
+        by_rank = [p for _, p in sorted(zip(ranks, products, strict=True))]
+        assert by_rank == [p for p in stage.runs["hybrid_rrf"][q] if p in set(products)]
+        by_score = sorted(zip(-out["g2_rrf"][part], products, strict=True))
+        assert [p for _, p in by_score] == by_rank
+
+
+def test_product_below_the_fused_run_gets_the_next_rank(pairs, stage):
+    stage.runs["hybrid_rrf"] = {q: r[:1] for q, r in stage.runs["hybrid_rrf"].items()}
+    out = semantic.semantic_features(pairs, stage, 60)
+    assert set(out["g2_rrf_rank"]) == {1, 2}
+
+
 CLASSES = ["Lamps", "Sofas", "other"]
 DEPARTMENTS = {"Lamps": "Lighting", "Sofas": "Furniture", "Rare Lamps": "Lighting"}
 

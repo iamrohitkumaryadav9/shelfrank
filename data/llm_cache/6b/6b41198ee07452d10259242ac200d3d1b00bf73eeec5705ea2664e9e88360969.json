@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "96fbd62b99c8ecc8795b97bfec514fcc5ebaf555e2f0fb118476b6ed8756f086",
+ "response": {
+  "input_tokens": 1387,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 495,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Headboards\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Chairmats\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Sideboards & Buffets\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Shower Curtains\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Vanity Lighting\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Chairmats\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Decorative Trays\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Serving Dishes & Platters\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Benches\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Towel Bars, Racks, and Stands\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Signs & Sign Holders\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

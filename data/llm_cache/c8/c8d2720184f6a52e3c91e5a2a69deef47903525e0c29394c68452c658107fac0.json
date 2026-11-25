@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "2b7028f0cf2ed5b1197e6c1f880e98a2eece029940133767295b7cb2d98705d3",
+ "response": {
+  "input_tokens": 1385,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 505,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Game Chairs\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Sheets And Sheet Sets\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Planters\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Holiday Accents & Decor\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Wall Stickers\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bed Accessories\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Wall Mounted Shelves\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Ottomans\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Bathroom Sink Faucets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Boxes, Bins, Baskets, & Buckets\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Furniture Cushions\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Sheds\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Closet Storage & Organization\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

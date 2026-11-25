@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "eb0c3c91a71964fd1f320bb0bf6f1262c78ae779047df996ba95c019cab1b1aa",
+ "response": {
+  "input_tokens": 1366,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 497,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Table Lamps\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Garden Statues\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Projector Screens\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Dining Linens\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Refrigerators\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Armoires & Wardrobes\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Cooking Utensils\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"End Tables\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Dining Chairs\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Furniture Cushions\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Mugs & Teacups\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

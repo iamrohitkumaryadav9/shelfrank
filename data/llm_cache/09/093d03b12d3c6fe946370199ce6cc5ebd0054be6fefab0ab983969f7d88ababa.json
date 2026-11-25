@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "c33ae30ea03059b5017c03869a37a658768266b997f65bc62712f872f668f4f4",
+ "response": {
+  "input_tokens": 1382,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 508,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Hampers & Baskets\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"TV Stands & Entertainment Centers\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Dining Linens\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Patio Umbrella Stands & Bases\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Kitchen Sinks\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Pergolas\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Wall Art\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Towel & Robe Hooks\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Ornaments & Tree Décor\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"End Tables\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Pendant Lights\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Patio Rockers & Gliders\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

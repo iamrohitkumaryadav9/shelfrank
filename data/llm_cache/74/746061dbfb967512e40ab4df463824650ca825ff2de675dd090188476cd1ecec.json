@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4166fa64a933082d742a82d10958935a6cd4497ae24003726c56affdb3c37761",
+ "response": {
+  "input_tokens": 1397,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 495,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"End Tables\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Cooking Utensils\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Pet Gates\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Lighting Accessories\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Wall Sconces\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Mailboxes\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Refrigerators\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Landscape Lighting\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Area Rugs\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Holiday Accents & Decor\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Bar Stools\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Lawn Games\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Wall Sconces\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Doormats\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Decorative Objects\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

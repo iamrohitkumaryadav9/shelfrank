@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "0a89f775855f4921eaf1a32c947f5ac922d1d4bf8b518d0b5176aa1721b89018",
+ "response": {
+  "input_tokens": 1404,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 505,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Shower Heads\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Bathroom Storage\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Sectionals\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Wall & Accent Mirrors\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Mattress Toppers and Pads\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Accent Pillows\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Ornaments & Tree Décor\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Ornaments & Tree Décor\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Computer Mounts\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

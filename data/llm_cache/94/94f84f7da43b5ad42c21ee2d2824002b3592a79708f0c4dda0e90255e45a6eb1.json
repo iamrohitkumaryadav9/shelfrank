@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "38cde224711e43f9a8ee8d50ac436b8ad30bc5887481a5e654f55890cf174b9d",
+ "response": {
+  "input_tokens": 1400,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 508,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Dining Tables\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Futons\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Sheds\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Canisters & Jars\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Standard Bed Pillows\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Shoe Storage\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Garden Accents\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Mailboxes\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Cabinet and Drawer Pulls\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Wall Décor\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"Shower Curtain Hooks and Accessories\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Curtain Hardware & Accessories\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"Boxes, Bins, Baskets, & Buckets\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"Cooking Utensils\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}
