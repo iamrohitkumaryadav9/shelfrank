@@ -1,0 +1,17 @@
+{
+ "prompt_sha256": "8ef78a3eca3928907c2e9b548191cde5b3b13199a82080a2418ae4f7f59a9b2c",
+ "response": {
+  "input_tokens": 1282,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 246,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Beds\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Sheds\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Ceiling Fans\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Serving Dishes & Platters\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

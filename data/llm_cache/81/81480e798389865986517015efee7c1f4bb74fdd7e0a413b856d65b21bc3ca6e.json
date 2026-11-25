@@ -1,0 +1,17 @@
+{
+ "prompt_sha256": "26ea74f7a88affa40b2d8a4443d4f7535541b06e93ebc1819cc33c5c1fda7a1c",
+ "response": {
+  "input_tokens": 16,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 13,
+  "text": "{\n  \"product_type\": \"chair\"\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 256,
+  "model": "gemini-3.1-flash-lite",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

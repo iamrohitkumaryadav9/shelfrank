@@ -12,6 +12,7 @@ dependencies = [
     "bm25s==0.2.6",
     "numpy==1.26.4",
     "pandas==2.2.2",
+    "pydantic>=2.9.2,<3",
     "pyyaml==6.0.2",
     "scipy==1.13.1",
 ]
@@ -21,7 +22,6 @@ dev = ["pyarrow==17.0.0", "pytest==8.3.3", "ranx==0.3.20", "ruff==0.7.4"]
 bench = [
     "google-genai==3.6.1",
     "lightgbm==4.5.0",
-    "pydantic>=2.9.2,<3",
     "python-dotenv>=1.0,<2",
     "scikit-learn==1.5.1",
     "sentence-transformers==3.2.1",

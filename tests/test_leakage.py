@@ -12,6 +12,7 @@ from shelfrank.data.taxonomy import build_taxonomy, class_support
 from shelfrank.data.wands import load_products, load_queries
 from shelfrank.eval.leakage import exact_matches, key_hashes, load_key_hashes, near_matches
 from shelfrank.eval.splits import assign_folds
+from shelfrank.qu.guidelines import example_queries
 from shelfrank.text.near_duplicates import jaccard, leakage_keys, near_duplicate_groups, token_key
 
 TEXT_SUFFIXES = {".md", ".json", ".jsonl", ".yaml", ".csv", ".txt", ".py"}
@@ -167,3 +168,9 @@ def test_stronger_key_finds_no_cross_fold_pair(raw_dir, data_cfg, folds):
         and any(jaccard(x, y) >= threshold for x in keys[a] for y in keys[b])
     ]
     assert crossing == []
+
+
+@pytest.mark.full_data
+def test_prompt_examples_resemble_no_wands_query(raw_dir, data_cfg):
+    threshold = data_cfg["splits"]["near_duplicate_jaccard"]
+    assert near_matches(example_queries(), load_queries(raw_dir)["query"], threshold) == []

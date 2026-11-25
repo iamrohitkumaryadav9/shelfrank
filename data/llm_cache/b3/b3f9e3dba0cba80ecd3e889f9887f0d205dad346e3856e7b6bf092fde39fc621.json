@@ -1,0 +1,17 @@
+{
+ "prompt_sha256": "5631baf32b65e01f600131449a7441ac298b594caaa1143d854b6639dcbf8cfb",
+ "response": {
+  "input_tokens": 554,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 397,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 2,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 3,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 4,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 5,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 6,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 7,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 8,\n      \"color\": [\"blue\"],\n      \"material\": [\"cotton\"],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 9,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    },\n    {\n      \"i\": 10,\n      \"color\": [],\n      \"material\": [],\n      \"style\": [],\n      \"room\": []\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 3200,
+  "model": "gemini-3.1-flash-lite",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

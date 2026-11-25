@@ -1448,6 +1448,7 @@ dependencies = [
     { name = "bm25s" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "pydantic" },
     { name = "pyyaml" },
     { name = "scipy" },
 ]
@@ -1465,7 +1466,6 @@ app = [
 bench = [
     { name = "google-genai" },
     { name = "lightgbm" },
-    { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "scikit-learn" },
     { name = "sentence-transformers" },
@@ -1492,7 +1492,7 @@ requires-dist = [
     { name = "pandas", specifier = "==2.2.2" },
     { name = "pyarrow", marker = "extra == 'app'", specifier = "==17.0.0" },
     { name = "pyarrow", marker = "extra == 'dev'", specifier = "==17.0.0" },
-    { name = "pydantic", marker = "extra == 'bench'", specifier = ">=2.9.2,<3" },
+    { name = "pydantic", specifier = ">=2.9.2,<3" },
     { name = "pytest", marker = "extra == 'dev'", specifier = "==8.3.3" },
     { name = "python-dotenv", marker = "extra == 'bench'", specifier = ">=1.0,<2" },
     { name = "pyyaml", specifier = "==6.0.2" },
