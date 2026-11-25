@@ -8,7 +8,7 @@ import pytest
 from shelfrank.config import load_config
 from shelfrank.eval.access import ProtocolError
 from shelfrank.eval.claims import GAIN, LOSS, NONE, UNCLEAR, compare, holm, verdict
-from shelfrank.ltr.ablation import ablations, alternatives, variants
+from shelfrank.ltr.ablation import ablations, alternatives, training_choices, variants
 from shelfrank.ltr.cross_validation import grouped_folds, out_of_fold
 from shelfrank.ltr.dataset import (
     JUDGED_ONLY,
@@ -19,6 +19,7 @@ from shelfrank.ltr.dataset import (
 )
 from shelfrank.ltr.gates import allowed_groups, slot_blockers
 from shelfrank.ltr.model import (
+    CV,
     POINTWISE,
     LtrConfig,
     Ranker,
@@ -152,7 +153,16 @@ def test_params_for_each_objective():
         lightgbm_params(config(objective="x"), 5)
 
 
-@pytest.mark.parametrize("changes", [{}, {"variant": UNJUDGED_ZERO}, {"objective": POINTWISE}])
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {},
+        {"variant": UNJUDGED_ZERO},
+        {"objective": POINTWISE},
+        {"stopping": CV},
+        {"stopping": CV, "objective": POINTWISE},
+    ],
+)
 def test_ranker_learns_the_signal_and_is_deterministic(changes):
     pytest.importorskip("lightgbm")
     data = make_data()
@@ -211,6 +221,47 @@ def test_near_duplicates_share_an_inner_fold():
     assert sorted(q for f in folds for q in f) == sorted(texts)
     assert any({18, 19} <= set(f) for f in folds)
     assert folds == grouped_folds(texts, 4, 1, 0.75)
+
+
+def test_cv_stopping_uses_one_tree_count_for_every_seed_and_rejects_unknown_rules():
+    pytest.importorskip("lightgbm")
+    data = make_data()
+    trees = Ranker(config(stopping=CV)).fit(data, range(16)).trees
+    assert len(set(trees)) == 1 and 1 <= trees[0] <= 30
+    with pytest.raises(ValueError, match="stopping"):
+        Ranker(config(stopping="x")).fit(data, range(16))
+
+
+def test_learning_curve_trains_on_exactly_that_many_queries(monkeypatch):
+    data = make_data(12, 3)
+    sizes = []
+
+    class Fake:
+        trees = ()
+
+        def __init__(self, config):
+            pass
+
+        def fit(self, data, query_ids):
+            sizes.append(len(query_ids))
+            return self
+
+        def scores(self, data, rows):
+            return np.zeros(len(rows))
+
+        def gain_importance(self):
+            return {}
+
+    monkeypatch.setattr("shelfrank.ltr.cross_validation.Ranker", Fake)
+    out = out_of_fold(data, [list(range(6)), list(range(6, 12))], config(), train_limit=4)
+    assert sizes == [4, 4] and len(out.run) == 12
+
+
+def test_training_choices_cross_stopping_and_size():
+    out = training_choices(config())
+    assert out["stop_cv"].stopping == CV and out["stop_cv"].params == config().params
+    assert out["stop_cv_smaller"].params["num_leaves"] == 7
+    assert out["stop_holdout_smaller"].stopping != CV
 
 
 COLUMNS = ["g1_a", "g2_b", "g3_c"]

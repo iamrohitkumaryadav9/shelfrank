@@ -39,7 +39,7 @@ from shelfrank.features.priors import prior_features
 from shelfrank.features.query_class import class_features
 from shelfrank.features.semantic import semantic_features
 from shelfrank.features.text_shape import shape_features
-from shelfrank.ltr.ablation import ablations, alternatives, variants
+from shelfrank.ltr.ablation import ablations, alternatives, training_choices, variants
 from shelfrank.ltr.cross_validation import grouped_folds, out_of_fold
 from shelfrank.ltr.dataset import JUDGED_ONLY, RankingData, build_data
 from shelfrank.ltr.first_stage import FirstStage, candidate_pairs, first_stage
@@ -171,8 +171,8 @@ def main() -> None:
             flush=True,
         )
 
-    def run(name: str, config: LtrConfig, reference: str) -> None:
-        result = out_of_fold(data, folds, config)
+    def run(name: str, config: LtrConfig, reference: str, limit: int | None = None) -> None:
+        result = out_of_fold(data, folds, config, limit)
         per_query[name] = evaluate(result.run, qrels)
         importance = {c: float(np.mean([g[c] for g in result.gain])) for c in config.columns}
         by_group: dict[str, float] = {}
@@ -186,7 +186,7 @@ def main() -> None:
             "commit": commit,
             "note": note,
             "name": name,
-            "config": config.describe(),
+            "config": config.describe() | {"train_limit": limit},
             "ndcg10": systems[name]["ndcg10"]["mean"],
             "condensed_ndcg10": systems[name]["condensed_ndcg10"]["mean"],
         }
@@ -203,8 +203,18 @@ def main() -> None:
     def both(name: str) -> float:
         return systems[name]["ndcg10"]["mean"] + systems[name]["condensed_ndcg10"]["mean"]
 
-    chosen = max(variants(base), key=both)
-    full = variants(base)[chosen]
+    # Stopping rule and size are chosen per variant first, so that neither variant is judged under
+    # a rule that happens to suit the other.
+    options = dict(variants(base))
+    for variant, config in variants(base).items():
+        for name, choice in training_choices(config).items():
+            options[f"{variant}__{name}"] = choice
+            run(f"{variant}__{name}", choice, "hybrid_rrf")
+    chosen = max(options, key=both)
+    full = options[chosen]
+    sizes = [n for n in cfg["learning_curve"] if n < len(texts) - max(map(len, folds))]
+    for size in sizes:
+        run(f"train_on_{size}", full, chosen, size)
     for name, config in alternatives(full).items():
         run(name, config, chosen)
     for name, config in ablations(full, columns, groups).items():
@@ -218,7 +228,8 @@ def main() -> None:
         "features": columns,
         "inner_folds": [len(f) for f in folds],
         "class_student": "names only, provisional",
-        "chosen_variant": chosen,
+        "chosen": chosen,
+        "learning_curve": sizes,
         "systems": systems,
     }
     path = REPO_ROOT / "results/ltr_dev.json"

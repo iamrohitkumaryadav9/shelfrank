@@ -10,6 +10,7 @@ import numpy as np
 from shelfrank.ltr.dataset import RankingData, group_sizes
 
 LAMBDAMART, POINTWISE = "lambdamart", "pointwise"
+HOLDOUT, CV = "holdout", "cv"
 
 
 @dataclass(frozen=True)
@@ -24,6 +25,8 @@ class LtrConfig:
     rounds: int = 600
     patience: int = 60
     valid_share: float = 0.2
+    stopping: str = HOLDOUT
+    stopping_folds: int = 4
     seeds: tuple[int, ...] = (20260, 20261, 20262)
 
     def describe(self) -> dict[str, Any]:
@@ -38,6 +41,7 @@ class LtrConfig:
             "rounds": self.rounds,
             "patience": self.patience,
             "valid_share": self.valid_share,
+            "stopping": self.stopping,
             "seeds": list(self.seeds),
         }
 
@@ -101,6 +105,49 @@ class Ranker:
 
     def fit(self, data: RankingData, query_ids: Sequence[int]) -> "Ranker":
         """Train on the given queries only."""
+        if self.config.stopping == CV:
+            return self._fit_cv(data, query_ids)
+        if self.config.stopping != HOLDOUT:
+            raise ValueError(f"unknown stopping rule {self.config.stopping}")
+        return self._fit_holdout(data, query_ids)
+
+    def _fit_cv(self, data: RankingData, query_ids: Sequence[int]) -> "Ranker":
+        """Choose the number of trees by cross-validation, then train on every query.
+
+        One small validation set gives an erratic number of trees and takes queries away from
+        training. Here every training query is validated once and the curves are averaged.
+        """
+        import lightgbm as lgb
+
+        ids = sorted(query_ids)
+        random.Random(self.config.seeds[0]).shuffle(ids)
+        folds = [ids[i :: self.config.stopping_folds] for i in range(self.config.stopping_folds)]
+        curves = []
+        seed = self.config.seeds[0]
+        for held in folds:
+            fitted = self._matrix(data, sorted(set(ids) - set(held)))
+            history: dict[str, Any] = {}
+            lgb.train(
+                lightgbm_params(self.config, seed),
+                fitted,
+                num_boost_round=self.config.rounds,
+                valid_sets=[self._matrix(data, sorted(held), fitted)],
+                callbacks=[lgb.record_evaluation(history)],
+            )
+            (curve,) = history["valid_0"].values()
+            curves.append(np.asarray(curve) * len(held))
+        total = np.sum(curves, axis=0)
+        ranking = self.config.objective == LAMBDAMART
+        trees = int(np.argmax(total) if ranking else np.argmin(total)) + 1
+        self.boosters = []
+        for seed in self.config.seeds:
+            params, matrix = lightgbm_params(self.config, seed), self._matrix(data, ids)
+            booster = lgb.train(params, matrix, num_boost_round=trees)
+            booster.best_iteration = trees
+            self.boosters.append(booster)
+        return self
+
+    def _fit_holdout(self, data: RankingData, query_ids: Sequence[int]) -> "Ranker":
         import lightgbm as lgb
 
         self.boosters = []

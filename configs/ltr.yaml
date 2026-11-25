@@ -1,5 +1,6 @@
 # G4 stays out until the slot student exists. shelfrank/ltr/gates.py refuses it before that.
 groups: [G1, G2, G3, G5, G6]
+learning_curve: [18, 36, 54]   # training queries; the full inner training set is 72
 inner_folds: 4          # inside the dev fold, for dev decisions only
 seed: 20260
 rounds: 600

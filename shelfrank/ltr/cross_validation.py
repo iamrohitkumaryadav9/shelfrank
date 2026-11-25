@@ -33,14 +33,25 @@ def grouped_folds(
     return [sorted(f) for f in folds]
 
 
-def out_of_fold(data: RankingData, folds: Sequence[Sequence[int]], config: LtrConfig) -> OutOfFold:
-    """Train on the other folds, rank every candidate of this one."""
+def out_of_fold(
+    data: RankingData,
+    folds: Sequence[Sequence[int]],
+    config: LtrConfig,
+    train_limit: int | None = None,
+) -> OutOfFold:
+    """Train on the other folds, rank every candidate of this one.
+
+    ``train_limit`` trains on a fixed random subset, for learning curves.
+    """
     everything = [q for fold in folds for q in fold]
     if len(everything) != len(set(everything)):
         raise ValueError("folds overlap")
     out = OutOfFold({})
     for held in folds:
-        ranker = Ranker(config).fit(data, sorted(set(everything) - set(held)))
+        train = sorted(set(everything) - set(held))
+        if train_limit is not None:
+            train = sorted(random.Random(config.seeds[0]).sample(train, train_limit))
+        ranker = Ranker(config).fit(data, train)
         rows = data.rows(held)
         out.run |= to_run(data, rows, ranker.scores(data, rows))
         out.trees.append(ranker.trees)

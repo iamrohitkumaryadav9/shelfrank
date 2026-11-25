@@ -5,12 +5,31 @@ from dataclasses import replace
 
 from shelfrank.features.groups import columns_of
 from shelfrank.ltr.dataset import VARIANTS
-from shelfrank.ltr.model import POINTWISE, LtrConfig
+from shelfrank.ltr.model import CV, POINTWISE, LtrConfig
 
 
 def variants(base: LtrConfig) -> dict[str, LtrConfig]:
     """The two treatments of unjudged candidates."""
     return {f"full_{v}": replace(base, variant=v) for v in VARIANTS}
+
+
+SMALLER = {
+    "learning_rate": 0.03,
+    "num_leaves": 7,
+    "min_data_in_leaf": 100,
+    "feature_fraction": 0.5,
+    "lambda_l2": 10.0,
+}
+
+
+def training_choices(base: LtrConfig) -> dict[str, LtrConfig]:
+    """Stopping rule and model size, crossed. The base is one of the four."""
+    smaller = {**base.params, **SMALLER}
+    return {
+        "stop_holdout_smaller": replace(base, params=smaller),
+        "stop_cv": replace(base, stopping=CV),
+        "stop_cv_smaller": replace(base, stopping=CV, params=smaller),
+    }
 
 
 def alternatives(base: LtrConfig) -> dict[str, LtrConfig]:
