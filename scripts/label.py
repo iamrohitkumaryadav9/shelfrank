@@ -57,7 +57,7 @@ def main() -> None:
             limit = teacher.CLASS_MAX_OUTPUT
         else:
             prompt, schema = teacher.slot_prompt(group), teacher.SLOT_SCHEMA
-            limit = teacher.SLOT_MAX_OUTPUT
+            limit = teacher.slot_output_limit(args.source, len(group))
         return make_request(client.config, prompt, schema, limit, rules_version=version)
 
     def parse(text: str, group: list[str]) -> list:
@@ -66,18 +66,28 @@ def main() -> None:
         return teacher.parse_slots(text, group)
 
     name = f"{args.task}_{args.source}_{version}"
-    size = PILOT_ITEMS if args.pilot else teacher.CHUNK
-    labels = run_batch(
-        client,
-        name,
-        "labelling",
-        [query for _, query in rows],
-        size,
-        build,
-        lambda group: lambda text: parse(text, group),
-        parse,
-        pilot=args.pilot,
-    )
+    queries = [query for _, query in rows]
+
+    def run(items: list[str], size: int) -> list:
+        return run_batch(
+            client,
+            name,
+            "labelling",
+            items,
+            size,
+            build,
+            lambda group: lambda text: parse(text, group),
+            parse,
+            pilot=args.pilot,
+        )
+
+    if args.pilot:
+        labels = run(queries, PILOT_ITEMS)
+    elif args.source == "esci_dev":
+        labels = run(queries, teacher.CHUNK)
+    else:
+        # The pilot group is repeated exactly, so it comes from the cache and is not paid twice.
+        labels = run(queries[:PILOT_ITEMS], PILOT_ITEMS) + run(queries[PILOT_ITEMS:], teacher.CHUNK)
     spent = client.budget.ledger.spent(batch=name)
     print(f"{name}: {len(rows)} items, batch spend Rs {spent:.4f}")
     if args.pilot:

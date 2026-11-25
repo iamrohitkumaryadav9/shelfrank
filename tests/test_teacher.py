@@ -130,3 +130,9 @@ def test_prompt_examples_contain_no_wands_query():
 def test_prompt_dev_slice_shares_nothing_with_the_examples():
     dev = (REPO_ROOT / "data/esci/esci_prompt_dev.txt").read_text(encoding="utf-8").splitlines()
     assert not set(dev) & set(example_queries())
+
+
+def test_slot_output_limit_scales_with_the_group_but_keeps_the_first_slice():
+    assert teacher.slot_output_limit("esci_dev", 20) == teacher.SLOT_MAX_OUTPUT
+    assert teacher.slot_output_limit("wands_dev", 6) == 460
+    assert teacher.slot_output_limit("wands_dev", 20) > 20 * 42

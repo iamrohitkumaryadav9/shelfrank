@@ -1,0 +1,57 @@
+{
+ "rules": {
+  "class": "class-v1",
+  "slots": "slots-v1"
+ },
+ "class": {
+  "queries": 100,
+  "outside_taxonomy": 0,
+  "other": 27,
+  "distinct": 58,
+  "top": [
+   [
+    "Futons",
+    4
+   ],
+   [
+    "Light Bulbs",
+    3
+   ],
+   [
+    "Ceiling Fans",
+    2
+   ],
+   [
+    "Bedding Sets",
+    2
+   ],
+   [
+    "Boxes, Bins, Baskets, & Buckets",
+    2
+   ]
+  ]
+ },
+ "slots": {
+  "queries": 100,
+  "any": 26,
+  "per_slot": {
+   "color": 7,
+   "material_finish": 13,
+   "style": 4,
+   "room": 7
+  },
+  "projected": {
+   "color": 140,
+   "material_finish": 260,
+   "style": 80,
+   "room": 140
+  },
+  "invented": 0,
+  "out_of_vocabulary": 4,
+  "spans": 31
+ },
+ "room_rule": {
+  "cases": 8,
+  "disagreements": 2
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "4d3000f842c0e11800b9859567e1f10ab30b627a9cfb3f21505aa2208acc2e17",
+ "response": {
+  "input_tokens": 1392,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 500,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Cooking Utensils\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Picture Frames\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Light Bulbs\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Wall Sconces\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Futons\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Bread & Loaf Pans\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Outdoor Fireplaces\"\n    },\n    {\n      \"i\": 11,\n      \"label\": \"Office Chairs\"\n    },\n    {\n      \"i\": 12,\n      \"label\": \"Foam and Latex Mattresses\"\n    },\n    {\n      \"i\": 13,\n      \"label\": \"Bedding Sets\"\n    },\n    {\n      \"i\": 14,\n      \"label\": \"Candle Holders\"\n    },\n    {\n      \"i\": 15,\n      \"label\": \"Chairmats\"\n    },\n    {\n      \"i\": 16,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 17,\n      \"label\": \"Rocking Chairs\"\n    },\n    {\n      \"i\": 18,\n      \"label\": \"Decorative Objects\"\n    },\n    {\n      \"i\": 19,\n      \"label\": \"TV Stands & Entertainment Centers\"\n    },\n    {\n      \"i\": 20,\n      \"label\": \"other\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}

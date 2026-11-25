@@ -1,0 +1,100 @@
+{"id": 0, "label": "Ceiling Fans", "rules": "class-v1"}
+{"id": 1, "label": "other", "rules": "class-v1"}
+{"id": 2, "label": "Wall Décor", "rules": "class-v1"}
+{"id": 3, "label": "other", "rules": "class-v1"}
+{"id": 4, "label": "Beds", "rules": "class-v1"}
+{"id": 5, "label": "Sheds", "rules": "class-v1"}
+{"id": 6, "label": "Ceiling Fans", "rules": "class-v1"}
+{"id": 7, "label": "Bedding Sets", "rules": "class-v1"}
+{"id": 8, "label": "Serving Dishes & Platters", "rules": "class-v1"}
+{"id": 9, "label": "other", "rules": "class-v1"}
+{"id": 10, "label": "Boxes, Bins, Baskets, & Buckets", "rules": "class-v1"}
+{"id": 11, "label": "other", "rules": "class-v1"}
+{"id": 12, "label": "Specialty Serving", "rules": "class-v1"}
+{"id": 13, "label": "Ornaments & Tree Décor", "rules": "class-v1"}
+{"id": 14, "label": "Glassware & Barware", "rules": "class-v1"}
+{"id": 15, "label": "other", "rules": "class-v1"}
+{"id": 16, "label": "Food Storage & Dispensers", "rules": "class-v1"}
+{"id": 17, "label": "other", "rules": "class-v1"}
+{"id": 18, "label": "Towel & Robe Hooks", "rules": "class-v1"}
+{"id": 19, "label": "Clothing & Garment Racks", "rules": "class-v1"}
+{"id": 20, "label": "Food Storage & Dispensers", "rules": "class-v1"}
+{"id": 21, "label": "other", "rules": "class-v1"}
+{"id": 22, "label": "other", "rules": "class-v1"}
+{"id": 23, "label": "other", "rules": "class-v1"}
+{"id": 24, "label": "Picture Frames", "rules": "class-v1"}
+{"id": 25, "label": "Nightstands", "rules": "class-v1"}
+{"id": 26, "label": "Wall & Accent Mirrors", "rules": "class-v1"}
+{"id": 27, "label": "Futons", "rules": "class-v1"}
+{"id": 28, "label": "Standard Bed Pillows", "rules": "class-v1"}
+{"id": 29, "label": "Barn Door Hardware", "rules": "class-v1"}
+{"id": 30, "label": "other", "rules": "class-v1"}
+{"id": 31, "label": "Projector Screens", "rules": "class-v1"}
+{"id": 32, "label": "Futons", "rules": "class-v1"}
+{"id": 33, "label": "Shower & Tub Accessories", "rules": "class-v1"}
+{"id": 34, "label": "Faux Florals", "rules": "class-v1"}
+{"id": 35, "label": "Furniture Cushions", "rules": "class-v1"}
+{"id": 36, "label": "other", "rules": "class-v1"}
+{"id": 37, "label": "Shower Curtain Hooks and Accessories", "rules": "class-v1"}
+{"id": 38, "label": "other", "rules": "class-v1"}
+{"id": 39, "label": "Light Bulbs", "rules": "class-v1"}
+{"id": 40, "label": "Boxes, Bins, Baskets, & Buckets", "rules": "class-v1"}
+{"id": 41, "label": "other", "rules": "class-v1"}
+{"id": 42, "label": "other", "rules": "class-v1"}
+{"id": 43, "label": "Wall Plates", "rules": "class-v1"}
+{"id": 44, "label": "Vases, Urns, Jars, & Bottles", "rules": "class-v1"}
+{"id": 45, "label": "other", "rules": "class-v1"}
+{"id": 46, "label": "Holiday Accents & Decor", "rules": "class-v1"}
+{"id": 47, "label": "Patio Tables", "rules": "class-v1"}
+{"id": 48, "label": "Towel Bars, Racks, and Stands", "rules": "class-v1"}
+{"id": 49, "label": "Wall Sconces", "rules": "class-v1"}
+{"id": 50, "label": "other", "rules": "class-v1"}
+{"id": 51, "label": "Mugs & Teacups", "rules": "class-v1"}
+{"id": 52, "label": "Vases, Urns, Jars, & Bottles", "rules": "class-v1"}
+{"id": 53, "label": "Vanity Bases", "rules": "class-v1"}
+{"id": 54, "label": "other", "rules": "class-v1"}
+{"id": 55, "label": "End Tables", "rules": "class-v1"}
+{"id": 56, "label": "other", "rules": "class-v1"}
+{"id": 57, "label": "Bars & Bar Sets", "rules": "class-v1"}
+{"id": 58, "label": "Bath Accessories", "rules": "class-v1"}
+{"id": 59, "label": "Bread & Loaf Pans", "rules": "class-v1"}
+{"id": 60, "label": "other", "rules": "class-v1"}
+{"id": 61, "label": "Molding & Millwork", "rules": "class-v1"}
+{"id": 62, "label": "Garden Statues", "rules": "class-v1"}
+{"id": 63, "label": "Trash Cans & Recycling", "rules": "class-v1"}
+{"id": 64, "label": "other", "rules": "class-v1"}
+{"id": 65, "label": "Area Rugs", "rules": "class-v1"}
+{"id": 66, "label": "Flush Mount Lighting", "rules": "class-v1"}
+{"id": 67, "label": "Dog and Cat Bowls, Feeders & Accessories", "rules": "class-v1"}
+{"id": 68, "label": "Dining Linens", "rules": "class-v1"}
+{"id": 69, "label": "Futons", "rules": "class-v1"}
+{"id": 70, "label": "Saunas", "rules": "class-v1"}
+{"id": 71, "label": "Light Bulbs", "rules": "class-v1"}
+{"id": 72, "label": "other", "rules": "class-v1"}
+{"id": 73, "label": "End Tables", "rules": "class-v1"}
+{"id": 74, "label": "other", "rules": "class-v1"}
+{"id": 75, "label": "Patio Dining Sets", "rules": "class-v1"}
+{"id": 76, "label": "Kitchen Sinks", "rules": "class-v1"}
+{"id": 77, "label": "other", "rules": "class-v1"}
+{"id": 78, "label": "Decorative Objects", "rules": "class-v1"}
+{"id": 79, "label": "Decorative Trays", "rules": "class-v1"}
+{"id": 80, "label": "other", "rules": "class-v1"}
+{"id": 81, "label": "Cooking Utensils", "rules": "class-v1"}
+{"id": 82, "label": "Furniture Covers", "rules": "class-v1"}
+{"id": 83, "label": "other", "rules": "class-v1"}
+{"id": 84, "label": "Picture Frames", "rules": "class-v1"}
+{"id": 85, "label": "Light Bulbs", "rules": "class-v1"}
+{"id": 86, "label": "Wall Sconces", "rules": "class-v1"}
+{"id": 87, "label": "Futons", "rules": "class-v1"}
+{"id": 88, "label": "Bread & Loaf Pans", "rules": "class-v1"}
+{"id": 89, "label": "Outdoor Fireplaces", "rules": "class-v1"}
+{"id": 90, "label": "Office Chairs", "rules": "class-v1"}
+{"id": 91, "label": "Foam and Latex Mattresses", "rules": "class-v1"}
+{"id": 92, "label": "Bedding Sets", "rules": "class-v1"}
+{"id": 93, "label": "Candle Holders", "rules": "class-v1"}
+{"id": 94, "label": "Chairmats", "rules": "class-v1"}
+{"id": 95, "label": "other", "rules": "class-v1"}
+{"id": 96, "label": "Rocking Chairs", "rules": "class-v1"}
+{"id": 97, "label": "Decorative Objects", "rules": "class-v1"}
+{"id": 98, "label": "TV Stands & Entertainment Centers", "rules": "class-v1"}
+{"id": 99, "label": "other", "rules": "class-v1"}

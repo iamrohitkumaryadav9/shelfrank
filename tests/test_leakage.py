@@ -189,3 +189,19 @@ def test_class_names_are_catalogue_vocabulary_and_the_overlap_is_documented(data
     overlap = len(exact_matches(classes, load_key_hashes(KEYS)))
     protocol = (REPO_ROOT / "docs/PROTOCOL.md").read_text(encoding="utf-8")
     assert f"{overlap} of {len(classes)} class names" in protocol
+
+
+def test_wands_label_files_hold_dev_queries_only_before_the_freeze(folds):
+    if (REPO_ROOT / "configs/frozen.yaml").exists():
+        pytest.skip("frozen")
+    files = list((REPO_ROOT / "data/labels").glob("*wands*.jsonl"))
+    assert files
+    for path in files:
+        rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
+        assert {row["id"] for row in rows} <= set(folds.dev)
+
+
+def test_label_rows_carry_their_rules_version_and_match_their_file_name():
+    for path in (REPO_ROOT / "data/labels").glob("*_*-v*.jsonl"):
+        rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
+        assert {row["rules"] for row in rows} == {path.stem.rsplit("_", 1)[1]}

@@ -20,6 +20,15 @@ CLASS_MAX_OUTPUT = 1600
 SLOT_MAX_OUTPUT = 3200
 
 
+def slot_output_limit(source: str, items: int) -> int:
+    """Output limit for a slot call, which is also what the budget reserves.
+
+    Sized to the group, with room above the 42 tokens per item measured on the first slice. That
+    slice keeps its original limit, because the limit is part of the cache key.
+    """
+    return SLOT_MAX_OUTPUT if source == "esci_dev" else 100 + 60 * items
+
+
 class _Strict(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
