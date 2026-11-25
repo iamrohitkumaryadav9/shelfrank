@@ -33,6 +33,10 @@ def limitations(audit: dict[str, Any]) -> str:
   Recall@100 of {primary["recall_at_100"]:.3f} on {primary["n_relevant"]}.
 - **The benchmark is small.** It has {audit["rows"]["queries"]} queries, and the headline uses
   {primary["n"]}.
+- **Patterns have no slot.** Floral, striped, geometric, plaid and solid are out of scope in this version. The
+  catalogue keeps them under their own keys and lists none of them as a style.
+- **The taxonomy has gaps.** No blanket class reaches the 30-product cut, so a query for a blanket is labelled
+  "Bedding Sets".
 - **`query_class` is itself a model prediction**, so classifier accuracy means agreement with Wayfair's
   classifier."""
 

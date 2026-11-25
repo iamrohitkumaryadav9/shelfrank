@@ -1,25 +1,35 @@
 """Labelling rules and examples, shared by the teacher prompt and the human annotator.
 
-One source for both: agreement between the two is meaningless if they follow different rules. The
-examples were invented for this file and are checked against WANDS by the leakage tests.
+GOVERNING PRINCIPLE: a slot's value set is defined by the WANDS catalogue's own attribute keys,
+because slots exist to be matched against product features. docs/slot_evidence.md shows the keys.
+
+One source for both labellers: agreement is meaningless if they follow different rules. The examples
+were invented for this file and are checked against WANDS by the leakage tests.
 """
 
 SLOTS = ("color", "material", "style", "room")
 
+# Recorded in the cache entry of every label. "-rc" marks rules that are not final, and paid slot
+# labelling is refused while it is there.
+SLOT_VERSION = "slots-v1-rc1"
+CLASS_VERSION = "class-v1"
+
 SLOT_RULES = (
     "Copy words exactly as they appear in the query, including misspellings. Never add a word.",
     "Leave a slot empty when the query does not state it. Do not infer it from the product type.",
-    "color: a colour or colour family, including shades and wood tones used as a colour "
-    "(navy, espresso, light gray, multicolor). Copy the whole phrase.",
-    "material: what it is made of or covered with, including wood species, fabrics, stone and "
-    "metals (oak, velvet, marble, brushed nickel, wicker). A metal finish is a material.",
-    "style: a named design style or period (modern, farmhouse, mid century, boho, rustic, "
-    "coastal). Shapes, sizes, patterns and themes are not styles.",
-    "room: where it is used, indoors or outdoors (bedroom, kitchen, office, patio, outdoor). "
-    "Only when it says where the product goes, not when it is part of the product's name "
-    "('dining table' and 'kitchen sink' have no room).",
-    "A word belongs to one slot. If it could be a colour or a material, choose material when it "
-    "describes what the product is made of.",
+    "color: a colour, colour family or shade (navy, light gray, espresso, multicolor). Copy the "
+    "whole phrase.",
+    "material: what the product is made of, covered with or finished in. This includes wood "
+    "species, fabrics, stone, metals and metal finishes (oak, velvet, marble, brushed nickel, "
+    "chrome, matte black when it is a finish).",
+    "style: a named design style (modern, farmhouse, mid century, boho, rustic, coastal, "
+    "industrial). Patterns (floral, striped, geometric, plaid, solid), shapes, sizes and subjects "
+    "are not styles and have no slot.",
+    "room: where the product goes, indoors or outdoors (bedroom, bathroom, patio, garden, "
+    "balcony). It is not a slot when the room word and the product noun together name a product "
+    "category ('dining table', 'kitchen island', 'bathroom vanity'). Otherwise it is "
+    "('bathroom rug', 'patio umbrella', 'bedroom lamp').",
+    "A word belongs to one slot.",
     "Brand names, collection names, quantities and dimensions belong to no slot.",
 )
 
@@ -37,6 +47,7 @@ SLOT_EXAMPLES: tuple[tuple[str, dict[str, list[str]]], ...] = (
         {"color": [], "material": ["brushed nickel"], "style": [], "room": []},
     ),
     ("dining chairs set of 6", {"color": [], "material": [], "style": [], "room": []}),
+    ("striped balcony cushion", {"color": [], "material": [], "style": [], "room": ["balcony"]}),
     ("usb charging cable", {"color": [], "material": [], "style": [], "room": []}),
 )
 
@@ -54,6 +65,16 @@ CLASS_EXAMPLES: tuple[tuple[str, str], ...] = (
     ("running shoes size 9", "other"),
     ("linen panels 96 inch long blackout", "Curtains & Drapes"),
 )
+
+
+class RulesNotFinalError(RuntimeError):
+    """Paid labelling was asked for while the rules may still change."""
+
+
+def require_final(version: str) -> None:
+    """Refuse a release candidate, because changed rules would waste the money and the labels."""
+    if "-rc" in version:
+        raise RulesNotFinalError(f"{version} is not final")
 
 
 def slot_rules_text() -> str:

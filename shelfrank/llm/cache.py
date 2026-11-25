@@ -18,10 +18,15 @@ class Request:
     max_output_tokens: int
     temperature: float = 0.0
     seed: int = 20260
+    rules_version: str = ""
 
     def key(self) -> str:
-        """Hash of all fields, so any change to a prompt or setting is a different entry."""
-        body = json.dumps(asdict(self), sort_keys=True, ensure_ascii=False)
+        """Hash of all fields, so any change to a prompt or setting is a different entry.
+
+        An empty version is left out, which keeps the keys of calls that are not labels.
+        """
+        fields = {k: v for k, v in asdict(self).items() if k != "rules_version" or v}
+        body = json.dumps(fields, sort_keys=True, ensure_ascii=False)
         return hashlib.sha256(body.encode("utf-8")).hexdigest()
 
 

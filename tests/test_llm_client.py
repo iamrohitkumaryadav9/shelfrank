@@ -300,10 +300,18 @@ def test_offline_miss_is_an_error(tmp_path):
         {"max_output_tokens": 99},
         {"temperature": 0.5},
         {"seed": 1},
+        {"rules_version": "slots-v1"},
     ],
 )
 def test_any_change_is_a_different_cache_key(change):
     assert replace(REQUEST, **change).key() != REQUEST.key()
+
+
+def test_rules_version_is_recorded_in_the_cache_entry(tmp_path):
+    client, *_ = make(tmp_path)
+    call(client, replace(REQUEST, rules_version="slots-v1"))
+    stored = json.loads(next((tmp_path / "cache").rglob("*.json")).read_text(encoding="utf-8"))
+    assert stored["settings"]["rules_version"] == "slots-v1"
 
 
 def test_cache_files_hold_no_prompt_text(tmp_path):

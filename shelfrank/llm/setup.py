@@ -27,8 +27,9 @@ def make_request(
     schema: dict[str, Any],
     max_output_tokens: int,
     model: str | None = None,
+    rules_version: str = "",
 ) -> Request:
     """Build a request with the thinking level recorded for the model."""
     name = model or config["model"]
     level = config["models"][name]["thinking_level"]
-    return Request(name, prompt, schema, level, max_output_tokens)
+    return Request(name, prompt, schema, level, max_output_tokens, rules_version=rules_version)

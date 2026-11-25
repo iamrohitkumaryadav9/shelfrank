@@ -38,6 +38,13 @@ def test_committed_readme_is_up_to_date():
     assert replace_block(readme, "findings", body) == readme
 
 
+def test_prose_in_the_limitations_holds():
+    path = REPO_ROOT / "data/taxonomy.json"
+    classes = json.loads(path.read_text(encoding="utf-8"))["classes"]
+    assert not [c for c in classes if "blanket" in c.lower()] and "Bedding Sets" in classes
+    assert set(load("slot_evidence")["patterns"].values()) == {0}
+
+
 def test_prose_in_the_findings_holds():
     data, tuning = load("retrieval_dev"), load("bm25_tuning")
     dense = data["systems"]["dense_bge_small"]["versus_baseline"]

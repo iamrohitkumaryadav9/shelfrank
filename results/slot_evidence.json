@@ -1,0 +1,228 @@
+{
+ "borderline": {
+  "brushed nickel": {
+   "color": 52,
+   "finish": 434,
+   "material": 2,
+   "style": 0
+  },
+  "matte black": {
+   "color": 69,
+   "finish": 306,
+   "material": 0,
+   "style": 0
+  },
+  "oil rubbed bronze": {
+   "color": 34,
+   "finish": 239,
+   "material": 0,
+   "style": 0
+  },
+  "polished brass": {
+   "color": 12,
+   "finish": 35,
+   "material": 0,
+   "style": 0
+  },
+  "antique brass": {
+   "color": 32,
+   "finish": 85,
+   "material": 0,
+   "style": 0
+  },
+  "chrome": {
+   "color": 448,
+   "finish": 634,
+   "material": 93,
+   "style": 0
+  },
+  "bronze": {
+   "color": 180,
+   "finish": 166,
+   "material": 46,
+   "style": 0
+  },
+  "gold": {
+   "color": 828,
+   "finish": 233,
+   "material": 1,
+   "style": 0
+  },
+  "silver": {
+   "color": 1258,
+   "finish": 428,
+   "material": 0,
+   "style": 0
+  },
+  "stainless steel": {
+   "color": 64,
+   "finish": 286,
+   "material": 1593,
+   "style": 0
+  },
+  "espresso": {
+   "color": 778,
+   "finish": 87,
+   "material": 12,
+   "style": 0
+  },
+  "walnut": {
+   "color": 596,
+   "finish": 67,
+   "material": 142,
+   "style": 0
+  },
+  "oak": {
+   "color": 173,
+   "finish": 26,
+   "material": 348,
+   "style": 0
+  },
+  "cherry": {
+   "color": 218,
+   "finish": 14,
+   "material": 53,
+   "style": 0
+  },
+  "natural": {
+   "color": 565,
+   "finish": 125,
+   "material": 4,
+   "style": 0
+  },
+  "velvet": {
+   "color": 3,
+   "finish": 1,
+   "material": 1048,
+   "style": 0
+  },
+  "leather": {
+   "color": 1,
+   "finish": 0,
+   "material": 407,
+   "style": 0
+  },
+  "wicker": {
+   "color": 1,
+   "finish": 0,
+   "material": 57,
+   "style": 0
+  },
+  "marble": {
+   "color": 17,
+   "finish": 5,
+   "material": 354,
+   "style": 0
+  }
+ },
+ "finish_majority_terms": 39,
+ "styles": {
+  "modern": 15405,
+  "contemporary": 8584,
+  "traditional": 7775,
+  "transitional modern": 3118,
+  "transitional traditional": 2732,
+  "country": 2696,
+  "farmhouse": 2579,
+  "glam": 2150,
+  "mid-century modern": 1792,
+  "coastal": 1714,
+  "ultra-modern": 1642,
+  "industrial": 1552,
+  "rustic": 1114,
+  "contemporary glam": 991,
+  "american traditional": 858,
+  "boho": 840,
+  "lodge": 779,
+  "ornate traditional": 775,
+  "modern farmhouse": 765,
+  "contemporary industrial": 713,
+  "classic glam": 650,
+  "classic boho": 605,
+  "mountain lodge": 554,
+  "eclectic": 544,
+  "nautical": 469,
+  "classic farmhouse": 411,
+  "classic industrial": 372,
+  "beach": 343,
+  "french country": 334,
+  "tropical": 253,
+  "contemporary boho": 202,
+  "desert lodge": 199,
+  "bohemian": 104,
+  "cottage": 94,
+  "scandinavian": 59,
+  "global inspired": 58,
+  "antik": 56,
+  "sleek": 44,
+  "chic modern": 44,
+  "asian inspired": 31,
+  "retro": 31,
+  "cottage americana": 25,
+  "bold": 24,
+  "eclectic modern": 24,
+  "posh": 22,
+  "luxe": 22,
+  "modern rustic": 19,
+  "beachy": 17,
+  "ornate glam": 11,
+  "natural modern": 10,
+  "transitional": 9,
+  "tiffany": 9,
+  "mission shaker": 6,
+  "cabin": 5,
+  "urban rustic": 5,
+  "classic": 4,
+  "vintage": 3
+ },
+ "patterns": {
+  "floral": 0,
+  "striped": 0,
+  "geometric": 0,
+  "plaid": 0,
+  "solid": 0
+ },
+ "room_examples": {
+  "dining table": false,
+  "kitchen island": false,
+  "bathroom vanity": false,
+  "outdoor dining set": false,
+  "bathroom rug": true,
+  "patio umbrella": true,
+  "bedroom lamp": true
+ },
+ "room_options_wrong": {
+  "1/1000000000": [
+   "bathroom vanity",
+   "patio umbrella"
+  ],
+  "30/1000000000": [
+   "bathroom vanity"
+  ],
+  "30/500": [],
+  "30/100": [],
+  "30/79": [
+   "patio umbrella"
+  ]
+ },
+ "density": {
+  "esci_prompt_dev": {
+   "queries": 100,
+   "any": 22,
+   "material": 11,
+   "color": 8,
+   "finish": 1,
+   "style": 3,
+   "room": 5
+  },
+  "esci_seed_queries": {
+   "queries": 2000,
+   "any": 552,
+   "material": 185,
+   "room": 172,
+   "color": 208,
+   "style": 45,
+   "finish": 14
+  }
+ }
+}
