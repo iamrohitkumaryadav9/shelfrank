@@ -12,6 +12,7 @@ from shelfrank.ltr.report import render as render_ltr
 from shelfrank.qu.class_report import render as render_class
 from shelfrank.qu.slot_report import render as render_slots
 from shelfrank.readme_tables import findings, limitations, replace_block
+from shelfrank.rewrite.report import render as render_rewrite
 from shelfrank.similar.report import render as render_similar
 from shelfrank.suggest.report import render as render_suggest
 
@@ -54,6 +55,12 @@ def main() -> None:
     if (REPO_ROOT / "results/suggest.json").exists():
         page = render_suggest(_load("suggest"))
         (REPO_ROOT / "docs/suggest.md").write_text(page, encoding="utf-8", newline="\n")
+    if (REPO_ROOT / "results/rewrite_dev.json").exists():
+        main_split = REPO_ROOT / "results/rewrite_primary.json"
+        page = render_rewrite(
+            _load("rewrite_dev"), _load("rewrite_primary") if main_split.exists() else None
+        )
+        (REPO_ROOT / "docs/rewriting.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_dense(_load("dense_dev"))
     (REPO_ROOT / "docs/dense_dev.md").write_text(page, encoding="utf-8", newline="\n")
     page = render_checks(_load("phase3_checks"), _load("finetune_esci"))

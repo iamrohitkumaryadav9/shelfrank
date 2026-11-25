@@ -243,6 +243,15 @@ of four or more words appears in committed files. Each later phase adds its deri
 Leakage checks compare two token keys, because the key frozen with the folds misses some plurals. Under the
 stronger key no additional pair of WANDS queries crosses folds, so the folds stand.
 
+## 17. Rewriting
+
+- The trigger is one signal and one threshold, chosen on fold 0 among thresholds at fixed quantiles that fire on at most half of the
+  queries. The rule is the largest mean gain of LTR over all dev queries, by the mean of standard and condensed nDCG@10. A tie goes
+  to fewer rewrites. The choice is kept even when the gain is negative. It is committed in `configs/frozen_rewrite.yaml` before the
+  primary queries are scored.
+- Aggregate primary results of the ranker were already known at that point. They are not used in the choice.
+- Family for Holm: LTR with triggered rewriting against LTR (primary), and hybrid RRF likewise. Slices and oracles are exploratory.
+
 ## 16. "More like this" (item-to-item recommendations, added 2026-11-26 before the freeze)
 
 Written before anything in this section was measured.
