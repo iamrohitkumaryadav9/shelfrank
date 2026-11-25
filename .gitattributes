@@ -1,0 +1,5 @@
+# Byte-identical generated files on Windows and on CI.
+* text=auto eol=lf
+*.parquet binary
+*.onnx binary
+*.joblib binary

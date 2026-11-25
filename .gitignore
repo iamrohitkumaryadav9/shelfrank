@@ -1,0 +1,21 @@
+# secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# raw data and heavy artifacts: re-creatable by script
+data/raw/
+data/interim/
+artifacts/
+
+# OS and editors
+.vscode/
+Thumbs.db

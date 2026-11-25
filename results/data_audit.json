@@ -1,0 +1,655 @@
+{
+ "rows": {
+  "queries": 480,
+  "products": 42994,
+  "label_rows": 233448,
+  "unique_pairs": 231873,
+  "repeated_rows": 1575,
+  "max_repeats": 5,
+  "conflicting_pairs": 14,
+  "label_queries_missing": 0,
+  "label_products_missing": 0,
+  "products_never_judged": 8,
+  "query_id_max": 487,
+  "duplicate_query_text": 0
+ },
+ "labels": {
+  "counts": {
+   "Exact": 25470,
+   "Partial": 145679,
+   "Irrelevant": 60724
+  },
+  "shares": {
+   "Exact": 0.1098,
+   "Partial": 0.6283,
+   "Irrelevant": 0.2619
+  },
+  "judgments_per_query": {
+   "mean": 483.07,
+   "min": 1.0,
+   "p25": 122.0,
+   "p50": 215.0,
+   "p75": 504.25,
+   "p90": 1233.1000000000004,
+   "p99": 3411.059999999998,
+   "max": 4329.0
+  },
+  "exact_per_query": {
+   "mean": 53.06,
+   "min": 0.0,
+   "p25": 1.0,
+   "p50": 10.0,
+   "p75": 59.0,
+   "p90": 148.30000000000007,
+   "p99": 631.8899999999999,
+   "max": 876.0
+  },
+  "partial_per_query": {
+   "mean": 303.5,
+   "min": 0.0,
+   "p25": 66.5,
+   "p50": 125.0,
+   "p75": 281.25,
+   "p90": 713.4000000000001,
+   "p99": 2985.239999999999,
+   "max": 3438.0
+  },
+  "irrelevant_per_query": {
+   "mean": 126.51,
+   "min": 0.0,
+   "p25": 3.0,
+   "p50": 18.5,
+   "p75": 73.0,
+   "p90": 298.30000000000007,
+   "p99": 2033.9899999999996,
+   "max": 2940.0
+  },
+  "queries_without_exact": 101,
+  "queries_under_10_exact": 238,
+  "queries_without_relevant": 1,
+  "queries_without_irrelevant": 57,
+  "queries_under_10_judged": 8
+ },
+ "ceilings_all": {
+  "n": 480,
+  "exact_at_10": 0.5973,
+  "mrr_exact": 0.7896,
+  "recall_at_100": 0.5931,
+  "recall_at_100_exact_only": 0.9147,
+  "queries_over_100_relevant": 353,
+  "queries_over_100_exact": 74
+ },
+ "ceilings_primary": {
+  "n": 384,
+  "exact_at_10": 0.607,
+  "mrr_exact": 0.7943,
+  "recall_at_100": 0.5747,
+  "recall_at_100_exact_only": 0.9024,
+  "queries_over_100_relevant": 288,
+  "queries_over_100_exact": 67
+ },
+ "query_class": {
+  "missing": 6,
+  "distinct": 188,
+  "singletons": 98,
+  "at_least_5": 28,
+  "at_least_10": 6,
+  "at_least_10_primary": 4,
+  "queries_in_at_least_10_primary": 53,
+  "top": [
+   [
+    "Wall Art",
+    20
+   ],
+   [
+    "Accent Chairs",
+    16
+   ],
+   [
+    "Area Rugs",
+    15
+   ],
+   [
+    "Beds",
+    15
+   ],
+   [
+    "Coffee & Cocktail Tables",
+    10
+   ],
+   [
+    "Dressers & Chests",
+    10
+   ],
+   [
+    "Desks",
+    9
+   ],
+   [
+    "Accent Pillows",
+    8
+   ],
+   [
+    "End Tables",
+    8
+   ],
+   [
+    "Outdoor Conversation Sets",
+    8
+   ],
+   [
+    "Wall Décor",
+    8
+   ],
+   [
+    "Bar Stools",
+    7
+   ],
+   [
+    "Furniture Cushions",
+    7
+   ],
+   [
+    "Office Chairs",
+    7
+   ],
+   [
+    "Vanities",
+    7
+   ]
+  ],
+  "absent_from_catalogue": [
+   "Crock Pots & Slow Cookers",
+   "Door Mats",
+   "Flatware Serving Pieces",
+   "Free Weights",
+   "Uniters Outdoor Furniture"
+  ],
+  "queries_in_absent": 5,
+  "words_per_query": {
+   "mean": 3.38,
+   "min": 1.0,
+   "p25": 2.0,
+   "p50": 3.0,
+   "p75": 4.0,
+   "p90": 5.0,
+   "p99": 8.0,
+   "max": 10.0
+  }
+ },
+ "product_class": {
+  "missing": 2852,
+  "missing_share": 0.0663,
+  "multi_class_products": 2247,
+  "distinct_atomic": 601,
+  "distinct_raw": 860,
+  "singletons": 98,
+  "under_10": 273,
+  "under_30": 390,
+  "top": [
+   [
+    "Accent Chairs",
+    1426
+   ],
+   [
+    "Area Rugs",
+    1320
+   ],
+   [
+    "Beds",
+    1261
+   ],
+   [
+    "Coffee & Cocktail Tables",
+    1138
+   ],
+   [
+    "Floor & Wall Tile",
+    862
+   ],
+   [
+    "Dining Chairs",
+    803
+   ],
+   [
+    "Bar Stools",
+    794
+   ],
+   [
+    "Desks",
+    752
+   ],
+   [
+    "End Tables",
+    746
+   ],
+   [
+    "Accent Pillows",
+    708
+   ],
+   [
+    "Dining Tables",
+    624
+   ],
+   [
+    "Wall Art",
+    619
+   ],
+   [
+    "Bedding Sets",
+    605
+   ],
+   [
+    "Dressers & Chests",
+    605
+   ],
+   [
+    "Curtains & Drapes",
+    553
+   ]
+  ]
+ },
+ "taxonomy_grid": [
+  {
+   "min_support": 5,
+   "k": 398,
+   "product_coverage": 0.9251,
+   "dev_query_coverage": 1.0,
+   "all_query_coverage": 0.9771
+  },
+  {
+   "min_support": 10,
+   "k": 328,
+   "product_coverage": 0.9159,
+   "dev_query_coverage": 0.9896,
+   "all_query_coverage": 0.975
+  },
+  {
+   "min_support": 20,
+   "k": 255,
+   "product_coverage": 0.8958,
+   "dev_query_coverage": 0.9792,
+   "all_query_coverage": 0.9563
+  },
+  {
+   "min_support": 30,
+   "k": 211,
+   "product_coverage": 0.8754,
+   "dev_query_coverage": 0.9688,
+   "all_query_coverage": 0.9333
+  },
+  {
+   "min_support": 50,
+   "k": 173,
+   "product_coverage": 0.845,
+   "dev_query_coverage": 0.9271,
+   "all_query_coverage": 0.8938
+  },
+  {
+   "min_support": 100,
+   "k": 105,
+   "product_coverage": 0.7445,
+   "dev_query_coverage": 0.8125,
+   "all_query_coverage": 0.7812
+  }
+ ],
+ "hierarchy": {
+  "missing": 1556,
+  "depth": {
+   "1": 103,
+   "2": 1720,
+   "3": 16297,
+   "4": 16256,
+   "5": 6453,
+   "6": 609
+  },
+  "top_levels": [
+   [
+    "Furniture",
+    16039
+   ],
+   [
+    "Home Improvement",
+    4686
+   ],
+   [
+    "Décor & Pillows",
+    4612
+   ],
+   [
+    "Outdoor",
+    3394
+   ],
+   [
+    "Storage & Organization",
+    2175
+   ],
+   [
+    "Lighting",
+    2072
+   ],
+   [
+    "Rugs",
+    2002
+   ],
+   [
+    "Bed & Bath",
+    1865
+   ],
+   [
+    "Kitchen & Tabletop",
+    1615
+   ],
+   [
+    "Baby & Kids",
+    1204
+   ]
+  ]
+ },
+ "features": {
+  "pairs": 2383691,
+  "keyless": 50491,
+  "malformed": 10,
+  "distinct_keys": 7961,
+  "products_with_multi_value_key": 29547,
+  "products_with_multi_value_key_share": 0.6872,
+  "top_keys": [
+   [
+    "overallproductweight",
+    39810
+   ],
+   [
+    "countryoforigin",
+    34017
+   ],
+   [
+    "supplierintendedandapproveduse",
+    32507
+   ],
+   [
+    "overallheight-toptobottom",
+    31636
+   ],
+   [
+    "overallwidth-sidetoside",
+    31401
+   ],
+   [
+    "commercialwarranty",
+    30517
+   ],
+   [
+    "productwarranty",
+    29184
+   ],
+   [
+    "overalldepth-fronttoback",
+    27728
+   ],
+   [
+    "purposefuldistressingtype",
+    26320
+   ],
+   [
+    "uniformpackagingandlabelingregulationsuplrcompliant",
+    25626
+   ],
+   [
+    "adultassemblyrequired",
+    25239
+   ],
+   [
+    "canadaproductrestriction",
+    23229
+   ],
+   [
+    "producttype",
+    23055
+   ],
+   [
+    "compositewoodproductcwp",
+    21787
+   ],
+   [
+    "warrantylength",
+    21062
+   ],
+   [
+    "dsprimaryproductstyle",
+    18219
+   ],
+   [
+    "dssecondaryproductstyle",
+    17654
+   ],
+   [
+    "naturalvariationtype",
+    17341
+   ],
+   [
+    "levelofassembly",
+    16954
+   ],
+   [
+    "style",
+    16653
+   ]
+  ],
+  "slots": {
+   "color": {
+    "products": 30258,
+    "share": 0.7038,
+    "multi_valued": 12274,
+    "multi_valued_share": 0.4056,
+    "distinct_values": 9181,
+    "top_values": [
+     "black",
+     "white",
+     "gray",
+     "brown",
+     "blue",
+     "beige",
+     "clear",
+     "silver"
+    ]
+   },
+   "material": {
+    "products": 41790,
+    "share": 0.972,
+    "multi_valued": 22118,
+    "multi_valued_share": 0.5293,
+    "distinct_values": 896,
+    "top_values": [
+     "metal",
+     "solid wood",
+     "foam",
+     "manufactured wood",
+     "solid + manufactured wood",
+     "wood",
+     "polyester",
+     "plastic"
+    ]
+   },
+   "style": {
+    "products": 27455,
+    "share": 0.6386,
+    "multi_valued": 18442,
+    "multi_valued_share": 0.6717,
+    "distinct_values": 108,
+    "top_values": [
+     "modern & contemporary",
+     "traditional",
+     "modern",
+     "transitional modern",
+     "transitional traditional",
+     "glam",
+     "mid-century modern",
+     "coastal"
+    ]
+   },
+   "room": {
+    "products": 629,
+    "share": 0.0146,
+    "multi_valued": 367,
+    "multi_valued_share": 0.5835,
+    "distinct_values": 35,
+    "top_values": [
+     "bathroom",
+     "living room",
+     "bedroom",
+     "living",
+     "dining room",
+     "hallway",
+     "kitchen",
+     "kitchen/pantry"
+    ]
+   }
+  }
+ },
+ "missingness": {
+  "columns": {
+   "product_id": 0,
+   "product_name": 0,
+   "product_class": 2852,
+   "category_hierarchy": 1556,
+   "product_description": 6008,
+   "product_features": 0,
+   "rating_count": 9452,
+   "average_rating": 9452,
+   "review_count": 9452
+  },
+  "shares": {
+   "product_id": 0.0,
+   "product_name": 0.0,
+   "product_class": 0.0663,
+   "category_hierarchy": 0.0362,
+   "product_description": 0.1397,
+   "product_features": 0.0,
+   "rating_count": 0.2198,
+   "average_rating": 0.2198,
+   "review_count": 0.2198
+  },
+  "rating_fields_missing_together": true,
+  "rated_but_zero_reviews": 543,
+  "average_rating_values": [
+   1.0,
+   1.5,
+   2.0,
+   2.5,
+   3.0,
+   3.5,
+   4.0,
+   4.5,
+   5.0
+  ],
+  "review_count": {
+   "mean": 284.25,
+   "min": 0.0,
+   "p25": 6.0,
+   "p50": 31.0,
+   "p75": 131.0,
+   "p90": 495.0,
+   "p99": 3955.1299999999756,
+   "max": 61362.0
+  }
+ },
+ "text": {
+  "product_name": {
+   "mean": 6.75,
+   "min": 1.0,
+   "p25": 4.0,
+   "p50": 6.0,
+   "p75": 8.0,
+   "p90": 11.0,
+   "p99": 20.0,
+   "max": 49.0
+  },
+  "product_description": {
+   "mean": 83.02,
+   "min": 1.0,
+   "p25": 46.0,
+   "p50": 76.0,
+   "p75": 102.0,
+   "p90": 142.0,
+   "p99": 295.0,
+   "max": 791.0
+  },
+  "product_features": {
+   "mean": 120.5,
+   "min": 1.0,
+   "p25": 77.0,
+   "p50": 112.0,
+   "p75": 154.0,
+   "p90": 197.0,
+   "p99": 320.0,
+   "max": 2537.0
+  }
+ },
+ "duplicates": {
+  "rows_sharing_a_name": 768,
+  "rows_sharing_name_and_description": 46,
+  "rows_identical_except_id": 0
+ },
+ "pool_bias": {
+  "judged_share_in_query_class_mean": 0.554,
+  "judged_share_in_query_class_median": 0.5768,
+  "queries_measured": 469,
+  "judged_share_overall": 0.0112,
+  "judged_pairs_in_query_class": 0.401,
+  "exact_pairs_in_query_class": 0.6845,
+  "label_mix": {
+   "no_match": {
+    "Exact": 0.0579,
+    "Partial": 0.5257,
+    "Irrelevant": 0.4164
+   },
+   "match": {
+    "Exact": 0.1875,
+    "Partial": 0.7814,
+    "Irrelevant": 0.0311
+   }
+  }
+ },
+ "folds": [
+  {
+   "fold": 0,
+   "queries": 96,
+   "distinct_classes": 70,
+   "median_judged": 173.5,
+   "queries_without_exact": 22,
+   "exact_at_10_ceiling": 0.5583
+  },
+  {
+   "fold": 1,
+   "queries": 96,
+   "distinct_classes": 75,
+   "median_judged": 230.0,
+   "queries_without_exact": 19,
+   "exact_at_10_ceiling": 0.626
+  },
+  {
+   "fold": 2,
+   "queries": 96,
+   "distinct_classes": 67,
+   "median_judged": 249.0,
+   "queries_without_exact": 20,
+   "exact_at_10_ceiling": 0.601
+  },
+  {
+   "fold": 3,
+   "queries": 96,
+   "distinct_classes": 69,
+   "median_judged": 208.5,
+   "queries_without_exact": 19,
+   "exact_at_10_ceiling": 0.6198
+  },
+  {
+   "fold": 4,
+   "queries": 96,
+   "distinct_classes": 71,
+   "median_judged": 225.5,
+   "queries_without_exact": 21,
+   "exact_at_10_ceiling": 0.5812
+  }
+ ]
+}
