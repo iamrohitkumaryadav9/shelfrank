@@ -128,6 +128,7 @@ it is flagged at the next gate.
 | 0 | Text and class of query ids 0 to 4 and 483 to 487, in the raw file preview and WANDS's sample notebook | No |
 | 0 | The example queries printed in the WANDS annotation guidelines and paper | No |
 | 0 | Taxonomy coverage over all 480 queries was visible; the rule reads only catalogue counts | No |
+| 1 | None. `shelfrank/eval/access.py` refuses any other split until `configs/frozen.yaml` exists. The only query texts displayed were the five dev queries of the CI fixture | No |
 
 ## 14. Guards
 

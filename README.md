@@ -3,12 +3,13 @@
 Query understanding and learning-to-rank for home-goods product search, evaluated on
 [WANDS](https://github.com/wayfair/WANDS), Wayfair's public relevance benchmark (ECIR 2022).
 
-**Status: Phase 0, data audit. No ranking results exist yet.**
+**Status: Phase 1, retrieval baselines on the dev fold. No primary result exists yet.**
 
 | Document | What it covers |
 | --- | --- |
 | [docs/data_audit.md](docs/data_audit.md) | What is in WANDS and what it means for evaluation (generated) |
 | [docs/PROTOCOL.md](docs/PROTOCOL.md) | Splits, metrics, label rules and what has been looked at so far |
+| [docs/retrieval_dev.md](docs/retrieval_dev.md) | Retrieval baselines on the 96 dev queries (generated) |
 | [docs/DATA.md](docs/DATA.md) | Source, commit, license, published baseline |
 | [docs/ENVIRONMENT.md](docs/ENVIRONMENT.md) | Pinned versions and why |
 
@@ -32,10 +33,13 @@ Query understanding and learning-to-rank for home-goods product search, evaluate
 ## Reproduce
 
 ```powershell
-uv sync --extra dev
+uv sync --extra dev --extra bench
 uv run python scripts/get_wands.py      # about 96 MB, verified by SHA-256
 uv run python scripts/data_audit.py     # writes results/data_audit.json and docs/data_audit.md
-uv run python scripts/make_tables.py    # fills the generated blocks in this file
+uv run python scripts/encode_products.py bge_small   # about 35 min on CPU, resumable
+uv run python scripts/tune_bm25.py      # dev fold only
+uv run python scripts/run_retrieval.py --split dev
+uv run python scripts/make_tables.py    # fills every generated table
 uv run pytest
 ```
 

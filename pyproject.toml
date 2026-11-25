@@ -9,23 +9,21 @@ license = { text = "MIT" }
 # Versions are pinned to wheels verified to load on the development machine, where
 # Windows Smart App Control rejects some newer compiled wheels. See docs/ENVIRONMENT.md.
 dependencies = [
+    "bm25s==0.2.6",
     "numpy==1.26.4",
     "pandas==2.2.2",
     "pyyaml==6.0.2",
+    "scipy==1.13.1",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==8.3.3", "ruff==0.7.4"]
+dev = ["pytest==8.3.3", "ranx==0.3.20", "ruff==0.7.4"]
 bench = [
-    "bm25s==0.2.6",
-    "faiss-cpu==1.9.0",
     "google-genai==3.6.1",
     "lightgbm==4.5.0",
     "pydantic>=2.9.2,<3",
     "python-dotenv>=1.0,<2",
-    "ranx==0.3.20",
     "scikit-learn==1.5.1",
-    "scipy==1.13.1",
     "sentence-transformers==3.2.1",
     "torch==2.4.1",
     "transformers==4.45.2",
@@ -36,7 +34,6 @@ app = [
     "onnxruntime==1.19.2",
     "pyarrow==17.0.0",
     "scikit-learn==1.5.1",
-    "scipy==1.13.1",
     "streamlit==1.39.0",
     "tokenizers==0.20.3",
 ]
@@ -76,4 +73,5 @@ ignore = ["ANN101", "RUF001", "RUF002", "RUF003"]
 "scripts/*" = ["E501"]
 # Markdown template lines
 "shelfrank/data/audit_report.py" = ["E501"]
+"shelfrank/eval/retrieval_report.py" = ["E501"]
 "shelfrank/readme_tables.py" = ["E501"]

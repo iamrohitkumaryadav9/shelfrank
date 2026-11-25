@@ -344,22 +344,6 @@ wheels = [
 ]
 
 [[package]]
-name = "faiss-cpu"
-version = "1.9.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "numpy" },
-    { name = "packaging" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/14/76/67475a3009c4aeccab462325144738fb62074ed6edbc9ab55cc9ddddc127/faiss_cpu-1.9.0-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:2ed784120f6be7a7cde90f507831e670b4edc94f20cc7955eef3ae5fba70d449", size = 7691461, upload-time = "2024-10-08T07:06:37.762Z" },
-    { url = "https://files.pythonhosted.org/packages/31/28/6ece7a2bf3a4f53b25533353baf47e42055f16004e79554f3fcd975569f2/faiss_cpu-1.9.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:358be27446389c9df374fba17221ae5e45a7a8c943c4c675f81814d6fb7c31b1", size = 3217821, upload-time = "2024-10-08T07:06:39.377Z" },
-    { url = "https://files.pythonhosted.org/packages/e5/20/822dd24d168a56f1af0f2aa276b183b2176659c44644e67757015e8272b1/faiss_cpu-1.9.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:31a0b5ec546c7455cf526326194ace125199769ccbc90bb69b464cd4a26b7f4d", size = 3651805, upload-time = "2024-10-08T07:06:41.715Z" },
-    { url = "https://files.pythonhosted.org/packages/3b/27/45be1b5e71feef7d22f65c409658d698655a8c86547d20448388521a6697/faiss_cpu-1.9.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:89f03a4882e27c71ead60d84d06263d3f8592c842f0f469eeaf7883cfd4f2bfa", size = 27471710, upload-time = "2024-10-08T07:06:44.653Z" },
-    { url = "https://files.pythonhosted.org/packages/51/d6/4228ddef6324abb7b6a62cf0dd72938147234770b1f04adcb23fa1a424bb/faiss_cpu-1.9.0-cp312-cp312-win_amd64.whl", hash = "sha256:39a163c2c3c33df10b82fd3b61cb6c8bd7884e2526f1393de32ed71814c5cbfb", size = 14864760, upload-time = "2024-10-08T07:06:47.875Z" },
-]
-
-[[package]]
 name = "fastparquet"
 version = "2026.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1461,9 +1445,11 @@ name = "shelfrank"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "bm25s" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pyyaml" },
+    { name = "scipy" },
 ]
 
 [package.optional-dependencies]
@@ -1473,20 +1459,15 @@ app = [
     { name = "onnxruntime" },
     { name = "pyarrow" },
     { name = "scikit-learn" },
-    { name = "scipy" },
     { name = "streamlit" },
     { name = "tokenizers" },
 ]
 bench = [
-    { name = "bm25s" },
-    { name = "faiss-cpu" },
     { name = "google-genai" },
     { name = "lightgbm" },
     { name = "pydantic" },
     { name = "python-dotenv" },
-    { name = "ranx" },
     { name = "scikit-learn" },
-    { name = "scipy" },
     { name = "sentence-transformers" },
     { name = "torch", version = "2.4.1", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'aarch64' and platform_python_implementation == 'CPython' and sys_platform == 'linux') or sys_platform == 'darwin'" },
     { name = "torch", version = "2.4.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (platform_python_implementation != 'CPython' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
@@ -1494,14 +1475,14 @@ bench = [
 ]
 dev = [
     { name = "pytest" },
+    { name = "ranx" },
     { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "bm25s", marker = "extra == 'bench'", specifier = "==0.2.6" },
+    { name = "bm25s", specifier = "==0.2.6" },
     { name = "duckdb", marker = "extra == 'app'", specifier = "==1.1.3" },
-    { name = "faiss-cpu", marker = "extra == 'bench'", specifier = "==1.9.0" },
     { name = "google-genai", marker = "extra == 'bench'", specifier = "==3.6.1" },
     { name = "lightgbm", marker = "extra == 'app'", specifier = "==4.5.0" },
     { name = "lightgbm", marker = "extra == 'bench'", specifier = "==4.5.0" },
@@ -1513,12 +1494,11 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'", specifier = "==8.3.3" },
     { name = "python-dotenv", marker = "extra == 'bench'", specifier = ">=1.0,<2" },
     { name = "pyyaml", specifier = "==6.0.2" },
-    { name = "ranx", marker = "extra == 'bench'", specifier = "==0.3.20" },
+    { name = "ranx", marker = "extra == 'dev'", specifier = "==0.3.20" },
     { name = "ruff", marker = "extra == 'dev'", specifier = "==0.7.4" },
     { name = "scikit-learn", marker = "extra == 'app'", specifier = "==1.5.1" },
     { name = "scikit-learn", marker = "extra == 'bench'", specifier = "==1.5.1" },
-    { name = "scipy", marker = "extra == 'app'", specifier = "==1.13.1" },
-    { name = "scipy", marker = "extra == 'bench'", specifier = "==1.13.1" },
+    { name = "scipy", specifier = "==1.13.1" },
     { name = "sentence-transformers", marker = "extra == 'bench'", specifier = "==3.2.1" },
     { name = "streamlit", marker = "extra == 'app'", specifier = "==1.39.0" },
     { name = "tokenizers", marker = "extra == 'app'", specifier = "==0.20.3" },
