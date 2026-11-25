@@ -3,13 +3,18 @@
 Query understanding and learning-to-rank for home-goods product search, evaluated on
 [WANDS](https://github.com/wayfair/WANDS), Wayfair's public relevance benchmark (ECIR 2022).
 
-**Status: Phase 1, retrieval baselines on the dev fold. No primary result exists yet.**
+**Status: development on the dev fold only. No primary result exists yet.**
 
 | Document | What it covers |
 | --- | --- |
 | [docs/data_audit.md](docs/data_audit.md) | What is in WANDS and what it means for evaluation (generated) |
 | [docs/PROTOCOL.md](docs/PROTOCOL.md) | Splits, metrics, label rules and what has been looked at so far |
 | [docs/retrieval_dev.md](docs/retrieval_dev.md) | Retrieval baselines on the 96 dev queries (generated) |
+| [docs/class_dev.md](docs/class_dev.md) | Product-class student on dev (generated) |
+| [docs/phase3_checks.md](docs/phase3_checks.md) | Checks of the encoder fine-tuned on ESCI (generated) |
+| [docs/dense_dev.md](docs/dense_dev.md) | Fine-tuned against off-the-shelf encoder, serving format (generated) |
+| [docs/ltr_interim.md](docs/ltr_interim.md) | Interim ranking comparison on dev (generated) |
+| [docs/README_FRAMING.md](docs/README_FRAMING.md) | Wording fixed in advance for every possible outcome |
 | [docs/DATA.md](docs/DATA.md) | Source, commit, license, published baseline |
 | [docs/slot_evidence.md](docs/slot_evidence.md) | What the catalogue says about attribute slots (generated) |
 | [docs/COLAB.md](docs/COLAB.md) | Running the ESCI notebooks |

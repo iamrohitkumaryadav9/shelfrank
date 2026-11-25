@@ -113,7 +113,7 @@ def render(results: Mapping[str, Any], source: str = "ltr_dev") -> str:
         "about 72 queries. The final run trains on about 384. **These are dev numbers used to make "
         "choices. They are not results.**",
         "",
-        f"## Levels, with the option that has the highest sum of both metrics: `{chosen}`",
+        f"## Levels, with the option that has the highest mean of both metrics: `{chosen}`",
         "",
         *_level_rows(systems, [*baselines, chosen]),
         "",
