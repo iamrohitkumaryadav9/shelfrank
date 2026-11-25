@@ -1,0 +1,47 @@
+{
+ "reference": "teacher labels on the 100 ESCI prompt-development queries",
+ "lexicon_terms": {
+  "color": 226,
+  "material_finish": 270,
+  "style": 60,
+  "product_types": 463,
+  "species": 21
+ },
+ "scores": {
+  "color": {
+   "precision": 0.8571428571428571,
+   "recall": 0.8571428571428571,
+   "f1": 0.8571428571428571,
+   "predicted": 7,
+   "support": 7
+  },
+  "material_finish": {
+   "precision": 0.75,
+   "recall": 0.6923076923076923,
+   "f1": 0.72,
+   "predicted": 12,
+   "support": 13
+  },
+  "style": {
+   "precision": 1.0,
+   "recall": 0.75,
+   "f1": 0.8571428571428571,
+   "predicted": 3,
+   "support": 4
+  },
+  "room": {
+   "precision": 1.0,
+   "recall": 0.42857142857142855,
+   "f1": 0.6,
+   "predicted": 3,
+   "support": 7
+  },
+  "all": {
+   "precision": 0.84,
+   "recall": 0.6774193548387096,
+   "f1": 0.75,
+   "predicted": 25,
+   "support": 31
+  }
+ }
+}

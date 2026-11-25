@@ -1,0 +1,18 @@
+{
+ "prompt_sha256": "dccc54478f32d8134a2b44716aa17599f9a53a623d78fb766fe3208e13ce5bed",
+ "response": {
+  "input_tokens": 1298,
+  "model_version": "gemini-3.1-flash-lite",
+  "output_tokens": 248,
+  "text": "{\n  \"items\": [\n    {\n      \"i\": 1,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 2,\n      \"label\": \"Furniture Covers\"\n    },\n    {\n      \"i\": 3,\n      \"label\": \"other\"\n    },\n    {\n      \"i\": 4,\n      \"label\": \"Carts & Stands\"\n    },\n    {\n      \"i\": 5,\n      \"label\": \"Storage Drawers\"\n    },\n    {\n      \"i\": 6,\n      \"label\": \"Bed Frames\"\n    },\n    {\n      \"i\": 7,\n      \"label\": \"Signs & Sign Holders\"\n    },\n    {\n      \"i\": 8,\n      \"label\": \"Fixture Parts And Components\"\n    },\n    {\n      \"i\": 9,\n      \"label\": \"Kids Beds\"\n    },\n    {\n      \"i\": 10,\n      \"label\": \"Flags\"\n    }\n  ]\n}",
+  "thinking_tokens": 0
+ },
+ "settings": {
+  "max_output_tokens": 1600,
+  "model": "gemini-3.1-flash-lite",
+  "rules_version": "class-v1",
+  "seed": 20260,
+  "temperature": 0.0,
+  "thinking_level": "minimal"
+ }
+}
