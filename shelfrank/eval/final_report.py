@@ -212,7 +212,10 @@ def importance_table(data: Mapping[str, Any]) -> str:
         [g, f"{gain.get(g, 0):.0%}", f"{shap[g]:.3f}", f"{shap[g] / total:.0%}"]
         for g in sorted(shap)
     ]
-    return table(["Group", "Share of split gain", "Mean |SHAP| in top 10", "Share of |SHAP|"], rows)
+    return table(
+        ["Group", "Share of split gain", "Mean absolute SHAP in top 10", "Share of absolute SHAP"],
+        rows,
+    )
 
 
 def feature_table(data: Mapping[str, Any], n: int = 15) -> str:
@@ -220,7 +223,7 @@ def feature_table(data: Mapping[str, Any], n: int = 15) -> str:
     ranked = sorted(data["shap_by_feature"].items(), key=lambda x: -x[1])[:n]
     gain = data["importance"]["ltr_full"]
     return table(
-        ["Feature", "Mean |SHAP|", "Share of split gain"],
+        ["Feature", "Mean absolute SHAP", "Share of split gain"],
         [[f"`{c}`", f"{v:.3f}", f"{gain[c]:.1%}"] for c, v in ranked],
     )
 
