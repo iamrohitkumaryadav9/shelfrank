@@ -94,11 +94,9 @@ def main() -> None:
         return {m: asdict(clustered_mean(by_query(scores, m), weighted, **boot)) for m in METRICS}
 
     per = {name: scored(run) for name, run in runs.items()}
-    if frozen:
-        encoder = frozen["encoder"]
-    else:
-        # max keeps the first on a tie, which is off-the-shelf.
-        encoder = max(ENCODERS, key=lambda n: objective(means(per[n])))
+    # max keeps the first on a tie, which is off-the-shelf.
+    chosen = max(ENCODERS, key=lambda n: objective(means(per[n])))
+    encoder = frozen["encoder"] if frozen else chosen
     runs["rrf"] = fuse(runs["bm25"], runs[encoder], k, DEPTH)
     per["rrf"] = scored(runs["rrf"])
 
