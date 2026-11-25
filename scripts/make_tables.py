@@ -5,6 +5,7 @@ from typing import Any
 
 from shelfrank.config import REPO_ROOT
 from shelfrank.eval.retrieval_report import render
+from shelfrank.ltr.report import render as render_ltr
 from shelfrank.readme_tables import findings, limitations, replace_block
 
 
@@ -22,7 +23,9 @@ def main() -> None:
     readme.write_text(text, encoding="utf-8", newline="\n")
     page = render(_load("retrieval_dev"), _load("bm25_tuning"))
     (REPO_ROOT / "docs/retrieval_dev.md").write_text(page, encoding="utf-8", newline="\n")
-    print("updated README.md and docs/retrieval_dev.md")
+    page = render_ltr(_load("ltr_dev"))
+    (REPO_ROOT / "docs/ltr_dev.md").write_text(page, encoding="utf-8", newline="\n")
+    print("updated README.md, docs/retrieval_dev.md and docs/ltr_dev.md")
 
 
 if __name__ == "__main__":

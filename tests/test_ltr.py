@@ -327,3 +327,22 @@ def test_slot_seed_batch_is_refused_before_any_client_exists(monkeypatch, extra)
     monkeypatch.setattr(label, "make_client", lambda **k: pytest.fail("a client was made"))
     with pytest.raises(SystemExit, match="must wait"):
         label.main()
+
+
+def test_committed_dev_page_is_generated_from_the_committed_results():
+    from shelfrank.config import REPO_ROOT
+    from shelfrank.ltr.report import render
+
+    results = json.loads((REPO_ROOT / "results/ltr_dev.json").read_text(encoding="utf-8"))
+    page = (REPO_ROOT / "docs/ltr_dev.md").read_text(encoding="utf-8")
+    assert page == render(results)
+    assert "G4" not in results["groups"] and results["split"] == "dev"
+
+
+def test_every_reported_configuration_is_in_the_log():
+    from shelfrank.config import REPO_ROOT
+
+    results = json.loads((REPO_ROOT / "results/ltr_dev.json").read_text(encoding="utf-8"))
+    lines = (REPO_ROOT / "results/ltr_dev_log.jsonl").read_text(encoding="utf-8").splitlines()
+    logged = {json.loads(line)["name"] for line in lines}
+    assert set(results["systems"]) - {"bm25_multi", "dense", "hybrid_rrf"} <= logged

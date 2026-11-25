@@ -127,6 +127,12 @@ products. These rules apply:
 - Two training variants are compared on the dev fold, using both standard and condensed nDCG@10: (a) judged
   pairs only, and (b) unjudged candidates added with label 0. The choice goes into `configs/frozen.yaml`
   and the other variant is reported as an ablation.
+  In both, training rows are candidates of the union above; (a) keeps the judged ones. At test time every
+  candidate is ranked, judged or not.
+- Dev experiments run out-of-fold inside the dev fold and every configuration is appended to
+  `results/ltr_dev_log.jsonl`. The number of trees is chosen on training queries only.
+- G4 is refused by `shelfrank/ltr/gates.py` until Round A has a summary, the room rule has passed and a slot
+  student is selected. The slot seed batch is refused by the same check.
 - The main BM25 baseline is tuned multi-field BM25. Its field weights are the ones tuned on fold 0 and are
   not re-tuned per fold. Title-only BM25 appears in every table.
 - Reciprocal rank fusion uses k = 60, the published default. **It is not tuned** and is frozen now.
@@ -176,6 +182,8 @@ it is flagged at the next gate.
 | 1 | None. `shelfrank/eval/access.py` refuses any other split until `configs/frozen.yaml` exists. The only query texts displayed were the five dev queries of the CI fixture | No |
 | 2, planned | Round A shows dev queries only. Round B shows 100 primary queries, after the freeze | No: the student and lexicons are frozen first |
 | 2 (so far) | None. The seed notebook reads all WANDS queries by code, to remove look-alikes, and never prints or saves them. Hashed token keys of all queries are committed for the leakage tests | No |
+| 3 | None. The fine-tuning notebook reads all WANDS queries by code, to remove look-alikes from ESCI, and never prints or saves them | No |
+| 4 (dev) | None. Features, training and ablations used the 96 dev queries only | No |
 | 2 | The leakage test found that one style word in a draft of the slot rules is a dev query. It was removed before any call used that draft | No |
 
 2 of 211 class names have the same words as a WANDS query. The class prompt lists them because they are the
