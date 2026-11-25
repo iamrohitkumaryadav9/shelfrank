@@ -116,6 +116,21 @@ def test_quit_at_the_reveal_resumes_there_without_a_second_blind_label(tmp_path)
     assert "color" not in person.text().split("Type the words")[1].split("yours")[0]
 
 
+@pytest.mark.parametrize("error", [KeyboardInterrupt, EOFError])
+def test_ctrl_c_or_closed_input_keeps_what_was_saved(tmp_path, error):
+    person = Person("dark gray", "linen", "", "", "")
+    answer = person.ask
+
+    def ask(prompt):
+        if "keep yours" in prompt:
+            raise error
+        return answer(prompt)
+
+    log = VerificationLog(tmp_path / "log.jsonl")
+    done = run_session(QUERIES, TEACHER.__getitem__, log, "v1", 0, ask, person.say)
+    assert done == 0 and stages(log) == ["blind"] and "Saved" in person.text()
+
+
 def test_finished_queries_are_not_asked_again(tmp_path):
     session(tmp_path, Person("dark gray", "linen", "", "", "", ""))
     log, done = session(tmp_path, Person())

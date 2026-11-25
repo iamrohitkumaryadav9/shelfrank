@@ -188,7 +188,8 @@ def run_session(
         for query_id in todo:
             done = stages.get(query_id, set())
             verify_query(query_id, queries[query_id], teacher, log, done, version, ask, say)
-    except Quit:
+    except (Quit, EOFError, KeyboardInterrupt):
+        # Every finished step is already on disk, so stopping at any point loses only this query.
         say("\nSaved. Run the same command to continue.")
     return sum(bool(s & finished) for s in log.stages().values())
 
