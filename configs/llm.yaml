@@ -44,6 +44,7 @@ approvals:
   - {batch: class_esci_dev_class-v1, max_inr: 3, date: 2026-11-25}
   - {batch: slots_esci_dev_slots-v1, max_inr: 3, date: 2026-11-25}
   - {batch: slots_wands_dev_slots-v1, max_inr: 1, date: 2026-11-25}
+  - {batch: class_esci_seed_class-v1, max_inr: 18, date: 2026-11-26}
 
 # Use of the Rs 200 between the planned total and the absolute limit. Same rule.
 buffer_approvals: []

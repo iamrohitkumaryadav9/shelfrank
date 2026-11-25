@@ -212,6 +212,16 @@ def test_held_out_interval_needs_per_query_scores():
     assert "+0.1000 [+0.1000, +0.1000]" in ft.held_out_lines(means | rows)
 
 
+def test_committed_model_card_is_generated_and_admits_what_was_not_logged():
+    from shelfrank.config import REPO_ROOT
+
+    training = json.loads((REPO_ROOT / "results/finetune_esci.json").read_text(encoding="utf-8"))
+    card = (REPO_ROOT / "docs/model_card_bge_small_esci.md").read_text(encoding="utf-8")
+    assert card == ft.model_card(training)
+    assert "Wall time: not logged. Resume history: not logged." in card
+    assert "in-domain" in card and "no confidence interval" in card
+
+
 def test_reference_texts_are_twenty_and_resemble_no_wands_query():
     from shelfrank.config import REPO_ROOT
     from shelfrank.eval.leakage import exact_matches, load_key_hashes

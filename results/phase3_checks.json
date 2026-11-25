@@ -1,0 +1,123 @@
+{
+ "pooler_tensors_in_file": {
+  "bge_small": [
+   "pooler.dense.bias",
+   "pooler.dense.weight"
+  ],
+  "bge_small_esci": []
+ },
+ "pooling": {
+  "bge_small": {
+   "modules": [
+    "Transformer",
+    "Pooling",
+    "Normalize"
+   ],
+   "pooling": "cls",
+   "max_difference_from_first_token": 2.9802322387695312e-08,
+   "cosine_to_pooler_output": [
+    -0.12626788020133972,
+    -0.02042285166680813
+   ],
+   "identical_with_layer": true,
+   "identical_noised": true,
+   "identical_removed": true
+  },
+  "bge_small_esci": {
+   "modules": [
+    "Transformer",
+    "Pooling",
+    "Normalize"
+   ],
+   "pooling": "cls",
+   "max_difference_from_first_token": 1.4901161193847656e-08,
+   "cosine_to_pooler_output": [
+    -0.07472148537635803,
+    0.03818424046039581
+   ],
+   "identical_with_layer": true,
+   "identical_noised": true,
+   "identical_removed": true
+  }
+ },
+ "embeddings": {
+  "bge_small": {
+   "manifest_matches": true,
+   "shape": [
+    42994,
+    384
+   ],
+   "finite": true,
+   "reencoded_min_cosine": 0.9999998807907104,
+   "pairwise_mean": 0.5639040470123291,
+   "pairwise_sd": 0.06320358067750931,
+   "same_class_mean": 0.7588263154029846,
+   "other_class_mean": 0.5637180805206299,
+   "same_class_pairs": 4341,
+   "class_auc": 0.987590904666742,
+   "neighbours_same_class": 0.839,
+   "grey_sofa_classes": [
+    "Sectionals",
+    "Sectionals",
+    "Sofas",
+    "",
+    "Sofas",
+    "Sofas",
+    "Sofas",
+    "Sofas",
+    "Sofas",
+    "Patio Sofas"
+   ]
+  },
+  "bge_small_esci": {
+   "manifest_matches": true,
+   "shape": [
+    42994,
+    384
+   ],
+   "finite": true,
+   "reencoded_min_cosine": 0.9999998807907104,
+   "pairwise_mean": 0.19373492896556854,
+   "pairwise_sd": 0.1452246755361557,
+   "same_class_mean": 0.6596871018409729,
+   "other_class_mean": 0.18533092737197876,
+   "same_class_pairs": 4341,
+   "class_auc": 0.9936167372174891,
+   "neighbours_same_class": 0.8601,
+   "grey_sofa_classes": [
+    "Sofas",
+    "Sectionals",
+    "Sectionals",
+    "Sectionals",
+    "",
+    "Sofas|Sectionals",
+    "Sofas",
+    "Sofas",
+    "Sofas",
+    "Sofas"
+   ]
+  }
+ },
+ "shared_neighbours": 0.557,
+ "provenance": {
+  "commit": "8a9fc4f0801a5fe1a3356fc6b5c3662126836d07",
+  "code_files_match": {
+   "shelfrank/text/normalize.py": true,
+   "shelfrank/text/near_duplicates.py": true,
+   "shelfrank/data/download.py": true,
+   "shelfrank/qu/seed_selection.py": true,
+   "shelfrank/dense/esci_data.py": true,
+   "shelfrank/dense/finetune.py": true,
+   "shelfrank/dense/onnx_export.py": true,
+   "scripts/finetune_dense.py": true
+  },
+  "every_embedded_file_recorded": true,
+  "training_settings_match": true,
+  "data_settings_match": true,
+  "base_model_matches": true
+ },
+ "weights_sha256": "e4911557025d2096e9bc9cd178d8ab945f93e6bb13c8b0fb489713d2d59a33a0",
+ "reference_embeddings_in_package": false,
+ "run_log_in_package": false,
+ "per_query_held_out_in_package": false
+}

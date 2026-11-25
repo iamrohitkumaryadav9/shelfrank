@@ -83,5 +83,7 @@ ignore = ["ANN101", "RUF001", "RUF002", "RUF003"]
 # Markdown template lines
 "shelfrank/data/audit_report.py" = ["E501"]
 "shelfrank/eval/retrieval_report.py" = ["E501"]
+"shelfrank/eval/dense_report.py" = ["E501"]
+"shelfrank/dense/checks_report.py" = ["E501"]
 "shelfrank/qu/seed_notebook.py" = ["E501"]
 "shelfrank/readme_tables.py" = ["E501"]
