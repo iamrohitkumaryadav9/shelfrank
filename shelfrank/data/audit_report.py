@@ -48,7 +48,13 @@ def _rows_section(a: dict[str, Any]) -> str:
 **The published count of {num(r["label_rows"])} judgments includes repeats.** One pair appears
 {r["max_repeats"]} times. Repeats would double-count a product in the ideal ranking, so each pair is
 reduced to a majority vote, and a tie takes the lower grade. Query ids run to {r["query_id_max"]}
-with gaps, so they must not be used as positions."""
+with gaps, so they must not be used as positions.
+
+Every disagreement and its resolution, by id:
+
+{table(["Query id", "Product id", "Labels", "Resolved to", "Rule"], [
+    [c["query_id"], c["product_id"], ", ".join(c["labels"]), c["resolved"], c["rule"]]
+    for c in a["conflicts"]])}"""
 
 
 def _labels_section(a: dict[str, Any]) -> str:
@@ -71,14 +77,18 @@ Judgments per query:
 
 ### Score of a perfect ranker
 
-{table(["Metric", "All 480", "Primary 384"], [
-    ["Exact@10", c["exact_at_10"], p["exact_at_10"]],
-    ["MRR of first Exact", c["mrr_exact"], p["mrr_exact"]],
-    ["Recall@100, Exact or Partial", c["recall_at_100"], p["recall_at_100"]],
-    ["Recall@100, Exact only", c["recall_at_100_exact_only"], p["recall_at_100_exact_only"]],
+{table(["Metric", "Averaged over", "All folds", "n", "Primary folds", "n"], [
+    ["Exact@10", "queries with an Exact product", c["exact_at_10"], c["n_exact"],
+     p["exact_at_10"], p["n_exact"]],
+    ["Exact@10", "all queries (not used)", c["exact_at_10_all_queries"], c["n"],
+     p["exact_at_10_all_queries"], p["n"]],
+    ["Recall@100, Exact or Partial", "queries with a relevant product", c["recall_at_100"],
+     c["n_relevant"], p["recall_at_100"], p["n_relevant"]],
+    ["Recall@100, Exact only", "queries with an Exact product", c["recall_at_100_exact_only"],
+     c["n_exact"], p["recall_at_100_exact_only"], p["n_exact"]],
 ])}
 
-Three secondary metrics cannot reach 1. Recall@100 is limited because
+None of these can reach 1. Recall@100 is limited because
 {c["queries_over_100_relevant"]} of {c["n"]} queries have more than 100 relevant products, and Exact@10
 because many queries have few Exact products. Raw values must be read against these ceilings."""
 
@@ -101,6 +111,13 @@ def _classes_section(a: dict[str, Any]) -> str:
   {a["ceilings_primary"]["n"]} queries. A per-class breakdown is therefore mostly uninterpretable.
 - {len(q["absent_from_catalogue"])} query classes never occur as a product class ({absent}),
   affecting {q["queries_in_absent"]} queries. No model trained on product names can predict them.
+
+Results are broken down by department instead. The mapping reads the catalogue only
+([PROTOCOL.md](PROTOCOL.md) section 4).
+
+{table(["Department", "All queries", "Primary queries", "Interpretable (n >= 10)"], [
+    [d["department"], d["all"], d["primary"], "yes" if d["primary"] >= 10 else "no"]
+    for d in a["departments"]])}
 
 Largest classes:
 

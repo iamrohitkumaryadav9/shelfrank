@@ -5,6 +5,7 @@ import pytest
 
 from shelfrank.config import REPO_ROOT
 from shelfrank.data.audit import (
+    conflict_log,
     feature_stats,
     grade_table,
     label_stats,
@@ -42,10 +43,26 @@ def test_label_stats_count_hard_queries():
 def test_ceilings_by_hand():
     rows = [(1, p, 2) for p in range(5)] + [(2, p, 1) for p in range(200)]
     out = metric_ceilings(judged_frame(rows), [1, 2])
-    assert out["exact_at_10"] == pytest.approx((0.5 + 0.0) / 2)
-    assert out["mrr_exact"] == pytest.approx(0.5)
+    assert (out["n"], out["n_exact"], out["n_relevant"]) == (2, 1, 2)
+    assert out["exact_at_10"] == pytest.approx(0.5)
+    assert out["exact_at_10_all_queries"] == pytest.approx((0.5 + 0.0) / 2)
     assert out["recall_at_100"] == pytest.approx((1.0 + 0.5) / 2)
     assert out["recall_at_100_exact_only"] == pytest.approx(1.0)
+
+
+def test_conflict_log_states_the_rule_and_skips_agreement():
+    labels = pd.DataFrame(
+        {
+            "query_id": [1, 1, 1, 1, 1, 1, 1],
+            "product_id": [5, 5, 6, 6, 6, 7, 7],
+            "label": ["Exact", "Partial", "Irrelevant", "Partial", "Partial", "Exact", "Exact"],
+        }
+    )
+    out = conflict_log(labels)
+    assert [(c["product_id"], c["resolved"], c["rule"]) for c in out] == [
+        (5, "Partial", "tie, lower"),
+        (6, "Partial", "majority"),
+    ]
 
 
 def test_row_counts_find_repeats_and_conflicts():
@@ -131,6 +148,10 @@ def test_prose_claims_in_the_report_hold():
     irrelevant_ratio = mix["no_match"]["Irrelevant"] / mix["match"]["Irrelevant"]
     assert irrelevant_ratio > mix["match"]["Exact"] / mix["no_match"]["Exact"]
     assert audit["features"]["slots"]["room"]["share"] < 0.05
+    assert len(audit["conflicts"]) == audit["rows"]["conflicting_pairs"] == 14
+    primary, everything = audit["ceilings_primary"], audit["ceilings_all"]
+    assert (primary["n_exact"], everything["n_exact"]) == (305, 379)
+    assert (primary["n_relevant"], everything["n_relevant"]) == (383, 479)
     assert audit["duplicates"]["rows_identical_except_id"] == 0
 
 

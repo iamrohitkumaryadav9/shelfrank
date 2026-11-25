@@ -9,9 +9,10 @@ from typing import Any
 
 import pandas as pd
 
+from shelfrank.data.departments import department_map, departments_of
 from shelfrank.data.product_features import parse_features, slot_of_key
 from shelfrank.data.taxonomy import build_taxonomy, class_support, product_coverage, query_coverage
-from shelfrank.data.wands import GAINS, split_classes, split_hierarchy
+from shelfrank.data.wands import GAINS, resolve_grade, split_classes, split_hierarchy
 from shelfrank.eval.splits import Folds
 
 SUPPORT_GRID = (5, 10, 20, 30, 50, 100)
@@ -55,6 +56,28 @@ def row_counts(
     }
 
 
+def conflict_log(labels: pd.DataFrame) -> list[dict[str, Any]]:
+    """List every pair whose repeats disagree and the label it resolves to, by id only."""
+    names = {grade: label for label, grade in GAINS.items()}
+    rows = []
+    for (query_id, product_id), group in labels.groupby(["query_id", "product_id"])["label"]:
+        if group.nunique() > 1:
+            grades = sorted((GAINS[label] for label in group), reverse=True)
+            resolved = resolve_grade(grades)
+            rows.append(
+                {
+                    "query_id": int(query_id),
+                    "product_id": int(product_id),
+                    "labels": [names[grade] for grade in grades],
+                    "resolved": names[resolved],
+                    "rule": "majority"
+                    if grades.count(resolved) * 2 > len(grades)
+                    else "tie, lower",
+                }
+            )
+    return rows
+
+
 def grade_table(judged: pd.DataFrame, query_ids: list[int]) -> pd.DataFrame:
     """Judgments per query and label, with a zero row for any query that has none."""
     names = {grade: label for label, grade in GAINS.items()}
@@ -87,12 +110,15 @@ def metric_ceilings(judged: pd.DataFrame, query_ids: list[int]) -> dict[str, Any
     table = grade_table(judged, query_ids)
     exact, relevant = table["Exact"], table["Exact"] + table["Partial"]
     has_exact, has_relevant = exact > 0, relevant > 0
+    reachable = exact[has_exact].clip(upper=10) / 10
     ratio = relevant[has_relevant].clip(upper=100) / relevant[has_relevant]
     exact_ratio = exact[has_exact].clip(upper=100) / exact[has_exact]
     return {
         "n": len(query_ids),
-        "exact_at_10": round(float((exact.clip(upper=10) / 10).mean()), 4),
-        "mrr_exact": _share(has_exact),
+        "n_exact": int(has_exact.sum()),
+        "n_relevant": int(has_relevant.sum()),
+        "exact_at_10": round(float(reachable.mean()), 4),
+        "exact_at_10_all_queries": round(float((exact.clip(upper=10) / 10).mean()), 4),
         "recall_at_100": round(float(ratio.mean()), 4),
         "recall_at_100_exact_only": round(float(exact_ratio.mean()), 4),
         "queries_over_100_relevant": int((relevant > 100).sum()),
@@ -326,6 +352,21 @@ def fold_balance(queries: pd.DataFrame, judged: pd.DataFrame, folds: Folds) -> l
     return rows
 
 
+def department_stats(
+    queries: pd.DataFrame, products: pd.DataFrame, folds: Folds
+) -> list[dict[str, Any]]:
+    """Queries per department, which decides where a breakdown can be interpreted."""
+    mapping = department_map(products)
+    names = departments_of(queries["query_class"], mapping)
+    table = pd.DataFrame({"query_id": queries["query_id"], "department": names})
+    primary = table[table["query_id"].isin(folds.primary)]["department"].value_counts()
+    everything = table["department"].value_counts()
+    ordered = sorted(everything.items(), key=lambda item: (-item[1], str(item[0])))
+    return [
+        {"department": str(d), "all": int(n), "primary": int(primary.get(d, 0))} for d, n in ordered
+    ]
+
+
 def run_audit(
     queries: pd.DataFrame,
     products: pd.DataFrame,
@@ -338,9 +379,11 @@ def run_audit(
     catalogue = set(class_support(products["product_class"]).index)
     return {
         "rows": row_counts(queries, products, labels, judged),
+        "conflicts": conflict_log(labels),
         "labels": label_stats(judged, ids),
         "ceilings_all": metric_ceilings(judged, ids),
         "ceilings_primary": metric_ceilings(judged, folds.primary),
+        "departments": department_stats(queries, products, folds),
         "query_class": query_class_stats(queries, catalogue, folds),
         "product_class": product_class_stats(products),
         "taxonomy_grid": taxonomy_grid(products, queries, folds),

@@ -4,10 +4,12 @@ Each import runs in its own process because Windows Smart App Control can reject
 one rejection would otherwise hide the state of everything after it.
 """
 
+import shutil
 import subprocess
 import sys
 
 CORE = ["numpy", "pandas", "yaml"]
+MIN_FREE_GB = 8
 BENCH = [
     "scipy.stats",
     "sklearn.linear_model",
@@ -33,6 +35,14 @@ def check(module: str) -> str | None:
     return (run.stderr.strip().splitlines() or ["no output"])[-1]
 
 
+def low_disk_warning(free_bytes: int, minimum_gb: float = MIN_FREE_GB) -> str | None:
+    """Warn early: an embedding or model write that runs out of disk leaves a corrupt cache."""
+    free_gb = free_bytes / 1e9
+    if free_gb >= minimum_gb:
+        return None
+    return f"WARNING: {free_gb:.1f} GB free, below the {minimum_gb} GB minimum"
+
+
 def main() -> int:
     """Probe the groups named on the command line, or all of them."""
     groups = {"core": CORE, "bench": BENCH, "app": APP}
@@ -43,6 +53,8 @@ def main() -> int:
             error = check(module)
             failures += error is not None
             print(f"{'FAIL' if error else 'ok  '} {group:5s} {module} {error or ''}".rstrip())
+    free = shutil.disk_usage(__file__).free
+    print(low_disk_warning(free) or f"ok   disk  {free / 1e9:.1f} GB free")
     return min(failures, 1)
 
 

@@ -22,6 +22,25 @@ Source commit `3b74dcf4ba29ab8ff3e6a50b5b09fc627cb882b5`. Only aggregates are sh
 reduced to a majority vote, and a tie takes the lower grade. Query ids run to 487
 with gaps, so they must not be used as positions.
 
+Every disagreement and its resolution, by id:
+
+| Query id | Product id | Labels | Resolved to | Rule |
+| --- | --- | --- | --- | --- |
+| 0 | 31306 | Partial, Irrelevant | Irrelevant | tie, lower |
+| 12 | 34349 | Exact, Partial, Partial | Partial | majority |
+| 24 | 696 | Exact, Partial | Partial | tie, lower |
+| 89 | 24413 | Exact, Partial | Partial | tie, lower |
+| 106 | 1990 | Partial, Irrelevant | Irrelevant | tie, lower |
+| 243 | 5766 | Exact, Partial | Partial | tie, lower |
+| 246 | 38402 | Partial, Irrelevant | Irrelevant | tie, lower |
+| 258 | 2076 | Exact, Partial | Partial | tie, lower |
+| 293 | 19210 | Exact, Partial | Partial | tie, lower |
+| 313 | 602 | Partial, Irrelevant, Irrelevant | Irrelevant | majority |
+| 327 | 22268 | Exact, Partial | Partial | tie, lower |
+| 421 | 29138 | Exact, Partial | Partial | tie, lower |
+| 425 | 40107 | Exact, Partial | Partial | tie, lower |
+| 444 | 15033 | Partial, Irrelevant | Irrelevant | tie, lower |
+
 ## 2. Labels (after removing repeats)
 
 | Label | Pairs | Share |
@@ -47,14 +66,14 @@ Judgments per query:
 
 ### Score of a perfect ranker
 
-| Metric | All 480 | Primary 384 |
-| --- | --- | --- |
-| Exact@10 | 0.5973 | 0.607 |
-| MRR of first Exact | 0.7896 | 0.7943 |
-| Recall@100, Exact or Partial | 0.5931 | 0.5747 |
-| Recall@100, Exact only | 0.9147 | 0.9024 |
+| Metric | Averaged over | All folds | n | Primary folds | n |
+| --- | --- | --- | --- | --- | --- |
+| Exact@10 | queries with an Exact product | 0.7565 | 379 | 0.7643 | 305 |
+| Exact@10 | all queries (not used) | 0.5973 | 480 | 0.607 | 384 |
+| Recall@100, Exact or Partial | queries with a relevant product | 0.5931 | 479 | 0.5747 | 383 |
+| Recall@100, Exact only | queries with an Exact product | 0.9147 | 379 | 0.9024 | 305 |
 
-Three secondary metrics cannot reach 1. Recall@100 is limited because
+None of these can reach 1. Recall@100 is limited because
 353 of 480 queries have more than 100 relevant products, and Exact@10
 because many queries have few Exact products. Raw values must be read against these ceilings.
 
@@ -73,6 +92,29 @@ because many queries have few Exact products. Raw values must be read against th
   384 queries. A per-class breakdown is therefore mostly uninterpretable.
 - 5 query classes never occur as a product class (Crock Pots & Slow Cookers, Door Mats, Flatware Serving Pieces, Free Weights, Uniters Outdoor Furniture),
   affecting 5 queries. No model trained on product names can predict them.
+
+Results are broken down by department instead. The mapping reads the catalogue only
+([PROTOCOL.md](PROTOCOL.md) section 4).
+
+| Department | All queries | Primary queries | Interpretable (n >= 10) |
+| --- | --- | --- | --- |
+| Furniture | 165 | 131 | yes |
+| Décor & Pillows | 71 | 58 | yes |
+| Outdoor | 50 | 42 | yes |
+| Home Improvement | 49 | 38 | yes |
+| Lighting | 25 | 18 | yes |
+| Bed & Bath | 23 | 16 | yes |
+| Storage & Organization | 23 | 18 | yes |
+| Kitchen & Tabletop | 18 | 15 | yes |
+| Rugs | 17 | 14 | yes |
+| Other | 12 | 12 | yes |
+| Baby & Kids | 10 | 7 | no |
+| Appliances | 5 | 5 | no |
+| School Furniture and Supplies | 5 | 4 | no |
+| Pet | 3 | 2 | no |
+| Contractor | 2 | 2 | no |
+| Commercial Business Furniture | 1 | 1 | no |
+| Holiday Décor | 1 | 1 | no |
 
 Largest classes:
 
@@ -233,11 +275,11 @@ collected products of the predicted class. The effect is measurable.
 
 | Fold | Queries | Distinct classes | Median judged | No Exact | Exact@10 ceiling |
 | --- | --- | --- | --- | --- | --- |
-| 0 (dev) | 96 | 70 | 173.5 | 22 | 0.5583 |
-| 1 | 96 | 75 | 230 | 19 | 0.626 |
-| 2 | 96 | 67 | 249 | 20 | 0.601 |
-| 3 | 96 | 69 | 208.5 | 19 | 0.6198 |
-| 4 | 96 | 71 | 225.5 | 21 | 0.5812 |
+| 0 (dev) | 96 | 70 | 173.5 | 22 | 0.7243 |
+| 1 | 96 | 75 | 230 | 19 | 0.7805 |
+| 2 | 96 | 67 | 249 | 20 | 0.7592 |
+| 3 | 96 | 69 | 208.5 | 19 | 0.7727 |
+| 4 | 96 | 71 | 225.5 | 21 | 0.744 |
 
 Stratification by query class is only partly possible: 28 classes have the
 five queries needed to appear in every fold. The rest are pooled. The dev fold has the lowest Exact@10

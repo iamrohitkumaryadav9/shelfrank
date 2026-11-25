@@ -13,6 +13,150 @@
   "query_id_max": 487,
   "duplicate_query_text": 0
  },
+ "conflicts": [
+  {
+   "query_id": 0,
+   "product_id": 31306,
+   "labels": [
+    "Partial",
+    "Irrelevant"
+   ],
+   "resolved": "Irrelevant",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 12,
+   "product_id": 34349,
+   "labels": [
+    "Exact",
+    "Partial",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "majority"
+  },
+  {
+   "query_id": 24,
+   "product_id": 696,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 89,
+   "product_id": 24413,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 106,
+   "product_id": 1990,
+   "labels": [
+    "Partial",
+    "Irrelevant"
+   ],
+   "resolved": "Irrelevant",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 243,
+   "product_id": 5766,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 246,
+   "product_id": 38402,
+   "labels": [
+    "Partial",
+    "Irrelevant"
+   ],
+   "resolved": "Irrelevant",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 258,
+   "product_id": 2076,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 293,
+   "product_id": 19210,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 313,
+   "product_id": 602,
+   "labels": [
+    "Partial",
+    "Irrelevant",
+    "Irrelevant"
+   ],
+   "resolved": "Irrelevant",
+   "rule": "majority"
+  },
+  {
+   "query_id": 327,
+   "product_id": 22268,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 421,
+   "product_id": 29138,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 425,
+   "product_id": 40107,
+   "labels": [
+    "Exact",
+    "Partial"
+   ],
+   "resolved": "Partial",
+   "rule": "tie, lower"
+  },
+  {
+   "query_id": 444,
+   "product_id": 15033,
+   "labels": [
+    "Partial",
+    "Irrelevant"
+   ],
+   "resolved": "Irrelevant",
+   "rule": "tie, lower"
+  }
+ ],
  "labels": {
   "counts": {
    "Exact": 25470,
@@ -72,8 +216,10 @@
  },
  "ceilings_all": {
   "n": 480,
-  "exact_at_10": 0.5973,
-  "mrr_exact": 0.7896,
+  "n_exact": 379,
+  "n_relevant": 479,
+  "exact_at_10": 0.7565,
+  "exact_at_10_all_queries": 0.5973,
   "recall_at_100": 0.5931,
   "recall_at_100_exact_only": 0.9147,
   "queries_over_100_relevant": 353,
@@ -81,13 +227,102 @@
  },
  "ceilings_primary": {
   "n": 384,
-  "exact_at_10": 0.607,
-  "mrr_exact": 0.7943,
+  "n_exact": 305,
+  "n_relevant": 383,
+  "exact_at_10": 0.7643,
+  "exact_at_10_all_queries": 0.607,
   "recall_at_100": 0.5747,
   "recall_at_100_exact_only": 0.9024,
   "queries_over_100_relevant": 288,
   "queries_over_100_exact": 67
  },
+ "departments": [
+  {
+   "department": "Furniture",
+   "all": 165,
+   "primary": 131
+  },
+  {
+   "department": "Décor & Pillows",
+   "all": 71,
+   "primary": 58
+  },
+  {
+   "department": "Outdoor",
+   "all": 50,
+   "primary": 42
+  },
+  {
+   "department": "Home Improvement",
+   "all": 49,
+   "primary": 38
+  },
+  {
+   "department": "Lighting",
+   "all": 25,
+   "primary": 18
+  },
+  {
+   "department": "Bed & Bath",
+   "all": 23,
+   "primary": 16
+  },
+  {
+   "department": "Storage & Organization",
+   "all": 23,
+   "primary": 18
+  },
+  {
+   "department": "Kitchen & Tabletop",
+   "all": 18,
+   "primary": 15
+  },
+  {
+   "department": "Rugs",
+   "all": 17,
+   "primary": 14
+  },
+  {
+   "department": "Other",
+   "all": 12,
+   "primary": 12
+  },
+  {
+   "department": "Baby & Kids",
+   "all": 10,
+   "primary": 7
+  },
+  {
+   "department": "Appliances",
+   "all": 5,
+   "primary": 5
+  },
+  {
+   "department": "School Furniture and Supplies",
+   "all": 5,
+   "primary": 4
+  },
+  {
+   "department": "Pet",
+   "all": 3,
+   "primary": 2
+  },
+  {
+   "department": "Contractor",
+   "all": 2,
+   "primary": 2
+  },
+  {
+   "department": "Commercial Business Furniture",
+   "all": 1,
+   "primary": 1
+  },
+  {
+   "department": "Holiday Décor",
+   "all": 1,
+   "primary": 1
+  }
+ ],
  "query_class": {
   "missing": 6,
   "distinct": 188,
@@ -617,7 +852,7 @@
    "distinct_classes": 70,
    "median_judged": 173.5,
    "queries_without_exact": 22,
-   "exact_at_10_ceiling": 0.5583
+   "exact_at_10_ceiling": 0.7243
   },
   {
    "fold": 1,
@@ -625,7 +860,7 @@
    "distinct_classes": 75,
    "median_judged": 230.0,
    "queries_without_exact": 19,
-   "exact_at_10_ceiling": 0.626
+   "exact_at_10_ceiling": 0.7805
   },
   {
    "fold": 2,
@@ -633,7 +868,7 @@
    "distinct_classes": 67,
    "median_judged": 249.0,
    "queries_without_exact": 20,
-   "exact_at_10_ceiling": 0.601
+   "exact_at_10_ceiling": 0.7592
   },
   {
    "fold": 3,
@@ -641,7 +876,7 @@
    "distinct_classes": 69,
    "median_judged": 208.5,
    "queries_without_exact": 19,
-   "exact_at_10_ceiling": 0.6198
+   "exact_at_10_ceiling": 0.7727
   },
   {
    "fold": 4,
@@ -649,7 +884,7 @@
    "distinct_classes": 71,
    "median_judged": 225.5,
    "queries_without_exact": 21,
-   "exact_at_10_ceiling": 0.5812
+   "exact_at_10_ceiling": 0.744
   }
  ]
 }

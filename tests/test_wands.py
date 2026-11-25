@@ -53,6 +53,19 @@ def test_judgments_keep_the_same_product_separate_per_query():
     assert out["grade"].tolist() == [2, 0]
 
 
+def test_exactly_one_label_per_pair_after_loading(sample):
+    assert not sample["judged"].duplicated(["query_id", "product_id"]).any()
+
+
+@pytest.mark.full_data
+def test_exactly_one_label_per_pair_on_the_full_data(raw_dir):
+    labels = load_labels(raw_dir)
+    judged = judgments(labels)
+    assert not judged.duplicated(["query_id", "product_id"]).any()
+    assert len(judged) == len(labels[["query_id", "product_id"]].drop_duplicates())
+    assert set(judged["grade"]) == set(GAINS.values())
+
+
 def test_judgments_do_not_depend_on_row_order():
     rows = labels_frame([(2, 5, "Exact"), (1, 9, "Partial"), (1, 9, "Irrelevant"), (1, 3, "Exact")])
     pd.testing.assert_frame_equal(judgments(rows), judgments(rows.iloc[::-1]))

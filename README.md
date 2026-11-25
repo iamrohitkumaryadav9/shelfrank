@@ -12,12 +12,30 @@ Query understanding and learning-to-rank for home-goods product search, evaluate
 | [docs/DATA.md](docs/DATA.md) | Source, commit, license, published baseline |
 | [docs/ENVIRONMENT.md](docs/ENVIRONMENT.md) | Pinned versions and why |
 
+## Limitations known so far
+
+<!-- begin:limitations -->
+- **The judgment pool favours class match.** Wayfair's own query classifier helped choose
+  which products were judged. A product in the query's class is judged
+  55.4% of the time, against
+  1.1% for a random pair, so class features can gain by retrieving judged
+  products. Condensed nDCG@10 and judged@10 are reported beside every such claim.
+- **Some metrics have low ceilings.** A perfect ranker reaches Exact@10 of
+  0.764 on the 305 primary queries that have an Exact product, and
+  Recall@100 of 0.575 on 383.
+- **The benchmark is small.** It has 480 queries, and the headline uses
+  384.
+- **`query_class` is itself a model prediction**, so classifier accuracy means agreement with Wayfair's
+  classifier.
+<!-- end:limitations -->
+
 ## Reproduce
 
 ```powershell
 uv sync --extra dev
 uv run python scripts/get_wands.py      # about 96 MB, verified by SHA-256
 uv run python scripts/data_audit.py     # writes results/data_audit.json and docs/data_audit.md
+uv run python scripts/make_tables.py    # fills the generated blocks in this file
 uv run pytest
 ```
 
