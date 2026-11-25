@@ -61,16 +61,33 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
   itself a model prediction.
 - Also reported: top-3 accuracy and department-level accuracy.
 - Secondary: macro-F1 over classes with at least 5 queries, with the class count stated.
+- **Selection:** every class and slot student is chosen on the dev fold and on held-out ESCI seed queries.
+  Before `preregistered-v1`, only dev numbers are reported. Results on all 480 queries come after it.
+- The Gemini zero-shot ceiling runs on the 96 dev queries first and on the other 384 after the freeze.
 
 ## 6. Attribute slots
 
 - Room values come from category paths plus a small hand list. The hand list is written from
   catalogue-side text only (category names, product names, feature values), never from queries.
-- Room support (the number of room mentions in the 100 verified queries) is shown beside its F1. Below
-  10, the F1 is reported as not interpretable.
+- Room support (the number of room mentions in the verified queries of the round) is shown beside its F1.
+  Below 10, the F1 is reported as not interpretable.
 - Whether the room slot stays is decided by the ablation.
 - A product with several values for a slot is a family of variants. A conflict means that **none** of
   its listed values matches the query.
+
+### Verification by hand
+
+| Round | Queries | When | Used for |
+| --- | --- | --- | --- |
+| A | all 96 dev queries | before the freeze | choosing the slot student, Gate 2 numbers |
+| B | 100 from folds 1 to 4, a seeded draw committed as ids | after `preregistered-v1` | **primary reported slot F1** |
+
+- The annotator sees only the query and labels it first. The teacher's answer is shown afterwards and the
+  label may be revised. Both labels are stored with timestamps. **The blind label is primary.**
+- Reported: blind agreement with the teacher, how often the label was revised, and the count of "unsure".
+- The slot student and the lexicons are frozen before Round B starts.
+- Silver labels for all 480 queries may be generated before the freeze. Nothing is scored against the
+  non-dev ones until after it.
 
 ## 7. Pool bias
 
@@ -142,9 +159,26 @@ it is flagged at the next gate.
 | 0 | The example queries printed in the WANDS annotation guidelines and paper | No |
 | 0 | Taxonomy coverage over all 480 queries was visible; the rule reads only catalogue counts | No |
 | 1 | None. `shelfrank/eval/access.py` refuses any other split until `configs/frozen.yaml` exists. The only query texts displayed were the five dev queries of the CI fixture | No |
+| 2, planned | Round A shows dev queries only. Round B shows 100 primary queries, after the freeze | No: the student and lexicons are frozen first |
 | 2 (so far) | None. The seed notebook reads all WANDS queries by code, to remove look-alikes, and never prints or saves them. Hashed token keys of all queries are committed for the leakage tests | No |
 
-## 14. Guards
+## 14. LLM spend
+
+- Hard limits in code, all in: labelling Rs 100, rewriting Rs 200, planned total Rs 300, absolute Rs 500.
+- **The absolute limit is a constant in the code.** No configuration can raise it, and any call whose worst
+  case would cross it is refused, whatever the other caps say.
+- The Rs 200 between the planned total and the absolute limit is for re-runs and fixes. It is usable only
+  through a recorded approval.
+- Before a call, its worst case is reserved in the ledger. Afterwards the reservation is replaced by the
+  actual cost. A crash therefore leaves the worst case counted, not zero.
+- The ledger counts every call: successes, failures, retries and thinking tokens. Failures are counted
+  although the documentation says failed requests are not charged.
+- Every paid batch starts with a 10-item pilot. Its measured cost per item gives the projection, and the rest
+  runs only after a recorded approval.
+- Cached responses hold a hash of the prompt and no query text.
+- The teacher is `gemini-3.1-flash-lite`.
+
+## 15. Guards
 
 `tests/test_leakage.py` checks fold sizes and disjointness, near-duplicate grouping, that the CI fixture
 holds dev queries only, that the taxonomy is rebuilt from the catalogue alone, and that no primary query
