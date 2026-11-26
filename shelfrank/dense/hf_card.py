@@ -11,7 +11,11 @@ def _gap(c: Mapping[str, float]) -> str:
 
 
 def card(
-    training: Mapping[str, Any], dense: Mapping[str, Any], final: Mapping[str, Any], repository: str
+    training: Mapping[str, Any],
+    dense: Mapping[str, Any],
+    final: Mapping[str, Any],
+    repository: str,
+    model_id: str = "iamrohitkumar9/bge-small-en-v1.5-esci",
 ) -> str:
     """Front matter and text."""
     source = training["provenance"]
@@ -75,7 +79,7 @@ for one epoch on the US small version of the Amazon Shopping Queries Dataset (ES
 ```python
 from sentence_transformers import SentenceTransformer
 
-model = SentenceTransformer("<this repository>")
+model = SentenceTransformer("{model_id}")
 queries = model.encode(["Represent this sentence for searching relevant passages: grey velvet sofa"], normalize_embeddings=True)
 products = model.encode(["Tincher 74'' velvet round arm curved sofa . Sofas . ..."], normalize_embeddings=True)
 ```

@@ -13,4 +13,5 @@ Checked on 2026-11-26 at the commit that adds this file.
 | LLM spend | Rs 46.30 of 500 (ledger, reservations replaced by results) |
 | Licenses | Code MIT (`LICENSE`); WANDS MIT, ESCI Apache-2.0 (`docs/DATA.md`, `docs/LICENSE-DATA.md`); base encoder MIT |
 | Files over 1 MB | `results/final_run.json` 1.66 MB, `results/final_rankings.json` 1.06 MB; nothing larger in history |
-| Hugging Face | `iamrohitkumar9/bge-small-en-v1.5-esci` is public and not gated; all 11 model files match the local artifact by SHA-256 (`results/hf_model.json`); the card's text equals `docs/hf_model_card.md` apart from CRLF line endings |
+| Live demo | https://shelfrank.streamlit.app/ returns 200 after Community Cloud's cookie redirect, and the app's own `/~/+/_stcore/health` returns `ok`. CI job `streamlit-cloud` installs the way Community Cloud does and runs the page with two searches |
+| Hugging Face | `iamrohitkumar9/bge-small-en-v1.5-esci` is public and not gated; all 11 model files match the local artifact by SHA-256, and the card, re-uploaded with Unix line endings and the real model id, is byte-identical to `docs/hf_model_card.md` (`results/hf_model.json`, revision `b161fce4`) |

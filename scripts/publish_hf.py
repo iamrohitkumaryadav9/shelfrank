@@ -42,8 +42,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo")
     parser.add_argument("--yes", action="store_true")
+    parser.add_argument("--card-only", action="store_true", help="replace README.md only")
     args = parser.parse_args()
-    text = card(load("finetune_esci"), load("dense_dev"), load("final_run"), REPOSITORY)
+    extra = [args.repo] if args.repo else []
+    text = card(load("finetune_esci"), load("dense_dev"), load("final_run"), REPOSITORY, *extra)
     (REPO_ROOT / "docs/hf_model_card.md").write_text(text, encoding="utf-8", newline="\n")
     print("wrote docs/hf_model_card.md")
     if not args.repo:
@@ -53,6 +55,15 @@ def main() -> None:
     from huggingface_hub import HfApi
 
     api = HfApi()
+    if args.card_only:
+        api.upload_file(
+            path_or_fileobj=text.encode("utf-8"),
+            path_in_repo="README.md",
+            repo_id=args.repo,
+            commit_message="Model card: Unix line endings, real model id",
+        )
+        print(f"https://huggingface.co/{args.repo}")
+        return
     api.create_repo(args.repo, repo_type="model", private=False, exist_ok=True)
     with tempfile.TemporaryDirectory() as folder:
         out = Path(folder)

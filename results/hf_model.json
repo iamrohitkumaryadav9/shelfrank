@@ -1,13 +1,13 @@
 {
  "repo": "iamrohitkumar9/bge-small-en-v1.5-esci",
  "url": "https://huggingface.co/iamrohitkumar9/bge-small-en-v1.5-esci",
- "revision": "99089692ad8a3a485562219b71b1392908932dd4",
+ "revision": "b161fce47e6338e8cdbd035a1753699bc4022393",
  "checked": "2026-11-26",
  "public": true,
  "gated": false,
  "sha256": {
   "1_Pooling/config.json": "d1caf60c96f5fba2157c0c26b76d80818fad6cf0b8eb5e73ec372ff9818eba5c",
-  "README.md": "762b3e73a56ad0ad6f04dd90800d4cd217cd45c0965ae519d8a957b5bce9acf9",
+  "README.md": "102b3f3dc45c56a3b503b6ce2e0b262eb9646527d9a13a696f645d477b194197",
   "config.json": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750",
   "config_sentence_transformers.json": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
   "model.safetensors": "e4911557025d2096e9bc9cd178d8ab945f93e6bb13c8b0fb489713d2d59a33a0",
@@ -21,6 +21,7 @@
  },
  "matches_local_artifact": [
   "1_Pooling/config.json",
+  "README.md",
   "config.json",
   "config_sentence_transformers.json",
   "model.safetensors",
@@ -32,5 +33,5 @@
   "training.json",
   "vocab.txt"
  ],
- "card": "README.md equals docs/hf_model_card.md except CRLF line endings, written by the upload script before the LF fix"
+ "card": "README.md is byte-identical to docs/hf_model_card.md"
 }

@@ -20,7 +20,7 @@ for one epoch on the US small version of the Amazon Shopping Queries Dataset (ES
 ```python
 from sentence_transformers import SentenceTransformer
 
-model = SentenceTransformer("<this repository>")
+model = SentenceTransformer("iamrohitkumar9/bge-small-en-v1.5-esci")
 queries = model.encode(["Represent this sentence for searching relevant passages: grey velvet sofa"], normalize_embeddings=True)
 products = model.encode(["Tincher 74'' velvet round arm curved sofa . Sofas . ..."], normalize_embeddings=True)
 ```

@@ -125,7 +125,10 @@ def test_lexicon_is_loaded_when_selected(tmp_path):
 
 def test_protocol_states_the_selection_rule_and_the_dropped_round():
     text = " ".join((REPO_ROOT / "docs/PROTOCOL.md").read_text(encoding="utf-8").split())
-    assert "Round A was then dropped before any recorded pass, because of rater time" in text
+    assert "Round A was then dropped before the freeze, to save rater time." in text
+    assert "misapplied the slot rules: product words were labelled as style" in text
+    assert "could not have been blind anyway, because its tool showed the teacher's answers" in text
+    assert "Round B is a blind check" in text
     assert "the mean of two exact-span F1 scores over all slots" in text
     assert "vs LLM silver labels; human verification pending" in text
 

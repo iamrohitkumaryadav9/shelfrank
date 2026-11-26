@@ -3,7 +3,7 @@
 Query understanding and learning-to-rank for home-goods product search, evaluated on [WANDS](https://github.com/wayfair/WANDS), Wayfair's
 public relevance benchmark (ECIR 2022): 42,994 products, 480 queries and 233,448 human judgments.
 
-**Live demo:** DEMO_URL_PLACEHOLDER (added after deployment) · **Fine-tuned encoder:**
+**Live demo:** [shelfrank.streamlit.app](https://shelfrank.streamlit.app/) · **Fine-tuned encoder:**
 [iamrohitkumar9/bge-small-en-v1.5-esci](https://huggingface.co/iamrohitkumar9/bge-small-en-v1.5-esci) on Hugging Face
 
 <!-- begin:pitch -->
@@ -301,8 +301,10 @@ All on the 96 dev queries, exploratory and uncorrected.
 - **`query_class` is itself a model prediction**, so classifier accuracy means agreement with Wayfair's
   classifier.
 <!-- end:limitations -->
-- **Slot labels are an LLM's.** Every slot F1 is vs LLM silver labels; human verification pending. A first human labelling attempt was discarded and a
-  planned round was dropped for time, before the freeze ([docs/PROTOCOL.md](docs/PROTOCOL.md), section 6).
+- **Slot labels are an LLM's.** Every slot F1 is vs LLM silver labels; human verification pending. The first human labelling pass was discarded
+  because the slot rules were misapplied (product words labelled as style). The next round was dropped before the freeze to save rater time; it could
+  not have been blind, because its tool showed the teacher's answers. A blind, seeded check on held-out queries (Round B) is designed and pending
+  ([docs/PROTOCOL.md](docs/PROTOCOL.md), section 6). The headline does not rest on slot F1: the attribute features did not earn a gain.
 - **Pretraining contamination is possible.** bge-small and Gemini may have seen WANDS on the web. Nothing here can rule it out.
 - **Offline is not online.** nDCG is agreement with annotators. It is no evidence of clicks, carts or revenue.
 - **Some choices used dev data.** BM25 weights, the training option and the student selection were chosen on fold 0, so dev numbers are optimistic.
@@ -346,4 +348,5 @@ LLM spend, whole project: **Rs 46.30** of a Rs 500 limit in code (labelling Rs 3
 
 WANDS is MIT licensed and ESCI Apache-2.0 ([docs/DATA.md](docs/DATA.md), [docs/LICENSE-DATA.md](docs/LICENSE-DATA.md)). This project is not affiliated with Wayfair or Amazon.
 
-Individual project by Rohit Kumar, M.Tech CSE, IIIT Delhi. [GitHub](https://github.com/iamrohitkumaryadav9)
+Individual project by Rohit Kumar, M.Tech CSE, IIIT Delhi. [GitHub](https://github.com/iamrohitkumaryadav9) ·
+[LinkedIn](https://www.linkedin.com/in/rohit-k-327030387)

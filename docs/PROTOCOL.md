@@ -88,9 +88,13 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
 
 ### Verification by hand, and the pre-freeze change of 2026-11-26
 
-- A first labelling attempt was discarded after the rater misapplied the slot rules; the tool was revised and the rater retrained before the recorded pass. That attempt showed the teacher's answers, so Round A is not blind; Round B is.
-- **Round A was then dropped before any recorded pass, because of rater time.** This is a protocol change made before
-  the freeze. Consequences:
+The wording of the first two points was clarified after the freeze, on 2026-11-26. No rule changed, and the frozen text is at the tag
+`preregistered-v1`.
+
+- The first human labelling pass was discarded because the rater misapplied the slot rules: product words were labelled as style.
+  The tool was revised and the rater retrained.
+- **Round A was then dropped before the freeze, to save rater time.** It could not have been blind anyway, because its tool showed the
+  teacher's answers. This is a protocol change made before the freeze. Consequences:
   - No human slot label exists when the slot student is selected, when G4 is enabled, or at the freeze.
   - Gemini's slot labels on the 96 dev queries are called **silver** everywhere.
   - The room rule has no human check.
@@ -99,7 +103,7 @@ trigger) go into `configs/frozen.yaml`, tagged `preregistered-v1` before the one
   the seed, not trained on). The candidates are the lexicon matcher and every student configuration. The highest
   score is used for G4, and an exact tie goes to the lexicon, which is simpler.
 - Both references come from the same teacher, so the rule measures how well a student imitates Gemini.
-- **Round B is optional and comes after the freeze.** It has 50 queries from folds 1 to 4, a seeded draw committed as
+- **Round B is a blind check, optional, and comes after the freeze.** It has 50 held-out queries from folds 1 to 4, a seeded draw committed as
   ids in `data/splits/round_b_draw.json`. Until it is complete, every slot F1 is labelled **"vs LLM silver labels;
   human verification pending"**. If it is completed, the human number becomes primary in the README. Nothing in the
   ranking pipeline depends on it.
