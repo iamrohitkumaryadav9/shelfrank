@@ -20,15 +20,39 @@ STAGES = {
     "total": "**Total**",
 }
 RANKERS = {"ltr": "LTR", "rrf": "Hybrid RRF"}
+HF_MODEL = "iamrohitkumar9/bge-small-en-v1.5-esci"
 
 
 def _gap(c: Mapping[str, float]) -> str:
     return f"{c['mean']:+.3f} [{c['low']:+.3f}, {c['high']:+.3f}]"
 
 
-def pitch(data: Mapping[str, Any]) -> str:
-    """The one-paragraph result, primary comparison first."""
-    return f"{headline(data)}\n\n{secondary(data)}"
+def pitch(
+    data: Mapping[str, Any],
+    rewriting_primary: Mapping[str, Any] | None = None,
+    rewriting_dev: Mapping[str, Any] | None = None,
+    speed: Mapping[str, Any] | None = None,
+) -> str:
+    """The one-paragraph result, primary comparison first, and the negative result beside it."""
+    text = f"{headline(data)}\n\n{secondary(data)}"
+    if rewriting_primary is None or rewriting_dev is None or speed is None:
+        return text
+    dev, overall = rewriting_dev["overall"][0], rewriting_primary["overall"][0]
+    p = fr.adjusted(rewriting_primary["overall"])[0]
+    harm, cost, ms = (
+        rewriting_primary["harm"],
+        rewriting_primary["cost"],
+        rewriting_primary["latency_ms"],
+    )
+    search = speed["stages"]["ltr"]["total"]["p50"]
+    return (
+        f"{text}\n\n**LLM query rewriting did not help.** Its trigger was chosen on dev, where rewriting gained {_gap(dev['ndcg10'])} "
+        f"({_gap(dev['condensed_ndcg10'])} condensed). On the primary queries it fires on {rewriting_primary['triggered']} of {rewriting_primary['n']} "
+        f"and moves LTR by {_gap(overall['ndcg10'])} standard and {_gap(overall['condensed_ndcg10'])} condensed (Holm p {p:.3f}): "
+        f"{fr.claimed(overall, p)}. Of the triggered queries {harm['worse']} got worse and {harm['better']} better. It would cost "
+        f"Rs {cost['inr_per_1000_rewritten']:.1f} per 1,000 rewritten queries (Rs {cost['inr_per_1000_queries']:.1f} per 1,000 searches) and add "
+        f"{ms['p50']:.0f} ms at the median ({ms['p95']:.0f} ms p95) to a {search:.0f} ms search, so it is off by default."
+    )
 
 
 def key_results(data: Mapping[str, Any], checks: Mapping[str, Any]) -> str:
@@ -124,7 +148,8 @@ def retrieval(data: Mapping[str, Any], dense: Mapping[str, Any]) -> str:
 
 On dev the fine-tuned encoder showed "{verdict}" as a dense retriever, so by a rule written before measuring, the ranker kept the off-the-shelf
 encoder. On the primary queries it is better. int8 lost {abs(dense["serving"]["bge_small"]["formats"]["int8"]["ndcg10"] - dense["serving"]["bge_small"]["formats"]["pytorch"]["ndcg10"]):.3f} nDCG@10 on dev, more than the tolerance of 0.005, so the demo uses fp32 ONNX
-([docs/dense_dev.md](docs/dense_dev.md), [docs/phase3_checks.md](docs/phase3_checks.md))."""
+([docs/dense_dev.md](docs/dense_dev.md), [docs/phase3_checks.md](docs/phase3_checks.md)). The fine-tuned encoder is public:
+[{HF_MODEL}](https://huggingface.co/{HF_MODEL})."""
 
 
 def rewriting(primary: Mapping[str, Any] | None) -> str:

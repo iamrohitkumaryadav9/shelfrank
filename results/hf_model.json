@@ -1,0 +1,36 @@
+{
+ "repo": "iamrohitkumar9/bge-small-en-v1.5-esci",
+ "url": "https://huggingface.co/iamrohitkumar9/bge-small-en-v1.5-esci",
+ "revision": "99089692ad8a3a485562219b71b1392908932dd4",
+ "checked": "2026-11-26",
+ "public": true,
+ "gated": false,
+ "sha256": {
+  "1_Pooling/config.json": "d1caf60c96f5fba2157c0c26b76d80818fad6cf0b8eb5e73ec372ff9818eba5c",
+  "README.md": "762b3e73a56ad0ad6f04dd90800d4cd217cd45c0965ae519d8a957b5bce9acf9",
+  "config.json": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750",
+  "config_sentence_transformers.json": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56",
+  "model.safetensors": "e4911557025d2096e9bc9cd178d8ab945f93e6bb13c8b0fb489713d2d59a33a0",
+  "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+  "sentence_bert_config.json": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf",
+  "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+  "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+  "tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+  "training.json": "7829f9ac938edeaa5701d958f970624f07cb195a96b4081edbc3934c64458adf",
+  "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+ },
+ "matches_local_artifact": [
+  "1_Pooling/config.json",
+  "config.json",
+  "config_sentence_transformers.json",
+  "model.safetensors",
+  "modules.json",
+  "sentence_bert_config.json",
+  "special_tokens_map.json",
+  "tokenizer.json",
+  "tokenizer_config.json",
+  "training.json",
+  "vocab.txt"
+ ],
+ "card": "README.md equals docs/hf_model_card.md except CRLF line endings, written by the upload script before the LF fix"
+}

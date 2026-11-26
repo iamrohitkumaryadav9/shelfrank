@@ -3,10 +3,15 @@
 Query understanding and learning-to-rank for home-goods product search, evaluated on [WANDS](https://github.com/wayfair/WANDS), Wayfair's
 public relevance benchmark (ECIR 2022): 42,994 products, 480 queries and 233,448 human judgments.
 
+**Live demo:** DEMO_URL_PLACEHOLDER (added after deployment) · **Fine-tuned encoder:**
+[iamrohitkumar9/bge-small-en-v1.5-esci](https://huggingface.co/iamrohitkumar9/bge-small-en-v1.5-esci) on Hugging Face
+
 <!-- begin:pitch -->
 On WANDS, a LambdaMART ranker raised nDCG@10 from 0.782 (hybrid RRF) to 0.820, a difference of +0.038 [+0.027, +0.048] on 384 held-out queries, and the gain holds under condensed evaluation (+0.020 [+0.010, +0.030]). Tuned BM25 scores 0.746. Feature groups whose removal hurts: G1, G2.
 
 Secondary comparison, LTR against tuned BM25: +0.074 [+0.057, +0.091] standard, +0.060 [+0.043, +0.077] condensed, Holm p 0.0004: a gain that holds under both evaluations.
+
+**LLM query rewriting did not help.** Its trigger was chosen on dev, where rewriting gained +0.014 [+0.001, +0.030] (+0.025 [+0.005, +0.052] condensed). On the primary queries it fires on 171 of 384 and moves LTR by -0.009 [-0.017, -0.001] standard and -0.006 [-0.014, +0.001] condensed (Holm p 0.254): direction depends on unjudged handling. Of the triggered queries 63 got worse and 38 better. It would cost Rs 15.8 per 1,000 rewritten queries (Rs 7.0 per 1,000 searches) and add 870 ms at the median (1176 ms p95) to a 123 ms search, so it is off by default.
 <!-- end:pitch -->
 
 Settings were frozen and tagged (`preregistered-v1`) before any of the 384 evaluation queries was read, and the evaluation ran once. A gain is
@@ -153,7 +158,8 @@ Details: [docs/class_dev.md](docs/class_dev.md), [docs/slots_dev.md](docs/slots_
 
 On dev the fine-tuned encoder showed "no clear difference" as a dense retriever, so by a rule written before measuring, the ranker kept the off-the-shelf
 encoder. On the primary queries it is better. int8 lost 0.010 nDCG@10 on dev, more than the tolerance of 0.005, so the demo uses fp32 ONNX
-([docs/dense_dev.md](docs/dense_dev.md), [docs/phase3_checks.md](docs/phase3_checks.md)).
+([docs/dense_dev.md](docs/dense_dev.md), [docs/phase3_checks.md](docs/phase3_checks.md)). The fine-tuned encoder is public:
+[iamrohitkumar9/bge-small-en-v1.5-esci](https://huggingface.co/iamrohitkumar9/bge-small-en-v1.5-esci).
 <!-- end:retrieval -->
 
 ## Query rewriting

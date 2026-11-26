@@ -30,7 +30,12 @@ def readme_blocks() -> dict[str, str]:
     ledger = (REPO_ROOT / "results/llm_spend.jsonl").read_text(encoding="utf-8").splitlines()
     ceilings = {s: _load(f"class_ceiling_{s}") for s in ("dev", "primary", "all")}
     return {
-        "pitch": rb.pitch(final),
+        "pitch": rb.pitch(
+            final,
+            _load("rewrite_primary") if rewrite.exists() else None,
+            _load("rewrite_dev") if rewrite.exists() else None,
+            _load("latency"),
+        ),
         "key_results": rb.key_results(final, _load("leak_checks")),
         "ablation": rb.ablation(final),
         "understanding": rb.understanding(_load("class_dev"), ceilings, _load("slots_all")),

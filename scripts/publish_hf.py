@@ -59,7 +59,7 @@ def main() -> None:
         for name in FILES:
             (out / name).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(MODEL / name, out / name)
-        (out / "README.md").write_text(text, encoding="utf-8")
+        (out / "README.md").write_text(text, encoding="utf-8", newline="\n")
         api.upload_folder(
             folder_path=str(out),
             repo_id=args.repo,

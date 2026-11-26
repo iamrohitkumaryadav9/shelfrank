@@ -74,3 +74,26 @@ def test_hostile_query_does_not_break_the_page(page):
     page.run()
     page.text_input(key="query").set_value("<script>alert(1)</script> [x](y) $$ lamp").run()
     assert not page.exception
+
+
+def test_more_like_this_lists_substitutes(page, sample):
+    products = sample["products"].sort_values("product_id").reset_index(drop=True)
+    first = int(products["product_id"].iloc[0])
+    page.run()
+    name = products["product_name"].iloc[0]
+    page.text_input(key="query").set_value(name).run()
+    buttons = [
+        b for b in page.button if str(b.key).startswith("similar-") and f"-{first}-" in str(b.key)
+    ]
+    assert buttons, "the product with substitutes should be among the results for its own name"
+    buttons[0].click().run()
+    assert not page.exception
+    panel = next(
+        e
+        for e in page.expander
+        if e.label == "More like this"
+        and any(getattr(k, "key", None) == buttons[0].key for k in e.children.values())
+    )
+    shown = [str(k.value) for k in panel.children.values() if k.type in ("markdown", "caption")]
+    assert sum(s.startswith("- ") for s in shown) == 3
+    assert any("Precomputed substitutes" in s for s in shown)
