@@ -3,8 +3,9 @@
 Python 3.12, managed by [uv](https://docs.astral.sh/uv/). `uv.lock` fixes every transitive version.
 
 ```powershell
-uv sync --extra dev                               # tests and data audit
-uv sync --extra dev --extra bench --extra app     # everything
+uv sync                                          # the demo only: what Streamlit Community Cloud installs
+uv sync --extra dev                              # tests and data audit
+uv sync --extra dev --extra bench --extra api     # everything
 uv run python scripts/check_env.py                # does each compiled dependency load?
 ```
 

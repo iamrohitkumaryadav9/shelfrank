@@ -315,7 +315,7 @@ Session-aware re-ranking, and why it cannot be evaluated honestly on WANDS: [doc
 ## Reproduce
 
 ```powershell
-uv sync --extra dev --extra bench --extra app --extra api
+uv sync --extra dev --extra bench --extra api   # the base set alone is the demo
 uv run python scripts/reproduce.py --offline --fixture   # no download: cached LLM answers, tables, fixture search
 uv run python scripts/get_wands.py                       # about 96 MB, verified by SHA-256
 uv run python scripts/encode_products.py bge_small       # about 35 min on CPU, resumable

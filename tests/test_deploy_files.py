@@ -31,3 +31,21 @@ def test_no_env_file_is_tracked():
     done = subprocess.run(["git", "ls-files"], cwd=REPO_ROOT, capture_output=True, text=True)
     names = done.stdout.split()
     assert not [n for n in names if n == ".env" or n.endswith("secrets.toml")]
+
+
+def test_base_dependencies_are_exactly_the_demo_set():
+    """Community Cloud installs uv.lock without extras, so the base set must be the app."""
+    import tomllib
+
+    project = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    text = (REPO_ROOT / "requirements.txt").read_text(encoding="utf-8")
+    wanted = {x for x in text.splitlines() if x and not x.startswith("#")}
+    assert set(project["dependencies"]) == wanted
+    assert "app" not in project["optional-dependencies"]
+    heavy = {re.split(r"[=<>]", x)[0] for x in project["dependencies"]} & set(HEAVY)
+    assert not heavy
+
+
+def test_ci_installs_the_way_community_cloud_does():
+    ci = (REPO_ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+    assert "uv sync --locked\n" in ci and "scripts/smoke_app.py" in ci
