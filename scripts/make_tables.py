@@ -38,7 +38,13 @@ def readme_blocks() -> dict[str, str]:
         "rewriting": rb.rewriting(_load("rewrite_primary") if rewrite.exists() else None),
         "suggestions": rb.suggestions(_load("suggest")),
         "similar": rb.similar(_load("similar_primary")),
-        "latency": rb.latency(_load("latency")),
+        "latency": rb.latency(_load("latency"), _load("latency_before"), _load("fast_path")),
+        "main_findings": rb.findings_final(
+            final,
+            _load("leak_checks"),
+            _load("rewrite_primary") if rewrite.exists() else None,
+            _load("latency"),
+        ),
         "mapping": rb.mapping(),
         "spend": rb.spend([json.loads(line) for line in ledger]),
     }

@@ -87,10 +87,12 @@ def product_out(product: Product) -> ProductOut:
 
 def default_engine() -> Engine:
     """Engine from app_data, with the model downloaded if needed."""
+    from shelfrank.app_support.assets import ensure_assets
     from shelfrank.app_support.encoder import QueryEncoder, fetch_model
 
     folder = Path(os.environ.get("SHELFRANK_APP_DATA", REPO_ROOT / "app_data"))
     models = Path(os.environ.get("SHELFRANK_MODELS", REPO_ROOT / "artifacts/onnx"))
+    ensure_assets(folder)
     return Engine(folder, QueryEncoder(fetch_model(models), folder / "tokenizer.json"))
 
 

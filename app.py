@@ -6,6 +6,7 @@ from pathlib import Path
 import streamlit as st
 
 from shelfrank.app_support import catalog as sql
+from shelfrank.app_support.assets import ensure_assets
 from shelfrank.app_support.encoder import QueryEncoder, fetch_model
 from shelfrank.app_support.engine import BM25, LTR, RRF, Engine, Hit, Result
 from shelfrank.app_support.gemini import live_rewrites
@@ -33,9 +34,10 @@ EXAMPLES = ["grey velvet sofa", "round oak coffee table", "outdoor bar stool", "
 st.set_page_config(page_title="ShelfRank", page_icon="🛋️", layout="wide")
 
 
-@st.cache_resource(show_spinner="Loading the catalogue and the query encoder…")
+@st.cache_resource(show_spinner="Downloading and loading the catalogue and the query encoder…")
 def load_engine() -> Engine:
     """One engine per process."""
+    ensure_assets(DATA)
     return Engine(DATA, QueryEncoder(fetch_model(MODELS), DATA / "tokenizer.json"))
 
 
@@ -90,7 +92,13 @@ def rewrite_panel(query: str, result: Result) -> list[str] | None:
     with st.expander("Query rewriting (triggered: this query looks hard)", expanded=True):
         if u.rewrites:
             st.write("Cached rewrites: " + ", ".join(plain(r) for r in u.rewrites))
-            return u.rewrites
+            st.caption(
+                "Not applied by default: on held-out queries rewriting did not improve ranking. "
+                "Tick the box to see what it would do."
+            )
+            if st.checkbox("Apply these rewrites", key=f"apply-{query}"):
+                return u.rewrites
+            return None
         st.write("No cached rewrite for this query.")
         key = st.text_input(
             "Gemini API key (optional; kept in this session's memory, never stored or logged)",
@@ -146,7 +154,7 @@ def main() -> None:
     min_rating = rating or None
     right = engine.search(query, 10, ranker, product_class, min_rating, explain=ranker == LTR)
     rewrites = rewrite_panel(query, right)
-    if rewrites and not right.understanding.rewrites:
+    if rewrites:
         right = engine.search(
             query, 10, ranker, product_class, min_rating, rewrites, explain=ranker == LTR
         )

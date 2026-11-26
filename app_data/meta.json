@@ -1169,5 +1169,9 @@
   "g6_numbers_anywhere"
  ],
  "default_ranker": "ltr",
- "rewrite_trigger": null
+ "rewrite_trigger": {
+  "signal": "dense_top",
+  "threshold": 0.7938511967658997
+ },
+ "apply_rewrites": false
 }

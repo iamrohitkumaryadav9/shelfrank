@@ -39,7 +39,7 @@ def main() -> None:
         response = client.generate(request, "rewriting", name, parse, args.pilot)
         if paid:
             timings.append({"id": q, "ms": 1000 * (time.perf_counter() - start)})
-        rows.append({"id": q, "texts": parse(response.text).texts(text)})
+        rows.append({"id": q, "texts": parse(response.text).texts(text), "rules": VERSION})
     ledger = client.budget.ledger
     spent = ledger.spent(batch=name)
     log = REPO_ROOT / "results/rewrite_latency.jsonl"

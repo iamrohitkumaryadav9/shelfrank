@@ -1,8 +1,8 @@
 """Product-side work done once at build time: field tokens and listed attributes.
 
-The features need the tokens of every candidate and its attribute values. Neither depends on the query,
-and computing them per search took most of the ranker's time. Stored values come from the same
-functions, so the features do not change.
+The features need the tokens of every candidate and its attribute values. Neither depends on the
+query, and computing them per search took most of the ranker's time. Stored values come from the
+same functions, so the features do not change.
 """
 
 import gzip
@@ -72,10 +72,12 @@ class FieldView:
     """One field of a token table, read with ``view[row]``."""
 
     def __init__(self, table: TokenTable, field: str) -> None:
+        """Read one field, keeping rows already decoded."""
         self.table, self.field = table, field
         self.cache: dict[int, list[str]] = {}
 
     def __getitem__(self, row: int) -> list[str]:
+        """Tokens of one product."""
         if row not in self.cache:
             self.cache[row] = self.table.row(self.field, row)
         return self.cache[row]
@@ -100,3 +102,21 @@ def load_listed(path: Path) -> list[Listed]:
         Listed({tuple(t) for t in u}, {tuple(t) for t in s}, {tuple(t) for t in r}, set(m))
         for u, s, r, m in body
     ]
+
+
+class IdfTable(dict[str, float]):
+    """An idf mapping whose largest value is computed once.
+
+    ``weighted_coverage`` in the frozen feature code takes ``max(idf.values())`` for every
+    candidate, which scans 60,000 terms each time. Only the maximum of the values is ever read
+    from them, so returning it alone gives the same number without the scan.
+    """
+
+    def __init__(self, values: Mapping[str, float]) -> None:
+        """Copy the table and remember its largest value."""
+        super().__init__(values)
+        self.top = max(values.values(), default=1.0)
+
+    def values(self) -> tuple[float, ...]:  # type: ignore[override]
+        """Only the largest value, which is all the feature code reads."""
+        return (self.top,)

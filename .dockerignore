@@ -9,4 +9,8 @@ notebooks
 tests
 docs
 **/__pycache__
-app_data/catalog.duckdb
+app_data/*
+!app_data/meta.json
+!app_data/rewrites.json
+!app_data/suggest_queries.txt
+!app_data/assets.json

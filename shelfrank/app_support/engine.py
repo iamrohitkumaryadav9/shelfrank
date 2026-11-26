@@ -18,7 +18,7 @@ import pandas as pd
 from shelfrank.app_support.catalog import Catalog, Product
 from shelfrank.app_support.char_tfidf import PlainClassifier
 from shelfrank.app_support.product_side import FIELDS as PRODUCT_FIELDS
-from shelfrank.app_support.product_side import TokenTable, load_listed
+from shelfrank.app_support.product_side import IdfTable, TokenTable, load_listed
 from shelfrank.app_support.sparse_bm25 import SparseBM25
 from shelfrank.bm25.fields import FIELDS, combine, feature_text
 from shelfrank.data.wands import split_classes
@@ -114,7 +114,8 @@ class Engine:
         self.student = PlainClassifier.load(folder / "class_student.npz")
         self.tagger = load_tagger(folder / "slot_student.npz", folder / "slot_student.json")
         self.slot_of = {tuple(k.split()): v for k, v in self.meta["slot_of"].items()}
-        self.idf: dict[str, float] = json.loads((folder / "idf.json").read_text(encoding="utf-8"))
+        idf = json.loads((folder / "idf.json").read_text(encoding="utf-8"))
+        self.idf: dict[str, float] = IdfTable(idf) if precomputed else idf
         with np.load(folder / "priors.npz", allow_pickle=False) as body:
             self.priors = pd.DataFrame(body["values"], columns=[str(c) for c in body["columns"]])
         saved = json.loads((folder / "rewrites.json").read_text(encoding="utf-8"))
@@ -255,7 +256,11 @@ class Engine:
         lap("bm25_and_dense_search")
         understanding = self.understand(query, stage)
         lap("query_understanding")
-        texts = understanding.rewrites if rewrites is None else list(rewrites)
+        if rewrites is None:
+            apply = self.meta.get("apply_rewrites", False)
+            texts = understanding.rewrites if apply else []
+        else:
+            texts = list(rewrites)
         if texts and ranker != BM25:
             stage = self._widen(stage, texts)
             lap("rewrites")
@@ -268,7 +273,10 @@ class Engine:
             table = self.features(stage, pairs)[self.meta["columns"]]
             lap("feature_build")
             models = self._models(understanding.wands_fold)
-            scores = np.mean([m.predict(table) for m in models], axis=0)
+            # LightGBM turns a frame into this array itself; doing it once saves it for every model.
+            # The plain path keeps the frame, so the identity check also covers this conversion.
+            matrix = table.to_numpy(dtype=np.float64) if self.tokens is not None else table
+            scores = np.mean([m.predict(matrix) for m in models], axis=0)
             order = sorted(
                 range(len(pairs)), key=lambda i: (-scores[i], int(pairs["product_id"][i]))
             )

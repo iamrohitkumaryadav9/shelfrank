@@ -110,6 +110,7 @@ def make_inputs(sample, **changes):
         "suggest_queries": ["red sofa bed", "red sofa cover", "oak desk"],
         "rewrites": {int(queries["query_id"].iloc[0]): ["red lamp"]},
         "trigger": {"signal": "words", "threshold": 1.0},
+        "apply_rewrites": True,
     }
     return Inputs(**(base | changes)), student
 

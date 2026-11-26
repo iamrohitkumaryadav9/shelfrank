@@ -249,7 +249,7 @@ def test_committed_app_data_files_stay_below_the_git_limit():
         pytest.skip("app_data is not built")
     for path in folder.iterdir():
         if path.name != "catalog.duckdb":
-            assert path.stat().st_size < 95e6, path.name
+            assert path.stat().st_size < 95e6, path.name  # also the limit for a release file
 
 
 @pytest.mark.parametrize("ranker", ["ltr", "rrf"])
@@ -290,3 +290,33 @@ def test_committed_fast_path_check_covers_every_query():
         pytest.skip("not checked yet")
     body = json.loads(path.read_text(encoding="utf-8"))
     assert body == {"queries": 480, "depth": 100, "identical": 480}
+
+
+def test_cached_rewrites_are_shown_but_not_applied_unless_the_data_says_so(sample, tmp_path):
+    from shelfrank.app_support.build import build
+
+    inputs, _ = make_inputs(sample, apply_rewrites=False)
+    build(tmp_path, inputs)
+    off = Engine(tmp_path, fake_encode)
+    query = sample["queries"]["query"].iloc[0]
+    out = off.search(query, 5, "rrf")
+    assert out.understanding.rewrites == ["red lamp"] and "rewrites" not in out.timing
+    assert "rewrites" in off.search(query, 5, "rrf", rewrites=["red lamp"]).timing
+
+
+def test_idf_table_gives_the_same_lookups_and_maximum():
+    import inspect
+
+    from shelfrank.app_support.product_side import IdfTable
+    from shelfrank.features import lexical
+
+    plain = {"a": 1.5, "b": 3.0}
+    table = IdfTable(plain)
+    assert table["a"] == 1.5 and table.get("z", 9) == 9 and max(table.values()) == 3.0
+    for query, words in ((["a", "z"], {"a"}), (["b"], set()), (["z"], {"z"})):
+        assert lexical.weighted_coverage(query, words, table) == lexical.weighted_coverage(
+            query, words, plain
+        )
+    # The override is safe only while the feature code reads nothing but the maximum.
+    source = inspect.getsource(lexical)
+    assert source.count("idf.values()") == 1 and "max(idf.values(), default=1.0)" in source

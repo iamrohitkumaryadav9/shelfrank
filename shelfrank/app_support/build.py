@@ -55,6 +55,7 @@ class Inputs:
     suggest_queries: Sequence[str]
     rewrites: Mapping[int, Sequence[str]] = field(default_factory=dict)
     trigger: Mapping[str, Any] | None = None
+    apply_rewrites: bool = False
 
 
 def write_catalog(path: Path, data: Inputs) -> None:
@@ -151,6 +152,7 @@ def build(folder: Path, data: Inputs) -> None:
         "columns": list(data.columns),
         "default_ranker": data.default_ranker,
         "rewrite_trigger": dict(data.trigger) if data.trigger else None,
+        "apply_rewrites": data.apply_rewrites,
     }
     texts = {
         "meta.json": json.dumps(meta, indent=1),

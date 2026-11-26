@@ -13,6 +13,18 @@ Settings were frozen and tagged (`preregistered-v1`) before any of the 384 evalu
 claimed only when it holds with unjudged products counted as irrelevant **and** with them removed, and after Holm correction. Null and negative
 results are in the same tables.
 
+## Findings
+
+<!-- begin:main_findings -->
+- **Dev showed no gain; the primary queries do.** On the dev fold LTR is +0.009 [-0.008, +0.028] against hybrid RRF (-0.015 [-0.044, +0.008] condensed). On the 384 primary queries it is +0.038 [+0.027, +0.048]. Checks for a leak found none: the run repeats exactly, shuffled labels drop LTR to -0.283 [-0.313, -0.254], every other fold gains, and the gain does not grow with similarity to training queries. A known cause of the gap: BM25's field weights were tuned on dev, which makes the dev baselines optimistic.
+- **More training queries, more gain.** +0.020 [+0.011, +0.029] when trained on 48 queries, +0.038 [+0.027, +0.048] on 384. Dev experiments trained on about 72 queries, which may be part of why they did not show it.
+- **G1 and G2 earned it; the attribute features did not.** Without G4 the change is -0.004 [-0.008, -0.000], Holm p 0.123: no claimed effect.
+- **LambdaMART against pointwise regression:** -0.005 [-0.013, +0.003] for pointwise, Holm p 0.447, no clear difference.
+- **The price of pre-registration.** On the primary queries the fine-tuned encoder beats off-the-shelf by +0.021 [+0.007, +0.035] (Holm p 0.037). On dev it did not, so the rule written before measuring kept it out of the ranker. It stays out: changing the ranker now would be choosing on the test set.
+- **Latency.** LTR answers in 123 ms at the median (143 ms p95) against 49 ms (58 ms) for hybrid RRF.
+- **LLM rewriting did not help.** It gained on dev, where its trigger was chosen. On the primary queries LTR with triggered rewriting is -0.009 [-0.017, -0.001] (-0.006 [-0.014, +0.001] condensed): direction depends on unjudged handling. The demo shows rewrites but does not apply them by default.
+<!-- end:main_findings -->
+
 ## Key results
 
 <!-- begin:key_results -->
@@ -207,19 +219,19 @@ curl.exe "http://127.0.0.1:8000/search?q=grey%20velvet%20sofa&k=3"
 `GET /search`, `GET /similar/{product_id}`, `GET /health`. A WANDS query is ranked by the models of its own fold, which never trained on it.
 
 <!-- begin:latency -->
-| Stage (ms) | LTR p50 | LTR p95 | Hybrid RRF p50 | Hybrid RRF p95 |
-| --- | --- | --- | --- | --- |
-| Dense encode (fp32 ONNX) | 18.2 | 22.8 | 10.1 | 13.5 |
-| BM25 and dense search, fusion | 19.2 | 22.1 | 11.6 | 14.0 |
-| Query understanding | 4.7 | 6.3 | 2.3 | 3.4 |
-| Feature build (all candidates) | 347.2 | 444.3 |  |  |
-| LTR score | 9.5 | 12.9 |  |  |
-| Rank list |  |  | 9.6 | 12.5 |
-| Fetch products (DuckDB) | 39.1 | 46.2 | 18.0 | 24.2 |
-| **Total** | 435.0 | 535.5 | 52.2 | 60.8 |
+| Stage (ms) | LTR before p50 | LTR before p95 | LTR p50 | LTR p95 | Hybrid RRF p50 | Hybrid RRF p95 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Dense encode (fp32 ONNX) | 18.2 | 22.8 | 16.7 | 21.1 | 9.8 | 13.1 |
+| BM25 and dense search, fusion | 19.2 | 22.1 | 17.4 | 21.0 | 11.1 | 13.5 |
+| Query understanding | 4.7 | 6.3 | 7.1 | 10.2 | 3.5 | 5.4 |
+| Feature build (all candidates) | 347.2 | 444.3 | 43.7 | 54.5 |  |  |
+| LTR score | 9.5 | 12.9 | 6.8 | 8.8 |  |  |
+| Rank list |  |  |  |  | 9.1 | 12.2 |
+| Fetch products (DuckDB) | 39.1 | 46.2 | 31.9 | 38.4 | 15.4 | 20.2 |
+| **Total** | 435.0 | 535.5 | 123.1 | 142.6 | 49.4 | 57.6 |
 
-3 passes over 96 dev queries, one at a time, on the development laptop (Intel64 Family 6 Model 142 Stepping 12, no GPU). Start-up takes 7.2 s once the
-model is downloaded, the first search 2.2 s, and peak memory is 806 MB. The API and demo return the evaluated LTR
+3 passes over 96 dev queries, one at a time, on the development laptop (Intel64 Family 6 Model 142 Stepping 12, no GPU). Start-up takes 2.2 s once the
+files are downloaded, the first search 1.2 s, and peak memory is 937 MB. Tokens and attribute values of every product are now computed when the data is built, not per search. Rankings stay bit-identical, ids and scores, for 480 of 480 WANDS queries at depth 100, and peak memory went from 806 to 937 MB. The API and demo return the evaluated LTR
 top 10 exactly for 95.4% of the 480 WANDS queries (99.8% of the products). The rest differ by rounding of half-precision
 product vectors.
 <!-- end:latency -->
@@ -241,7 +253,7 @@ product vectors.
 | Personalization | Design note: why it cannot be evaluated here, and what to build | [link](docs/PERSONALIZATION.md) |
 <!-- end:mapping -->
 
-## Findings from development
+## Findings from early development
 
 <!-- begin:findings -->
 All on the 96 dev queries, exploratory and uncorrected.
@@ -301,6 +313,7 @@ uv sync --extra dev --extra bench --extra app --extra api
 uv run python scripts/reproduce.py --offline --fixture   # no download: cached LLM answers, tables, fixture search
 uv run python scripts/get_wands.py                       # about 96 MB, verified by SHA-256
 uv run python scripts/encode_products.py bge_small       # about 35 min on CPU, resumable
+uv run python scripts/fetch_assets.py                    # demo and API files from the v1.0-data release, verified
 uv run python scripts/reproduce.py --offline             # every step the local files allow, zero API calls
 uv run python -m streamlit run app.py
 uv run pytest
@@ -322,9 +335,9 @@ LLM spend, whole project: **Rs 46.30** of a Rs 500 limit in code (labelling Rs 3
 | `shelfrank/features`, `ltr` | six feature groups, LambdaMART, gates, ablation |
 | `shelfrank/rewrite`, `suggest`, `similar` | rewriting, suggestions, substitutes |
 | `shelfrank/eval`, `stats` | metrics, harness, pool rule, bootstrap, Holm |
-| `shelfrank/app_support`, `app.py`, `app_data` | engine, API, demo and its data |
+| `shelfrank/app_support`, `app.py`, `app_data` | engine, API, demo; large data files come from the `v1.0-data` release |
 | `scripts`, `configs`, `results`, `docs`, `tests` | entry points, frozen settings, committed results, generated pages, tests |
 
-WANDS is MIT licensed and ESCI Apache-2.0 ([docs/DATA.md](docs/DATA.md)). This project is not affiliated with Wayfair or Amazon.
+WANDS is MIT licensed and ESCI Apache-2.0 ([docs/DATA.md](docs/DATA.md), [docs/LICENSE-DATA.md](docs/LICENSE-DATA.md)). This project is not affiliated with Wayfair or Amazon.
 
 Individual project by Rohit Kumar, M.Tech CSE, IIIT Delhi. [GitHub](https://github.com/iamrohitkumaryadav9)

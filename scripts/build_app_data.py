@@ -106,6 +106,11 @@ def main() -> None:
     trigger = load_config("frozen_rewrite") if trigger_path.exists() else None
     tagger = load_slot_model()
     seed = (REPO_ROOT / "data/esci/esci_seed_queries.txt").read_text(encoding="utf-8").splitlines()
+    rewrite_path = REPO_ROOT / "results/rewrite_primary.json"
+    apply = False
+    if rewrite_path.exists():
+        result = json.loads(rewrite_path.read_text(encoding="utf-8"))["overall"]
+        apply = result[0]["verdict"] == GAIN and adjusted(result)[0] < ALPHA
     inputs = Inputs(
         products=res.products,
         tokens=res.tokens,
@@ -131,6 +136,7 @@ def main() -> None:
         trigger={"signal": trigger["signal"], "threshold": trigger["threshold"]}
         if trigger
         else None,
+        apply_rewrites=apply,
     )
     build(TARGET, inputs)
     shutil.copyfile(

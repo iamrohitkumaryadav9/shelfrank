@@ -197,24 +197,95 @@ def similar(data: Mapping[str, Any]) -> str:
 This measures substitutability, not engagement or complementarity ([docs/similar.md](docs/similar.md))."""
 
 
-def latency(data: Mapping[str, Any]) -> str:
-    """Latency budget."""
+def latency(
+    data: Mapping[str, Any],
+    before: Mapping[str, Any] | None = None,
+    fast: Mapping[str, Any] | None = None,
+) -> str:
+    """Latency budget, with the LTR timings before the product-side precomputation."""
     rows = []
     for stage, label in STAGES.items():
         cells = []
+        if before is not None:
+            c = before["stages"]["ltr"].get(stage)
+            cells += [f"{c['p50']:.1f}", f"{c['p95']:.1f}"] if c else ["", ""]
         for ranker in RANKERS:
             c = data["stages"][ranker].get(stage)
             cells += [f"{c['p50']:.1f}", f"{c['p95']:.1f}"] if c else ["", ""]
         if any(cells):
             rows.append([label, *cells])
-    header = ["Stage (ms)", *(f"{name} {p}" for name in RANKERS.values() for p in ("p50", "p95"))]
+    names = (["LTR before"] if before is not None else []) + list(RANKERS.values())
+    header = ["Stage (ms)", *(f"{name} {p}" for name in names for p in ("p50", "p95"))]
     agree = data["agreement_with_evaluation"]
+    identity = ""
+    if before is not None and fast is not None:
+        identity = (
+            f" Tokens and attribute values of every product are now computed when the data is built, not per search. Rankings stay "
+            f"bit-identical, ids and scores, for {fast['identical']} of {fast['queries']} WANDS queries at depth {fast['depth']}, and peak memory went from "
+            f"{before['memory_mb']:.0f} to {data['memory_mb']:.0f} MB."
+        )
     return f"""{table(header, rows)}
 
 {data["repeats"]} passes over {data["queries"]} dev queries, one at a time, on the development laptop ({data["machine"].split(",")[0]}, no GPU). Start-up takes {data["load_seconds"]:.1f} s once the
-model is downloaded, the first search {data["first_query_seconds"]:.1f} s, and peak memory is {data["memory_mb"]:.0f} MB. The API and demo return the evaluated LTR
+files are downloaded, the first search {data["first_query_seconds"]:.1f} s, and peak memory is {data["memory_mb"]:.0f} MB.{identity} The API and demo return the evaluated LTR
 top 10 exactly for {agree["ltr"]["identical_top10"]:.1%} of the {agree["ltr"]["n"]} WANDS queries ({agree["ltr"]["mean_top10_overlap"]:.1%} of the products). The rest differ by rounding of half-precision
 product vectors."""
+
+
+def findings_final(
+    data: Mapping[str, Any],
+    checks: Mapping[str, Any],
+    rewriting_primary: Mapping[str, Any] | None,
+    speed: Mapping[str, Any],
+) -> str:
+    """What a reader should know first, all from results files."""
+    dev = checks["by_fold"]["0"]
+    curve = checks["training_size"]
+    first, last = curve[min(curve, key=int)], curve[max(curve, key=int)]
+    rows = {
+        r["system"]: (r, p)
+        for r, p in zip(
+            data["comparisons"]["primary"]["ablation"],
+            fr.adjusted(data["comparisons"]["primary"]["ablation"]),
+            strict=True,
+        )
+    }
+    g4, g4p = rows["without_G4"]
+    point, pointp = rows["pointwise"]
+    retrieval = {
+        (r["system"], r["baseline"]): (r, p)
+        for r, p in zip(
+            data["comparisons"]["primary"]["retrieval"],
+            fr.adjusted(data["comparisons"]["primary"]["retrieval"]),
+            strict=True,
+        )
+    }
+    tuned, tunedp = retrieval[("dense_esci", "dense")]
+    shuffled = checks["shuffled_labels"]
+    row, _, _, _ = main_rows(data)
+    earned = " and ".join(earning_groups(data)) or "no group"
+    ltr, rrf = speed["stages"]["ltr"]["total"], speed["stages"]["rrf"]["total"]
+    lines = [
+        f"- **Dev showed no gain; the primary queries do.** On the dev fold LTR is {_gap(dev['ndcg10'])} against hybrid RRF ({_gap(dev['condensed_ndcg10'])} condensed). "
+        f"On the {data['queries']['primary']} primary queries it is {_gap(row['ndcg10'])}. Checks for a leak found none: the run repeats exactly, shuffled labels "
+        f"drop LTR to {_gap(shuffled['ndcg10'])}, every other fold gains, and the gain does not grow with similarity to training queries. A known cause "
+        "of the gap: BM25's field weights were tuned on dev, which makes the dev baselines optimistic.",
+        f"- **More training queries, more gain.** {_gap(first['ndcg10'])} when trained on {min(curve, key=int)} queries, {_gap(last['ndcg10'])} on {max(curve, key=int)}. "
+        "Dev experiments trained on about 72 queries, which may be part of why they did not show it.",
+        f"- **{earned} earned it; the attribute features did not.** Without G4 the change is {_gap(g4['ndcg10'])}, Holm p {g4p:.3f}: no claimed effect.",
+        f"- **LambdaMART against pointwise regression:** {_gap(point['ndcg10'])} for pointwise, Holm p {pointp:.3f}, {fr.claimed(point, pointp)}.",
+        f"- **The price of pre-registration.** On the primary queries the fine-tuned encoder beats off-the-shelf by {_gap(tuned['ndcg10'])} (Holm p {tunedp:.3f}). "
+        "On dev it did not, so the rule written before measuring kept it out of the ranker. It stays out: changing the ranker now would be choosing on the test set.",
+        f"- **Latency.** LTR answers in {ltr['p50']:.0f} ms at the median ({ltr['p95']:.0f} ms p95) against {rrf['p50']:.0f} ms ({rrf['p95']:.0f} ms) for hybrid RRF.",
+    ]
+    if rewriting_primary is not None:
+        overall = rewriting_primary["overall"][0]
+        p = fr.adjusted(rewriting_primary["overall"])[0]
+        lines.append(
+            f"- **LLM rewriting did not help.** It gained on dev, where its trigger was chosen. On the primary queries LTR with triggered rewriting is "
+            f"{_gap(overall['ndcg10'])} ({_gap(overall['condensed_ndcg10'])} condensed): {fr.claimed(overall, p)}. The demo shows rewrites but does not apply them by default."
+        )
+    return "\n".join(lines)
 
 
 def spend(rows: Sequence[Mapping[str, Any]]) -> str:

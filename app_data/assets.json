@@ -1,0 +1,71 @@
+{
+ "repository": "iamrohitkumaryadav9/shelfrank",
+ "release": "v1.0-data",
+ "license": "WANDS is MIT licensed (Copyright (c) 2021 ecir2022); the files are derived from it. See LICENSE-DATA.md in the release.",
+ "files": {
+  "bm25_class.npz": {
+   "sha256": "58843640df33740fa6caa45a2395a8597f634025f7f42107b5635edd603f3e86",
+   "bytes": 186922
+  },
+  "bm25_description.npz": {
+   "sha256": "46a1cabd3aece38e8728f4cbd19a5a358ff46b9f8dbcbc408449226f846a3d80",
+   "bytes": 7390705
+  },
+  "bm25_features.npz": {
+   "sha256": "5ddd7d59ffcd1821841f0f43cbe4aebc1d25532257c50dbb0243d50c0737de02",
+   "bytes": 5253218
+  },
+  "bm25_hierarchy.npz": {
+   "sha256": "74b05798919a6086208a1c88dca329cbf0c001a035925f1d3c85cb7e758a0f73",
+   "bytes": 521146
+  },
+  "bm25_name.npz": {
+   "sha256": "61ec0648f215365e0a70a548c97d01adc21932649f9d8c13802dfdc421a14419",
+   "bytes": 1036770
+  },
+  "catalog.duckdb.gz": {
+   "sha256": "56bfc75f7181ebc2cfc87f47ebc1027538ae06c7b4e04034f31da3245023dab9",
+   "bytes": 25473238
+  },
+  "class_student.npz": {
+   "sha256": "5cab649c62b23d847ba51ea724dd6234379a62840d5111c41e7868c0b8554a5d",
+   "bytes": 16340897
+  },
+  "idf.json": {
+   "sha256": "b37c8c2890e5465dc371ec901a3e401df1ee73af3827c67618d1efa8af9d447b",
+   "bytes": 831181
+  },
+  "priors.npz": {
+   "sha256": "7cec8abb8ad55448960beb335e489e498466e16f0e1fc0f01eed25fb4fa8e250",
+   "bytes": 386868
+  },
+  "product_attributes.json.gz": {
+   "sha256": "c765f18f8da1488221ae2bb0daa54c99656e30f02543165600afb8b706e74dbc",
+   "bytes": 623585
+  },
+  "product_tokens.npz": {
+   "sha256": "e4a9c5cf4189e6374458a55bd9082da98476907d74a096fbd60e6b5aa7a4bd8e",
+   "bytes": 5964249
+  },
+  "rankers.json": {
+   "sha256": "02e123c2c7888948e81a90f066968eb3876382af068a4e349fd936e35efd6a61",
+   "bytes": 7950252
+  },
+  "slot_student.json": {
+   "sha256": "f171995626a1afa3d234a63eb8e2072ebf54867dc88f95d35eef86271a282621",
+   "bytes": 223125
+  },
+  "slot_student.npz": {
+   "sha256": "3050aa21f914683b34f0fa85cb600cce42a449a0e271bc2ba277a64203c6974c",
+   "bytes": 168547
+  },
+  "tokenizer.json": {
+   "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+   "bytes": 711396
+  },
+  "vectors.npy": {
+   "sha256": "6db7cbdc974cb4dbae5e73c03f1e25dd57655cf78ee0abd9b983e43e0a5c4a48",
+   "bytes": 33019520
+  }
+ }
+}

@@ -21,7 +21,6 @@ LEDGER = ROOT / "results/llm_spend.jsonl"
 RAW = ROOT / "data/raw/wands/product.csv"
 EMBEDDINGS = ROOT / "artifacts/embeddings/bge_small/embeddings.npy"
 TUNED = ROOT / "artifacts/embeddings/bge_small_esci/embeddings.npy"
-APP_DATA = ROOT / "app_data/meta.json"
 
 # Runs before the step: no sockets except to this machine, and no key.
 GUARD = """
@@ -153,6 +152,7 @@ STEPS = (
         ("results/similar_primary.json",),
         (RAW, EMBEDDINGS, TUNED),
     ),
+    Step("app data, checksums", ("scripts/fetch_assets.py",), (), (ROOT / "app_data/vectors.npy",)),
     Step("tables", ("scripts/make_tables.py",), ("README.md", "docs/*.md"), in_fixture=True),
 )
 
